@@ -1,0 +1,38 @@
+/* fabric change slider */
+
+.slide-fabric-button-active{
+transform: scale(1.3);
+}
+
+.slide-fabric-nav {
+	text-align: center;
+	padding-bottom: 1em;
+}
+.slide-fabric-button:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.slide-fabric-button:active {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+.slides-fabric {
+	text-align: center;
+}
+
+#sofaFabric1 {
+   display: none;
+}
+#sofaFabric2 {
+   display: none;
+}
+#sofaFabric3 {
+   display: none;
+}
+#sofaFabric4 {
+   display: none;
+}
+#sofaFabric5 {
+   display: none;
+}
