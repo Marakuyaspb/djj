@@ -9,10 +9,6 @@ def index(request):
 def about(request):
 	return render(request, 'product/about.html')
 
-def category_goods(request):
-	products = Product.objects.all()
-	return render(request, 'product/category_goods.html', {'products': products})
-
 def contact(request):
 	return render(request, 'product/contact.html')
 
@@ -22,3 +18,30 @@ def payment(request):
 def showrooms(request):
 	return render(request, 'product/showrooms.html')
 
+
+# CATEGORIES
+
+def category_accessory (request):
+	products = Product.objects.all()
+	return render(request, 'product/category_goods.html', {'products': products})
+def category_arm (request):
+	products = Product.objects.all()
+	return render(request, 'product/category_goods.html', {'products': products})
+def category_bed (request):
+	products = Product.objects.all()
+	return render(request, 'product/category_goods.html', {'products': products})
+def category_corner (request):
+	products = Product.objects.all()
+	return render(request, 'product/category_goods.html', {'products': products})
+def category_k1r (request):
+	products = Product.objects.all()
+	return render(request, 'product/category_goods.html', {'products': products})
+def category_poufl (request):
+	products = Product.objects.all()
+	return render(request, 'product/category_goods.html', {'products': products})
+def category_poufs (request):
+	products = Product.objects.all()
+	return render(request, 'product/category_goods.html', {'products': products})
+def category_str (request):
+	products = Product.objects.all()
+	return render(request, 'product/category_goods.html', {'products': products})

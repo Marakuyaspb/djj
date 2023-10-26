@@ -4,7 +4,7 @@
 {% block content %}
 
 
-{% for el in products %}
+{% for el in {products} %}
 
 	<div class = "product_card p-3 sku {{ el.category} {{ el.filter_it }}" id='{{ el.sku }}' onClick='showDetails(event);'>
 

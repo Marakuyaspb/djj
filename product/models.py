@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class Category(models.Model):
 	category = models.CharField(max_length=50) # КреслА, пуфЫ etc
@@ -38,8 +39,7 @@ class Product(models.Model):
 	category_ru = models.CharField(max_length=50)
 	name = models.CharField(max_length=50) # Кресло Consono
 	product_type = models.CharField(max_length=50) # Кресло
-	image = models.ImageField(upload_to='products/%Y/%m/%d',
-	blank=True)
+	# image = models.FilePathField(path="/product/static", match="foo.*", recursive=True)
 	description = models.TextField(blank=True)
 	price = models.DecimalField(max_digits=10, decimal_places=2)
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2)
@@ -50,16 +50,16 @@ class Product(models.Model):
 	fabric_type = models.CharField(max_length=50)
 	fabric_name = models.CharField(max_length=50)
 	product_fabric_about = models.CharField(max_length=700)
-	#product_fabric_img = models.FilePathField(path=images_path)
-	#carousel_item = models.FilePathField(path=images_path)
-	#carousel_item_mob = models.FilePathField(path=images_path)
-	#closeup = models.FilePathField(path=images_path)
-	#slider_interior = models.FilePathField(path=images_path)
-	#slider_interior_mob = models.FilePathField(path=images_path)
+	# product_fabric_img = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
+	# carousel_item = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
+	# carousel_item_mob = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
+	# closeup = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
+	# slider_interior = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
+	# slider_interior_mob = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
 	prod_width = models.IntegerField(blank=True, null=True)
 	prod_depth = models.IntegerField(blank=True, null=True)
 	prod_height = models.IntegerField(blank=True, null=True)
-	#scheme = models.FilePathField(path=images_path)
+	# scheme = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 	slug = models.SlugField(max_length=250)
