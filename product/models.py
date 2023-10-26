@@ -76,3 +76,9 @@ class Product(models.Model):
 
 	def __str__(self):
 		return self.name
+		return self.price
+		return self.price_sale
+		return self.prod_width
+		return self.prod_depth
+		return self.prod_height
+		
