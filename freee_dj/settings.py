@@ -70,10 +70,9 @@ WSGI_APPLICATION = 'freee_dj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        # change DB
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
-    'catalog': {
+    },
+    'products': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db_test.db',
         # 'USER': 'admin',
