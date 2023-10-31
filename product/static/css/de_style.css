@@ -150,6 +150,7 @@ a:hover{
 	font-family: 'Montserrat';
 	font-weight: 300;
 	line-height: 1;
+	padding: .8em!important;
 }
 
 
@@ -157,6 +158,9 @@ a:hover{
 li .nav-link .nav-link-text{
 	padding-bottom: 2rem;
 }
+
+
+
 .navbar-brand {
 	font-family: 'Montserrat';
 	font-weight: 100;
@@ -558,10 +562,12 @@ a .icon-header:hover{
 }
 }
 .price_cat_page{
-	font-size:1.250em;
+	font-size:1em!important;
 }
 .old-price_cat_page{
-	font-size:1.250em;
+	font-size:1em!important;
+	color: #212529;
+	font-weight: 500;
 }
 
 .row_prod_catgories{

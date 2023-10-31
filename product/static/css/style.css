@@ -1060,7 +1060,7 @@ body {
 	font-weight: normal;
 	color: #5E5B5B;
 	text-align: left;
-	background-color: var(--global--color-background);
+	/*background-color: var(--global--color-background);*/
 }
 
 button {

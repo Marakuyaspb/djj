@@ -1,19 +1,16 @@
-from django.shortcuts import render, get_object_or_404
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
 from .models import Category
 from .models import Product
 
 def index(request):
 	return render(request, 'product/index.html')
-
 def about(request):
 	return render(request, 'product/about.html')
-
 def contact(request):
 	return render(request, 'product/contact.html')
-
 def payment(request):
 	return render(request, 'product/payment.html')
-
 def showrooms(request):
 	return render(request, 'product/showrooms.html')
 
@@ -44,9 +41,10 @@ def category_str (request):
 
 # dynamic products
 def single_product(request, id):
-	product = get_object_or_404(
-		Product, 
-		id=id, 
-		status=Product.Status.PUBLISHED)
+	return HttpResponse(f'Product {id}')
+	# try:
+	# 	p = Product.objects.get(id = product_id)
+	# except:
+	# 	raise Http404('Такого дивана пока нет :(')
 
-	return render(request,'product/single_product.html', {'product': product})
+	# return render(request,'product/single_product.html', {'single_product': p})
