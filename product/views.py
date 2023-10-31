@@ -1,7 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Category
 from .models import Product
-
 
 def index(request):
 	return render(request, 'product/index.html')
@@ -36,12 +35,18 @@ def category_corner (request):
 def category_k1r (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
-def category_poufl (request):
-	products = Product.objects.all()
-	return render(request, 'product/category_goods.html', {'products': products})
-def category_poufs (request):
+def category_pouf (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
 def category_str (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
+
+# dynamic products
+def single_product(request, id):
+	product = get_object_or_404(
+		Product, 
+		id=id, 
+		status=Product.Status.PUBLISHED)
+
+	return render(request,'product/single_product.html', {'product': product})

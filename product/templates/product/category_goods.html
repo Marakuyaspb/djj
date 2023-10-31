@@ -4,61 +4,62 @@
 {% block content %}
 
 
-{% for el in {products} %}
+{% for el in products %}
 
-	<div class = "product_card p-3 sku {{ el.category} {{ el.filter_it }}" id='{{ el.sku }}' onClick='showDetails(event);'>
+	<div class = "product_card p-3 sku {{ el.category}} " id=''>
+		<a href="{{ product.get_absolute_url }}">
 
-
-			<!-- HEAD OF THE CARD -->
+		<!-- HEAD OF THE CARD -->
 				
-				<!-- DESCTOP -->
-				<div class = 'd-none d-md-block d-lg-block d-xl-block d-xxl-block'>
-					<div class = 'd-flex justify-content-between'>
-						<div>
-							<h3 class='product_card_header'>{{ el.product_name }}</h3>
-						</div>
-				
-						<div>
-							<img class = 'is_new_icon' src='{{ el.is_new }}'>
-							<img class = 'available_icon' src='{{ el.available_in_showroom }}'> 
-							<img class = 'available_icon'src='{{ el.available_for_delivery_2 }}'>
-						</div>
-					</div>
-				</div>
-					
-				<!-- PHONE -->
-				<div class='d-flex justify-content-between d-block d-md-none'>
-					<h3 class='product_card_header product_card_name_mob '>{{ el.product_name }}</h3>
+			<!-- DESCTOP -->
+			<div class = 'd-none d-md-block d-lg-block d-xl-block d-xxl-block'>
+				<div class = 'd-flex justify-content-between'>
 					<div>
-						<img class = 'is_new_icon_mobile' src='{{ el.is_new }}'>
-						<img class = 'available_icon_mobile' src='{{ el.available_in_showroom }}'> 
-						<img class = 'available_icon_mobile'src='{{ el.available_for_delivery_2 }}'>
+						<h3 class='product_card_header'>{{ el.product_name }}</h3>
 					</div>
-				</div>
-
-			<!-- END OF THE HEAD OF THE CARD -->
-
-			<!-- THE CARD BODY -->
-				<center class='mt-4 d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
-					<img src="{{ el.product_img }}" class="img-fluid product_img_under">
-				</center>
-				
-				<div class = 'card-bottom-info'>
-					<center class='mt-5 d-block d-md-none'>
-						<img src="{{ el.product_img_mob }}" class="img-fluid product_img_under">
-					</center>
-
-					<div class = 'd-flex justify-content-between'>
-						<div class='cacao'>В наличии</div>
-						<div class='old-price_cat_page'>{{ el.price }} ₽</div>
-					</div>
-
-					<div class = 'd-flex justify-content-between'>
-						<div class='cacao'>{{ el.width }}×{{ el.depth }}×{{ el.height }</div>
-						<div class='cacao price_cat_page'>{{ el.price_sale } ₽</div>
+			
+					<div>
+						<img class = 'is_new_icon' src='{{ el.is_new }}'>
+						<img class = 'available_icon' src='{{ el.available_in_showroom }}'> 
+						<img class = 'available_icon'src='{{ el.available_for_delivery_2 }}'>
 					</div>
 				</div>
 			</div>
+				
+			<!-- PHONE -->
+			<div class='d-flex justify-content-between d-block d-md-none'>
+				<h3 class='product_card_header product_card_name_mob '>{{ el.product_name }}</h3>
+				<div>
+					<img class = 'is_new_icon_mobile' src='{{ el.is_new }}'>
+					<img class = 'available_icon_mobile' src='{{ el.available_in_showroom }}'> 
+					<img class = 'available_icon_mobile'src='{{ el.available_for_delivery_2 }}'>
+				</div>
+			</div>
+
+		<!-- END OF THE HEAD OF THE CARD -->
+
+		<!-- THE CARD BODY -->
+			<center class='mt-4 d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
+				<img src="{{ el.product_img }}" class="img-fluid product_img_under">
+			</center>
+			
+			<div class = 'card-bottom-info'>
+				<center class='mt-5 d-block d-md-none'>
+					<img src="{{ el.product_img_mob }}" class="img-fluid product_img_under">
+				</center>
+
+				<div class = 'd-flex justify-content-between'>
+					<div class='cacao'>В наличии</div>
+					<div class='old-price_cat_page'>{{ el.price }} ₽</div>
+				</div>
+
+				<div class = 'd-flex justify-content-between'>
+					<div class='cacao'>{{ el.width }}×{{ el.depth }}×{{ el.height }</div>
+					<div class='cacao price_cat_page'>{{ el.price_sale } ₽</div>
+				</div>
+			</div>
+		</a>
+	</div>
 
 {% endfor %}
 

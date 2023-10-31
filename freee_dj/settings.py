@@ -74,7 +74,7 @@ DATABASES = {
     },
     'products': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db_test.db',
+        'NAME': BASE_DIR / 'db5_test.db',
         # 'USER': 'admin',
         # 'PASSWORD': '123',
     }

@@ -40,7 +40,11 @@ class Product(models.Model):
 	product_full_name = models.CharField(max_length=50) # Кресло Consono
 	product_type = models.CharField(max_length=50) # Кресло
 	product_img = models.CharField(max_length=150)
-	description = models.TextField(blank=True)
+	is_new = models.BooleanField(default=True)
+	available_for_delivery_2 = models.BooleanField(default=True)
+	available_for_delivery_28 = models.BooleanField(default=True)
+	available_in_showroom = models.BooleanField(default=True)
+	description = models.CharField(max_length=550)
 	price = models.DecimalField(max_digits=10, decimal_places=2)
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2)
 	fabric_type = models.CharField(max_length=50)
@@ -79,10 +83,6 @@ class Product(models.Model):
 	linen_drawer = models.CharField(max_length=50)
 	scheme = models.CharField(max_length=150)
 	features = models.CharField(max_length=350)
-	is_new = models.BooleanField(default=True)
-	available_for_delivery_2 = models.BooleanField(default=True)
-	available_for_delivery_28 = models.BooleanField(default=True)
-	available_in_showroom = models.BooleanField(default=True)
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 	slug = models.SlugField(max_length=250)
