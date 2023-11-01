@@ -41,10 +41,10 @@ def category_str (request):
 
 # dynamic products
 def single_product(request, id):
-	return HttpResponse(f'Product {id}')
-	# try:
-	# 	p = Product.objects.get(id = product_id)
-	# except:
-	# 	raise Http404('Такого дивана пока нет :(')
+	#return HttpResponse(f'Product {id}')
+	try:
+		product = Product.objects.get(id = id)
+	except:
+		raise Http404('Такого дивана пока нет :(')
 
-	# return render(request,'product/single_product.html', {'single_product': p})
+	return render(request,'product/single_product.html', {'single_product': product})
