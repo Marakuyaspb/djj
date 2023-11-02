@@ -88,18 +88,6 @@ Decona Theme, (C) 2023
 /* Categories 01 to 03 are the basics. */
 
 
- 
-@font-face {
-    font-family: 'ALS Hauss Book';
-    src: url('http://temp.decona.ru/wp-content/themes/decona_wonder/fonts/ALSHauss-Book.woff');
-    font-style: normal;
- }
-
-@font-face {
-    font-family: 'ALS Hauss Thin';
-    src: url('http://temp.decona.ru/wp-content/themes/decona_wonder/fonts/ALSHauss-Thin.woff');
-    font-style: normal;
-}
 
 /* Variables */
 :root {

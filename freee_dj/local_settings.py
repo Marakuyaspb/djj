@@ -11,7 +11,7 @@ SECRET_KEY = 'django-insecure-ysl(oab^duj6c@()&p=vc)es!559e&y_mvjg&4&i&lg^#&s_9s
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 DATABASES = {

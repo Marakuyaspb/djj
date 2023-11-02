@@ -22,21 +22,21 @@
 				<!-- fabric buttons -->
 
 				<div class='slide-fabric-nav'>
-				<a href='../1/'>  	  
-					<img class='slide-fabric-button fabric-var-desctop fabric-var CAMBRIDGE_600' id='{{ single_product.collection }}_{{ single_product.category }}_CAMBRIDGE_600' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/CAMBRIDGE/ICONS/CAMBRIDGE_600.png' onClick ='showDetailsByFabric(event);'>
-				</a>
-				<a href='../2/'> 
-			    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_01' id='{{ single_product.collection }}_{{ single_product.category }}_JAZZ_01' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/JAZZ/ICONS/JAZZ_01.png'>
-			    </a>
-				<a href='../3/'> 
-			    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_21' id='{{ single_product.collection }}_{{ single_product.category }}_JAZZ_21' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/JAZZ/ICONS/JAZZ_21.png'>
-			    </a>
-				<a href='../4/'> 
-			    	<img class='slide-fabric-button fabric-var-desctop fabric-var PIXEL_FOREST' id='{{ single_product.collection }}_{{ single_product.category }}_PIXEL_FOREST' src= 'http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/PIXEL/ICONS/PIXEL_FOREST.png'>
-			    </a>
-				<a href='../5/'> 
-			    	<img class='slide-fabric-button fabric-var-desctop fabric-var VELUTTO_16' id='{{ single_product.collection }}_{{ single_product.category }}_VELUTTO_32' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/VELUTTO/ICONS/VELUTTO_32.png'>  
-			    </a>  	
+					<a href='../1/'>  	  
+						<img class='slide-fabric-button fabric-var-desctop fabric-var CAMBRIDGE_600' id='{{ single_product.collection }}_{{ single_product.category }}_CAMBRIDGE_600' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/CAMBRIDGE/ICONS/CAMBRIDGE_600.png' onClick ='showDetailsByFabric(event);'>
+					</a>
+					<a href='../2/'> 
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_01' id='{{ single_product.collection }}_{{ single_product.category }}_JAZZ_01' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/JAZZ/ICONS/JAZZ_01.png'>
+				    </a>
+					<a href='../3/'> 
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_21' id='{{ single_product.collection }}_{{ single_product.category }}_JAZZ_21' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/JAZZ/ICONS/JAZZ_21.png'>
+				    </a>
+					<a href='../4/'> 
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var PIXEL_FOREST' id='{{ single_product.collection }}_{{ single_product.category }}_PIXEL_FOREST' src= 'http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/PIXEL/ICONS/PIXEL_FOREST.png'>
+				    </a>
+					<a href='../5/'> 
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var VELUTTO_16' id='{{ single_product.collection }}_{{ single_product.category }}_VELUTTO_32' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/VELUTTO/ICONS/VELUTTO_32.png'>  
+				    </a>  	
 				</div>
 
 				<div class='d-flex flex-row ms-4 card_icons'>
@@ -57,19 +57,19 @@
 					</div>
 					<div class='carousel-inner'>
 					    <div class='carousel-item active' data-bs-interval='10000'>
-					      <img src='{{ single_product.carousel_item_1 }}' class='d-block w-100' alt='...'>
+					      <img src='{{ single_product.carousel_item_1 }}' class='margin-arm-card d-block w-100' alt='...'>
 					    </div>
 					    <div class='carousel-item' data-bs-interval='2000'>
-					      <img src='{{ single_product.carousel_item_2 }}' class='d-block w-100' alt='...'>
+					      <img src='{{ single_product.carousel_item_2 }}' class='margin-arm-card d-block w-100' alt='...'>
 					    </div>
 					    <div class='carousel-item'>
-					      <img src='{{ single_product.carousel_item_3 }}' class='d-block w-100' alt='...'>
+					      <img src='{{ single_product.carousel_item_3 }}' class='margin-arm-card d-block w-100' alt='...'>
 					    </div>
 					    <div class='carousel-item' data-bs-interval='2000'>
-					      <img src='{{ single_product.carousel_item_4 }}' class='d-block w-100' alt='...'>
+					      <img src='{{ single_product.carousel_item_4 }}' class='margin-arm-card d-block w-100' alt='...'>
 					    </div>
 					    <div class='carousel-item'>
-					      <img src='{{ single_product.carousel_item_5 }}' class='d-block w-100' alt='...'>
+					      <img src='{{ single_product.carousel_item_5 }}' class='margin-arm-card d-block w-100' alt='...'>
 					    </div>
 					</div>
 
@@ -84,7 +84,7 @@
 				</div>  
 			</div>
 
-			<div class='no-padding-right padding-left-4 col-md-4' id='content_right'>
+			<div class='no-padding-right padding-left-4 col-md-4 pt-5' id='content_right'>
 				<img class='img-fluid banner' src='{{ single_product.closeup }}'>
 			</div>
 		</div>
@@ -92,10 +92,10 @@
 		<!-- Name & price -->
 	
 		<div class='d-flex justify-content-evenly latte_bg banner'>
-			<div class='mt-2 prod-card-model'>
+			<div class='prod-card-model'>
 				{{ single_product.product_full_name }}
 			</div>
-			<div class='mt-1 d-flex flex-row'>
+			<div class='d-flex flex-row'>
 				<p class='prod-card-price pe-3'>{{ single_product.price_sale }} ₽</p>
 				<p class='old-price'>{{ single_product.price }} ₽</p>
 			</div>
@@ -231,7 +231,7 @@
 		
 		<!-- Slider with interiors DESCTOP -->
 
-		<div class='banner mt-3'>
+		<div class='banner mt-3' onmousemove="showPopOverscanvasConsonoArm()">
 			<div id='carouselExampleIndicators' class='carousel slide' data-bs-ride='carousel'>
 				<div class='carousel-indicators'>
 				    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>
@@ -275,12 +275,161 @@
 			</center>
 		</div>
 
-		<!-- DESCTOP POP OVER THING-->
+	<!-- DESCTOP POP OVER THING START -->
+
+		<canvas id='canvasConsonoArm' class='canvas_consono_arm_velutto_32'></canvas>
 		
-		<!-- {{ single_product.canvas_background }} -->
+		<div class='popOvers'>
+			<div id='popAboutStitchesConsonoArm'>
+				<div class='card' style='width: 15rem;'>
+					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+					<div class='card-body'>
+						<p class='card-text'>Мы прошиваем наши диваны турецкими мебельными нитями марки POLYART. Это синтетические армированные  нити с полиэфирной оплёткой. Нити обладают высокой прочностью и устойчивы к истиранию. 
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id='popAboutPillowConsonoArm'>
+				<div class='card' style='width: 15rem;'>
+					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+					<div class='card-body'>
+						<p class='card-text'>Широкие комфортные подлокотники - идеальны для расслабленного отдыха 
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id='popAboutFrontConsonoArm'>
+				<div class='card' style='width: 15rem;'>
+					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+					<div class='card-body'>
+						<p class='card-text'>Вывернутый шов - трендовое направление в дизайне сегодняшнего дня. Добавляет изюминку дивану и выделяет его в интерьере
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id='popAboutBackConsonoArm'>
+				<div class='card' style='width: 15rem;'>
+					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+					<div class='card-body'>
+						<p class='card-text'>Комфортабельное место сидения обеспечивается наполнителем из премиальной пены Elax 
+						</p>
+					</div>
+				</div>
+			</div>
+			<div id='popAboutPawConsonoArm'>
+				<div class='card' style='width: 15rem;'>
+					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+					<div class='card-body'>
+						<p class='card-text'>Элегантные зеркальные ножки польского производства отражают напольное покрытие добавляет дивану лёгкости
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <script src="{% static 'js/showPopOverscanvasConsonoArm.js' %}" type="script"></script> -->
+		<script type="text/javascript">
 			
+			function showPopOverscanvasConsonoArm(event){
+			 
+			  var canvasConsonoArm = document.getElementById("canvasConsonoArm");
+			  var ctx = canvasConsonoArm.getContext('2d');
+
+			/*  console.log('Hey! You ll see armchair');*/
+
+			  const canvasConsonoArm_width = canvasConsonoArm.width = 1600;
+			  const canvasConsonoArm_heigh = canvasConsonoArm.height = 800;
+
+			/* сделать эту штуку вариативной из массива */
+
+			  var pinStitchesConsonoArm = new Image();
+			  pinStitchesConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+			  pinStitchesConsonoArm.onload = function(){
+			    ctx.imageSmoothingEnabled = false;
+			    ctx.drawImage(pinStitchesConsonoArm, 496, 533, 50, 50);
+			  }
+			  var pinPillowConsonoArm = new Image();
+			  pinPillowConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+			  pinPillowConsonoArm.onload = function(){
+			    ctx.imageSmoothingEnabled = false;
+			    ctx.drawImage(pinPillowConsonoArm, 622, 415, 50, 50);
+			  }
+			  var pinFrontConsonoArm = new Image();
+			  pinFrontConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+			  pinFrontConsonoArm.onload = function(){
+			    ctx.imageSmoothingEnabled = false;
+			    ctx.drawImage(pinFrontConsonoArm, 852, 550, 50, 50);
+			  }
+			  var pinBackConsonoArm = new Image();
+			  pinBackConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+			  pinBackConsonoArm.onload = function(){
+			    ctx.imageSmoothingEnabled = false;
+			    ctx.drawImage(pinBackConsonoArm, 710, 470, 50, 50);
+			  }
+			  var pinPawConsonoArm = new Image();
+			  pinPawConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+			  pinPawConsonoArm.onload = function(){
+			    ctx.imageSmoothingEnabled = false;
+			    ctx.drawImage(pinPawConsonoArm, 875, 734, 50, 50);
+			  }
+
+			  canvasConsonoArm.style.width = canvasConsonoArm.offsetWidth + 'px';
+			  canvasConsonoArm.style.height = canvasConsonoArm.offsetHeight + 'px';
+
+			  let popAboutStitchesConsonoArm = document.getElementById('popAboutStitchesConsonoArm');     
+			  let popAboutPillowConsonoArm = document.getElementById('popAboutPillowConsonoArm');
+			  let popAboutFrontConsonoArm = document.getElementById('popAboutFrontConsonoArm');
+			  let popAboutBackConsonoArm = document.getElementById('popAboutBackConsonoArm');
+			  let popAboutPawConsonoArm = document.getElementById('popAboutPawConsonoArm');
+
+			  const mouse = {
+			    x:0,
+			    y:0,
+			    left: false,
+			    right: false,
+			    over: false,
+			  }; 
+
+			  canvasConsonoArm.addEventListener('mousemove', function(e) {
+			    const rect = canvasConsonoArm.getBoundingClientRect();
+			    mouse.x = e.clientX - rect.left;
+			    mouse.y = e.clientY - rect.top;
+			    console.log(mouse.x, mouse.y);
+
+			    if (mouse.x >= 496 && mouse.x <= 546 && mouse.y >= 533 && mouse.y <= 583) {
+			      popAboutStitchesConsonoArm.style.display = 'block';
+			    }
+			    else if (mouse.x >= 622 && mouse.x <= 672 && mouse.y >= 415 && mouse.y <= 465) {
+			      popAboutPillowConsonoArm.style.display = 'block';
+			    }
+			    else if (mouse.x >= 852 && mouse.x <= 902 && mouse.y >= 550 && mouse.y <= 600) {
+			      popAboutFrontConsonoArm.style.display = 'block';
+			    }
+			    else if (mouse.x >= 710 && mouse.x <= 760 && mouse.y >= 470 && mouse.y <= 520) {
+			      popAboutBackConsonoArm.style.display = 'block';
+			    }
+			    else if (mouse.x >= 875 && mouse.x <= 925 && mouse.y >= 734 && mouse.y <= 824) {
+			      popAboutPawConsonoArm.style.display = 'block';
+			    }
+
+			    else {
+			      popAboutStitchesConsonoArm.style.display = 'none';
+			      popAboutPillowConsonoArm.style.display = 'none'; 
+			      popAboutFrontConsonoArm.style.display = 'none'; 
+			      popAboutFrontConsonoArm.style.display = 'none'; 
+			      popAboutBackConsonoArm.style.display = 'none'; 
+			      popAboutPawConsonoArm.style.display = 'none';   
+			    }
+			  });
+			}
+
+		</script>
+
+
+		<!-- DESCTOP POP OVER THING END -->
+			
+
 	</div>
-	
 	<!-- DESCTOP END -->
 
 
@@ -530,17 +679,24 @@
 		</div>
 
 		<div class='container-fluid mt-5'>
-			<p>	Стоимость дивана в нестандартной комплектации рассчитывается в салоне, после выбора клиентом обивки и дополнительных опций. После того, как вы определилисть, подписывается договор, гле прописаны все особенности товара, его доставка и гарантии.</p>
+			<p class='mb-4'>Стоимость дивана в нестандартной комплектации рассчитывается в салоне, после выбора клиентом обивки и дополнительных опций. После того, как вы определилисть, подписывается договор, гле прописаны все особенности товара, его доставка и гарантии.</p>
 			<center>
+				<br>
 				<a class='' href='/showrooms'>
-					<button class='btn-outline-gray mt-4'>Адреса шоурумов</button>
+					<button class='btn-outline-gray'>Адреса шоурумов</button>
 				</a>
 			</center>
 		</div>
 
 	</div>
-
 	<!-- PHONE & TABLET END -->
+
+	
+
+<!-- PRODUCTS SLIDER START -->
+
+<!-- PRODUCTS SLIDER END-->
+
 </div>
 
 {% endblock %}

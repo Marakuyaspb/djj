@@ -124,8 +124,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 8%;
-  bottom: 4em;
+  left: 28%;
+  bottom: .5em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -136,8 +136,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 32%;
-  bottom: 23em;
+  left: 3%;
+  bottom: 17em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -148,8 +148,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 40%;
-  bottom: 4em;
+  left: 57%;
+  bottom: 5em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -160,8 +160,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 67%;
-  bottom: 28em;
+  left: 53%;
+  bottom: 17.5em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -172,8 +172,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 70%;
-  bottom: 0;
+  left: 63%;
+  top: -5em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);

@@ -15,7 +15,7 @@ ALLOWED_HOSTS = ['77.222.42.39']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sofas',
+        'NAME': 'products_dj',
         'USER': 'aadmin',
         'PASSWORD': '123',
         'HOST': 'localhost',

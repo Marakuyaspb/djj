@@ -2,24 +2,6 @@
 Theme name: Decona_
 */
  
-/*@font-face {
-    font-family: 'ALS Hauss Book', Georgia, serif;
-    src: url('http://temp.decona.ru/wp-content/themes/decona_wonder/fonts/ALSHauss-Book.woff');
-    font-style: normal;
- }
-
-@font-face {
-    font-family: 'ALS Hauss Thin', Georgia, serif;
-    src: url('http://temp.decona.ru/wp-content/themes/decona_wonder/fonts/ALSHauss-Thin.woff');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'ALS Hauss Hairline', Georgia, serif;
-    src: url('http://temp.decona.ru/wp-content/themes/decona_wonder/fonts/ALSHauss-Hairline.woff');
-    font-style: normal;
-}*/
-
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&display=swap');
 
@@ -376,8 +358,8 @@ a .icon-header:hover{
 .btn-prod-card {
 	background-color: #9F8A88!important;
 	border: none!important;	
-	font-size: 1.3em;
-	line-height: 1.1;
+	font-size: 1.1em!important;
+	line-height: 1.1!important;
 	margin: 0!important;
 	height: 2.4em;
 }
@@ -661,7 +643,7 @@ a .icon-header:hover{
 }
 .prod-card-price {
 	color: #5E5B5B;
-	font-size: 2.25em;
+	font-size: 2.2em;
 	padding-top: .4em;
 }
 .prod-card-price-phone {
@@ -670,7 +652,7 @@ a .icon-header:hover{
 }
 .old-price{
 	color: #9F8A88;
-	font-size: 2.25em;
+	font-size: 2.2em;
 	padding-top: .4em;
 	text-decoration: line-through;
 }
@@ -678,6 +660,9 @@ a .icon-header:hover{
 	color: #9F8A88;
 	font-size: 1.7em;
 	text-decoration: line-through;
+}
+.margin-arm-card{
+	margin-top: -10em;
 }
 
 .price_cat_page{
@@ -783,4 +768,71 @@ a .icon-header:hover{
 
 .wpcf7 form .wpcf7-response-output {
 	border: 2px solid #9F8A88!important;
+}
+
+/* PRODUCTS SLIDER */
+
+* {
+  box-sizing: border-box;
+}
+.slider-collection {
+  position: relative;
+  width: 600px;
+  height: 200px;
+  margin: 50px auto 0;
+  user-select: none;
+  touch-action: pan-y;
+}
+
+.slider-collection img {
+  poiner-events: none;
+}
+
+.slider-list-collection {
+  width: 600px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.slider-list-collection.grab {
+  cursor: grab;
+}
+
+.slider-list-collection.grabbing{
+  cursor: grabbing;
+}
+
+.slider-track-collection {
+  display: flex;
+}
+
+.slide-collection {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: .1em;
+  margin-right: .1em;
+}
+
+.slider-arrows-collection {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.next-collection,
+.prev-collection {
+  background: none;
+  border: none;
+  margin: 0 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.next-collection.disabled,
+.prev-collection.disabled {
+  opacity: .25;
+  pointer-events: none;
 }
