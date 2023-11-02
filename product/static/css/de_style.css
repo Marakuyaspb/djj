@@ -770,69 +770,31 @@ a .icon-header:hover{
 	border: 2px solid #9F8A88!important;
 }
 
+
 /* PRODUCTS SLIDER */
 
-* {
-  box-sizing: border-box;
+.arrow-prev{
+	background-image: url("http://temp.decona.ru/wp-content/uploads/goods_pics/prev.svg")!important;
+	padding-top: 3.6em;
+	margin-top: auto;
+	margin-bottom: 3.5em;
 }
-.slider-collection {
-  position: relative;
-  width: 600px;
-  height: 200px;
-  margin: 50px auto 0;
-  user-select: none;
-  touch-action: pan-y;
-}
+.arrow-next{
+	background-image: url("http://temp.decona.ru/wp-content/uploads/goods_pics/next.svg")!important;
+	padding-top: 3.6em;
+	margin-top: auto;
+	margin-bottom: 3.5em;
 
-.slider-collection img {
-  poiner-events: none;
-}
-
-.slider-list-collection {
-  width: 600px;
-  height: 200px;
-  overflow: hidden;
-}
-
-.slider-list-collection.grab {
-  cursor: grab;
-}
-
-.slider-list-collection.grabbing{
-  cursor: grabbing;
-}
-
-.slider-track-collection {
-  display: flex;
-}
-
-.slide-collection {
-  width: 200px;
-  height: 200px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: .1em;
-  margin-right: .1em;
-}
-
-.slider-arrows-collection {
-  margin-top: 15px;
-  text-align: center;
-}
-
-.next-collection,
-.prev-collection {
-  background: none;
-  border: none;
-  margin: 0 10px;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.next-collection.disabled,
-.prev-collection.disabled {
-  opacity: .25;
-  pointer-events: none;
-}
+/*.owl-carousel{
+		responsive:{
+	  0:{
+	    items:1
+	  },
+	  768:{
+	    items:2
+	  },
+	  1180:{
+	    items:3
+	  }
+	}
+}*/
