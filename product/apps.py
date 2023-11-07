@@ -5,3 +5,8 @@ class ProductConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'product'
     verbose_name = 'Каталог продукции'
+
+class BlogConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'blog'
+    verbose_name = 'Блог компании'
