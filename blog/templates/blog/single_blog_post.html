@@ -1,0 +1,16 @@
+{% extends 'product/base_cacao_nav.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container container-fluid my-5">
+
+	<div class="container">
+			<h3 class='cacao'>{{ e.title }}</h3>
+			<p>{{ e.body }}</p>
+			<p class='thin'>{{ e.created }}</p>
+			<hr>
+	</div>
+
+</div>
+
+{% endblock %}

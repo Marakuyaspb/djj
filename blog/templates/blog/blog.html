@@ -1,0 +1,43 @@
+{% extends 'product/base_cacao_nav.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container container-fluid my-5">
+
+	<h2 class="mb-5">Блог компании</h2>
+
+	<!-- show poss by tag -->
+	{% if tag %}
+	<h3>Публикации по теме "{{ tag.name }}"</h3>
+	{% endif %}
+
+	<!-- just show posts -->
+	{% for el in posts %}
+
+	<div class="container">
+		<a href="#">
+		<!-- <a href="{% url 'product:single_product' el.id %}">  -->
+			
+			<h3 class='cacao'>{{ el.title }}</h3>
+			{{ el.body|truncatewords:30|linebreaks }}
+
+			<p class="tags cacao my-3">Темы: 
+				{% for tag in post.tags.all %}
+				<a href="{% url 'blog:blog_by_tag' tag.slug %}">
+				{{ tag.name }}
+				</a>
+				{% if not forloop.last %}, {% endif %}
+				{% endfor %}
+			</p>
+			<p class='thin mb-5'>{{ el.created }}</p>
+			
+		</a>
+		<hr>
+	</div>
+
+	{% endfor %}	
+
+</div>
+
+
+{% endblock %}

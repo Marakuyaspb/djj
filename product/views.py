@@ -47,6 +47,6 @@ def single_product(request, id):
 		raise Http404('Такого дивана пока нет :(')
 	return render(request,'product/single_product.html', {'single_product': product})
 
-	# products_show = Product.objects.filter(category=1)
-	# context = { 'products_show': products_show }
-	# 
+def popular_goods_carousel(request):
+	popular_g = Product.objects.filter(popular=True)
+	return render(request, 'popular_goods.html', {'popular_g': popular_g})

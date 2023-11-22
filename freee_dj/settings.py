@@ -6,8 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 PROJECT_ROOT = os.path.dirname(__file__)
 
-
-
+SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
@@ -19,6 +18,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'taggit',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -36,9 +38,7 @@ ROOT_URLCONF = 'freee_dj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(PROJECT_ROOT, 'templates')
-        ],
+        'DIRS': [ os.path.join(PROJECT_ROOT, 'templates/') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

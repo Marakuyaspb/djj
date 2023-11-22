@@ -1,9 +1,12 @@
 from django.db import models
 from django.conf import settings
+from django.utils.text import slugify
+
 
 class Category(models.Model):
+	category_id = models.AutoField(primary_key=True)
 	category = models.CharField(max_length=50) # КреслА, пуфЫ etc
-	slug = models.SlugField(max_length=50, unique=True)
+	category_ru = models.CharField(max_length=50)
 
 	class Meta:
 		ordering = ['category']
@@ -17,8 +20,8 @@ class Category(models.Model):
 
 
 class Collection(models.Model):
+	collection_id = models.AutoField(primary_key=True)
 	collection = models.CharField(max_length=50) # Consono etc
-	slug = models.SlugField(max_length=50, unique=True)
 
 	class Meta:
 		ordering = ['collection']
@@ -31,15 +34,33 @@ class Collection(models.Model):
 		return self.collection
 
 
-class Product(models.Model):
-	collection = models.CharField(max_length=50) # Consono
-	category = models.ForeignKey(Category,
-		related_name='products',
-		on_delete=models.CASCADE)
-	category_ru = models.CharField(max_length=50)
+class Fabric(models.Model):
+	fabric_id = models.AutoField(primary_key=True)
+	fabric_name = models.CharField(max_length=50)
+	product_fabric_icon = models.ImageField(upload_to='fabric_images/%Y/')
+	product_fabric_img = models.ImageField(upload_to='fabric_images/%Y/')
+	product_fabric_about = models.ImageField(upload_to='fabric_images/%Y/')
+
+	class Meta:
+		ordering = ['fabric_name']
+		indexes = [
+		models.Index(fields=['fabric_name']),
+		]
+		verbose_name = 'Ткань'
+		verbose_name_plural = 'Ткани'
+	def __str__(self):
+		return self.fabric_name		
+		return self.product_fabric_icon
+		return self.product_fabric_img
+		return self.product_fabric_about
+
+
+class Product(Category, Collection, Fabric):
+	id = models.AutoField(primary_key=True)
 	product_full_name = models.CharField(max_length=50) # Кресло Consono
 	product_type = models.CharField(max_length=50) # Кресло
 	product_img = models.CharField(max_length=150)
+	popular = models.BooleanField(default=True)
 	is_new = models.BooleanField(default=True)
 	available_for_delivery_2 = models.BooleanField(default=True)
 	available_for_delivery_28 = models.BooleanField(default=True)
@@ -47,29 +68,11 @@ class Product(models.Model):
 	description = models.CharField(max_length=1500)
 	price = models.DecimalField(max_digits=10, decimal_places=2)
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2)
-	# fabric_type = models.CharField(max_length=50)
-	fabric_name = models.CharField(max_length=50)
-	product_fabric_about = models.CharField(max_length=1000)
-	product_fabric_img = models.CharField(max_length=250)
-	carousel_item_1 = models.CharField(max_length=250)
-	carousel_item_2 = models.CharField(max_length=250)
-	carousel_item_3 = models.CharField(max_length=250)
-	carousel_item_4 = models.CharField(max_length=250)
-	carousel_item_5 = models.CharField(max_length=250)
-	carousel_item_mob_1 = models.CharField(max_length=250)
-	carousel_item_mob_2 = models.CharField(max_length=250)
-	carousel_item_mob_3 = models.CharField(max_length=250)
-	carousel_item_mob_4 = models.CharField(max_length=250)
-	carousel_item_mob_5 = models.CharField(max_length=250)
-	closeup = models.CharField(max_length=250)
-	slider_interior_1 = models.CharField(max_length=250)
-	slider_interior_2 = models.CharField(max_length=250)
-	slider_interior_3 = models.CharField(max_length=250)
-	slider_interior_4 = models.CharField(max_length=250)
-	slider_interior_1_mob = models.CharField(max_length=250)
-	slider_interior_2_mob = models.CharField(max_length=250)
-	slider_interior_3_mob = models.CharField(max_length=250)
-	slider_interior_4_mob = models.CharField(max_length=250)
+	carousel_items = models.ManyToManyField('ProductImage', related_name='carousel_items')	
+	carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob')
+	closeup = models.ImageField(upload_to='images/%Y/')
+	slider_interior = models.ManyToManyField('ProductImage', related_name='slider_interior')
+	slider_interior_mob = models.ManyToManyField('ProductImage', related_name='slider_interior_mob')
 	width = models.IntegerField(blank=True, null=True)
 	depth = models.IntegerField(blank=True, null=True)
 	height = models.IntegerField(blank=True, null=True)
@@ -87,19 +90,10 @@ class Product(models.Model):
 	updated = models.DateTimeField(auto_now=True)
 	slug = models.SlugField(max_length=350)
 
-	#scheme = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
-	# image = models.FilePathField(path="/product/static", match="foo.*", recursive=True)
-	# is_new = models.BooleanField(default=True)
-	# available_for_delivery_2 = models.BooleanField(default=True)
-	# available_for_delivery_28 = models.BooleanField(default=True)
-	# available_in_showroom = models.BooleanField(default=True)
-	# product_fabric_img = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
-	# carousel_item = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
-	# carousel_item_mob = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
-	# closeup = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
-	# slider_interior = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
-	# slider_interior_mob = models.FilePathField(path=settings.FILE_PATH_FIELD_DIRECTORY)
-	
+	def save(self, *args, **kwargs):
+		if not self.slug:
+			self.slug = slugify(self.title)
+		super().save(*args, **kwargs)
 	
 	class Meta:
 		ordering = ['product_full_name']
@@ -119,3 +113,6 @@ class Product(models.Model):
 		return self.prod_depth
 		return self.prod_height
 		
+
+class ProductImage(models.Model):
+    image = models.ImageField(upload_to='product_images/')

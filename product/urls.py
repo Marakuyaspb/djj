@@ -1,7 +1,13 @@
 from django.urls import path
 from . import views
+from django.contrib.sitemaps.views import sitemap
+from product.sitemaps import ProductSitemap
 
 app_name = 'product'
+
+sitemaps = {
+	'products' : ProductSitemap,
+}
 
 urlpatterns = [
 	path('', views.index, name = 'index'),
@@ -22,4 +28,7 @@ urlpatterns = [
 
 	# products dynamic
 	path('category_arm/<int:id>/', views.single_product, name='single_product'),
+
+	#sitemap
+	path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]
