@@ -37,9 +37,10 @@ class Collection(models.Model):
 class Fabric(models.Model):
 	fabric_id = models.AutoField(primary_key=True)
 	fabric_name = models.CharField(max_length=50)
-	product_fabric_icon = models.ImageField(upload_to='fabric_images/%Y/')
-	product_fabric_img = models.ImageField(upload_to='fabric_images/%Y/')
-	product_fabric_about = models.ImageField(upload_to='fabric_images/%Y/')
+	product_fabric_icon = models.ImageField(upload_to='fabric_images/')
+	product_fabric_img = models.ImageField(upload_to='fabric_images/')
+	product_fabric_about = models.CharField(max_length=1500)
+	# slug = models.SlugField(max_length=350)
 
 	class Meta:
 		ordering = ['fabric_name']
@@ -50,50 +51,79 @@ class Fabric(models.Model):
 		verbose_name_plural = 'Ткани'
 	def __str__(self):
 		return self.fabric_name		
-		return self.product_fabric_icon
-		return self.product_fabric_img
-		return self.product_fabric_about
 
 
-class Product(Category, Collection, Fabric):
+class Option(models.Model):
+	option_id = models.AutoField(primary_key=True)
+	option_name = models.CharField(max_length=350, null=True, blank=True)
+	option_1_img = models.ImageField(upload_to='options/')
+	option_1_description = models.CharField(max_length=500)
+	option_2_img = models.ImageField(upload_to='options/')
+	option_2_description = models.CharField(max_length=500)
+
+	class Meta:
+		ordering = ['option_name']
+		indexes = [
+		models.Index(fields=['option_name']),
+		]
+		verbose_name = 'Опция'
+		verbose_name_plural = 'Опции'
+	def __str__(self):
+		return self.option_name		
+
+
+class Product(models.Model):
 	id = models.AutoField(primary_key=True)
-	product_full_name = models.CharField(max_length=50) # Кресло Consono
-	product_type = models.CharField(max_length=50) # Кресло
-	product_img = models.CharField(max_length=150)
+	product_full_name = models.CharField(max_length=50, null=True, blank=True) # Кресло Consono
+	product_type = models.CharField(max_length=50, null=True, blank=True) # Кресло
+	product_img = models.ImageField(upload_to='images/', null=True, blank=True)
 	popular = models.BooleanField(default=True)
 	is_new = models.BooleanField(default=True)
 	available_for_delivery_2 = models.BooleanField(default=True)
 	available_for_delivery_28 = models.BooleanField(default=True)
 	available_in_showroom = models.BooleanField(default=True)
-	description = models.CharField(max_length=1500)
+	fabric_current = models.ForeignKey(Fabric,
+		related_name='fabric_current',
+    	db_column='fabric_current',
+		on_delete=models.CASCADE)
+	fabric = models.ManyToManyField(Fabric,
+		related_name='fabric_icons',
+    	db_column='fabric_icons',)
+	# fabric_1 = models.ManyToManyField(Fabric)
+	# fabric_2 = models.ManyToManyField(Fabric)
+	# fabric_3 = models.ManyToManyField(Fabric)
+	# fabric_4 = models.ManyToManyField(Fabric)
+	# fabric_5 = models.ManyToManyField(Fabric)
+	description = models.CharField(max_length=1500, null=True, blank=True)
 	price = models.DecimalField(max_digits=10, decimal_places=2)
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2)
-	carousel_items = models.ManyToManyField('ProductImage', related_name='carousel_items')	
-	carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob')
-	closeup = models.ImageField(upload_to='images/%Y/')
-	slider_interior = models.ManyToManyField('ProductImage', related_name='slider_interior')
-	slider_interior_mob = models.ManyToManyField('ProductImage', related_name='slider_interior_mob')
+	carousel_items = models.ManyToManyField('ProductImage', related_name='carousel_items', blank=True)	
+	carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob', blank=True)
+	closeup = models.ImageField(upload_to='closeups/', null=True, blank=True)
+	slider_interior = models.ManyToManyField('ProductImage', related_name='slider_interior', blank=True)
+	slider_interior_mob = models.ManyToManyField('ProductImage', related_name='slider_interior_mob', blank=True)
 	width = models.IntegerField(blank=True, null=True)
 	depth = models.IntegerField(blank=True, null=True)
 	height = models.IntegerField(blank=True, null=True)
-	pdf = models.CharField(max_length=150)
-	product_inside = models.CharField(max_length=150)
-	product_inside_pillow = models.CharField(max_length=150)
-	carcas_type = models.CharField(max_length=50)
-	paws_type = models.CharField(max_length=50)
-	mechanism_type = models.CharField(max_length=50)
-	sleep_place = models.CharField(max_length=50)
-	linen_drawer = models.CharField(max_length=50)
-	scheme = models.CharField(max_length=150)
-	features = models.CharField(max_length=350)
+	pdf = models.CharField(max_length=150, null=True, blank=True)
+	product_inside = models.CharField(max_length=150, null=True, blank=True)
+	product_inside_pillow = models.CharField(max_length=150, null=True, blank=True)
+	carcas_type = models.CharField(max_length=50, null=True, blank=True)
+	paws_type = models.CharField(max_length=50, null=True, blank=True)
+	mechanism_type = models.CharField(max_length=50, null=True, blank=True)
+	sleep_place = models.CharField(max_length=50, null=True, blank=True)
+	linen_drawer = models.CharField(max_length=50, null=True, blank=True)
+	scheme = models.CharField(max_length=150, null=True, blank=True)
+	option = models.ForeignKey(Option, default=1, on_delete=models.CASCADE)
+	features = models.CharField(max_length=350, null=True, blank=True)
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 	slug = models.SlugField(max_length=350)
 
-	def save(self, *args, **kwargs):
-		if not self.slug:
-			self.slug = slugify(self.title)
-		super().save(*args, **kwargs)
+	# def save(self, *args, **kwargs):
+	# 	if not self.slug:
+	# 		self.slug = slugify(self.title)
+	# 	super().save(*args, **kwargs)
 	
 	class Meta:
 		ordering = ['product_full_name']
@@ -107,11 +137,6 @@ class Product(Category, Collection, Fabric):
 
 	def __str__(self):
 		return self.product_full_name
-		return self.price
-		return self.price_sale
-		return self.prod_width
-		return self.prod_depth
-		return self.prod_height
 		
 
 class ProductImage(models.Model):
