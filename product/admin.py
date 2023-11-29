@@ -69,11 +69,21 @@ from django.forms import CheckboxSelectMultiple
 
 # admin.site.register(ProductAdmin, ProductOptionInline)
 
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ('product_full_name', 'description', 'price')
+    actions = ['duplicate_products']
 
+    def duplicate_products(self, request, queryset):
+        for product in queryset:
+            product.pk = None  # set primary key to None to create a new instance in the database
+            product.save()
+        self.message_user(request, f"{len(queryset)} product(s) duplicated successfully.")
+
+    duplicate_products.short_description = "Duplicate selected products"
 
 admin.site.register(Category)
 admin.site.register(Collection)
 admin.site.register(Fabric)
 admin.site.register(Option)
 admin.site.register(FabricIconChange)
-admin.site.register(Product)
+admin.site.register(Product, ProductAdmin)
