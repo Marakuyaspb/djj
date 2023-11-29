@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.contrib.sitemaps.views import sitemap
 from product.sitemaps import ProductSitemap
@@ -28,6 +28,9 @@ urlpatterns = [
 
 	# products dynamic
 	path('category_arm/<int:id>/', views.single_product, name='single_product'),
+
+	# choices
+	# path(r'^chaining/', include('smart_selects.urls')),
 
 	#sitemap
 	path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')

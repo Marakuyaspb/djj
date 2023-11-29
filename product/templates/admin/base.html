@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="{% static 'css/de_style.css'%}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/popOverAboutCANVAS.css'%}" type="text/css">
+	<link rel="stylesheet" href="{% static 'css/sliderFabricChange.css'%}" type="text/css">
+
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+	<title>
+	{% block title %}Мебельная фабрика Decona{% endblock %}
+	</title>
+</head>
+<body>
+
+<header class="header latte_bg">  
+  	<div class="ps-4 mb-5">
+	  <div class='d-flex d-flex justify-content-between'>
+	   	<a class='navbar-brand' href='http://127.0.0.1:8000/admin'>
+	        <svg width="152px" height="27px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 13.06 2.286">
+	          <path fill="currentColor" class="fil0" d="M7.357 0c0.304,0 0.585,0.118 0.782,0.331 0.191,0.206 0.301,0.502 0.301,0.812 0,0.311 -0.11,0.606 -0.301,0.812 -0.197,0.213 -0.478,0.331 -0.782,0.331 -0.304,0 -0.585,-0.118 -0.782,-0.331 -0.191,-0.206 -0.301,-0.501 -0.301,-0.812 0,-0.31 0.11,-0.606 0.301,-0.812 0.197,-0.213 0.478,-0.331 0.782,-0.331zm0 1.887c0.159,0.004 0.318,-0.061 0.439,-0.199 0.13,-0.147 0.192,-0.346 0.188,-0.545 0.004,-0.199 -0.058,-0.398 -0.188,-0.545 -0.121,-0.138 -0.28,-0.203 -0.439,-0.199 -0.159,-0.004 -0.318,0.061 -0.44,0.199 -0.129,0.147 -0.191,0.346 -0.187,0.545 -0.004,0.199 0.058,0.398 0.187,0.545 0.122,0.138 0.281,0.203 0.44,0.199z"/>
+	          <path fill="currentColor"  class="fil0" d="M0.789 0.054c0.304,0 0.585,0.113 0.782,0.317 0.19,0.197 0.301,0.48 0.301,0.778 0,0.297 -0.111,0.581 -0.301,0.778 -0.197,0.204 -0.478,0.317 -0.782,0.317l-0.375 0 -0.414 0 0 -0.416 0 -1.358 0 -0.416 0.414 0 0.375 0zm-0.375 0.416l0 1.358 0.375 0 0 0c0.159,0.004 0.318,-0.048 0.439,-0.181 0.13,-0.141 0.191,-0.308 0.188,-0.498 0.003,-0.191 -0.058,-0.358 -0.188,-0.499 -0.121,-0.132 -0.28,-0.184 -0.439,-0.18l-0.375 0z"/>
+	          <polygon  fill="currentColor" class="fil0" points="8.703,2.225 8.703,0.041 9.163,0.041 10.059,1.414 10.059,0.041 10.519,0.041 10.519,2.244 10.059,2.244 9.163,0.883 9.163,2.244 8.703,2.244 "/>
+	          <polygon  fill="currentColor" class="fil0" points="2.149,0.054 3.757,0.054 3.757,0.447 2.608,0.447 2.608,0.941 3.722,0.941 3.722,1.346 2.608,1.346 2.608,1.828 3.757,1.828 3.757,2.244 2.149,2.244 "/>
+	          <path  fill="currentColor" class="fil0" d="M11.648 0.047l0.252 0 0.019 0 0.252 0 0.889 2.203 -0.492 0 -0.177 -0.439 -0.472 0 -0.019 0 -0.472 0 -0.177 0.439 -0.492 0 0.889 -2.203zm0.262 0.572l-0.303 0.749 0.293 0 0.019 0 0.293 0 -0.302 -0.749z"/>
+	          <path  fill="currentColor" class="fil0" d="M5.097 0c0.303,0 0.585,0.118 0.782,0.331 0.117,0.127 0.188,0.288 0.231,0.466l-0.466 0c-0.026,-0.073 -0.056,-0.14 -0.108,-0.199 -0.121,-0.138 -0.28,-0.203 -0.439,-0.199 -0.16,-0.004 -0.319,0.061 -0.44,0.199 -0.129,0.147 -0.191,0.346 -0.188,0.545 -0.003,0.199 0.059,0.398 0.188,0.545 0.121,0.138 0.28,0.203 0.44,0.199 0.159,0.004 0.318,-0.061 0.439,-0.199 0.052,-0.059 0.082,-0.126 0.108,-0.198l0.466 0c-0.043,0.177 -0.114,0.338 -0.231,0.465 -0.197,0.213 -0.479,0.331 -0.782,0.331 -0.304,0 -0.586,-0.118 -0.783,-0.331 -0.19,-0.206 -0.3,-0.501 -0.3,-0.812 0,-0.31 0.11,-0.606 0.3,-0.812 0.197,-0.213 0.479,-0.331 0.783,-0.331z"/>
+	          </g>
+	        </svg>
+	    </a>
+	 	<h4 class='major-text pt-3 ps-5'>Панель администратора сайта</h4>
+	 	<a href='/admin' class=' pt-3 pe-5'><button class='btn-outline-gray'>На главную админки</button></a>
+	 </div>
+ 	</div>
+</div>
+
+</header>
+
+<div class='container-fluid'>
+
+{% block content %}
+{% endblock %}
+
+</div>
+<footer class='footer fixed-bottom'>
+	<div class='d-flex justify-content-around over-width latte_bg py-3'>
+		<div>
+            <p class='small-text'>© ООО «ПЕРСПЕКТИВА», 2023</p>
+        </div>  
+        <div class='px-4 '>
+            <p class='small-text'><a href = '#'>Политика конфиденциальности</a> | 
+            <a href = '#'>Карта сайта</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</body>
+</html>

@@ -1,15 +1,37 @@
 from django import forms
-from .models import Fabric, Product
+from .models import Product, FabricIconChange, Option
 
-class FabricChoiceField(forms.ModelChoiceField):
-    def label_from_instance(self, obj):
-        return '<img src="%s" width="50" />' % obj.product_fabric_icon.url
 
-    label_from_instance.allow_tags = True
+class ProductForm(forms.Form):
+    pass
 
-class ProductForm(forms.ModelForm):
-    fabric = FabricChoiceField(queryset=Fabric.objects.all())
+    # options = forms.ModelMultipleChoiceField(queryset=Option.objects.all(), widget=forms.CheckboxSelectMultiple)
 
-    class Meta:
-        model = Product
-        fields = '__all__'
+    # product_fabric_icon = forms.ModelMultipleChoiceField(
+    #     widget=forms.CheckboxSelectMultiple,
+    #     queryset=FabricIconChange.objects.all()
+    #     )
+
+    # class Meta:
+    #     model = Product
+    #     fields = ['product_full_name', 'product_fabric_icon', 'options']
+
+
+
+class FabricIconForm(forms.ModelForm):
+    pass
+
+    # class Meta:
+    #     model = FabricIconChange
+    #     fields = '__all__'
+    #     widgets = {
+    #         'product_fabric_icon': forms.ClearableFileInput(),
+    #     }
+
+
+class OptionForm(forms.ModelForm):
+    pass
+
+    # class Meta:
+    #     model = Option
+    #     fields = ['option_name', 'option_1_img', 'option_1_description', 'option_2_img', 'option_2_description']
