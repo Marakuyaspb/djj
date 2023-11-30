@@ -20,9 +20,18 @@ def showrooms(request):
 def category_accessory (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
-def category_arm (request):
+
+
+def category_arm (request, slug):
 	products = Product.objects.filter(category=1)
-	return render(request, 'product/category_goods.html', {'products': products})
+	collection, category, fabric_name = slug.split('-')
+	category_obj = Category.objects.get(collection=collection, category=category, fabric_name=fabric_name)
+	context = {
+        'category': category_obj,
+    }
+	return render(request, 'product/category_goods.html', {'products': products}, context)
+
+
 def category_bed (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})

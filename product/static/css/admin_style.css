@@ -1,0 +1,75 @@
+button{
+	background-color: transparent;
+	border: 1px solid #9F8A88;
+	color: #9F8A88!important;
+	font-size: 1.125rem;
+	height: 3rem;
+	line-height: 1;
+	padding: .5em;
+	z-index: 5;
+	margin-bottom: .5em;
+}
+button:hover{
+	background-color: #e6ddd8;
+}
+
+input[type="submit"]{
+	background-color: transparent;
+	border: 1px solid #9F8A88;
+	color: #5E5B5B!important;
+	padding: .5em;
+	margin-bottom: 1em;
+}
+input[type="submit"]{
+	background-color: #e6ddd8;
+}
+
+input[type="text"]{
+	border: 1px solid #9F8A88;
+}
+input[type="number"]{
+	border: 1px solid #9F8A88;
+}
+select{
+	border: 1px solid #9F8A88;
+}
+fieldset input[type="checkbox"]{
+	margin-right: 1em;
+}
+
+#id_description{
+	width: 50%;
+	height: 15em;
+}
+
+.form-row{
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+table th, table td, tr{
+  border-color: #F6F1EE;
+  border-style: solid;
+  border-width: 2px;
+  padding: .5em;
+}
+
+ul {
+  /*list-style-type: "✔";*/
+  list-style-type: none;
+}
+caption{
+	padding-top: 2em;
+}
+
+.addlink{
+	font-size: 1.2em;
+	font-weight: 600;
+}
+.object-tools{
+	margin-bottom: 1em;
+	padding: .5em;
+	background-color: #F6F1EE;
+	border: 1px solid #9F8A88;
+	width: 15%;
+}

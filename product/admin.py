@@ -1,9 +1,44 @@
 from django.contrib import admin
-from .models import Category, Collection, Option, Fabric, FabricIconChange, Product
+from .models import Category, Collection, ProductType, Option, Fabric, Product
 # from .forms import ProductForm, FabricIconForm, OptionForm
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 from django.forms import CheckboxSelectMultiple
+
+
+
+
+class FabricAdmin(admin.ModelAdmin):
+	list_display = ('fabric_name', 'product_fabric_about', 'created', 'updated')
+
+class OptionAdmin(admin.ModelAdmin):
+	list_display = ('option_name', 'option_1_description', 'option_2_description', 'created', 'updated')
+
+# class ProductImageAdmin(admin.StackedInline):
+# 	model = ProductImage
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+	list_display = ('product_full_name', 'fabric_name', 'price', 'price_sale', 'is_new', 'available_in_showroom', 'available_for_delivery_2', 'created', 'updated')
+	# prepopulated_fields = {'slug': ['collection', 'category', 'fabric_name',]}
+	actions = ['duplicate_products']
+
+	def duplicate_products(self, request, queryset):
+		for product in queryset:
+			product.pk = None
+			product.save()
+		self.message_user(request, f"{len(queryset)} product(s) duplicated successfully.")
+	duplicate_products.short_description = "Дублировать выбранные товары"
+
+admin.site.register(Category)
+admin.site.register(Collection)
+admin.site.register(ProductType)
+admin.site.register(Fabric, FabricAdmin)
+admin.site.register(Option, OptionAdmin)
+# admin.site.register(FabricIconChange)
+
+
+
 
 
 # class ForModelAdmin(admin.ModelAdmin):
@@ -61,29 +96,6 @@ from django.forms import CheckboxSelectMultiple
 #         })
 #     ]
 
-# 	# def duplicate_event(ProductAdmin, request, queryset):
-# 	# 	for object in queryset:
-# 	# 		object.id = None
-# 	# 		object.save()
-# 	# 	duplicate_event.short_description = "Duplica Record Selezionati"
 
 # admin.site.register(ProductAdmin, ProductOptionInline)
 
-class ProductAdmin(admin.ModelAdmin):
-    list_display = ('product_full_name', 'description', 'price')
-    actions = ['duplicate_products']
-
-    def duplicate_products(self, request, queryset):
-        for product in queryset:
-            product.pk = None  # set primary key to None to create a new instance in the database
-            product.save()
-        self.message_user(request, f"{len(queryset)} product(s) duplicated successfully.")
-
-    duplicate_products.short_description = "Duplicate selected products"
-
-admin.site.register(Category)
-admin.site.register(Collection)
-admin.site.register(Fabric)
-admin.site.register(Option)
-admin.site.register(FabricIconChange)
-admin.site.register(Product, ProductAdmin)

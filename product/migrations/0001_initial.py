@@ -110,7 +110,7 @@ class Migration(migrations.Migration):
                 ('features', models.CharField(blank=True, max_length=350, null=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
-                ('slug', models.SlugField(default='pr', max_length=350)),
+                ('slug', models.SlugField(default='', max_length=350)),
             ],
             options={
                 'verbose_name': 'Товар',

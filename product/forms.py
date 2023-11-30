@@ -1,20 +1,18 @@
 from django import forms
-from .models import Product, FabricIconChange, Option
+from .models import Product, ProductImage, FabricIconChange, Option
 
 
-class ProductForm(forms.Form):
-    pass
 
-    # options = forms.ModelMultipleChoiceField(queryset=Option.objects.all(), widget=forms.CheckboxSelectMultiple)
 
-    # product_fabric_icon = forms.ModelMultipleChoiceField(
-    #     widget=forms.CheckboxSelectMultiple,
-    #     queryset=FabricIconChange.objects.all()
-    #     )
 
-    # class Meta:
-    #     model = Product
-    #     fields = ['product_full_name', 'product_fabric_icon', 'options']
+
+
+class ProductForm(forms.ModelForm):
+    carousel_items =  = forms.ImageField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+
+    class Meta:
+        model = Product
+        fields = ['product_full_name', 'fabric_name', 'price', 'price_sale', 'is_new', 'carousel_items']
 
 
 
