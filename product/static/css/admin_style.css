@@ -47,6 +47,11 @@ fieldset input[type="checkbox"]{
 	padding-bottom: .5em;
 }
 
+a{
+	font-size: .9em;
+	font-weight: 600;
+}
+
 table th, table td, tr{
   border-color: #F6F1EE;
   border-style: solid;
@@ -59,11 +64,12 @@ ul {
   list-style-type: none;
 }
 caption{
-	padding-top: 2em;
+	padding-bottom: 2em;
+	font-size: .8em;
 }
 
 .addlink{
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: 600;
 }
 .object-tools{

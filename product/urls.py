@@ -18,17 +18,16 @@ urlpatterns = [
 	path('showrooms/', views.showrooms, name = 'showrooms'),
 
 	# category pages 
-	path('category_accessory/', views.showrooms, name = 'category_accessory'),
-	path('category_arm/', views.category_arm, name = 'category_arm'),
-	path('category_bed/', views.showrooms, name = 'category_bed'),
-	path('category_corner/', views.showrooms, name = 'category_corner'),
-	path('category_k1r/', views.showrooms, name = 'category_k1r'),
-	path('category_poufl/', views.showrooms, name = 'category_poufl'),
-	path('category_poufs/', views.showrooms, name = 'category_poufs'),
-	path('category_str/', views.showrooms, name = 'category_str'),
+	path('accessory/', views.accessory, name = 'accessory'),
+	path('arm/', views.arm, name = 'arm'),
+	path('bed/', views.bed, name = 'bed'),
+	path('corner/', views.corner, name = 'corner'),
+	path('k1r/', views.k1r, name = 'k1r'),
+	path('poufl/', views.poufl, name = 'poufl'),
+	path('str/', views.str, name = 'str'),
 
 	# products dynamic
-	path('category_arm/<slug:slug>/', views.single_product, name='single_product'),
+	path('product/<slug:slug>/', views.single_product, name='single_product'),
 
 	# choices
 	# path(r'^chaining/', include('smart_selects.urls')),

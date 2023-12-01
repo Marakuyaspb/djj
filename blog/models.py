@@ -16,18 +16,18 @@ class Post(models.Model):
 		DRAFT = 'DF', 'Draft'
 		PUBLISHED = 'PB', 'Published'
 
-	title = models.CharField(max_length=250)
-	slug = models.SlugField(max_length=250)
+	title = models.CharField(max_length=250, verbose_name = 'Заголовок')
+	slug = models.SlugField(max_length=255, unique=True, db_index=True, verbose_name="URL")
 	author = models.ForeignKey(User,
 		on_delete=models.CASCADE,
-		related_name='blog_posts')
-	body = models.TextField()
-	publish = models.DateTimeField(default=timezone.now)
-	created = models.DateTimeField(auto_now_add=True)
-	updated = models.DateTimeField(auto_now=True)
+		related_name='blog_posts', verbose_name = 'Автор')
+	body = models.TextField(verbose_name = 'Текст поста')
+	publish = models.DateTimeField(default=timezone.now, verbose_name = 'Опубликовано')
+	created = models.DateTimeField(auto_now_add=True, verbose_name = 'Создано')
+	updated = models.DateTimeField(auto_now=True, verbose_name = 'Обновлено')
 	status = models.CharField(max_length=2,
 		choices=Status.choices,
-		default=Status.DRAFT)
+		default=Status.DRAFT, verbose_name = 'Статус')
 
 	objects = models.Manager() # default
 	published = PublishedManager() # show published
@@ -38,6 +38,8 @@ class Post(models.Model):
 		indexes = [
 		models.Index(fields=['-publish']),
 		]
+		verbose_name = 'Запись в блоге'
+		verbose_name_plural = 'Записи в блоге'
 
 	def __str__(self):
 		return self.title

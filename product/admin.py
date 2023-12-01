@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Collection, ProductType, Option, Fabric, Product
+from .models import Category, Collection, Option, Fabric, Product, SliderInterior, FabricIconChange,PopOverFeatures
 # from .forms import ProductForm, FabricIconForm, OptionForm
 from django.utils.translation import gettext_lazy as _
 from django.db import models
@@ -19,8 +19,7 @@ class OptionAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-	list_display = ('product_full_name', 'fabric_name', 'price', 'price_sale', 'is_new', 'available_in_showroom', 'available_for_delivery_2', 'created', 'updated')
-	# prepopulated_fields = {'slug': ['collection', 'category', 'fabric_name',]}
+	list_display = ('product_full_name', 'fabric_name', 'price', 'price_sale', 'show_on_category_page', 'popular', 'is_new', 'available_in_showroom', 'available_for_delivery_2', 'created', 'updated')
 	actions = ['duplicate_products']
 
 	def duplicate_products(self, request, queryset):
@@ -30,12 +29,29 @@ class ProductAdmin(admin.ModelAdmin):
 		self.message_user(request, f"{len(queryset)} product(s) duplicated successfully.")
 	duplicate_products.short_description = "Дублировать выбранные товары"
 
-admin.site.register(Category)
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+	list_display = ('category_ru', 'category')
+
+@admin.register(PopOverFeatures)
+class PopOverFeaturesAdmin(admin.ModelAdmin):
+	list_display = ('popover_name', 'popover_1_description', 'popover_2_description', 'popover_3_description', 'popover_4_description', 'popover_5_description')
+
+	actions = ['duplicate_popovers']
+
+	def duplicate_popovers(self, request, queryset):
+		for popover in queryset:
+			popover.pk = None
+			popover.save()
+		self.message_user(request, f"{len(queryset)} popover(s) duplicated successfully.")
+	duplicate_popovers.short_description = "Дублировать набор 5-ти фич"
+
+
 admin.site.register(Collection)
-admin.site.register(ProductType)
 admin.site.register(Fabric, FabricAdmin)
 admin.site.register(Option, OptionAdmin)
-# admin.site.register(FabricIconChange)
+admin.site.register(FabricIconChange)
+admin.site.register(SliderInterior)
 
 
 

@@ -1,5 +1,6 @@
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator
 from .models import Category
 from .models import Product
 
@@ -15,15 +16,45 @@ def showrooms(request):
 	return render(request, 'product/showrooms.html')
 
 
+
+# dynamic products
+
+def single_product(request, id=None, slug=None):
+	if id:
+		product = get_object_or_404(Product, id=id)
+	elif slug:
+		product = get_object_or_404(Product, slug=slug)
+	else:
+		# handle error case here
+		pass
+
+	return render(request,'product/single_product.html', {'single_product': product})
+
+
+def popular_goods_carousel(request):
+	popular = Product.objects.filter(popular=True)
+	return render(request, 'popular_goods.html', {'popular': popular})
+
 # CATEGORIES
 
-def category_accessory (request):
+
+def accessory (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
 
 
-def category_arm (request, slug):
-	products = Product.objects.filter(category=1)
+def arm (request):
+	products = Product.objects.filter(category='arm')
+	# collection, category, fabric_name = slug.split('-')
+	category_obj = Category.objects.get(collection=collection, category=category, fabric_name=fabric_name)
+	context = {
+        'category': category_obj,
+    }
+	return render(request, 'product/category_goods.html', {'products': products}, context)
+
+
+def bed (request, slug):
+	products = Product.objects.filter(category='bed')
 	collection, category, fabric_name = slug.split('-')
 	category_obj = Category.objects.get(collection=collection, category=category, fabric_name=fabric_name)
 	context = {
@@ -32,30 +63,20 @@ def category_arm (request, slug):
 	return render(request, 'product/category_goods.html', {'products': products}, context)
 
 
-def category_bed (request):
+def corner (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
-def category_corner (request):
+def k1r (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
-def category_k1r (request):
+def poufl (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
-def category_pouf (request):
-	products = Product.objects.all()
-	return render(request, 'product/category_goods.html', {'products': products})
-def category_str (request):
+def str (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
 
-# dynamic products
-def single_product(request, id):
-	try:
-		product = Product.objects.get(id = id)
-	except:
-		raise Http404('Такого дивана пока нет :(')
-	return render(request,'product/single_product.html', {'single_product': product})
-
-def popular_goods_carousel(request):
-	popular_g = Product.objects.filter(popular=True)
-	return render(request, 'popular_goods.html', {'popular_g': popular_g})
+# def category_page(request, slug):
+#     category = Category.objects.get(slug=slug)
+#     products = Product.objects.filter(category=category)
+#     return render(request, 'product/category_goods.html', {'products': products})
