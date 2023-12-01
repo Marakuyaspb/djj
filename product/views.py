@@ -39,44 +39,36 @@ def popular_goods_carousel(request):
 
 
 def accessory (request):
-	products = Product.objects.all()
+	category='accessory'
+	products = Product.objects.filter(category__category=category)
 	return render(request, 'product/category_goods.html', {'products': products})
-
 
 def arm (request):
-	products = Product.objects.filter(category='arm')
-	# collection, category, fabric_name = slug.split('-')
-	category_obj = Category.objects.get(collection=collection, category=category, fabric_name=fabric_name)
-	context = {
-        'category': category_obj,
-    }
-	return render(request, 'product/category_goods.html', {'products': products}, context)
-
+	category='arm'
+	products = Product.objects.filter(category__category=category)
+	return render(request, 'product/category_goods.html', {'products': products})
 
 def bed (request, slug):
-	products = Product.objects.filter(category='bed')
-	collection, category, fabric_name = slug.split('-')
-	category_obj = Category.objects.get(collection=collection, category=category, fabric_name=fabric_name)
-	context = {
-        'category': category_obj,
-    }
-	return render(request, 'product/category_goods.html', {'products': products}, context)
-
+	category='bed'
+	products = Product.objects.filter(category__category=category)
+	return render(request, 'product/category_goods.html', {'products': products})
 
 def corner (request):
-	products = Product.objects.all()
-	return render(request, 'product/category_goods.html', {'products': products})
-def k1r (request):
-	products = Product.objects.all()
-	return render(request, 'product/category_goods.html', {'products': products})
-def poufl (request):
-	products = Product.objects.all()
-	return render(request, 'product/category_goods.html', {'products': products})
-def str (request):
-	products = Product.objects.all()
+	category='corner'
+	products = Product.objects.filter(category__category=category)
 	return render(request, 'product/category_goods.html', {'products': products})
 
-# def category_page(request, slug):
-#     category = Category.objects.get(slug=slug)
-#     products = Product.objects.filter(category=category)
-#     return render(request, 'product/category_goods.html', {'products': products})
+def k1r (request):
+	category='k1r'
+	products = Product.objects.filter(category__category=category)
+	return render(request, 'product/category_goods.html', {'products': products})
+
+def poufl (request):
+	category='poufl'
+	products = Product.objects.filter(category__category=category)
+	return render(request, 'product/category_goods.html', {'products': products})
+
+def str (request):
+	category='str'
+	products = Product.objects.filter(category__category=category)
+	return render(request, 'product/category_goods.html', {'products': products})

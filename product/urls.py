@@ -27,7 +27,7 @@ urlpatterns = [
 	path('str/', views.str, name = 'str'),
 
 	# products dynamic
-	path('product/<slug:slug>/', views.single_product, name='single_product'),
+	path('category/<slug:slug>/', views.single_product, name='single_product'),
 
 	# choices
 	# path(r'^chaining/', include('smart_selects.urls')),

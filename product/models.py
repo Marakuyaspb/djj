@@ -234,7 +234,7 @@ class Product(models.Model):
 	features = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Конструктивные особенности')
 	created = models.DateTimeField(auto_now_add=True, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
-	slug = models.SlugField(max_length=100, unique=True)
+	slug = models.SlugField(max_length=100)
 
 	
 	class Meta:
