@@ -1,15 +1,16 @@
 from django.db import models
 from django.conf import settings
 from django.utils.text import slugify
+from django.db.models.signals import pre_save
 # from django.urls import reverse
 
 
 class Category(models.Model):
 	category_id = models.AutoField(primary_key=True)
 	category_ru = models.CharField(max_length=50, verbose_name = 'Название категории (по-русски, в МНОЖЕСТВЕННОМ числе)')
-	producttype = models.CharField(max_length=50, default='Аксессуар', verbose_name = 'Название категории (то же, в ЕДИНСТВЕННОМ числе)')
-	category = models.CharField(max_length=50, verbose_name='Сокращенно латиницей (arm, str, k1r и т.п.)')
-	# slug = models.SlugField(max_length=200, verbose_name='URL')
+	producttype = models.CharField(max_length=50, verbose_name = 'Название категории (то же, в ЕДИНСТВЕННОМ числе)')
+	category = models.CharField(max_length=30, verbose_name='Сокращенно латиницей (arm, str, k1r и т.п.)')
+	category_slug = models.SlugField(max_length=30, unique=True, verbose_name='Повторите')
 
 	class Meta:
 		ordering = ['category']
@@ -17,16 +18,18 @@ class Category(models.Model):
 		models.Index(fields=['category']),
 		]
 		verbose_name = 'Категория'
-		verbose_name_plural = 'Категории'
+		verbose_name_plural = 'Категории'	
+
 	def __str__(self):
 		return self.category
-		return self.producttype
 
+	
 
 
 class Collection(models.Model):
 	collection_id = models.AutoField(primary_key=True)
-	collection = models.CharField(max_length=50, verbose_name = 'Коллекция') # Consono etc
+	collection = models.CharField(max_length=30, verbose_name = 'Коллекция (Латиницей)')
+	collection_slug = models.SlugField(max_length=30, unique=True, verbose_name='Повторите')
 
 	class Meta:
 		ordering = ['collection']
@@ -72,7 +75,6 @@ class Fabric(models.Model):
 		return self.fabric_name	
 
 
-
 class FabricIconChange(models.Model):
 	fabric_icon_id = models.AutoField(primary_key=True)
 	product_fabric_icon = models.ImageField(null=True, blank=True, upload_to='fabric_images/%Y/%m/%d', verbose_name = 'Иконка переключения ткани')
@@ -109,7 +111,6 @@ class Option(models.Model):
 		return self.option_name	
 
 
-
 class PopOverFeatures(models.Model):
 	popover_id = models.AutoField(primary_key=True)
 	popover_name = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Название фичи')
@@ -135,7 +136,6 @@ class PopOverFeatures(models.Model):
 		verbose_name_plural = 'Фичи поп-овер'
 	def __str__(self):
 		return self.popover_name	
-
 
 
 class SliderInterior(models.Model):
@@ -234,13 +234,13 @@ class Product(models.Model):
 	features = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Конструктивные особенности')
 	created = models.DateTimeField(auto_now_add=True, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
-	slug = models.SlugField(max_length=100)
+	product_slug = models.SlugField(max_length=100)
 
 	
 	class Meta:
 		ordering = ['product_full_name']
 		indexes = [
-			models.Index(fields=['id', 'slug', '-created']),
+			models.Index(fields=['id', 'product_slug', '-created']),
 			models.Index(fields=['product_full_name']),
 			models.Index(fields=['-created']),
 		]
@@ -248,8 +248,12 @@ class Product(models.Model):
 		verbose_name_plural = 'Товары'
 
 	def save(self, *args, **kwargs):
-		self.slug = slugify('-'.join([self.collection.collection, self.category.category, self.fabric_name.fabric_name]))
+		self.product_slug = slugify('-'.join([self.collection.collection, self.category.category, self.fabric_name.fabric_name]))
 		super().save(*args, **kwargs)
+
+	# def savecat(self, *args, **kwargs):
+	# 	self.cat_slug = slugify('-'.join([self.category.category]))
+	# 	super().save(*args, **kwargs)
 
 	def __str__(self):
 		return self.product_full_name

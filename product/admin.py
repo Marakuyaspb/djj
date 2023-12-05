@@ -32,6 +32,7 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
 	list_display = ('category_ru', 'category')
+	prepopulated_fields = {"category_slug": ("category", )}
 
 @admin.register(PopOverFeatures)
 class PopOverFeaturesAdmin(admin.ModelAdmin):

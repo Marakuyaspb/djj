@@ -8,7 +8,7 @@
 {% for el in products %}
 
 	<div class = "product_card p-3" >
-		<a href="{% url 'product:single_product' el.id %}">
+		<a href="{% url 'product:single_product' el.product_slug %}">
 	
 		<!-- HEAD OF THE CARD -->
 			<!-- DESCTOP -->
