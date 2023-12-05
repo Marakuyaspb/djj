@@ -23,7 +23,6 @@ class Category(models.Model):
 	def __str__(self):
 		return self.category
 
-	
 
 
 class Collection(models.Model):
@@ -203,9 +202,6 @@ class Product(models.Model):
 	available_for_delivery_2 = models.BooleanField(default=True, verbose_name = 'Доставим за 2 дня')
 	available_for_delivery_28 = models.BooleanField(default=True, verbose_name = 'Доставим за 28 дней')
 	available_in_showroom = models.BooleanField(default=True, verbose_name = 'Есть в шоуруме')
-	# product_fabric_img = models.ImageField(upload_to='fabric_images/%Y/%m/%d', blank=True, verbose_name = 'Образец ткани')
-	# product_fabric_about = models.CharField(max_length=1500, blank=True, verbose_name = 'Описание ткани')
-	# product_fabric_icon = models.ManyToManyField(FabricIconChange, blank=True)
 	description = models.CharField(max_length=1500, blank=True, verbose_name = 'Описание товара')
 	price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена')
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена (распродажа)')
@@ -247,16 +243,24 @@ class Product(models.Model):
 		verbose_name = 'Товар'
 		verbose_name_plural = 'Товары'
 
+
+	@property
+	def fabric_img_url(self):
+		return self.fabric_name.product_fabric_img.url
+	@property
+	def fabric_about(self):
+		return self.fabric_name.product_fabric_about
+
+
 	def save(self, *args, **kwargs):
 		self.product_slug = slugify('-'.join([self.collection.collection, self.category.category, self.fabric_name.fabric_name]))
 		super().save(*args, **kwargs)
 
-	# def savecat(self, *args, **kwargs):
-	# 	self.cat_slug = slugify('-'.join([self.category.category]))
-	# 	super().save(*args, **kwargs)
 
 	def __str__(self):
 		return self.product_full_name
+
+
 
 
 
