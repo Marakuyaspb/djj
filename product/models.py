@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from multiupload.fields import MultiFileField
 from django.utils import timezone
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
@@ -109,30 +110,6 @@ class PopOverFeatures(models.Model):
 		return self.popover_name	
 
 
-class SliderInterior(models.Model):
-	slint_id = models.AutoField(primary_key=True)
-	slint_name = models.CharField(max_length=350, verbose_name='Название слайдера')
-	slint_img_1 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Десктоп | Изображение 1')
-	slint_img_2 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Десктоп | Изображение 2')
-	slint_img_3 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Десктоп | Изображение 3')
-	slint_img_4 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Десктоп | Изображение 4')
-	slint_img_mob_1 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Мобильный | Изображение 1')
-	slint_img_mob_2 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Мобильный | Изображение 2')
-	slint_img_mob_3 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Мобильный | Изображение 3')
-	slint_img_mob_4 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Мобильный | Изображение 4')
-	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
-	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
-
-	class Meta:
-		ordering = ['slint_name']
-		indexes = [
-		models.Index(fields=['slint_name']),
-		]
-		verbose_name = 'Слайдер с интерьерами'
-		verbose_name_plural = 'Слайдеры с интерьерами'
-	def __str__(self):
-		return self.slint_name	
-
 
 class Product(models.Model):
 	id = models.AutoField(primary_key=True)
@@ -167,15 +144,12 @@ class Product(models.Model):
 	description = models.CharField(max_length=1500, null=True, blank=True, verbose_name = 'Описание товара')
 	price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена')
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена (распродажа)')
-	carousel_items = models.ManyToManyField('ProductImage', related_name='carousel_items', blank=True)
-	carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob', blank=True)
+
+	carousel_items = models.ManyToManyField('ProductImage', related_name='carousel_items', verbose_name ='Слайдер с товаром | десктоп')
+	carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob', blank=True, verbose_name ='Слайдер с товаром | мобильный')
 	closeup = models.ImageField(upload_to='closeups/', blank=True, null=True, verbose_name = 'Крупный фрагмент справа')
-	slider_interior = models.ForeignKey(SliderInterior, verbose_name = 'Слайдер с интерьерами',
-		related_name='products',
-    	db_column='products',
-		on_delete=models.CASCADE, null=True, blank=True)
-	# slider_interior = models.ManyToManyField('ProductImage', related_name='slider_interior', blank=True)
-	# slider_interior_mob = models.ManyToManyField('ProductImage', related_name='slider_interior_mob', blank=True)
+	interior_items = models.ManyToManyField('ProductImage', related_name='interior_items', blank=True, verbose_name ='Слайдер с интерьером | десктоп')
+	interior_items_mob = models.ManyToManyField('ProductImage', related_name='interior_items_mob', blank=True, verbose_name ='Слайдер с интерьером | мобильный')
 	width = models.IntegerField(blank=True, null=True, verbose_name = 'Ширина')
 	depth = models.IntegerField(blank=True, null=True, verbose_name = 'Глубина')
 	height = models.IntegerField(blank=True, null=True, verbose_name = 'Высота')
@@ -240,6 +214,7 @@ class Product(models.Model):
 	def option_2_description(self):
 		return self.options.option_2_description
 
+
 	def save(self, *args, **kwargs):
 		self.product_slug = slugify('-'.join([self.collection.collection, self.category.category, self.fabric_name.fabric_name]))
 		super().save(*args, **kwargs)
@@ -248,18 +223,13 @@ class Product(models.Model):
 	def __str__(self):
 		return self.product_full_name
 
-
+class ProductImage(models.Model):
+	id = models.AutoField(primary_key=True)
+	product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
+	image = models.ImageField(upload_to='product_items/%Y/%m/%d')
 
 
 
 class ProductOption(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     option = models.ForeignKey(Option, on_delete=models.CASCADE)
-
-		
-
-class ProductImage(models.Model):
-	image = models.ImageField(upload_to='product_images/%Y/%m/%d')
-	caption = models.CharField(max_length=100, blank=True)
-	def __str__(self):
-		 return self.caption
