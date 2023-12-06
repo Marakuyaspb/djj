@@ -1,0 +1,35 @@
+<h3>options</h3>
+
+
+{% for e in options %}
+
+<div class='accordion-item'>
+	<h2 class='accordion-header top-strip' id='headingSix'>
+		<button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapseSix' aria-expanded='true' aria-controls='collapseSix'>Опции</button>
+	</h2>
+	<div id='collapseSix' class='accordion-collapse collapse' aria-labelledby='headingSix' data-bs-parent='#accordionExample'>
+		<div class='accordion-body'>
+			<div>
+				<p class='mb-3'>{{ single_product.option_name }}</p>
+			</div>
+			<div class='container-fluid'>
+				<div class='row'>
+					<div class='col-md-4 col-sm-12 px-4'>
+						<center>
+						<p>{{ single_product.option_1_description }}
+						</center>
+						<img src='{{ single_product.option_1_img }}'>
+					</div>
+					<div class='col-md-4 col-sm-12 px-4'>
+						<center>
+						<p>{{ single_product.option_2_description }}
+						</center>
+						<img src='{{ single_product.option_2_img }}'>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endfor %}
+

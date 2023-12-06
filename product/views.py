@@ -25,16 +25,16 @@ def cat_view (request, category_slug=None):
 	products = Product.objects.filter(category=category)
 	return render(request, 'product/category_goods.html', {'products': products})
 # COLLECTIONS
-def coll_view (request, collection_slug=None):
-	category = get_object_or_404(Collection, collection_slug=collection_slug)
-	products = Product.objects.filter(collection=collection)
-	return render(request, 'product/category_goods.html', {'products': products})
+# def coll_view (request, collection_slug=None):
+# 	category = get_object_or_404(Collection, collection_slug=collection_slug)
+# 	products = Product.objects.filter(collection=collection)
+# 	return render(request, 'product/category_goods.html', {'products': products})
 
 # SINGLE PRODUCT
 
 def single_product(request, product_slug=None):
 	if product_slug:
-		product = get_object_or_404(Product, product_slug=product_slug)
+		product = get_object_or_404(Product, product_slug=product_slug)	
 	else:
 		# handle error case here
 		pass

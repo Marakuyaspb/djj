@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.utils import timezone
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
 # from django.urls import reverse
@@ -8,9 +9,9 @@ from django.db.models.signals import pre_save
 class Category(models.Model):
 	category_id = models.AutoField(primary_key=True)
 	category_ru = models.CharField(max_length=50, verbose_name = 'Название категории (по-русски, в МНОЖЕСТВЕННОМ числе)')
-	producttype = models.CharField(max_length=50, verbose_name = 'Название категории (то же, в ЕДИНСТВЕННОМ числе)')
+	producttype = models.CharField(max_length=50, null=True, verbose_name = 'Название категории (то же, в ЕДИНСТВЕННОМ числе)')
 	category = models.CharField(max_length=30, verbose_name='Сокращенно латиницей (arm, str, k1r и т.п.)')
-	category_slug = models.SlugField(max_length=30, unique=True, verbose_name='Повторите')
+	category_slug = models.SlugField(max_length=30, unique=True, null=True, verbose_name='Повторите')
 
 	class Meta:
 		ordering = ['category']
@@ -28,7 +29,7 @@ class Category(models.Model):
 class Collection(models.Model):
 	collection_id = models.AutoField(primary_key=True)
 	collection = models.CharField(max_length=30, verbose_name = 'Коллекция (Латиницей)')
-	collection_slug = models.SlugField(max_length=30, unique=True, verbose_name='Повторите')
+	collection_slug = models.SlugField(max_length=30, unique=True, null=True, verbose_name='Повторите')
 
 	class Meta:
 		ordering = ['collection']
@@ -60,8 +61,8 @@ class Fabric(models.Model):
 	fabric_name = models.CharField(max_length=50, verbose_name = 'Название ткани')
 	product_fabric_img = models.ImageField(upload_to='fabric_images/%Y/%m/%d', verbose_name = 'Образец ткани')
 	product_fabric_about = models.CharField(max_length=1500, verbose_name = 'Описание ткани')
-	created = models.DateTimeField(auto_now_add=True, verbose_name = 'Создано')
-	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
+	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
+	updated = models.DateTimeField(default=timezone.now, verbose_name = 'Последние изменения')
 
 	class Meta:
 		ordering = ['fabric_name']
@@ -74,21 +75,6 @@ class Fabric(models.Model):
 		return self.fabric_name	
 
 
-class FabricIconChange(models.Model):
-	fabric_icon_id = models.AutoField(primary_key=True)
-	product_fabric_icon = models.ImageField(null=True, blank=True, upload_to='fabric_images/%Y/%m/%d', verbose_name = 'Иконка переключения ткани')
-	product_fabric_name = models.CharField(null=True, blank=True, max_length=500, verbose_name = 'Название ткани')
-	class Meta:
-		ordering = ['product_fabric_name']
-		indexes = [
-		models.Index(fields=['product_fabric_name']),
-		]
-		verbose_name = 'Иконка переключения ткани'
-		verbose_name_plural = 'Иконки переключения ткани'
-	def __str__(self):
-		return self.product_fabric_name
-
-
 class Option(models.Model):
 	option_id = models.AutoField(primary_key=True)
 	option_name = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Заголовок опции (не обязательно)')
@@ -96,7 +82,7 @@ class Option(models.Model):
 	option_1_description = models.CharField(max_length=500, verbose_name = 'Описание опции 1')
 	option_2_img = models.ImageField(upload_to='options/%Y/%m/%d', verbose_name = 'Изображение 2')
 	option_2_description = models.CharField(max_length=500, verbose_name = 'Описание опции 2')
-	created = models.DateTimeField(auto_now_add=True, verbose_name = 'Создано')
+	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
 
 	class Meta:
@@ -123,7 +109,7 @@ class PopOverFeatures(models.Model):
 	popover_4_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 4')
 	popover_5_img = models.ImageField(upload_to='popover_features/%Y/%m/%d', verbose_name = 'Картинка фичи 5')
 	popover_5_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 5')
-	created = models.DateTimeField(auto_now_add=True, verbose_name = 'Создано')
+	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
 
 	class Meta:
@@ -148,7 +134,7 @@ class SliderInterior(models.Model):
 	slint_img_mob_2 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Мобильный | Изображение 2')
 	slint_img_mob_3 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Мобильный | Изображение 3')
 	slint_img_mob_4 = models.ImageField(upload_to='slider_interior/%Y/%m/%d', verbose_name = 'Мобильный | Изображение 4')
-	created = models.DateTimeField(auto_now_add=True, verbose_name = 'Создано')
+	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
 
 	class Meta:
@@ -175,39 +161,29 @@ class Product(models.Model):
 		related_name='products',
 		on_delete=models.CASCADE, verbose_name = 'Название ткани')
 	product_full_name = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Полное название товара (напр. Угловой диван Consono)')
-	product_img = models.ImageField(upload_to='images/%Y/%m/%d', blank=True, verbose_name = 'Изображение товара')
-	# product_fabric_icon_1 = models.ImageField(upload_to='fabric_images/%Y/%m/%d', null=True, blank=True, verbose_name = '')
-	# product_fabric_icon_2 = models.ImageField(upload_to='fabric_images/%Y/%m/%d', null=True, blank=True, verbose_name = '')
-	# product_fabric_icon_3 = models.ImageField(upload_to='fabric_images/%Y/%m/%d', null=True, blank=True, verbose_name = '')
-	# product_fabric_icon_4 = models.ImageField(upload_to='fabric_images/%Y/%m/%d', null=True, blank=True, verbose_name = '')
-	# product_fabric_icon_5 = models.ImageField(upload_to='fabric_images/%Y/%m/%d', null=True, blank=True, verbose_name = '')
-	product_fabric_icon_1 = models.ForeignKey(FabricIconChange,
-		related_name='product_fabric_icon_1',
-		on_delete=models.CASCADE, null=True, blank=True)
-	product_fabric_icon_2 = models.ForeignKey(FabricIconChange,
-		related_name='product_fabric_icon_2',
-		on_delete=models.CASCADE, null=True, blank=True)
-	product_fabric_icon_3 = models.ForeignKey(FabricIconChange,
-		related_name='product_fabric_icon_3',
-		on_delete=models.CASCADE, null=True, blank=True)
-	product_fabric_icon_4 = models.ForeignKey(FabricIconChange,
-		related_name='product_fabric_icon_4',
-		on_delete=models.CASCADE, null=True, blank=True)
-	product_fabric_icon_5 = models.ForeignKey(FabricIconChange,
-		related_name='product_fabric_icon_5',
-		on_delete=models.CASCADE, null=True, blank=True)
+	product_fabric_icon_1 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 1')
+	slug_fabric_icon_1 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №1')
+	product_fabric_icon_2 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 2')
+	slug_fabric_icon_2 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №2')
+	product_fabric_icon_3 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 3')
+	slug_fabric_icon_3 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №3')
+	product_fabric_icon_4 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 4')
+	slug_fabric_icon_4 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №4')
+	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5')
+	slug_fabric_icon_5 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №5')
 	show_on_category_page = models.BooleanField(default=True, verbose_name = 'Отображать в выдаче категории')
 	popular = models.BooleanField(default=True, verbose_name = 'Отображать в карусели "Популярные"')
 	is_new = models.BooleanField(default=True, verbose_name = 'Новый')
 	available_for_delivery_2 = models.BooleanField(default=True, verbose_name = 'Доставим за 2 дня')
 	available_for_delivery_28 = models.BooleanField(default=True, verbose_name = 'Доставим за 28 дней')
 	available_in_showroom = models.BooleanField(default=True, verbose_name = 'Есть в шоуруме')
-	description = models.CharField(max_length=1500, blank=True, verbose_name = 'Описание товара')
+	product_img = models.ImageField(upload_to='images/%Y/%m/%d', null=True, blank=True, verbose_name = 'Изображение товара')
+	description = models.CharField(max_length=1500, null=True, blank=True, verbose_name = 'Описание товара')
 	price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена')
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена (распродажа)')
 	carousel_items = models.ManyToManyField('ProductImage', related_name='carousel_items', blank=True)
 	carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob', blank=True)
-	closeup = models.ImageField(upload_to='closeups/', blank=True, verbose_name = 'Крупный фрагмент справа')
+	closeup = models.ImageField(upload_to='closeups/', blank=True, null=True, verbose_name = 'Крупный фрагмент справа')
 	slider_interior = models.ForeignKey(SliderInterior, verbose_name = 'Слайдер с интерьерами',
 		related_name='products',
     	db_column='products',
@@ -228,9 +204,9 @@ class Product(models.Model):
 	scheme = models.CharField(max_length=150, null=True, blank=True, verbose_name = 'Схема')
 	options = models.ManyToManyField(Option, blank=True, verbose_name = 'Опции')
 	features = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Конструктивные особенности')
-	created = models.DateTimeField(auto_now_add=True, verbose_name = 'Создано')
+	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
-	product_slug = models.SlugField(max_length=100)
+	product_slug = models.SlugField(null=True, blank=True, max_length=100)
 
 	
 	class Meta:
@@ -243,7 +219,7 @@ class Product(models.Model):
 		verbose_name = 'Товар'
 		verbose_name_plural = 'Товары'
 
-
+	# Fabric
 	@property
 	def fabric_img_url(self):
 		return self.fabric_name.product_fabric_img.url
@@ -251,6 +227,22 @@ class Product(models.Model):
 	def fabric_about(self):
 		return self.fabric_name.product_fabric_about
 
+	# Options
+	@property
+	def option_name(self):
+		return self.options.option_name
+	@property
+	def option_1_img(self):
+		return self.options.option_1_img
+	@property
+	def option_2_img(self):
+		return self.options.option_2_img
+	@property
+	def option_1_description(self):
+		return self.options.option_1_description
+	@property
+	def option_2_description(self):
+		return self.options.option_2_description
 
 	def save(self, *args, **kwargs):
 		self.product_slug = slugify('-'.join([self.collection.collection, self.category.category, self.fabric_name.fabric_name]))

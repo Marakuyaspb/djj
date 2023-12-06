@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Collection, Option, Fabric, Product, SliderInterior, FabricIconChange,PopOverFeatures
+from .models import Category, Collection, Option, Fabric, Product, SliderInterior,PopOverFeatures
 # from .forms import ProductForm, FabricIconForm, OptionForm
 from django.utils.translation import gettext_lazy as _
 from django.db import models
@@ -51,7 +51,6 @@ class PopOverFeaturesAdmin(admin.ModelAdmin):
 admin.site.register(Collection)
 admin.site.register(Fabric, FabricAdmin)
 admin.site.register(Option, OptionAdmin)
-admin.site.register(FabricIconChange)
 admin.site.register(SliderInterior)
 
 
