@@ -34,6 +34,11 @@ class CategoryAdmin(admin.ModelAdmin):
 	list_display = ('category_ru', 'category')
 	prepopulated_fields = {"category_slug": ("category", )}
 
+@admin.register(Collection)
+class CategoryAdmin(admin.ModelAdmin):
+	list_display = ('collection',)
+	prepopulated_fields = {"collection_slug": ("collection", )}
+
 @admin.register(PopOverFeatures)
 class PopOverFeaturesAdmin(admin.ModelAdmin):
 	list_display = ('popover_name', 'popover_1_description', 'popover_2_description', 'popover_3_description', 'popover_4_description', 'popover_5_description')
@@ -48,7 +53,6 @@ class PopOverFeaturesAdmin(admin.ModelAdmin):
 	duplicate_popovers.short_description = "Дублировать набор 5-ти фич"
 
 
-admin.site.register(Collection)
 admin.site.register(Fabric, FabricAdmin)
 admin.site.register(Option, OptionAdmin)
 admin.site.register(SliderInterior)

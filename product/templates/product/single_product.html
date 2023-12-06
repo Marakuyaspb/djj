@@ -22,20 +22,22 @@
 				<!-- fabric buttons -->
 
 				<div class='slide-fabric-nav'>
-					<a href='http://127.0.0.1:8000/products/{{single_product.collection}}-{{single_product.category}}-{{single_product.slug_fabric_icon_1}}'>
-						<img class='slide-fabric-button fabric-var-desctop fabric-var CAMBRIDGE_600' id='' src='http://127.0.0.1:8000/media/{{ product_fabric_icon_1.product_fabric_icon.url }}'>
+					<a href='http://127.0.0.1:8000/products/{{single_product.collection_slug}}-{{single_product.category_slug}}-{{single_product.slug_fabric_icon_1}}'>
+
+						<img class='slide-fabric-button fabric-var-desctop fabric-var CAMBRIDGE_600' id='' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_1 }}'>
 					</a>
-					<a href='http://127.0.0.1:8000/products{{single_product.collection}}-{{single_product.category}}-{{single_product.slug_fabric_icon_2}}'> 
-				    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_01' id='{{ single_product.collection }}_{{ single_product.category }}_JAZZ_01' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/JAZZ/ICONS/JAZZ_01.png'>
+					<a href='http://127.0.0.1:8000/products{{single_product.collection_slug}}-{{single_product.category_slug}}-{{single_product.slug_fabric_icon_1}}'> 
+
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_01' id='' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_2 }}'>
 				    </a>
-					<a href='http://127.0.0.1:8000/products{{single_product.collection}}-{{single_product.category}}-{{single_product.slug_fabric_icon_3}}'> 
-				    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_21' id='{{ single_product.collection }}_{{ single_product.category }}_JAZZ_21' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/JAZZ/ICONS/JAZZ_21.png'>
+					<a href='http://127.0.0.1:8000/products{{single_product.collection_slug}}-{{single_product.category}}-{{single_product.slug_fabric_icon_3}}'> 
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_21' id='' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_3 }}'>
 				    </a>
-					<a href='{{single_product.collection}}-{{single_product.category}}-{{single_product.slug_fabric_icon_4}}'> 
-				    	<img class='slide-fabric-button fabric-var-desctop fabric-var PIXEL_FOREST' id='{{ single_product.collection }}_{{ single_product.category }}_PIXEL_FOREST' src= 'http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/PIXEL/ICONS/PIXEL_FOREST.png'>
+					<a href='{{single_product.collection_slug}}-{{single_product.category_slug}}-{{single_product.slug_fabric_icon_4}}'> 
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var PIXEL_FOREST' id='T' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_4 }}'>
 				    </a>
-					<a href='http://127.0.0.1:8000/products{{single_product.collection}}}{{single_product.category}}{{single_product.slug_fabric_icon_5}}'> 
-				    	<img class='slide-fabric-button fabric-var-desctop fabric-var VELUTTO_16' id='{{ single_product.collection }}_{{ single_product.category }}_VELUTTO_32' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/VELUTTO/ICONS/VELUTTO_32.png'>  
+					<a href='http://127.0.0.1:8000/products{{single_product.collection_slug}}}{{single_product.category_slug}}{{single_product.slug_fabric_icon_5}}'> 
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var VELUTTO_16' id='' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_5 }}'>  
 				    </a>  	
 				</div>
 
@@ -448,16 +450,24 @@
 
         <!-- fabric buttons -->
 
-		<div class='slide-fabric-nav' onClick ='event.stopPropagation()'>  	  
-			<img class='slide-fabric-button fabric-var-phone fabric-var CAMBRIDGE_600' id='{{ single_product.collection }}_{{ single_product.category }}_CAMBRIDGE_600' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/CAMBRIDGE/ICONS/CAMBRIDGE_600.png' onClick ='showDetailsByFabric(event);'>
+		<div class='slide-fabric-nav'>
+			<a href='http://127.0.0.1:8000/products/{{single_product.collection_slug}}-{{single_product.category_slug}}-{{single_product.slug_fabric_icon_1}}'>
 
-	    	<img class='slide-fabric-button fabric-var-phone fabric-var JAZZ_01' id='{{ single_product.collection }}_{{ single_product.category }}_JAZZ_01' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/JAZZ/ICONS/JAZZ_01.png' onClick ='showDetailsByFabric(event);'>
+				<img class='slide-fabric-button fabric-var-desctop fabric-var CAMBRIDGE_600' id='' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_1 }}'>
+			</a>
+			<a href='http://127.0.0.1:8000/products{{single_product.collection_slug}}-{{single_product.category_slug}}-{{single_product.slug_fabric_icon_1}}'> 
 
-	    	<img class='slide-fabric-button fabric-var-phone fabric-var JAZZ_21' id='{{ single_product.collection }}_{{ single_product.category }}_JAZZ_21' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/JAZZ/ICONS/JAZZ_21.png' onClick ='showDetailsByFabric(event);'>
-
-	    	<img class='slide-fabric-button fabric-var-phone fabric-var PIXEL_FOREST' id='{{ single_product.collection }}_{{ single_product.category }}_PIXEL_FOREST' src= 'http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/PIXEL/ICONS/PIXEL_FOREST.png' onClick ='showDetailsByFabric(event);'>
-	    
-	    	<img class='slide-fabric-button fabric-var-phone fabric-var VELUTTO_16' id='{{ single_product.collection }}_{{ single_product.category }}_VELUTTO_32' src='http://temp.decona.ru/wp-content/uploads/goods_pics/FABRIC/VELUTTO/ICONS/VELUTTO_32.png' onClick ='showDetailsByFabric(event);'>    
+		    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_01' id='' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_2 }}'>
+		    </a>
+			<a href='http://127.0.0.1:8000/products{{single_product.collection_slug}}-{{single_product.category}}-{{single_product.slug_fabric_icon_3}}'> 
+		    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_21' id='' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_3 }}'>
+		    </a>
+			<a href='{{single_product.collection_slug}}-{{single_product.category_slug}}-{{single_product.slug_fabric_icon_4}}'> 
+		    	<img class='slide-fabric-button fabric-var-desctop fabric-var PIXEL_FOREST' id='T' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_4 }}'>
+		    </a>
+			<a href='http://127.0.0.1:8000/products{{single_product.collection_slug}}}{{single_product.category_slug}}{{single_product.slug_fabric_icon_5}}'> 
+		    	<img class='slide-fabric-button fabric-var-desctop fabric-var VELUTTO_16' id='' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_5 }}'>  
+		    </a>  	
 		</div>
 
 		<!-- slider with product -->

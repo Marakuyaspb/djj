@@ -11,7 +11,7 @@ class Category(models.Model):
 	category_ru = models.CharField(max_length=50, verbose_name = 'Название категории (по-русски, в МНОЖЕСТВЕННОМ числе)')
 	producttype = models.CharField(max_length=50, null=True, verbose_name = 'Название категории (то же, в ЕДИНСТВЕННОМ числе)')
 	category = models.CharField(max_length=30, verbose_name='Сокращенно латиницей (arm, str, k1r и т.п.)')
-	category_slug = models.SlugField(max_length=30, unique=True, null=True, verbose_name='Повторите')
+	category_slug = models.SlugField(max_length=30, unique=True, null=True, verbose_name='URL')
 
 	class Meta:
 		ordering = ['category']
@@ -28,8 +28,8 @@ class Category(models.Model):
 
 class Collection(models.Model):
 	collection_id = models.AutoField(primary_key=True)
-	collection = models.CharField(max_length=30, verbose_name = 'Коллекция (Латиницей)')
-	collection_slug = models.SlugField(max_length=30, unique=True, null=True, verbose_name='Повторите')
+	collection = models.CharField(max_length=30, verbose_name = 'Коллекция (Латиницей, с большой буквы)')
+	collection_slug = models.SlugField(max_length=30, unique=True, null=True, verbose_name='URL')
 
 	class Meta:
 		ordering = ['collection']
@@ -40,20 +40,6 @@ class Collection(models.Model):
 		verbose_name_plural = 'Коллекции'
 	def __str__(self):
 		return self.collection
-
-# class ProductType(models.Model):
-# 	producttype_id = models.AutoField(primary_key=True)
-# 	producttype = models.CharField(max_length=50) # Consono etc
-
-# 	class Meta:
-# 		ordering = ['producttype']
-# 		indexes = [
-# 		models.Index(fields=['producttype']),
-# 		]
-# 		verbose_name = 'Тип продукта'
-# 		verbose_name_plural = 'Типы продуктов'
-# 	def __str__(self):
-# 		return self.producttype
 
 
 class Fabric(models.Model):
@@ -218,6 +204,16 @@ class Product(models.Model):
 		]
 		verbose_name = 'Товар'
 		verbose_name_plural = 'Товары'
+
+	#Category
+	@property
+	def category_slug(self):
+		return self.category.category_slug
+
+	#Collection
+	@property
+	def collection_slug(self):
+		return self.collection.collection_slug
 
 	# Fabric
 	@property
