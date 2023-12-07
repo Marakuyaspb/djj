@@ -123,16 +123,22 @@ class Product(models.Model):
 		related_name='products',
 		on_delete=models.CASCADE, verbose_name = 'Название ткани')
 	product_full_name = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Полное название товара (напр. Угловой диван Consono)')
-	product_fabric_icon_1 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 1')
+
+	product_fabric_icon_1 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/CAMBRIDGE_600.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 1')
 	slug_fabric_icon_1 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №1')
-	product_fabric_icon_2 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 2')
+
+	product_fabric_icon_2 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d',  default='fabric_icons/2023/12/06/JAZZ_01.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 2')
 	slug_fabric_icon_2 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №2')
-	product_fabric_icon_3 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 3')
+
+	product_fabric_icon_3 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/JAZZ_21.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 3')
 	slug_fabric_icon_3 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №3')
-	product_fabric_icon_4 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 4')
+
+	product_fabric_icon_4 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/PIXEL_FOREST.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 4')
 	slug_fabric_icon_4 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №4')
-	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5')
+
+	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/VELUTTO_32.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5')
 	slug_fabric_icon_5 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №5')
+	
 	show_on_category_page = models.BooleanField(default=True, verbose_name = 'Отображать в выдаче категории')
 
 	popular = models.BooleanField(default=True, verbose_name = 'Отображать в карусели "Популярные"')
@@ -141,10 +147,10 @@ class Product(models.Model):
 	available_for_delivery_2 = models.BooleanField(default=True, verbose_name = 'Доставим за 2 дня')
 	available_for_delivery_28 = models.BooleanField(default=True, verbose_name = 'Доставим за 28 дней')
 	available_in_showroom = models.BooleanField(default=True, verbose_name = 'Есть в шоуруме')
-	icon_is_new = models.FileField(upload_to='status_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка | Новый')
-	icon_available_for_delivery_2 = models.FileField(upload_to='status_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка | Доставим за 2 дня')
-	icon_available_for_delivery_28 = models.FileField(upload_to='status_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка | Доставим за 28 дней')
-	icon_available_in_showroom =models.FileField(upload_to='status_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка | Есть в шоуруме')
+	icon_is_new = models.FileField(upload_to='status_icons/%Y/%m/%d', default='status_icons/2023/12/07/new.svg', null=True, blank=True, verbose_name = 'Иконка | Новый')
+	icon_available_for_delivery_2 = models.FileField(upload_to='status_icons/%Y/%m/%d', default='status_icons/2023/12/07/delivery2.svg', null=True, blank=True, verbose_name = 'Иконка | Доставим за 2 дня')
+	icon_available_for_delivery_28 = models.FileField(upload_to='status_icons/%Y/%m/%d', default='status_icons/2023/12/07/delivery2.svg', null=True, blank=True, verbose_name = 'Иконка | Доставим за 28 дней')
+	icon_available_in_showroom =models.FileField(upload_to='status_icons/%Y/%m/%d', default='status_icons/2023/12/07/showrooms.svg',null=True, blank=True, verbose_name = 'Иконка | Есть в шоуруме')
 
 	product_img = models.ImageField(upload_to='images/%Y/%m/%d', null=True, blank=True, verbose_name = 'Изображение товара')
 	description = models.CharField(max_length=1500, null=True, blank=True, verbose_name = 'Описание товара')
