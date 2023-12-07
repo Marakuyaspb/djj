@@ -41,10 +41,20 @@
 				    </a>  	
 				</div>
 
+
 				<div class='d-flex flex-row ms-4 card_icons'>
-					<img class = 'is_new_icon_pr_card' id='{{ single_product.is_new }}' src='http://temp.decona.ru/wp-content/uploads/icons/new.svg'>
-					<img class = 'available_icon_pr_card' id='{{ single_product.available_in_showroom }}' src='http://temp.decona.ru/wp-content/uploads/icons/showrooms.svg'> 
-					<img class = 'available_icon_pr_card' id='{{ single_product.available_for_delivery_2 }}' src='http://temp.decona.ru/wp-content/uploads/icons/delivery2.svg'>
+
+				{% if single_product.is_new %}
+					<img src="{{ single_product.icon_is_new.url }}" alt="Можем доставить за 2 дня">
+				{% endif %}
+				{% if single_product.available_in_showroom %}
+					<img src="{{ single_product.icon_available_in_showroom.url }}" alt="Можем доставить за 2 дня">
+				{% endif %}
+
+				{% if single_product.available_for_delivery_2 %}
+					<img src="{{ single_product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
+				{% endif %}
+
 				</div>
 
 				<!-- slider with product -->
@@ -468,6 +478,21 @@
 			<a href='http://127.0.0.1:8000/products{{single_product.collection_slug}}}{{single_product.category_slug}}{{single_product.slug_fabric_icon_5}}'> 
 		    	<img class='slide-fabric-button fabric-var-desctop fabric-var VELUTTO_16' id='' src='http://127.0.0.1:8000/media/{{ single_product.product_fabric_icon_5 }}'>  
 		    </a>  	
+		</div>
+
+		<div class='d-flex flex-row ms-4 card_icons'>
+
+			{% if single_product.is_new %}
+				<img src="{{ single_product.icon_is_new.url }}" alt="Можем доставить за 2 дня">
+			{% endif %}
+			{% if single_product.available_in_showroom %}
+				<img src="{{ single_product.icon_available_in_showroom.url }}" alt="Можем доставить за 2 дня">
+			{% endif %}
+
+			{% if single_product.available_for_delivery_2 %}
+				<img src="{{ single_product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
+			{% endif %}
+
 		</div>
 
 		<!-- slider with product -->

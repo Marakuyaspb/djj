@@ -110,7 +110,6 @@ class PopOverFeatures(models.Model):
 		return self.popover_name	
 
 
-
 class Product(models.Model):
 	id = models.AutoField(primary_key=True)
 	category = models.ForeignKey(
@@ -135,11 +134,18 @@ class Product(models.Model):
 	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5')
 	slug_fabric_icon_5 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №5')
 	show_on_category_page = models.BooleanField(default=True, verbose_name = 'Отображать в выдаче категории')
+
 	popular = models.BooleanField(default=True, verbose_name = 'Отображать в карусели "Популярные"')
+
 	is_new = models.BooleanField(default=True, verbose_name = 'Новый')
 	available_for_delivery_2 = models.BooleanField(default=True, verbose_name = 'Доставим за 2 дня')
 	available_for_delivery_28 = models.BooleanField(default=True, verbose_name = 'Доставим за 28 дней')
 	available_in_showroom = models.BooleanField(default=True, verbose_name = 'Есть в шоуруме')
+	icon_is_new = models.FileField(upload_to='status_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка | Новый')
+	icon_available_for_delivery_2 = models.FileField(upload_to='status_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка | Доставим за 2 дня')
+	icon_available_for_delivery_28 = models.FileField(upload_to='status_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка | Доставим за 28 дней')
+	icon_available_in_showroom =models.FileField(upload_to='status_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка | Есть в шоуруме')
+
 	product_img = models.ImageField(upload_to='images/%Y/%m/%d', null=True, blank=True, verbose_name = 'Изображение товара')
 	description = models.CharField(max_length=1500, null=True, blank=True, verbose_name = 'Описание товара')
 	price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена')
