@@ -19,9 +19,16 @@
 					</div>
 			
 					<div>
-						<img class = 'is_new_icon' id='{{ el.is_new }}' src='http://temp.decona.ru/wp-content/uploads/icons/new.svg'>
-						<img class = 'available_icon' id='{{ el.available_in_showroom }}' src='http://temp.decona.ru/wp-content/uploads/icons/showrooms.svg'> 
-						<img class = 'available_icon'id='{{ el.available_for_delivery_2 }}' src='http://temp.decona.ru/wp-content/uploads/icons/delivery2.svg'>
+					{% if el.is_new %}
+						<img src="{{ el.icon_is_new.url }}" alt="Можем доставить за 2 дня">
+					{% endif %}
+					{% if el.available_in_showroom %}
+						<img src="{{ el.icon_available_in_showroom.url }}" alt="Можем доставить за 2 дня">
+					{% endif %}
+
+					{% if el.available_for_delivery_2 %}
+						<img src="{{ el.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
+					{% endif %}
 					</div>
 				</div>
 			</div>
