@@ -1,9 +1,11 @@
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.conf import settings
 from django.core.paginator import Paginator
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from .models import Category, Collection, Product, ProductImage
-# from .forms import ProductForm, ProductImageForm
-
+from cart.forms import CartAddProductForm
+from .forms import CustomProductForm
 
 def index(request):
 	return render(request, 'product/index.html')
@@ -28,45 +30,94 @@ def cat_view (request, category_slug=None):
 	return render(request, 'product/category_goods.html', {'products': products})
 
 
-# SINGLE PRODUCT
-
-def single_product(request, product_slug=None):
-	if product_slug:
-		product = get_object_or_404(Product, product_slug=product_slug)	
-		context = {'single_product': product}
-	else:
-		# handle error case here
-		pass
-
-	return render(request,'product/single_product.html', context)
-
-
-
-# def single_product(request):
-# 	if request.method == 'POST':
-# 		product_form = ProductForm(request.POST)
-# 		image_form = ProductImageForm(request.POST, request.FILES)
-# 		if product_form.is_valid() and image_form.is_valid():
-# 			product = product_form.save()
-# 			for image in request.FILES.getlist('images'):
-# 				product_image = ProductImage.objects.create(image=image)
-# 				product_image.product = product
-# 				product_image.save()
-# 			return redirect('single_product', product_slug=product.product_slug)
-# 	else:
-# 		product_form = ProductForm()
-# 		image_form = ProductImageForm()
-# 	return render(request, 'single_product.html', {'product_form': product_form, 'image_form': image_form})
-
-
-
 
 def popular_goods_carousel(request):
 	popular = Product.objects.filter(popular=True)
 	return render(request, 'popular_goods.html', {'popular': popular})
 
-# COLLECTIONS
-def coll_view (request, collection_slug=None):
-	collection = get_object_or_404(Collection, collection_slug=collection_slug)
-	products = Product.objects.filter(collection=collection)
-	return render(request, 'product/category_goods.html', {'products': products})
+
+
+def error_404_view(request, exception):
+
+	# we add the path to the 404.html file
+	# here. The name of our HTML file is 404.html
+	return render(request, 'product/404.html')
+
+
+
+
+def single_product(request, product_slug=None):
+	if product_slug:
+		product = get_object_or_404(Product, product_slug=product_slug)	
+	else:
+		# handle error case here
+		pass
+	cart_product_form = CartAddProductForm()
+	return render(request,'product/single_product.html', {'product': product, 'cart_product_form': cart_product_form})
+
+
+
+
+# SINGLE PRODUCT
+# def single_product(request):
+# 	if request.method == 'POST':
+# 		carousel_items = request.FILES.getlist('carousel_items')
+# 		carousel_items_mob = request.FILES.getlist('carousel_items_mob')
+# 		interior_items = request.FILES.getlist('carousel_items')
+# 		interior_items_mob = request.FILES.getlist('carousel_items_mob')
+		
+# 		product = Product.objects.get(product_slug=product_slug)
+		
+# 		for image_file in carousel_items:
+# 			product_image = ProductImage.objects.create(product=product)
+# 			if isinstance(image_file, InMemoryUploadedFile):
+# 				image.image.save(image_file.name, image_file)
+# 			else:
+# 				image.image = image_file
+# 			image.save()
+# 		for image_file in carousel_items_mob:
+# 			product_image = ProductImage.objects.create(product=product)
+# 			if isinstance(image_file, InMemoryUploadedFile):
+# 				image.image.save(image_file.name, image_file)
+# 			else:
+# 				image.image = image_file
+# 			image.save()
+# 		for image_file in interior_items:
+# 			product_image = ProductImage.objects.create(product=product)
+# 			if isinstance(image_file, InMemoryUploadedFile):
+# 				image.image.save(image_file.name, image_file)
+# 			else:
+# 				image.image = image_file
+# 			image.save()
+# 		for image_file in interior_items_mob:
+# 			product_image = ProductImage.objects.create(product=product)
+# 			if isinstance(image_file, InMemoryUploadedFile):
+# 				image.image.save(image_file.name, image_file)
+# 			else:
+# 				image.image = image_file
+# 			image.save()
+
+
+# 			context = {'single_product': product, 'form': form}
+
+
+# 	return render(request, 'single_product.html', context)
+
+
+
+
+
+
+
+
+# def single_product(request, product_slug=None):
+# 	if product_slug:
+# 		product = get_object_or_404(Product, product_slug=product_slug)	
+# 		context = {'single_product': product}
+# 	else:
+# 		# handle error case here
+# 		pass
+
+# 	cart_product_form = CartAddProductForm()
+
+# 	return render(request,'product/single_product.html', context)

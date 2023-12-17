@@ -1,10 +1,12 @@
 from django.db import models
+from django.db.models.signals import pre_save
 from django.conf import settings
-from multiupload.fields import MultiFileField
+
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
-from django.db.models.signals import pre_save
-# from django.urls import reverse
+
+from multiupload.fields import MultiFileField
 
 
 class Category(models.Model):
@@ -85,7 +87,14 @@ class Option(models.Model):
 
 class PopOverFeatures(models.Model):
 	popover_id = models.AutoField(primary_key=True)
-	popover_name = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Название фичи')
+	popover_name = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Название набора 5 фич')
+	category = models.ForeignKey(
+		Category,
+		related_name='features', default='1',
+		on_delete=models.CASCADE, verbose_name = 'Категория')
+	collection = models.ForeignKey(Collection,
+		related_name='features', default='1',
+		on_delete=models.CASCADE, verbose_name = 'Коллекция')
 	popover_1_img = models.ImageField(upload_to='popover_features/%Y/%m/%d', verbose_name = 'Картинка фичи 1')
 	popover_1_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 1')
 	popover_2_img = models.ImageField(upload_to='popover_features/%Y/%m/%d', verbose_name = 'Картинка фичи 2')
@@ -157,7 +166,7 @@ class Product(models.Model):
 	price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена')
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена (распродажа)')
 
-	carousel_items = models.ManyToManyField('ProductImage', related_name='carousel_items', verbose_name ='Слайдер с товаром | десктоп')
+	carousel_items = models.ManyToManyField('ProductImage', blank=True, related_name='carousel_items', verbose_name ='Слайдер с товаром | десктоп')
 	carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob', blank=True, verbose_name ='Слайдер с товаром | мобильный')
 	closeup = models.ImageField(upload_to='closeups/', blank=True, null=True, verbose_name = 'Крупный фрагмент справа')
 	interior_items = models.ManyToManyField('ProductImage', related_name='interior_items', blank=True, verbose_name ='Слайдер с интерьером | десктоп')
@@ -232,11 +241,13 @@ class Product(models.Model):
 		super().save(*args, **kwargs)
 
 
+	def get_absolute_url(self):
+		return reverse('single_product', kwargs={'product_slug': self.product_slug})
+
 	def __str__(self):
 		return self.product_full_name
 
 class ProductImage(models.Model):
-	id = models.AutoField(primary_key=True)
 	product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
 	image = models.ImageField(upload_to='product_items/%Y/%m/%d')
 

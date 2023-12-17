@@ -1,5 +1,10 @@
 from pathlib import Path
 import os, sys
+from dotenv import load_dotenv
+from django.contrib.messages import constants as messages
+
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,8 +15,6 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
-    'product.apps.ProductConfig',
-    'product.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -21,7 +24,17 @@ INSTALLED_APPS = [
     'taggit',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+
+    # additional packages
     'debug_toolbar',
+    'crispy_forms',
+    'ckeditor',
+
+    #apps
+    'cart.apps.CartConfig',
+    'product.apps.ProductConfig',
+    'blog.apps.BlogConfig',
+
 ]
 
 MIDDLEWARE = [
@@ -54,6 +67,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'freee_dj.wsgi.application'
+
+
+CART_SESSION_ID = 'cart'
+
 
 
 
@@ -103,7 +120,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#https://django-crispy-forms.readthedocs.io/en/latest/install.html
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
+CKEDITOR_CONFIG ={
+    'default':{
+    'width':'auto',
+    },
+}
 
 try:
     from .local_settings import *

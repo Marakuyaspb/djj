@@ -7,27 +7,27 @@ from django.forms import CheckboxSelectMultiple
 
 
 
-class ProductCarouselInline(admin.TabularInline):
-	model = Product.carousel_items.through
+class ProductImagelInline(admin.TabularInline):
+	model = ProductImage
 	extra = 1
 
-class ProductCarouselMobInline(admin.TabularInline):
-	model = Product.carousel_items_mob.through
-	extra = 1
+# class ProductCarouselMobInline(admin.TabularInline):
+# 	model = Product.carousel_items_mob.through
+# 	extra = 1
 
-class ProductInteriorInline(admin.TabularInline):
-	model = Product.interior_items.through
-	extra = 1
+# class ProductInteriorInline(admin.TabularInline):
+# 	model = Product.interior_items.through
+# 	extra = 1
 
-class ProductInteriorMobInline(admin.TabularInline):
-	model = Product.interior_items_mob.through
-	extra = 1
+# class ProductInteriorMobInline(admin.TabularInline):
+# 	model = Product.interior_items_mob.through
+# 	extra = 1
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
 	list_display = ('product_full_name', 'fabric_name', 'price', 'price_sale', 'show_on_category_page', 'popular', 'is_new', 'available_in_showroom', 'available_for_delivery_2', 'created', 'updated')
 	form = CustomProductForm
-	#inlines = [ProductCarouselInline, ProductCarouselMobInline, ProductInteriorInline, ProductInteriorMobInline]
+	inlines = [ProductImagelInline]
 	actions = ['duplicate_products']
 
 	def duplicate_products(self, request, queryset):

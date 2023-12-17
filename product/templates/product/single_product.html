@@ -112,11 +112,18 @@
 				<p class='old-price'>{{ single_product.price }} ₽</p>
 			</div>
 			<div class='mt-3 d-flex justify-content-between'>
-				<a class='rel_pos' href='#'>
-					<button class='to-order white btn-prod-card' onClick='pushSKUinForm(event);'>
+
+				<form action='{% url "cart:cart_add" product_slug=product.product_slug %}' method="post">
+				{{ cart_product_form }}
+				{% csrf_token %}
+				<input type="submit" value="Заказать">
+				</form>
+
+				<!-- <a class='rel_pos' href='#'>
+					<button class='to-order white btn-prod-card'>
 						Заказать
 					</button>
-				</a>
+				</a> -->
 				<a class='white rel_pos' href='{{ single_product.d3 }}'>
 					<button class='white btn-prod-card'>
 						3d модель

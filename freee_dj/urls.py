@@ -10,10 +10,14 @@ admin.site.index_title = 'Админская панель'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", include("product.urls")),
+    path("cart/", include('cart.urls', namespace='cart')),
     path("", include("blog.urls")),
+    path("", include("product.urls")),
+
     path("__debug__/", include("debug_toolbar.urls")),
 ]
+
+handler404 = 'product.views.error_404_view'
 
 if settings.DEBUG:
     urlpatterns += static(

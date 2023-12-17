@@ -15,6 +15,9 @@ sitemaps = {
 
 urlpatterns = [
 	path('', views.index, name = 'index'),
+
+
+# just pages
 	path('about/', views.about, name = 'about'),
 	path('contact/', views.contact, name = 'contact'),
 	path('payment/', views.payment, name = 'payment'),
@@ -23,13 +26,11 @@ urlpatterns = [
 
 # category pages 
 	path('<str:category_slug>/', views.cat_view, name='cat_view'),
-# collection pages 
-	# path('<str:collection_slug>/', views.cat_view, name='coll_view'),
 
 # products dynamic
 	path('products/<slug:product_slug>/', views.single_product, name='single_product'),
 
-	#sitemap
+#sitemap
 	path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]
 if settings.DEBUG:
