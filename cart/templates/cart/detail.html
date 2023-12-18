@@ -7,7 +7,9 @@
 
 {% block content %}
 
-<h1>Корзина</h1>
+<div class='container my-5'>
+
+<h2>Корзина</h2>
 <table class="cart">
 
 <thead>
@@ -27,38 +29,65 @@
 {% with product=item.product %}
 	<tr>
 		<td>
-			<a href="{{ product.product_slug }}">
+			<!-- <a href="{{ product.product_slug }}"> -->
 				<img src="
 				{% if product.product_img %}{{ product.product_img.url }}
 				{% else %}
 					{% static 'media/no_img.jpg' %}
 				{% endif %}">
-			</a>
+			<!-- </a> -->
 		</td>
 		<td>{{ product.product_full_name }}</td>
-		<td>{{ item.quantity }}</td>
+		
 		<td>
-			<form action="{% url 'cart:cart_remove' product.product_slug %}" method="post">
-				<input type="submit" value="Удалить">
+			<form action="{% url 'cart:cart_add' product_slug=product.product_slug %}" method="post">
+
+				<div class="d-flex justify-content-start">
+					<div>
+						{{ item.update_quantity_form.quantity }}
+					</div>
+					<div>
+						{{ item.update_quantity_form.override }}
+						<input type="submit" value="Обновить" class="latte_bg">
+					</div>
+				</div>
 				{% csrf_token %}
 			</form>
 		</td>
+
+
+		<td>
+			<form action="{% url 'cart:cart_remove' product.product_slug %}" method="post" >
+				<input type="submit" value="Удалить" class="latte_bg">
+				{% csrf_token %}
+			</form>
+		</td>
+
+
 		<td class="num">${{ item.price }}</td>
 		<td class="num">${{ item.total_price }}</td>
 	</tr>
 {% endwith %}
 
 {% endfor %}
-	<tr class="total">
+	<tr class="total latte_bg">
 		<td>Итого</td>
 		<td colspan="4"></td>
 		<td class="num">${{ cart.get_total_price }}</td>
 	</tr>
 </tbody>
 </table>
-
+<br>
+<hr>
 <p class="text-right">
-	<a href="{% url 'product:products' %}" class="">Продолжить покупки</a>
-	<a href="#" class="button">Оформление заказа</a>
+	
+	<a href="{% url 'product:products' %}" class="">
+		<button class="btn-outline-gray">Продолжить покупки </button>
+
+	</a>
+	<a href="#" class="ms-3">
+		<button class="btn-outline-gray">Оформление заказа </button>
+	</a>
 </p>
+</div>
 {% endblock %}
