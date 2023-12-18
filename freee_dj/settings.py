@@ -22,7 +22,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'taggit',
-    'django.contrib.sites',
     'django.contrib.sitemaps',
 
     # additional packages
@@ -32,13 +31,15 @@ INSTALLED_APPS = [
 
     #apps
     'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
     'product.apps.ProductConfig',
     'blog.apps.BlogConfig',
 
 ]
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,7 +73,7 @@ WSGI_APPLICATION = 'freee_dj.wsgi.application'
 
 CART_SESSION_ID = 'cart'
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Password validation
