@@ -116,20 +116,15 @@
 				<form action='{% url "cart:cart_add" product_slug=product.product_slug %}' method="post">
 				{{ cart_product_form }}
 				{% csrf_token %}
-				<input type="submit" value="Заказать">
+				<input type="submit" class="white btn-prod-card" value="Заказать">
 				</form>
 
-				<!-- <a class='rel_pos' href='#'>
-					<button class='to-order white btn-prod-card'>
-						Заказать
-					</button>
-				</a> -->
-				<a class='white rel_pos' href='{{ single_product.d3 }}'>
+				<a class='white' href='{{ single_product.d3 }}'>
 					<button class='white btn-prod-card'>
 						3d модель
 					</button>
 				</a>
-				<a class='white rel_pos' href='{{ single_product.pdf }}'>
+				<a class='white' href='{{ single_product.pdf }}'>
 					<button class='white btn-prod-card'>
 						PDF
 					</button>
@@ -554,13 +549,18 @@
 			</div>
 
 			<div class='d-flex justify-content-around white btn-prod-card_mob py-2 img-cover cacao_bg'>
-				<a class='to-order white p-2' onClick='pushSKUinForm(event);'>
-					Заказать
-				</a>
-				<a class='white p-2' href='{{ single_product.d3 }}'>
+
+				<form action='{% url "cart:cart_add" product_slug=product.product_slug %}' method="post">
+					{{ cart_product_form }}
+					{% csrf_token %}
+					<input type="submit" class="cacao_bg white" value="Заказать">
+				</form>
+
+				<a class='white' href='{{ single_product.d3 }}'>
 					3d модель
 				</a>
-				<a class='white rel_pos' href='{{ single_product.pdf }}'>
+
+				<a class='white' href='{{ single_product.pdf }}'>
 					PDF
 				</a>
 			</div>

@@ -1,6 +1,7 @@
 from decimal import Decimal
 from django.conf import settings
 from product.models import Product
+from django.shortcuts import get_object_or_404
 
 class Cart:
 	def __init__(self, request):
@@ -29,7 +30,7 @@ class Cart:
 
 
 	def remove(self, product):
-		product_slug = str(product.slug)
+		product_slug = str(product.product_slug)
 		if product_slug in self.cart:
 			del self.cart[product_slug]
 			self.save()
@@ -37,12 +38,14 @@ class Cart:
 
 	def __iter__(self):
 		product_slugs = self.cart.keys()
-		# получить объекты product и добавить их в корзину
-		products = Product.objects.filter(id__in=product_slugs)
+		products = [get_object_or_404(Product, product_slug=product_slug) for product_slug in product_slugs]
+		# products = Product.objects.filter(product_slug__in=product_slugs)
 		cart = self.cart.copy()
+
 		for product in products:
-			cart[str(product.slug)]['product'] = product
+			cart[str(product.product_slug)]['product'] = product
 		for item in cart.values():
+			item = cart[product.product_slug]
 			item['price'] = Decimal(item['price'])
 			item['total_price'] = item['price'] * item['quantity']
 			yield item

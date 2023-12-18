@@ -22,9 +22,9 @@
 </thead>
 
 <tbody>
-{% for el in cart %}
+{% for item in cart %}
 
-{% with product=el.product %}
+{% with product=item.product %}
 	<tr>
 		<td>
 			<a href="{{ product.product_slug }}">
@@ -36,7 +36,7 @@
 			</a>
 		</td>
 		<td>{{ product.product_full_name }}</td>
-		<td>{{ el.quantity }}</td>
+		<td>{{ item.quantity }}</td>
 		<td>
 			<form action="{% url 'cart:cart_remove' product.product_slug %}" method="post">
 				<input type="submit" value="Удалить">
@@ -46,9 +46,9 @@
 		<td class="num">${{ item.price }}</td>
 		<td class="num">${{ item.total_price }}</td>
 	</tr>
-	{% endwith %}
+{% endwith %}
 
-	{% endfor %}
+{% endfor %}
 	<tr class="total">
 		<td>Итого</td>
 		<td colspan="4"></td>
