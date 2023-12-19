@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .forms import CustomProductForm
-from .models import Category, Collection, Option, Fabric, Product, ProductImage, PopOverFeatures
+from .models import Category, Collection, Option, Fabric, SliderInterior, Product, ProductImage, PopOverFeatures
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 from django.forms import CheckboxSelectMultiple
@@ -43,10 +43,13 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
 	list_display = ('category_ru', 'category')
 	prepopulated_fields = {"category_slug": ("category", )}
+
 @admin.register(Collection)
 class CollectionAdmin(admin.ModelAdmin):
 	list_display = ('collection',)
 	prepopulated_fields = {"collection_slug": ("collection", )}
+
+
 @admin.register(PopOverFeatures)
 class PopOverFeaturesAdmin(admin.ModelAdmin):
 	list_display = ('popover_name', 'popover_1_description', 'popover_2_description', 'popover_3_description', 'popover_4_description', 'popover_5_description')
@@ -58,13 +61,19 @@ class PopOverFeaturesAdmin(admin.ModelAdmin):
 			popover.save()
 		self.message_user(request, f"{len(queryset)} popover(s) duplicated successfully.")
 	duplicate_popovers.short_description = "Дублировать набор 5-ти фич"
+
+
 @admin.register(Fabric)
 class FabricAdmin(admin.ModelAdmin):
 	list_display = ('fabric_name', 'product_fabric_about', 'created', 'updated')
+
 @admin.register(Option)
 class OptionAdmin(admin.ModelAdmin):
 	list_display = ('option_name', 'option_1_description', 'option_2_description', 'created', 'updated')
 
+@admin.register(SliderInterior)
+class SliderInteriorAdmin(admin.ModelAdmin):
+	list_display = ('sl_interior_name', 'created', 'updated')
 
 
 # class CustomProductForm(ProductForm):

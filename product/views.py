@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from .models import Category, Collection, Product, ProductImage
+from .models import Category, Collection, Option, Product, ProductImage, SliderInterior
 from cart.forms import CartAddProductForm
 from .forms import CustomProductForm
 
@@ -41,19 +41,21 @@ def error_404_view(request, exception):
 
 	# we add the path to the 404.html file
 	# here. The name of our HTML file is 404.html
-	return render(request, 'product/404.html')
+	return render(request, '404/404.html')
 
 
 
 
 def single_product(request, product_slug=None):
 	if product_slug:
-		product = get_object_or_404(Product, product_slug=product_slug)	
+		product = get_object_or_404(Product, product_slug=product_slug)
+		options = product.options.all()
+		#slider_interior = product.slider_interior
 	else:
 		# handle error case here
 		pass
 	cart_product_form = CartAddProductForm()
-	return render(request,'product/single_product.html', {'product': product, 'cart_product_form': cart_product_form})
+	return render(request,'product/single_product.html', {'product': product, 'options': options, 'cart_product_form': cart_product_form})
 
 
 

@@ -242,42 +242,12 @@
 		</div>
 
 		
+
 		<!-- Slider with interiors DESCTOP -->
+		<div class='banner mt-3' onmousemove="showPopOverscanvasConsonoArm()"></div>
 
-		<div class='banner mt-3' onmousemove="showPopOverscanvasConsonoArm()">
-			<div id='carouselExampleIndicators' class='carousel slide' data-bs-ride='carousel'>
-				<div class='carousel-indicators'>
-				    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>
-				    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2'></button>
-				    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3'></button>
-				    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='3' aria-label='Slide 4'></button>
-				</div>
-
-				<div class='carousel-inner'>
-				    <div class='carousel-item active'>
-				      <img src='{{ product.slider_interior_1 }}' class='d-block w-100' alt='...'>
-				    </div>
-				    <div class='carousel-item'>
-				      <img src='{{ product.slider_interior_2 }}' class='d-block w-100' alt='...'>
-				    </div>
-				    <div class='carousel-item'>
-				      <img src='{{ product.slider_interior_3 }}' class='d-block w-100' alt='...'>
-				    </div>
-				    <div class='carousel-item'>
-				      <img src='{{ product.slider_interior_4 }}' class='d-block w-100' alt='...'>
-				    </div>
-				</div>
-				  
-				<button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev'>
-				    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-				    <span class='visually-hidden'>Previous</span>
-				</button>
-				<button class='carousel-control-next' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next'>
-				    <span class='carousel-control-next-icon' aria-hidden='true'></span>
-				    <span class='visually-hidden'>Next</span>
-				</button>
-			</div>
-		</div>
+		{% include 'product/card_parts/slider_interior.html' %}
+		
 
 		<div class='big-fields-content mt-5 d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
 			<p>	Стоимость дивана в нестандартной комплектации рассчитывается в салоне, после выбора клиентом обивки и дополнительных опций. После того, как вы определилисть, подписывается договор, гле прописаны все особенности товара, его доставка и гарантии.</p>
@@ -290,156 +260,10 @@
 
 	<!-- DESCTOP POP OVER THING START -->
 
-		<canvas id='canvasConsonoArm' class='canvas_consono_arm_velutto_32'></canvas>
-		
-		<div class='popOvers'>
-			<div id='popAboutStitchesConsonoArm'>
-				<div class='card' style='width: 15rem;'>
-					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
-					<div class='card-body'>
-						<p class='card-text'>Мы прошиваем наши диваны турецкими мебельными нитями марки POLYART. Это синтетические армированные  нити с полиэфирной оплёткой. Нити обладают высокой прочностью и устойчивы к истиранию. 
-						</p>
-					</div>
-				</div>
-			</div>
-			<div id='popAboutPillowConsonoArm'>
-				<div class='card' style='width: 15rem;'>
-					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
-					<div class='card-body'>
-						<p class='card-text'>Широкие комфортные подлокотники - идеальны для расслабленного отдыха 
-						</p>
-					</div>
-				</div>
-			</div>
-			<div id='popAboutFrontConsonoArm'>
-				<div class='card' style='width: 15rem;'>
-					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
-					<div class='card-body'>
-						<p class='card-text'>Вывернутый шов - трендовое направление в дизайне сегодняшнего дня. Добавляет изюминку дивану и выделяет его в интерьере
-						</p>
-					</div>
-				</div>
-			</div>
-			<div id='popAboutBackConsonoArm'>
-				<div class='card' style='width: 15rem;'>
-					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
-					<div class='card-body'>
-						<p class='card-text'>Комфортабельное место сидения обеспечивается наполнителем из премиальной пены Elax 
-						</p>
-					</div>
-				</div>
-			</div>
-			<div id='popAboutPawConsonoArm'>
-				<div class='card' style='width: 15rem;'>
-					<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
-					<div class='card-body'>
-						<p class='card-text'>Элегантные зеркальные ножки польского производства отражают напольное покрытие добавляет дивану лёгкости
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- <script src="{% static 'js/showPopOverscanvasConsonoArm.js' %}" type="script"></script> -->
-		<script type="text/javascript">
-			
-			function showPopOverscanvasConsonoArm(event){
-			 
-			  var canvasConsonoArm = document.getElementById("canvasConsonoArm");
-			  var ctx = canvasConsonoArm.getContext('2d');
-
-			/*  console.log('Hey! You ll see armchair');*/
-
-			  const canvasConsonoArm_width = canvasConsonoArm.width = 1600;
-			  const canvasConsonoArm_heigh = canvasConsonoArm.height = 800;
-
-			/* сделать эту штуку вариативной из массива */
-
-			  var pinStitchesConsonoArm = new Image();
-			  pinStitchesConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
-			  pinStitchesConsonoArm.onload = function(){
-			    ctx.imageSmoothingEnabled = false;
-			    ctx.drawImage(pinStitchesConsonoArm, 496, 533, 50, 50);
-			  }
-			  var pinPillowConsonoArm = new Image();
-			  pinPillowConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
-			  pinPillowConsonoArm.onload = function(){
-			    ctx.imageSmoothingEnabled = false;
-			    ctx.drawImage(pinPillowConsonoArm, 622, 415, 50, 50);
-			  }
-			  var pinFrontConsonoArm = new Image();
-			  pinFrontConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
-			  pinFrontConsonoArm.onload = function(){
-			    ctx.imageSmoothingEnabled = false;
-			    ctx.drawImage(pinFrontConsonoArm, 852, 550, 50, 50);
-			  }
-			  var pinBackConsonoArm = new Image();
-			  pinBackConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
-			  pinBackConsonoArm.onload = function(){
-			    ctx.imageSmoothingEnabled = false;
-			    ctx.drawImage(pinBackConsonoArm, 710, 470, 50, 50);
-			  }
-			  var pinPawConsonoArm = new Image();
-			  pinPawConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
-			  pinPawConsonoArm.onload = function(){
-			    ctx.imageSmoothingEnabled = false;
-			    ctx.drawImage(pinPawConsonoArm, 875, 734, 50, 50);
-			  }
-
-			  canvasConsonoArm.style.width = canvasConsonoArm.offsetWidth + 'px';
-			  canvasConsonoArm.style.height = canvasConsonoArm.offsetHeight + 'px';
-
-			  let popAboutStitchesConsonoArm = document.getElementById('popAboutStitchesConsonoArm');     
-			  let popAboutPillowConsonoArm = document.getElementById('popAboutPillowConsonoArm');
-			  let popAboutFrontConsonoArm = document.getElementById('popAboutFrontConsonoArm');
-			  let popAboutBackConsonoArm = document.getElementById('popAboutBackConsonoArm');
-			  let popAboutPawConsonoArm = document.getElementById('popAboutPawConsonoArm');
-
-			  const mouse = {
-			    x:0,
-			    y:0,
-			    left: false,
-			    right: false,
-			    over: false,
-			  }; 
-
-			  canvasConsonoArm.addEventListener('mousemove', function(e) {
-			    const rect = canvasConsonoArm.getBoundingClientRect();
-			    mouse.x = e.clientX - rect.left;
-			    mouse.y = e.clientY - rect.top;
-			    console.log(mouse.x, mouse.y);
-
-			    if (mouse.x >= 496 && mouse.x <= 546 && mouse.y >= 533 && mouse.y <= 583) {
-			      popAboutStitchesConsonoArm.style.display = 'block';
-			    }
-			    else if (mouse.x >= 622 && mouse.x <= 672 && mouse.y >= 415 && mouse.y <= 465) {
-			      popAboutPillowConsonoArm.style.display = 'block';
-			    }
-			    else if (mouse.x >= 852 && mouse.x <= 902 && mouse.y >= 550 && mouse.y <= 600) {
-			      popAboutFrontConsonoArm.style.display = 'block';
-			    }
-			    else if (mouse.x >= 710 && mouse.x <= 760 && mouse.y >= 470 && mouse.y <= 520) {
-			      popAboutBackConsonoArm.style.display = 'block';
-			    }
-			    else if (mouse.x >= 875 && mouse.x <= 925 && mouse.y >= 734 && mouse.y <= 824) {
-			      popAboutPawConsonoArm.style.display = 'block';
-			    }
-
-			    else {
-			      popAboutStitchesConsonoArm.style.display = 'none';
-			      popAboutPillowConsonoArm.style.display = 'none'; 
-			      popAboutFrontConsonoArm.style.display = 'none'; 
-			      popAboutFrontConsonoArm.style.display = 'none'; 
-			      popAboutBackConsonoArm.style.display = 'none'; 
-			      popAboutPawConsonoArm.style.display = 'none';   
-			    }
-			  });
-			}
-
-		</script>
+	{% include 'product/card_parts/popover_features.html' %}
 
 
-		<!-- DESCTOP POP OVER THING END -->
+	<!-- DESCTOP POP OVER THING END -->
 			
 
 	</div>
@@ -673,7 +497,8 @@
 			</div>
 
 			<!-- Опции -->
-		    {{ product.paws_var }}
+		    {% include 'product/card_parts/options.html' %}
+
 		</div>
 
 
@@ -682,42 +507,11 @@
 			<!-- button class='btn-outline-gray my-2'>Вся коллекция</button -->
 		</div>	
 
-		<!-- SLIDER INTERIORS -->
 
-		<div class='banner mt-3'>
-			<div id='carouselExampleIndicators' class='carousel slide' data-bs-ride='carousel'>
-				<div class='carousel-indicators'>
-				    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>
-				    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2'></button>
-				    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3'></button>
-				    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='3' aria-label='Slide 4'></button>
-				</div>
+		<!-- SLIDER INTERIORS PHONE -->
 
-				<div class='carousel-inner'>
-				    <div class='carousel-item active'>
-				      <img src='{{ product.slider_interior_1_mob }}' class='d-block w-100' alt='...'>
-				    </div>
-				    <div class='carousel-item'>
-				      <img src='{{ product.slider_interior_2_mob }}' class='d-block w-100' alt='...'>
-				    </div>
-				    <div class='carousel-item'>
-				      <img src='{{ product.slider_interior_3_mob }}' class='d-block w-100' alt='...'>
-				    </div>
-				    <div class='carousel-item'>
-				      <img src='{{ product.slider_interior_4_mob }}' class='d-block w-100' alt='...'>
-				    </div>
-				</div>
-				  
-				<button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev'>
-				    <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-				    <span class='visually-hidden'>Previous</span>
-				</button>
-				<button class='carousel-control-next' type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next'>
-				    <span class='carousel-control-next-icon' aria-hidden='true'></span>
-				    <span class='visually-hidden'>Next</span>
-				</button>
-			</div>
-		</div>
+		{% include 'product/card_parts/slider_interior_mob.html' %}
+
 
 		<div class='container-fluid mt-5'>
 			<p class='mb-4'>Стоимость дивана в нестандартной комплектации рассчитывается в салоне, после выбора клиентом обивки и дополнительных опций. После того, как вы определилисть, подписывается договор, гле прописаны все особенности товара, его доставка и гарантии.</p>
@@ -730,7 +524,7 @@
 		</div>
 
 	</div>
-	<!-- PHONE & TABLET END -->
+<!-- PHONE & TABLET END -->
 
 <div class="container ms-4 my-4">
 	<a href='../'><button class='btn-outline-gray mt-3'>Вся коллекция</button></a>
@@ -738,8 +532,7 @@
 
 <!-- PRODUCTS SLIDER START only desctop show -->
 	
-	{% include 'product/popular_goods.html' %}
-
+	{% include 'product/card_parts/popular_goods.html' %}
 
 <!-- PRODUCTS SLIDER END-->
 

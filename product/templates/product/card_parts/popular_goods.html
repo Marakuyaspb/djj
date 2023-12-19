@@ -1,0 +1,89 @@
+<h3> POPULAR WONDERFUL CAROUSEL</h3>
+
+{% if product.popular %}
+
+
+<div class="owl-carousel owl-theme d-none d-md-block d-lg-block d-xl-block d-xxl-block">
+
+
+{% for e in products %}
+
+	<div class = "slide-collection product_card p-3" >
+		<a href="{% url 'product:single_product' e.id %}">
+	
+		<!-- HEAD OF THE CARD -->
+
+			<!-- DESCTOP HEAD -->
+			<div class = 'd-none d-md-block d-lg-block d-xl-block d-xxl-block'>
+				<div class = 'd-flex justify-content-between'>
+					<div>
+						<h3 class='product_card_header'>{{ e.collection }}</h3>
+					</div>
+			
+					<div>
+					{% if el.is_new %}
+						<img src="{{ el.icon_is_new.url }}" alt="Можем доставить за 2 дня">
+					{% endif %}
+					{% if el.available_in_showroom %}
+						<img src="{{ el.icon_available_in_showroom.url }}" alt="Можем доставить за 2 дня">
+					{% endif %}
+
+					{% if el.available_for_delivery_2 %}
+						<img src="{{ el.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
+					{% endif %}
+					</div>
+
+				</div>
+			</div>
+		<!-- END OF THE HEAD OF THE CARD -->
+
+		<!-- THE CARD BODY -->			
+			<div class = 'card-bottom-info'>
+				<center class='mt-5 d-block d-md-none'>
+					<img src="http://127.0.0.1:8000/media/{{ el.product_img }}" class="img-fluid product_img_under">
+				</center>
+
+				<div class = 'd-flex justify-content-between'>
+					<div class='cacao'>В наличии</div>
+					<div class='old-price_cat_page'>{{ e.price }} ₽</div>
+				</div>
+
+				<div class = 'd-flex justify-content-between'>
+					<div class='cacao'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</div>
+					<div class='cacao price_cat_page'>{{ e.price_sale }} ₽</div>
+				</div>
+			</div>
+		<!-- END OF THE CARD BODY -->	
+		</a>
+	</div>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+	$(function() {
+	  // Owl Carousel
+	  var owl = $(".owl-carousel");
+	  owl.owlCarousel({
+	    items: 4,
+	    margin: 10,
+	    loop: true,
+	    nav: true
+	  });
+	});
+
+
+	$(".next_button").click(function(){
+	  owl.trigger("next.owl.carousel");
+	});
+	 
+	$(".prev_button").click(function(){
+	  owl.trigger("prev.owl.carousel");
+	});
+
+</script>
