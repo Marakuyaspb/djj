@@ -1,5 +1,3 @@
-{% for product in options %}
-
 <div id='carouselExampleIndicators' class='carousel slide' data-bs-ride='carousel'>
 	<div class='carousel-indicators'>
 	    <button type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>
@@ -10,16 +8,16 @@
 
 	<div class='carousel-inner'>
 	    <div class='carousel-item active'>
-	      <img src='{{ product.sl_interior_1_img_mob }}' class='d-block w-100' alt='...'>
+	      <img src='http://127.0.0.1:8000/media/{{ product.slider_interior.sl_interior_1_img_mob }}' class='d-block w-100' alt='...'>
 	    </div>
 	    <div class='carousel-item'>
-	      <img src='{{ product.sl_interior_2_img_mob }}' class='d-block w-100' alt='...'>
+	      <img src='http://127.0.0.1:8000/media/{{ product.slider_interior.sl_interior_2_img_mob }}' class='d-block w-100' alt='...'>
 	    </div>
 	    <div class='carousel-item'>
-	      <img src='{{ product.sl_interior_3_img_mob }}' class='d-block w-100' alt='...'>
+	      <img src='http://127.0.0.1:8000/media/{{ product.slider_interior.sl_interior_3_img_mob }}' class='d-block w-100' alt='...'>
 	    </div>
 	    <div class='carousel-item'>
-	      <img src='{{ product.sl_interior_4_img_mob }}' class='d-block w-100' alt='...'>
+	      <img src='http://127.0.0.1:8000/media/{{ product.slider_interior.sl_interior_4_img_mob }}' class='d-block w-100' alt='...'>
 	    </div>
 	</div>
 	  
@@ -32,5 +30,3 @@
 	    <span class='visually-hidden'>Next</span>
 	</button>
 </div>
-
-{% endfor %}

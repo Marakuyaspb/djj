@@ -50,12 +50,12 @@ def single_product(request, product_slug=None):
 	if product_slug:
 		product = get_object_or_404(Product, product_slug=product_slug)
 		options = product.options.all()
-		#slider_interior = product.slider_interior
+		slider_interior = product.slider_interior
 	else:
 		# handle error case here
 		pass
 	cart_product_form = CartAddProductForm()
-	return render(request,'product/single_product.html', {'product': product, 'options': options, 'cart_product_form': cart_product_form})
+	return render(request,'product/single_product.html', {'product': product, 'options': options, 'slider_interior':slider_interior, 'cart_product_form': cart_product_form})
 
 
 

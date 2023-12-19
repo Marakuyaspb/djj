@@ -231,6 +231,10 @@ class Product(models.Model):
 	@property
 	def category_slug(self):
 		return self.category.category_slug
+	@property
+	def category_ru(self):
+		return self.category.category_ru
+
 
 	#Collection
 	@property
