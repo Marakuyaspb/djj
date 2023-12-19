@@ -1,7 +1,7 @@
 <h3>options</h3>
 
 
-{% for e in options %}
+{% for product in options %}
 
 <div class='accordion-item'>
 	<h2 class='accordion-header top-strip' id='headingSix'>
@@ -10,21 +10,21 @@
 	<div id='collapseSix' class='accordion-collapse collapse' aria-labelledby='headingSix' data-bs-parent='#accordionExample'>
 		<div class='accordion-body'>
 			<div>
-				<p class='mb-3'>{{ single_product.option_name }}</p>
+				<p class='mb-3'>{{ product.option_name }}</p>
 			</div>
 			<div class='container-fluid'>
 				<div class='row'>
 					<div class='col-md-4 col-sm-12 px-4'>
 						<center>
-						<p>{{ single_product.option_1_description }}
+						<p>{{ product.option_1_description }}
 						</center>
-						<img src='{{ single_product.option_1_img }}'>
+						<img src='{{ product.option_1_img }}'>
 					</div>
 					<div class='col-md-4 col-sm-12 px-4'>
 						<center>
-						<p>{{ single_product.option_2_description }}
+						<p>{{ product.option_2_description }}
 						</center>
-						<img src='{{ single_product.option_2_img }}'>
+						<img src='{{ product.option_2_img }}'>
 					</div>
 				</div>
 			</div>
@@ -32,4 +32,3 @@
 	</div>
 
 {% endfor %}
-
