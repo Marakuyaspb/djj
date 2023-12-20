@@ -22,8 +22,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 28%;
-  bottom: -5em;
+  left: 29em;
+  bottom: -6em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -34,7 +34,7 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 40%;
+  left: 36em;
   bottom: 17em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -46,7 +46,7 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 55%;
+  left: 45em;
   bottom: 1em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -58,8 +58,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 57%;
-  bottom: 15em;
+  left: 75em;
+  bottom: 14em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -70,8 +70,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 53%;
-  top: 18em;
+  left: 72em;
+  bottom: 6em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
