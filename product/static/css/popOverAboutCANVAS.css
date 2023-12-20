@@ -12,7 +12,7 @@
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    background-image: url("http://127.0.0.1:8000/static/img/popovers_all.jpg");
+    background-image: url("http://127.0.0.1:8000/static/img/popovers_arm.png");
 }
 
 
@@ -83,7 +83,7 @@
 /*  VARIANTS OF BACKGROUND  */
 
 .canvas-Сonsono-arm{
-    background-image: url("http://127.0.0.1:8000/static/img/popovers_all.jpg");
+    background-image: url("http://127.0.0.1:8000/static/img/popovers_all.jpg")!important;
   }
 .canvas-consono-str{
     background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/CONSONO-CORNER_VELUTTO_32.png");

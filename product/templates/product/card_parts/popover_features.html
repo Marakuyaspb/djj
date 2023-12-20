@@ -1,12 +1,13 @@
 <canvas id='canvasDesctop' class='canvas-{{product.collection}}-{{product.category}}'></canvas>
-
+<div></div>
 <div class='popOvers'>
 
 	<div id='popPaw'>
 		<div class='card' style='width: 15rem;'>
 			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_1_img }}' class='card-img-top'>
 			<div class='card-body'>
-				<p class='card-text'>Мы прошиваем наши диваны турецкими мебельными нитями марки POLYART. Это синтетические армированные  нити с полиэфирной оплёткой. Нити обладают высокой прочностью и устойчивы к истиранию. 
+				<p class='card-text'>
+					{{ product.popover.popover_1_description }}
 				</p>
 			</div>
 		</div>
@@ -16,7 +17,8 @@
 		<div class='card' style='width: 15rem;'>
 			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_2_img}}'>
 			<div class='card-body'>
-				<p class='card-text'>Широкие комфортные подлокотники - идеальны для расслабленного отдыха 
+				<p class='card-text'>
+					{{ product.popover.popover_2_description }}
 				</p>
 			</div>
 		</div>
@@ -26,7 +28,8 @@
 		<div class='card' style='width: 15rem;'>
 			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_3_img}}'>
 			<div class='card-body'>
-				<p class='card-text'>Вывернутый шов - трендовое направление в дизайне сегодняшнего дня. Добавляет изюминку дивану и выделяет его в интерьере
+				<p class='card-text'>
+					{{ product.popover.popover_3_description }}
 				</p>
 			</div>
 		</div>
@@ -36,7 +39,8 @@
 		<div class='card' style='width: 15rem;'>
 			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_4_img}}'>
 			<div class='card-body'>
-				<p class='card-text'>Комфортабельное место сидения обеспечивается наполнителем из премиальной пены Elax 
+				<p class='card-text'>
+					{{ product.popover.popover_4_description }}
 				</p>
 			</div>
 		</div>
@@ -46,7 +50,8 @@
 		<div class='card' style='width: 15rem;'>
 			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_5_img}}'>
 			<div class='card-body'>
-				<p class='card-text'>Элегантные зеркальные ножки польского производства отражают напольное покрытие добавляет дивану лёгкости
+				<p class='card-text'>
+					{{ product.popover.popover_5_description }}
 				</p>
 			</div>
 		</div>
