@@ -4,7 +4,7 @@
 
 	<div id='popPaw'>
 		<div class='card' style='width: 15rem;'>
-			<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_1_img }}' class='card-img-top'>
 			<div class='card-body'>
 				<p class='card-text'>Мы прошиваем наши диваны турецкими мебельными нитями марки POLYART. Это синтетические армированные  нити с полиэфирной оплёткой. Нити обладают высокой прочностью и устойчивы к истиранию. 
 				</p>
@@ -14,7 +14,7 @@
 
 	<div id='popSeat'>
 		<div class='card' style='width: 15rem;'>
-			<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_2_img}}'>
 			<div class='card-body'>
 				<p class='card-text'>Широкие комфортные подлокотники - идеальны для расслабленного отдыха 
 				</p>
@@ -24,7 +24,7 @@
 
 	<div id='popFrontLeft'>
 		<div class='card' style='width: 15rem;'>
-			<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_3_img}}'>
 			<div class='card-body'>
 				<p class='card-text'>Вывернутый шов - трендовое направление в дизайне сегодняшнего дня. Добавляет изюминку дивану и выделяет его в интерьере
 				</p>
@@ -34,7 +34,7 @@
 
 	<div id='popFrontRight'>
 		<div class='card' style='width: 15rem;'>
-			<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_4_img}}'>
 			<div class='card-body'>
 				<p class='card-text'>Комфортабельное место сидения обеспечивается наполнителем из премиальной пены Elax 
 				</p>
@@ -44,7 +44,7 @@
 
 	<div id='popBack'>
 		<div class='card' style='width: 15rem;'>
-			<img src='http://temp.decona.ru/wp-content/uploads/2023/02/Detail_1-1.png' class='card-img-top'>
+			<img src='http://127.0.0.1:8000/media/{{ product.popover.popover_5_img}}'>
 			<div class='card-body'>
 				<p class='card-text'>Элегантные зеркальные ножки польского производства отражают напольное покрытие добавляет дивану лёгкости
 				</p>
@@ -55,14 +55,13 @@
 </div>
 
 
-<script type="text/javascript">
-	
+<script type="text/javascript">	
 	function showPopOverscanvasDesctop(event){
 	 
 	  var canvasDesctop = document.getElementById("canvasDesctop");
 	  var ctx = canvasDesctop.getContext('2d');
 
-	/*  console.log('Hey! You ll see armchair');*/
+		console.log('Hey! You ll see armchair');
 
 	  const canvasDesctop_width = canvasDesctop.width = 1600;
 	  const canvasDesctop_heigh = canvasDesctop.height = 800;
@@ -70,34 +69,34 @@
 	/* сделать эту штуку вариативной из массива */
 
 	  var pin_popPaw = new Image();
-	  pin_popPaw.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+	  pin_popPaw.src = 'http://127.0.0.1:8000/static/img/pin.svg';
 	  pin_popPaw.onload = function(){
 	    ctx.imageSmoothingEnabled = false;
-	    ctx.drawImage(pin_popPaw, 496, 533, 50, 50);
+	    ctx.drawImage(pin_popPaw, 608, 562, 50, 50);
 	  }
 	  var pin_popSeat = new Image();
-	  pin_popSeat.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+	  pin_popSeat.src = 'http://127.0.0.1:8000/static/img/pin.svg';
 	  pin_popSeat.onload = function(){
 	    ctx.imageSmoothingEnabled = false;
-	    ctx.drawImage(pin_popSeat, 622, 415, 50, 50);
+	    ctx.drawImage(pin_popSeat, 720, 334, 50, 50);
 	  }
 	  var pin_popFrontLeft = new Image();
-	  pin_popFrontLeft.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+	  pin_popFrontLeft.src = 'http://127.0.0.1:8000/static/img/pin.svg';
 	  pin_popFrontLeft.onload = function(){
 	    ctx.imageSmoothingEnabled = false;
-	    ctx.drawImage(pin_popFrontLeft, 852, 550, 50, 50);
+	    ctx.drawImage(pin_popFrontLeft, 827, 440, 50, 50);
 	  }
 	  var pin_popFrontRight = new Image();
-	  pin_popFrontRight.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+	  pin_popFrontRight.src = 'http://127.0.0.1:8000/static/img/pin.svg';
 	  pin_popFrontRight.onload = function(){
 	    ctx.imageSmoothingEnabled = false;
-	    ctx.drawImage(pin_popFrontRight, 710, 470, 50, 50);
+	    ctx.drawImage(pin_popFrontRight, 1014, 452, 50, 50);
 	  }
 	  var pin_popBack = new Image();
-	  pin_popBack.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
+	  pin_popBack.src = 'http://127.0.0.1:8000/static/img/pin.svg';
 	  pin_popBack.onload = function(){
 	    ctx.imageSmoothingEnabled = false;
-	    ctx.drawImage(pin_popBack, 875, 734, 50, 50);
+	    ctx.drawImage(pin_popBack, 940, 273, 50, 50);
 	  }
 
 	  canvasDesctop.style.width = canvasDesctop.offsetWidth + 'px';
@@ -121,21 +120,21 @@
 	    const rect = canvasDesctop.getBoundingClientRect();
 	    mouse.x = e.clientX - rect.left;
 	    mouse.y = e.clientY - rect.top;
-	    console.log(mouse.x, mouse.y);
+		/* console.log(mouse.x, mouse.y);*/
 
-	    if (mouse.x >= 496 && mouse.x <= 546 && mouse.y >= 533 && mouse.y <= 583) {
+	    if (mouse.x >= 608 && mouse.x <= 562 && mouse.y >= 658 && mouse.y <= 612) {
 	      popPaw.style.display = 'block';
 	    }
-	    else if (mouse.x >= 622 && mouse.x <= 672 && mouse.y >= 415 && mouse.y <= 465) {
+	    else if (mouse.x >= 720 && mouse.x <= 334 && mouse.y >= 770 && mouse.y <= 384) {
 	      popSeat.style.display = 'block';
 	    }
-	    else if (mouse.x >= 852 && mouse.x <= 902 && mouse.y >= 550 && mouse.y <= 600) {
+	    else if (mouse.x >= 827 && mouse.x <= 440 && mouse.y >= 977 && mouse.y <= 490) {
 	      popFrontLeft.style.display = 'block';
 	    }
-	    else if (mouse.x >= 710 && mouse.x <= 760 && mouse.y >= 470 && mouse.y <= 520) {
+	    else if (mouse.x >= 1014 && mouse.x <= 452 && mouse.y >= 1064 && mouse.y <= 602) {
 	      popFrontRight.style.display = 'block';
 	    }
-	    else if (mouse.x >= 875 && mouse.x <= 925 && mouse.y >= 734 && mouse.y <= 824) {
+	    else if (mouse.x >= 940 && mouse.x <= 273 && mouse.y >= 990 && mouse.y <= 333) {
 	      popBack.style.display = 'block';
 	    }
 
@@ -148,4 +147,5 @@
 	    }
 	  });
 	}
+	showPopOverscanvasDesctop()
 </script>

@@ -542,7 +542,7 @@ a .icon-header:hover{
 	padding-left: 8em;
   padding-top: 5em;
 }
-}
+
 .price_cat_page{
 	font-size:1em!important;
 }
@@ -580,6 +580,11 @@ a .icon-header:hover{
 .latte_wrap:hover {
   background-color: #F6F1EE!important; 
 }
+
+.status_icon{
+	max-width: 46px;
+}
+
 
 
 

@@ -9,7 +9,7 @@
 
 <div class='container my-5'>
 
-<h2>Корзина</h2>
+<h3>Корзина</h3>
 <table class="cart">
 
 <thead>
@@ -25,17 +25,16 @@
 
 <tbody>
 {% for item in cart %}
-
 	{% with product=item.product %}
 		<tr>
 			<td>
-				<!-- <a href="{{ product.product_slug }}"> -->
+				<a href="http://127.0.0.1:8000/products/{{ product.product_slug }}">
 					<img src="
 					{% if product.product_img %}{{ product.product_img.url }}
 					{% else %}
 						{% static 'media/no_img.jpg' %}
 					{% endif %}">
-				<!-- </a> -->
+				</a>
 			</td>
 			<td>{{ product.product_full_name }}</td>
 			
@@ -64,8 +63,8 @@
 			</td>
 
 
-			<td class="num">${{ item.price }}</td>
-			<td class="num">${{ item.total_price }}</td>
+			<td class="num">{{ item.price }}₽</td>
+			<td class="num">{{ item.total_price }}₽</td>
 		</tr>
 	{% endwith %}
 
@@ -73,7 +72,7 @@
 	<tr class="total latte_bg">
 		<td>Итого</td>
 		<td colspan="4"></td>
-		<td class="num">${{ cart.get_total_price }}</td>
+		<td class="num">{{ cart.get_total_price }}₽</td>
 	</tr>
 </tbody>
 </table>

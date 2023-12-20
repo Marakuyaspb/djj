@@ -8,7 +8,7 @@
 
 	<div class='d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
 		<div class='thin ms-4'>
-			<a id='collection' class='{{ product.collection }}' href='#'>Продукция</a> / {{ product.category_ru }}
+			<a id='collection' class='{{ product.collection }}' href='{% url "product:products" %}'>Продукция</a> / {{ product.category_ru }}
 		</div>
 
 		<div class='row'>
@@ -23,20 +23,20 @@
 				<div class='slide-fabric-nav'>
 					<a href='http://127.0.0.1:8000/products/{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_1}}'>
 
-						<img class='slide-fabric-button fabric-var-desctop fabric-var CAMBRIDGE_600' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_1 }}'>
+						<img class='slide-fabric-button fabric-var-desctop fabric-var' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_1 }}'>
 					</a>
-					<a href='http://127.0.0.1:8000/products{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_1}}'> 
+					<a href='http://127.0.0.1:8000/products{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_2}}'> 
 
-				    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_01' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_2 }}'>
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_2 }}'>
 				    </a>
 					<a href='http://127.0.0.1:8000/products{{product.collection_slug}}-{{product.category}}-{{product.slug_fabric_icon_3}}'> 
-				    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_21' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_3 }}'>
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_3 }}'>
 				    </a>
 					<a href='{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_4}}'> 
-				    	<img class='slide-fabric-button fabric-var-desctop fabric-var PIXEL_FOREST' id='T' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_4 }}'>
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var' id='T' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_4 }}'>
 				    </a>
 					<a href='http://127.0.0.1:8000/products{{product.collection_slug}}}{{product.category_slug}}{{product.slug_fabric_icon_5}}'> 
-				    	<img class='slide-fabric-button fabric-var-desctop fabric-var VELUTTO_16' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_5 }}'>  
+				    	<img class='slide-fabric-button fabric-var-desctop fabric-var' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_5 }}'>  
 				    </a>  	
 				</div>
 
@@ -44,14 +44,14 @@
 				<div class='d-flex flex-row ms-4 card_icons'>
 
 				{% if product.is_new %}
-					<img src="{{ product.icon_is_new.url }}" alt="Можем доставить за 2 дня">
+					<img src="{{ product.icon_is_new.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
 				{% endif %}
 				{% if product.available_in_showroom %}
-					<img src="{{ product.icon_available_in_showroom.url }}" alt="Можем доставить за 2 дня">
+					<img src="{{ product.icon_available_in_showroom.url }}" alt="Доступно в шоуруме" class='status_icon'>
 				{% endif %}
 
 				{% if product.available_for_delivery_2 %}
-					<img src="{{ product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
+					<img src="{{ product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
 				{% endif %}
 
 				</div>
@@ -96,7 +96,7 @@
 			</div>
 
 			<div class='no-padding-right padding-left-4 col-md-4 pt-5' id='content_right'>
-				<img class='img-fluid banner' src='{{ product.closeup }}'>
+				<img class='img-fluid banner' src='http://127.0.0.1:8000/media/{{ product.closeup }}'>
 			</div>
 		</div>
 
@@ -144,9 +144,7 @@
 		        <div id='collapseOne' class='accordion-collapse collapse show' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
 		            <div class='accordion-body'>
 		            	<div class='accordion-padding'>
-			                <p id='description' >
-			                	{{ product.description }}
-			                </p>
+			                <p id='description'> {{ product.description }} </p>
 
 							<div class='my-4'>
 								<table class='prod-card-table col-5'>
@@ -240,11 +238,11 @@
 			<!-- Опции -->
 		    {% include 'product/card_parts/options.html' %}
 		</div>
+		<div class="banner" onmousemove="showPopOverscanvasDesctop()"></div>
 
-		
 
 		<!-- Slider with interiors DESCTOP -->
-		<div class='banner mt-3' onmousemove="showPopOverscanvasConsonoArm()"></div>
+
 
 		{% include 'product/card_parts/slider_interior.html' %}
 		
@@ -263,6 +261,12 @@
 	{% include 'product/card_parts/popover_features.html' %}
 
 
+
+
+
+
+
+
 	<!-- DESCTOP POP OVER THING END -->
 			
 
@@ -274,7 +278,7 @@
 
 	<div class='d-block d-md-none'>
 		<div class='thin ms-4 mt-3'>
-			<a id='collection' class='{{ product.collection }}' href='http://temp.decona.ru/'>Продукция</a> / {{ product.category_ru }}
+			<a id='collection' class='{{ product.collection }}' href='{% url "product:products" %}'>Продукция</a> / {{ product.category_ru }}
 		</div>
 
 		<p class='h-center pt-5'>{{ product.product_name }}</p>
@@ -286,36 +290,40 @@
         <!-- fabric buttons -->
 
 		<div class='slide-fabric-nav'>
+
 			<a href='http://127.0.0.1:8000/products/{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_1}}'>
-
-				<img class='slide-fabric-button fabric-var-desctop fabric-var CAMBRIDGE_600' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_1 }}'>
+				<img class='slide-fabric-button fabric-var-desctop fabric-var' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_1 }}'>
 			</a>
-			<a href='http://127.0.0.1:8000/products{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_1}}'> 
 
-		    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_01' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_2 }}'>
+			<a href='http://127.0.0.1:8000/products{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_1}}'> 
+		    	<img class='slide-fabric-button fabric-var-desctop fabric-var' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_2 }}'>
 		    </a>
+
 			<a href='http://127.0.0.1:8000/products{{product.collection_slug}}-{{product.category}}-{{product.slug_fabric_icon_3}}'> 
-		    	<img class='slide-fabric-button fabric-var-desctop fabric-var JAZZ_21' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_3 }}'>
+		    	<img class='slide-fabric-button fabric-var-desctop fabric-var' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_3 }}'>
 		    </a>
+
 			<a href='{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_4}}'> 
-		    	<img class='slide-fabric-button fabric-var-desctop fabric-var PIXEL_FOREST' id='T' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_4 }}'>
+		    	<img class='slide-fabric-button fabric-var-desctop fabric-var' id='T' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_4 }}'>
 		    </a>
-			<a href='http://127.0.0.1:8000/products{{product.collection_slug}}}{{product.category_slug}}{{product.slug_fabric_icon_5}}'> 
-		    	<img class='slide-fabric-button fabric-var-desctop fabric-var VELUTTO_16' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_5 }}'>  
-		    </a>  	
+
+			<a href='http://127.0.0.1:8000/products{{product.collection_slug}}{{product.category_slug}}{{product.slug_fabric_icon_5}}'> 
+		    	<img class='slide-fabric-button fabric-var-desctop fabric-var' id='' src='http://127.0.0.1:8000/media/{{ product.product_fabric_icon_5 }}'>  
+		    </a> 
+
 		</div>
 
 		<div class='d-flex flex-row ms-4 card_icons'>
 
 			{% if product.is_new %}
-				<img src="{{ product.icon_is_new.url }}" alt="Можем доставить за 2 дня">
+				<img src="{{ product.icon_is_new.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
 			{% endif %}
 			{% if product.available_in_showroom %}
-				<img src="{{ product.icon_available_in_showroom.url }}" alt="Можем доставить за 2 дня">
+				<img src="{{ product.icon_available_in_showroom.url }}" alt="Доступно в шоуруме" class='status_icon'>
 			{% endif %}
 
 			{% if product.available_for_delivery_2 %}
-				<img src="{{ product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
+				<img src="{{ product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
 			{% endif %}
 
 		</div>
@@ -487,8 +495,8 @@
 		                			<p class='pt-4'>Больше образцов тканей вы можете посмотреть в наших салонах.
 									<p><a href='http://temp.decona.ru/showrooms/'><button class='btn-outline-gray mt-3'>Адреса салонов</button></a>
 								</div>
-								<div class='col-md-4 col-sm-12'>
-									<img src='{{ product.closeup }}' class='img-fluid'>
+								<div class='col-md-4 col-sm-12 mt-2'>
+									<img src='http://127.0.0.1:8000/media/{{ product.fabric_name.product_fabric_img }}' class='img-fluid'>
 								</div>
 							</div>	
 			          	</div>

@@ -1,17 +1,18 @@
 .popOvers{
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
 }
 
 #canvasDesctop {
-  background-size: 1600px;
-  display: block;
-  width: 1600px;
-  height: 800px;
-  position: relative;
-  margin-right: auto;
-  margin-left: auto;
+    background-size: 1600px;
+    display: block;
+    width: 1600px;
+    height: 800px;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("http://127.0.0.1:8000/static/img/popovers_all.jpg");
 }
 
 
@@ -22,7 +23,7 @@
   z-index: 4;
   display: none;
   left: 28%;
-  bottom: .5em;
+  bottom: -5em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -33,7 +34,7 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 44%;
+  left: 40%;
   bottom: 17em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -45,8 +46,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 57%;
-  bottom: 5em;
+  left: 55%;
+  bottom: 1em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -57,8 +58,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 53%;
-  bottom: 17.5em;
+  left: 57%;
+  bottom: 15em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -69,8 +70,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 63%;
-  top: -5em;
+  left: 53%;
+  top: 18em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -81,8 +82,8 @@
 
 /*  VARIANTS OF BACKGROUND  */
 
-.canvas-consono-arm{
-    background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/CONSONO_ARM_CAMBRIDGE_600.jpg");
+.canvas-Сonsono-arm{
+    background-image: url("http://127.0.0.1:8000/static/img/popovers_all.jpg");
   }
 .canvas-consono-str{
     background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/CONSONO-CORNER_VELUTTO_32.png");

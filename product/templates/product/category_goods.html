@@ -20,14 +20,14 @@
 			
 					<div>
 					{% if el.is_new %}
-						<img src="{{ el.icon_is_new.url }}" alt="Можем доставить за 2 дня">
+						<img src="{{ el.icon_is_new.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
 					{% endif %}
 					{% if el.available_in_showroom %}
-						<img src="{{ el.icon_available_in_showroom.url }}" alt="Можем доставить за 2 дня">
+						<img src="{{ el.icon_available_in_showroom.url }}" alt="Товар доступен в шоуруме" class='status_icon'>
 					{% endif %}
 
 					{% if el.available_for_delivery_2 %}
-						<img src="{{ el.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
+						<img src="{{ el.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
 					{% endif %}
 					</div>
 				</div>
