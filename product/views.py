@@ -30,13 +30,6 @@ def cat_view (request, category_slug=None):
 	return render(request, 'product/category_goods.html', {'products': products})
 
 
-
-def popular_goods_carousel(request):
-	popular = Product.objects.filter(popular=True)
-	return render(request, 'popular_goods.html', {'popular': popular})
-
-
-
 def error_404_view(request, exception):
 
 	# we add the path to the 404.html file
@@ -51,11 +44,12 @@ def single_product(request, product_slug=None):
 		product = get_object_or_404(Product, product_slug=product_slug)
 		options = product.options.all()
 		slider_interior = product.slider_interior
+		popular = Product.objects.filter(popular=True)
 	else:
 		# handle error case here
 		pass
 	cart_product_form = CartAddProductForm()
-	return render(request,'product/single_product.html', {'product': product, 'options': options, 'slider_interior':slider_interior, 'cart_product_form': cart_product_form})
+	return render(request,'product/single_product.html', {'product': product, 'options': options, 'slider_interior':slider_interior, 'popular': popular, 'cart_product_form': cart_product_form})
 
 
 

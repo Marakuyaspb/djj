@@ -191,6 +191,22 @@ class Product(models.Model):
 	price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена')
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена (распродажа)')
 
+# Carousel #
+	carousel_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', null=True, blank=True, verbose_name = 'Изображение товара')
+
+
+	carousel_item_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | десктоп', default='static/img/popovers_arm.png')
+	carousel_item_2 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 2 | десктоп', default='static/img/popovers_arm.png')
+	carousel_item_3 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 3 | десктоп', default='static/img/popovers_arm.png')
+	carousel_item_4 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | десктоп', default='static/img/popovers_arm.png')
+	carousel_item_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 5 | десктоп', default='static/img/popovers_arm.png')
+	carousel_item_mob_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | мобильный', default='static/img/popovers_arm.png')
+	carousel_item_mob_2 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 2 | мобильный', default='static/img/popovers_arm.png')
+	carousel_item_mob_3 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 3 | мобильный', default='static/img/popovers_arm.png')
+	carousel_item_mob_4 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png')
+	carousel_item_mob_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png')
+
+
 	carousel_items = models.ManyToManyField('ProductImage', blank=True, related_name='carousel_items', verbose_name ='Слайдер с товаром | десктоп')
 	carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob', blank=True, verbose_name ='Слайдер с товаром | мобильный')
 	closeup = models.ImageField(upload_to='closeups/', blank=True, null=True, verbose_name = 'Крупный фрагмент справа')

@@ -790,16 +790,19 @@ a .icon-header:hover{
 	margin-top: auto;
 	margin-bottom: 3.5em;
 
-/*.owl-carousel{
-		responsive:{
-	  0:{
-	    items:1
-	  },
-	  768:{
-	    items:2
-	  },
-	  1180:{
-	    items:3
-	  }
-	}
-}*/
+
+
+/* MULTIPLE ITEMS CAROUSEL */
+.carousel_wrap {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+div.product_card{
+	display: inline-block;
+  padding: 1em;
+}
+.product_img_under_carousel{
+	margin-top: -1em;
+  width: 24em;
+}
