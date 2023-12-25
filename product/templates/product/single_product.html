@@ -3,9 +3,8 @@
 
 {% block content %}
 
-<div class=''>
-	<!-- DESCTOP -->
 
+<!-- DESCTOP -->
 	<div class='d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
 		<div class='thin ms-4'>
 			<a id='collection' class='{{ product.collection }}' href='{% url "product:products" %}'>Продукция</a> / {{ product.category_ru }}
@@ -260,14 +259,9 @@
 
 	 {% include 'product/card_parts/popover_features.html' %} 
 
-
-
-
-
 	<!-- DESCTOP POP OVER THING END -->
-			
 
-	</div>
+</div>
 	<!-- DESCTOP END -->
 
 
@@ -535,12 +529,18 @@
 	<a href='../'><button class='btn-outline-gray mt-3'>Вся коллекция</button></a>
 </div>
 
-<!-- PRODUCTS SLIDER START only desctop show -->
-	
-	{% include 'product/card_parts/popular_goods.html' %}
-
+<!-- THE CURRENT COLLECTION PRODUCTS SLIDER START -->	
+	{% include 'product/card_parts/slider_all_collection.html' %}
 <!-- PRODUCTS SLIDER END-->
 
-</div>
+<!-- GRAY RECTANGLES START -->
+	{% include 'product/card_parts/gray_rectangles.html' %}
+<!-- GRAY RECTANGLES END -->
+
+<!-- POPULAR PRODUCTS SLIDER START -->	
+	{% include 'product/card_parts/slider_popular_goods.html' %}
+<!-- PRODUCTS SLIDER END-->
+
+
 
 {% endblock %}

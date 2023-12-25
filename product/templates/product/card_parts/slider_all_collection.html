@@ -1,0 +1,110 @@
+<style>
+	.carousel_wrap {
+	  width: 100%;
+	  overflow-x: auto;
+	  white-space: nowrap;
+	}
+	div.product_card{
+		display: inline-block;
+	  padding: 1em;
+	}
+	/*.product_card{
+		border-right: 1px solid #DCCBC7;
+		line-height: 10px;
+	}*/
+	.product_img_under_carousel{
+		position: relative;
+	  z-index: 1 !important;
+		margin-bottom: -1em;
+	  width: 22em;
+	  padding-right: 1em;
+	  padding-left: 1em;
+	}
+
+	.product_card_header_carousel{
+		font-size: 2em !important;
+		padding-bottom: 1em;
+	}
+</style>
+
+
+<div class="carousel_wrap" >
+{% for e in similar_products %}
+		<div class="product_card">
+			<a href="{% url 'product:single_product' e.product_slug %}">
+			<!-- HEAD OF THE CARD -->
+				<div class = 'd-flex justify-content-between'>
+					<div>
+						<h3 class='product_card_header_carousel'>{{ e.collection }}</h3>
+					</div>
+
+					<div>
+						{% if el.is_new %}
+							<img src="{{ el.icon_is_new.url }}" alt="Можем доставить за 2 дня">
+						{% endif %}
+						{% if el.available_in_showroom %}
+							<img src="{{ el.icon_available_in_showroom.url }}" alt="Можем доставить за 2 дня">
+						{% endif %}
+
+						{% if el.available_for_delivery_2 %}
+							<img src="{{ el.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
+						{% endif %}
+					</div>
+				</div>
+			<!-- END OF THE HEAD OF THE CARD -->
+
+			<!-- THE CARD BODY -->			
+				<div class = 'card-bottom-info'>
+					<center class='mt-5 '>
+						<img src="http://127.0.0.1:8000/media/{{ e.product_img }}" class="img-fluid product_img_under_carousel">
+					</center>
+
+					<div class = 'd-flex justify-content-between'>
+						<div class='cacao'>В наличии</div>
+						<div class='old-price_cat_page'>{{ e.price }} ₽</div>
+					</div>
+
+					<div class = 'd-flex justify-content-between'>
+						<div class='cacao'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</div>
+						<div class='cacao price_cat_page'>{{ e.price_sale }} ₽</div>
+					</div>
+				</div>
+			<!-- END OF THE CARD BODY -->	
+			</a>
+		</div>
+	{% endfor %}
+</div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  let position = 0;
+  const scrollIt = document.querySelector('.carousel_wrap');
+
+  // Function to animate the scrolling of slides
+  function scrollSlides() {
+    scrollIt.scrollTo({
+      left: position,
+      behavior: 'smooth'
+    });
+    position += 400; // Increment position for next animation
+    if (position > scrollIt.scrollWidth - scrollIt.clientWidth) {
+      position = 0; // Reset position to start over
+    }
+  }
+
+  // Auto-scroll slides every 3 seconds
+  setInterval(scrollSlides, 3000);
+
+  // Enable mouse scroll on .scroll_it element
+  scrollIt.addEventListener('wheel', function(e) {
+    e.preventDefault();
+    if (e.deltaY < 0) {
+      this.scrollLeft -= 100;
+    } else {
+      this.scrollLeft += 100;
+    }
+  });
+});
+
+</script>

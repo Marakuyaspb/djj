@@ -45,11 +45,12 @@ def single_product(request, product_slug=None):
 		options = product.options.all()
 		slider_interior = product.slider_interior
 		popular = Product.objects.filter(popular=True)
+		similar_products = Product.objects.filter(collection=product.collection)
 	else:
 		# handle error case here
 		pass
 	cart_product_form = CartAddProductForm()
-	return render(request,'product/single_product.html', {'product': product, 'options': options, 'slider_interior':slider_interior, 'popular': popular, 'cart_product_form': cart_product_form})
+	return render(request,'product/single_product.html', {'product': product, 'options': options, 'slider_interior':slider_interior, 'popular': popular, 'similar_products': similar_products,  'cart_product_form': cart_product_form})
 
 
 
