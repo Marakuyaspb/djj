@@ -22,7 +22,7 @@ urlpatterns = [
 	path('contact/', views.contact, name = 'contact'),
 	path('payment/', views.payment, name = 'payment'),
 	path('showrooms/', views.showrooms, name = 'showrooms'),
-	path('products/', views.all_products, name = 'products'),
+	path('products/', views.products, name = 'products'),
 
 # category pages 
 	path('<str:category_slug>/', views.cat_view, name='cat_view'),

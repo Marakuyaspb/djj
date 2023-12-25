@@ -8,7 +8,10 @@ from cart.forms import CartAddProductForm
 from .forms import CustomProductForm
 
 def index(request):
-	return render(request, 'product/index.html')
+	products = Product.objects.all()
+	popular = Product.objects.filter(popular=True)
+	return render(request, 'product/index.html', {'products': products, 'popular': popular})
+
 def about(request):
 	return render(request, 'product/about.html')
 def contact(request):
@@ -17,6 +20,8 @@ def payment(request):
 	return render(request, 'product/payment.html')
 def showrooms(request):
 	return render(request, 'product/showrooms.html')
+def products(request):
+	return render(request, 'product/categories_list.html')
 
 #ALL
 def all_products (request):
@@ -35,7 +40,6 @@ def error_404_view(request, exception):
 	# we add the path to the 404.html file
 	# here. The name of our HTML file is 404.html
 	return render(request, '404/404.html')
-
 
 
 
