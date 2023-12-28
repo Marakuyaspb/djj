@@ -31,7 +31,7 @@
 		</tr>
 		<tr>
 			<th>Покупатель</th>
-			<td>{{ order.first_name }} {{ order.last_name }}</td>
+			<td>{{ order.first_name }}</td>
 		</tr>
 		<tr>
 			<th>E-mail</th>
@@ -40,8 +40,7 @@
 		<tr>
 			<th>Адрес</th>
 			<td>
-			{{ order.address }},
-			{{ order.postal_code }} {{ order.city }}
+{{ order.city }}
 			</td>
 		</tr>
 		<tr>

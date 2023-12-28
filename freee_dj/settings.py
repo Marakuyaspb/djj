@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     # additional packages
-    'debug_toolbar',
+    #'debug_toolbar',
     'crispy_forms',
     'ckeditor',
 

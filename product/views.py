@@ -12,6 +12,12 @@ def index(request):
 	popular = Product.objects.filter(popular=True)
 	return render(request, 'product/index.html', {'products': products, 'popular': popular})
 
+	# CATEGORIES
+def cat_view (request, category_slug=None):
+	category = get_object_or_404(Category, category_slug=category_slug)
+	products = Product.objects.filter(category=category)
+	return render(request, 'product/category_goods.html', {'products': products})
+
 def about(request):
 	return render(request, 'product/about.html')
 def contact(request):
@@ -20,23 +26,18 @@ def payment(request):
 	return render(request, 'product/payment.html')
 def showrooms(request):
 	return render(request, 'product/showrooms.html')
-def products(request):
+def categories(request):
 	return render(request, 'product/categories_list.html')
 
 #ALL
-def all_products (request):
+def products (request):
 	products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
 
-# CATEGORIES
-def cat_view (request, category_slug=None):
-	category = get_object_or_404(Category, category_slug=category_slug)
-	products = Product.objects.filter(category=category)
-	return render(request, 'product/category_goods.html', {'products': products})
+
 
 
 def error_404_view(request, exception):
-
 	# we add the path to the 404.html file
 	# here. The name of our HTML file is 404.html
 	return render(request, '404/404.html')

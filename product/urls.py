@@ -10,7 +10,7 @@ from product.sitemaps import ProductSitemap
 app_name = 'product'
 
 sitemaps = {
-	'products' : ProductSitemap,
+	'all-products' : ProductSitemap,
 }
 
 urlpatterns = [
@@ -23,12 +23,17 @@ urlpatterns = [
 	path('payment/', views.payment, name = 'payment'),
 	path('showrooms/', views.showrooms, name = 'showrooms'),
 	path('products/', views.products, name = 'products'),
+	path('categories/', views.categories, name = 'categories'),
 
-# category pages 
-	path('<str:category_slug>/', views.cat_view, name='cat_view'),
 
 # products dynamic
 	path('products/<slug:product_slug>/', views.single_product, name='single_product'),
+
+# category pages 
+	path('categories/<str:category_slug>/', views.cat_view, name='cat_view'),
+
+
+
 
 #sitemap
 	path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
