@@ -942,13 +942,13 @@ input[type=datetime],
 input[type=datetime-local],
 input[type=color],
 .site textarea {
-	border: 2px solid #9F8A88;
+	border: .1em solid #9F8A88;
 	border-radius: var(--form--border-radius);
 	color: var(--form--color-text);
 	line-height: var(--global--line-height-body);
-	padding: var(--form--spacing-unit);
-	/*margin: 0 2px;*/
-	/*max-width: 100%;*/
+	padding: .5em;
+	margin-bottom: 1em;
+	width: 100%;
 }
 
 input[type=text]:focus,
@@ -1029,13 +1029,16 @@ input[type=url] {
 }
 
 select {
-	border: var(--form--border-width) solid var(--form--border-color);
+	border: .1em solid #9F8A88;
 	color: var(--form--color-text);
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
 	line-height: var(--global--line-height-body);
-	padding: var(--form--spacing-unit) calc(3 * var(--form--spacing-unit)) var(--form--spacing-unit) var(--form--spacing-unit);
+	height: 2.4em;
+	padding-left: .5em;
+	padding-right: 1em;
+	margin-right: .1em;
 	background: var(--global--color-white) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2328303d'><polygon points='0,0 10,0 5,5'/></svg>") no-repeat;
 	background-position: right var(--form--spacing-unit) top 60%;
 }
@@ -1454,15 +1457,24 @@ input[type=reset],
 .wp-block-search .wp-block-search__button,
 .wp-block-button .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
-	/*border: var(--button--border-width) 1px solid;*/
+
+	background-color: transparent;
+  border: 1px solid #5E5B5B;
+  /*color: #5E5B5B !important;*/
+  font-size: 1.125rem;
+  height: 2.4em;
+  /*width: 10rem;*/
+  line-height: 1;
+  padding: .5em;
+
+/*	border: .1em solid #9F8A88;
 	border-radius: var(--button--border-radius);
 	cursor: pointer;
-	/*font-weight: var(--button--font-weight);*/
 	font-family: var(--global--font-secondary);
 	font-size: 1.125rem;
 	line-height: var(--button--line-height);
 	padding: var(--button--padding-vertical) var(--button--padding-horizontal);
-	text-decoration: none;
+	text-decoration: none;*/
 }
 
 .site .button:not(:hover):not(:active):not(.has-text-color),
@@ -1663,21 +1675,6 @@ h6,
 	font-weight: var(--heading--font-weight);
 }
 
-
-h1 strong,
-.h1 strong,
-h2 strong,
-.h2 strong,
-h3 strong,
-.h3 strong,
-h4 strong,
-.h4 strong,
-h5 strong,
-.h5 strong,
-h6 strong,
-.h6 strong {
-	font-weight: var(--heading--font-weight-strong);
-}
 
 h1,
 .h1 {
@@ -3021,3 +3018,4 @@ footer {
 .is-IE .post-thumbnail .wp-post-image {
 	min-width: auto;
 }
+

@@ -29,9 +29,14 @@ def cart_remove(request, product_slug):
 
 def cart_detail(request):
 	cart = Cart(request)
+
+	products = Product.objects.all()
+	popular = Product.objects.filter(popular=True)
+
+
 	for item in cart:
 		item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity'], 'override': True})
-	return render(request, 'cart/detail.html', {'cart': cart})
+	return render(request, 'cart/detail.html', {'products': products, 'popular': popular, 'cart': cart})
 
 #EXPERIMENTS
 # def cart_detail(request):

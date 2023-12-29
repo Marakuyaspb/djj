@@ -411,13 +411,13 @@ a .icon-header:hover{
 	background-image: url("http://temp.decona.ru/wp-content/uploads/goods_pics/prev.svg")!important;
 	padding-top: 3.6em;
 	margin-top: auto;
-	margin-bottom: 3.5em;
+	margin-bottom: -33em;
 }
 .carousel-control-next-icon{
 	background-image: url("http://temp.decona.ru/wp-content/uploads/goods_pics/next.svg")!important;
 	padding-top: 3.6em;
 	margin-top: auto;
-	margin-bottom: 3.5em;
+	margin-bottom: -33em;
 }
 .control-prev .control-next {
   position: absolute;
@@ -583,6 +583,8 @@ a .icon-header:hover{
 
 .status_icon{
 	max-width: 46px;
+	z-index: 444;
+  position: relative;
 }
 
 
@@ -667,7 +669,7 @@ a .icon-header:hover{
 	text-decoration: line-through;
 }
 .margin-arm-card{
-	margin-top: -10em;
+/*	margin-top: -10em;*/
 }
 
 .price_cat_page{
@@ -738,7 +740,12 @@ a .icon-header:hover{
 }
 
 
-
+.cart_img{
+	width: 12em;
+}
+.zero_height{
+	height: 0!important;
+}
 
 
 /* Яндекс карта ЧБ */
