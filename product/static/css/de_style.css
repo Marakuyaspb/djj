@@ -3,21 +3,28 @@ Theme name: Decona_
 */
  
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500&display=swap');
+ @font-face {
+        font-family: "ALS Hauss";
+        src: url("http://http://127.0.0.1:8000/media/ALS_Hauss.woff");
+      }
+
 
 
 body {
-	font-family: 'Montserrat', 'Georgia', sans-serif !important;
+	font-family: 'ALS Hauss', 'Georgia', sans-serif !important;
 	margin: 0;
+
 }
 
 h1, h2, h3 {
-	font-family: 'Montserrat'!important;
+/*	font-family: 'ALS Hauss'!important;*/
 	color: #5E5B5B;
+
 }
 h4, h5, h6 {
-	font-family: 'Montserrat';
+
 	color: #5E5B5B;
+/*	font-weight: ;*/
 }
 h1{
 	font-size: 5.5rem!important;
@@ -45,13 +52,12 @@ p {
 	color: #5E5B5B!important;
 }
 .thin {
-	font-family: 'Montserrat'!important;
 	font-size: 1em!important;
 	font-weight: 100;
 	margin-bottom: -1.5em;
 }
 .just-thin{
-	font-family: 'Montserrat'!important;
+	font-family: 'ALS Hauss'!important;
 	font-weight: 100;
 }
 .major-text {
@@ -60,7 +66,7 @@ p {
 }
 
 .book {
-	font-family: 'Montserrat';
+	font-family: 'ALS Hauss';
 	font-weight: 400;
 }
 
@@ -129,7 +135,6 @@ a:hover{
 	background-color: transparent;
 	font-size: 1.125rem!important;
 	text-decoration: none!important;
-	font-family: 'Montserrat';
 	font-weight: 300;
 	line-height: 1;
 	padding: .8em!important;
@@ -144,12 +149,10 @@ li .nav-link .nav-link-text{
 
 
 .navbar-brand {
-	font-family: 'Montserrat';
 	font-weight: 100;
 	font-size: 2.6rem!important;
 }
 .accordion-header{
-	font-family: 'Montserrat';
 	font-weight: 400;
 	font-size: 1.125rem!important;
 	background: transparent;
@@ -622,7 +625,6 @@ a .icon-header:hover{
 }
 .h-center {
 	color: #9F8A88!important;
-	font-family: 'Montserrat', Georgia, serif!important;
 	font-weight: 400;
 	font-size: 2.7em;
 	text-align: center!important;

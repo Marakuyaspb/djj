@@ -93,8 +93,13 @@ Decona Theme, (C) 2023
 :root {
 
 	/* Font Family */
---global--font-primary: var(--font-headings, 'ALS Hauss Thin', sans-serif)!important;
---global--font-secondary: var(--font-base, 'ALS Hauss Book', sans-serif)!important;
+	@font-face {
+    font-family: 'ALS Hauss Book', Georgia, serif;
+    src: url("http://http://127.0.0.1:8000/media/ALS_Hauss.woff");
+    font-style: normal;
+ }
+--global--font-primary: var(--font-headings, 'ALS Hauss', sans-serif)!important;
+--global--font-secondary: var(--font-base, 'ALS Hauss', sans-serif)!important;
 
 	/* ANTIC INFO */
 	/*
@@ -1459,13 +1464,13 @@ input[type=reset],
 .wp-block-file a.wp-block-file__button {
 
 	background-color: transparent;
-  border: 1px solid #5E5B5B;
+  	border: 1px solid #5E5B5B;
   /*color: #5E5B5B !important;*/
-  font-size: 1.125rem;
-  height: 2.4em;
+  	font-size: 1.125rem;
+  	height: 2.4em;
   /*width: 10rem;*/
-  line-height: 1;
-  padding: .5em;
+  	line-height: 1;
+  	padding: .5em;
 
 /*	border: .1em solid #9F8A88;
 	border-radius: var(--button--border-radius);
