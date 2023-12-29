@@ -25,7 +25,7 @@ def order_create(request):
 			for item in cart:
 				OrderItem.objects.create(order=order, product=item['product'],	price=item['price'], quantity=item['quantity'])
 			cart.clear()
-			
+
 	# отправить письмо покупателю
 			#order_created.delay(order.id)
 

@@ -6,12 +6,31 @@
 
 {% block content %}
 <br><br>
-<div class="container mt-5">
-  <div class="row mt-5">
+<div class="container mt-4">
+  
+  <div class="row">
 
-    <div class="col">
+    <div class="col mx-5">  
+<h3 class='mb-4'>Оформление заказа</h3>
+
+      <form method="post" class="order-form">
+
+        {{ form.as_p }}
+
+        <div class='d-flex justify-content-center'>
+          <!-- p class='py-4 pe-2'>Перейти к выбору способа оплаты и доставки</p -->
+          <p class='py-5'><input type="submit" value="ЗАКАЗАТЬ" class="px-5"></p>
+
+        </div>
+
+        {% csrf_token %}
+
+      </form>
+    </div>
+
+
+    <div class="col mx-5">
       <div class="order-info">
-        <h3 class='pb-5'>Оформление заказа</h3>
         <p class='major-text mb-4'>Ваш заказ</p>
 
         <ul>
@@ -24,36 +43,13 @@
             </ol>
           {% endfor %}
         </ul>
-
-         <!--  {% with total_items_price=0 %}
-            {% for item in cart %}
-              {% with total_items_price=total_items_price|add:item.total_price %}
-              {% endwith %}
-            {% endfor %}
-            <p class="pt-4">Итого: {{ total_items_price|floatformat:2 }} ₽</p>
-          {% endwith %} -->
-
-        <p class="pt-4">Итого: {{ cart.get_total_price }} ₽</p>
+        <p class="py-4">Итого: {{ cart.get_total_price }} ₽</p>
 
         
       </div>
     </div>
 
-    <div class="col">  
-      <form method="post" class="order-form">
 
-        {{ form.as_p }}
-
-        <div class='d-flex justify-content-start'>
-          <!-- p class='py-4 pe-2'>Перейти к выбору способа оплаты и доставки</p -->
-          <p class='py-4'><input type="submit" value="ЗАКАЗАТЬ" class="latte_bg"></p>
-           
-        </div>
-
-        {% csrf_token %}
-
-      </form>
-    </div>
 
   </div>
 </div>
