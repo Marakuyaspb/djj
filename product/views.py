@@ -35,12 +35,8 @@ def products (request):
 	return render(request, 'product/category_goods.html', {'products': products})
 
 
-
-
 def error_404_view(request, exception):
-	# we add the path to the 404.html file
-	# here. The name of our HTML file is 404.html
-	return render(request, '404/404.html')
+	return render(request, '404/404.html', status=404)
 
 
 

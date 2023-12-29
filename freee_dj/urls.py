@@ -8,6 +8,8 @@ from django.conf.urls.static import static
 admin.site.site_header = 'Центр управления начинкой сайта'
 admin.site.index_title = 'Админская панель'
 
+handler404 = views.error_404_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("cart/", include('cart.urls', namespace='cart')),
