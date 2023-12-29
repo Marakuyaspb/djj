@@ -21,7 +21,6 @@ urlpatterns = [
     path("__debug__/", include("debug_toolbar.urls")),
 ]
 
-handler404 = 'product.views.error_404_view'
 
 if settings.DEBUG:
     urlpatterns += static(

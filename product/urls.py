@@ -13,7 +13,6 @@ sitemaps = {
 	'all-products' : ProductSitemap,
 }
 
-handler404 = views.error_404_view
 
 urlpatterns = [
 	path('', views.index, name = 'index'),

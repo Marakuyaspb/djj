@@ -19,7 +19,7 @@
 				<th></th>
 				<th></th>
 				<th>Цена за шт.</th>
-				<th>Итого</th>
+				<th>Общая цена</th>
 			</tr>
 		</thead>
 
@@ -72,22 +72,24 @@
 						
 					</td>
 					<td class="num">{{ item.product.price_sale }}₽</td>
-					<td class="num">{{ item.total_price }}₽</td>
+					<td class="num total_price">{{ item.total_price }}₽</td>
 				
 				</tr>
 			{% endwith %}
 
 		{% endfor %}
 			<tr class="total">
-				<td>Итого</td>
 				<td colspan="4"></td>
-				<td class="num">{{ order.get_total_cost }}₽</td>
+				<td>Итого:</td>
+				<!-- td class="num show_total_cost">{{ cart.get_total_cost }}₽</td -->
+				<td class="num show_total_cost"></td>
 			</tr>
 		</tbody>
 	</table>
 	<br>
-	<hr>
-	<p class="text-right">
+	<br>
+
+	<div class="d-flex justify-content-between">
 		
 		<a href="{% url 'product:products' %}" class="">
 			<button class="btn-outline-gray">Продолжить покупки </button>
@@ -96,10 +98,12 @@
 		<a href="{% url 'orders:order_create' %}" class="ms-3">
 			<button class="btn-outline-gray">Оформление заказа </button>
 		</a>
-	</p>
+	</div>
 
 </div>
-<h4 class='my-4 container'>Популярные товары</h4>
+<br><br>
+<h4 class='my-5 container cacao'>Популярные товары</h4>
+
 <!-- POPULAR PRODUCTS SLIDER START -->	
 	{% include 'product/card_parts/slider_for_index_popular_goods.html' %}
 <!-- PRODUCTS SLIDER END-->
@@ -107,5 +111,24 @@
 <!-- GRAY RECTANGLES START -->
 	{% include 'product/card_parts/gray_rectangles.html' %}
 <!-- GRAY RECTANGLES END -->
+
+
+
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+	var all_prices = document.querySelectorAll('.total_price');
+	var sum = 0;
+
+	for (var i = 0; i < all_prices.length; i++) {
+		var price = parseInt(all_prices[i].textContent);
+	    if (!isNaN(price)) {
+	      sum += price;
+	    	}
+		}
+	total_sum = sum;
+
+	document.querySelector('.show_total_cost').innerHTML = `<strong>${total_sum.toFixed(2)}₽</strong>`;
+	})
+</script>
 
 {% endblock %}
