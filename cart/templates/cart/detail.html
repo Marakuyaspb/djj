@@ -115,6 +115,8 @@
 
 
 <script>
+
+/* now you can see total sum of all products */
 window.addEventListener('DOMContentLoaded', function() {
 	var all_prices = document.querySelectorAll('.total_price');
 	var sum = 0;
@@ -126,14 +128,20 @@ window.addEventListener('DOMContentLoaded', function() {
 	    	}
 		}
 	total_sum = sum;
-
 	document.querySelector('.show_total_cost').innerHTML = `<strong>${total_sum.toFixed(2)}₽</strong>`;
-	})
 
-	q_selector = document.querySelector('#id_quantity');
+
+
+/* now you can change quantity of products! */
+
+	q_selector = document.querySelectorAll('#id_quantity');
 	console.log(q_selector);
-	q_selector.classList.add('z_index_up');
+	for (var i = 0; i < q_selector.length; i++){
+			q_selector[i].classList.add('z_index_up');
+		}
 
+
+	})
 </script>
 
 {% endblock %}
