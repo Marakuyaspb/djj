@@ -5,22 +5,24 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-3">
-  <div class="row">
+<div class="container mt-5">
+  <div class="row mt-5">
 
     <div class="col">
       <div class="order-info">
-        <h3>Оформление заказа</h3>
-        <p class='major-text mt-3'>Ваш заказ</p>
+        <h3 class='pb-5'>Оформление заказа</h3>
+        <p class='major-text mb-4'>Ваш заказ</p>
 
         <ul>
-
           {% for item in cart %}
-            <li class='order_li'>
-              {{ item.product.product_full_name }} x{{ item.quantity }} 
-              <span><strong>{{ item.total_price|floatformat:2 }} ₽</strong></span>
-            </li>
+            <ol class='order_li pb-2'>
+              <div class="d-flex justify-content-between pe-5">
+                <span class ='cacao'>{{ item.product.product_full_name }} ×{{ item.quantity }} шт. </span>
+                <span>{{ item.total_price|floatformat:2 }} ₽</span>
+              </div>
+            </ol>
           {% endfor %}
+        </ul>
 
           {% with total_items_price=0 %}
             {% for item in cart %}
@@ -29,7 +31,7 @@
             {% endfor %}
           {% endwith %}
 
-        </ul>
+        
 
         <p class="pt-4">Итого: {{ total_items_price|floatformat:2 }} ₽</p>
       </div>
@@ -41,8 +43,8 @@
         {{ form.as_p }}
 
         <div class='d-flex justify-content-start'>
-          <p class='py-4 pe-2'>Перейти к выбору способа оплаты и доставки</p>
-          <p class='py-4'><input type="submit" value="Вперёд" class="latte_bg"></p>
+          <!-- p class='py-4 pe-2'>Перейти к выбору способа оплаты и доставки</p -->
+          <p class='py-4'><input type="submit" value="ЗАКАЗАТЬ" class="latte_bg"></p>
         </div>
 
         {% csrf_token %}

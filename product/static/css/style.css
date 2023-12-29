@@ -1042,7 +1042,7 @@ select {
 	line-height: var(--global--line-height-body);
 	height: 2.4em;
 	padding-left: .5em;
-	padding-right: 1em;
+	padding-right: 1.5em;
 	margin-right: .1em;
 	background: var(--global--color-white) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2328303d'><polygon points='0,0 10,0 5,5'/></svg>") no-repeat;
 	background-position: right var(--form--spacing-unit) top 60%;
@@ -1705,7 +1705,7 @@ h3,
 h4,
 .h4 {
 	font-size: var(--heading--font-size-h4);
-	font-weight: var(--heading--font-weight-strong);
+	/*font-weight: var(--heading--font-weight-strong);*/
 	letter-spacing: var(--heading--letter-spacing-h4);
 	line-height: var(--heading--line-height-h4);
 }
@@ -1752,7 +1752,7 @@ ul,
 ol {
 	font-family: var(--list--font-family);
 	margin: 0;
-	padding-left: calc(2 * var(--global--spacing-horizontal));
+/*	padding-left: calc(2 * var(--global--spacing-horizontal));*/
 }
 
 ul.aligncenter,

@@ -749,6 +749,14 @@ a .icon-header:hover{
 	height: 0!important;
 }
 
+#id_quantity{
+	position: relative;
+	z-index: -2;
+}
+label{
+	position: relative;
+	z-index: -2;
+}
 
 /* Яндекс карта ЧБ */
 .ymaps-layers-pane {
