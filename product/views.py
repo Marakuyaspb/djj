@@ -36,7 +36,9 @@ def products (request):
 
 
 def error_404_view(request, exception):
-	return render(request, '404/404.html', status=404)
+	products = Product.objects.all()
+	popular = Product.objects.filter(popular=True)
+	return render(request, '404/404.html', {'products': products, 'popular': popular}, status=404)
 
 
 

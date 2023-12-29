@@ -9,7 +9,7 @@ PROJECT_ROOT = os.path.dirname(__file__)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-ysl(888^duj6c@()&p=vc)es!559e&y_mvjg&4&i&lg^#&s_9s'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['77.222.42.39']
 DATABASES = {
