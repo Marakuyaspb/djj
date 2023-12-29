@@ -2,10 +2,10 @@ from django.db import models
 from product.models import Product
 
 class Order(models.Model):
-	first_name = models.CharField(max_length=50, verbose_name = 'Имя')
-	city = models.CharField(max_length=100, verbose_name = 'Город')
+	first_name = models.CharField(max_length=50, verbose_name = 'Ваше имя', default='Евлампия Агамемноновна')
+	city = models.CharField(max_length=100, verbose_name = 'Город', default='Мангазея')
 	phone = models.CharField(max_length=100, verbose_name = 'Телефон', default='911')
-	email = models.EmailField(verbose_name = 'E-mail')
+	email = models.EmailField(verbose_name = 'E-mail', default='madmarakuya@gmail.com')
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 	
@@ -16,6 +16,7 @@ class Order(models.Model):
 		]
 		verbose_name = 'Заказ'
 		verbose_name_plural = 'Заказы'
+
 	def __str__(self):
 		return f'Order {self.id}'
 
@@ -31,5 +32,6 @@ class OrderItem(models.Model):
 	
 	def __str__(self):
 		return str(self.id)
+		
 	def get_cost(self):
 		return self.price * self.quantity

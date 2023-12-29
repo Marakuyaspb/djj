@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+<br><br>
 <div class="container mt-5">
   <div class="row mt-5">
 
@@ -24,16 +25,17 @@
           {% endfor %}
         </ul>
 
-          {% with total_items_price=0 %}
+         <!--  {% with total_items_price=0 %}
             {% for item in cart %}
               {% with total_items_price=total_items_price|add:item.total_price %}
               {% endwith %}
             {% endfor %}
-          {% endwith %}
+            <p class="pt-4">Итого: {{ total_items_price|floatformat:2 }} ₽</p>
+          {% endwith %} -->
+
+        <p class="pt-4">Итого: {{ cart.get_total_price }} ₽</p>
 
         
-
-        <p class="pt-4">Итого: {{ total_items_price|floatformat:2 }} ₽</p>
       </div>
     </div>
 
@@ -45,6 +47,7 @@
         <div class='d-flex justify-content-start'>
           <!-- p class='py-4 pe-2'>Перейти к выбору способа оплаты и доставки</p -->
           <p class='py-4'><input type="submit" value="ЗАКАЗАТЬ" class="latte_bg"></p>
+           
         </div>
 
         {% csrf_token %}
@@ -54,4 +57,5 @@
 
   </div>
 </div>
+<br><br><br>
 {% endblock %}

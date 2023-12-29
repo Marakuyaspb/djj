@@ -749,6 +749,11 @@ a .icon-header:hover{
 	height: 0!important;
 }
 
+.z_index_up{
+	z-index: 777!important;
+  position: relative;
+}
+
 #id_quantity{
 	position: relative;
 	z-index: -2;
