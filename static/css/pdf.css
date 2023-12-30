@@ -1,0 +1,37 @@
+@font-face {
+	font-family: "ALS Hauss";
+	src: url("http://http://127.0.0.1:8000/media/ALS_Hauss.woff");
+}
+
+body{
+	color: #5E5B5B;
+	font-family: 'ALS Hauss', 'Georgia', sans-serif !important;
+}
+
+h1, h2, h3, h4 {
+	color: #9F8A88;
+}
+h1{
+	font-size: 3.5em;
+	font-weight: 550;
+}
+h5{
+	font-weight: 200;
+}
+
+table, th, td{
+	border: 2px solid #F6F1EE;
+}
+.latte_bg{
+	background: #F6F1EE;
+}
+td{
+	padding: 5px;
+}
+.no_border{
+	border: none;
+}
+
+hr{
+	color: #F6F1EE;
+}

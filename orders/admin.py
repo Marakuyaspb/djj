@@ -8,8 +8,6 @@ from .models import Order, OrderItem
 
 
 
-
-
 def export_to_csv(modeladmin, request, queryset):
 	opts = modeladmin.model._meta
 	content_disposition = f'attachment; filename={opts.verbose_name}.csv'
@@ -36,13 +34,13 @@ class OrderItemInline(admin.TabularInline):
 	raw_id_fields = ['product']
 
 
-def order_payment(obj):
-	url = obj.get_stripe_url()
-	if obj.stripe_id:
-		html = f'<a href="{url}" target="_blank">{obj.stripe_id}</a>'
-		return mark_safe(html)
-	return ''
-order_payment.short_description = 'Stripe payment'
+# def order_payment(obj):
+# 	url = obj.get_stripe_url()
+# 	if obj.stripe_id:
+# 		html = f'<a href="{url}" target="_blank">{obj.stripe_id}</a>'
+# 		return mark_safe(html)
+# 	return ''
+# order_payment.short_description = 'Stripe payment'
 
 
 def order_detail(obj):

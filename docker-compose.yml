@@ -1,0 +1,12 @@
+services:
+
+  web:
+    build: .
+    command: python3 /code/deco_dj/freee_dj/manage.py runserver 0.0.0.0:8000
+    restart: always
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=free_dj.settings.prod

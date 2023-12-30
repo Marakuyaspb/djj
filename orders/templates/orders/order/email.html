@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Новая заявка</title>
+    <style media="all" type="text/css">
+      table {
+      border-collapse: separate;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+      width: 100%;
+    }
+    body {
+      color: #5E5B5B;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4 {
+      color: #9F8A88;
+    }
+    h1{
+      font-size: 3.5em;
+      font-weight: 550;
+    }
+    h5{
+      font-weight: 200;
+    }
+    table, th, td{
+      border: 2px solid #F6F1EE;
+    }
+    .latte_bg{
+      background: #F6F1EE;
+    }
+    td{
+      padding: 5px;
+    }
+    .no_border{
+      border: none;
+    }
+
+    hr{
+      color: #F6F1EE;
+    }
+    </style>
+</head>
+
+<body>
+
+  <table class='no_border'>
+    <thead></thead>
+    <tbody>
+      <tr>
+        <td class='no_border'>
+          <h1>DECONA</h1>
+          <!-- h5>Мебельное производство полного цикла</h5 -->
+        </td>
+        <td class='no_border'></td> <td class='no_border'></td> <td class='no_border'></td>
+        <td class='no_border'>
+          <p>
+          <strong>Заказ № {{ order.id }}</strong>
+          <br>
+            <span class="secondary">
+              {{ order.created|date:"d M, Y" }}
+            </span>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <br><br>
+
+  <h3>Покупатель</h3>
+
+  <table class='no_border'>
+    <thead></thead>
+    <tbody>
+      <tr>
+        <td class='no_border'> <strong>Имя:</strong>
+        </td>
+        <td class='no_border'>{{ order.first_name }}</td>
+      </tr>
+
+      <tr>
+        <td class='no_border'> <strong>Город:  </strong>
+        </td>
+        <td class='no_border'>{{ order.city }}</td>
+      </tr>
+
+      <tr>
+        <td class='no_border'> <strong>E-mail:  </strong>
+        </td>
+        <td class='no_border'>{{ order.email }}</td>
+      </tr>
+
+      <tr>
+        <td class='no_border'> <strong>Телефон: </strong> 
+        </td>
+        <td class='no_border'>{{ order.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+
+
+  <h3>Перечень товаров</h3>
+    <table>
+      <thead class='latte_bg'>
+        <tr>
+          <th>Товар</th>
+          <th>Цена за ед.</th>
+          <th>Количество</th>
+          <th>Итог</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in order.items.all %}
+          <tr class="row{% cycle '1' '2' %}">
+            <td>{{ item.product.product_full_name }}</td>
+            <td class="num">{{ item.price }} ₽</td>
+            <td class="num">{{ item.quantity }}</td>
+            <td class="num">{{ item.get_cost }} ₽</td>
+          </tr>
+        {% endfor %}
+        
+        <tr class="total">
+          <td colspan="3">Итог</td>
+          <td class="num"><strong>{{ order.get_total_cost|floatformat:2 }} ₽</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+</body>
+</html>
