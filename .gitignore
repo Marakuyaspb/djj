@@ -1,0 +1,16 @@
+db.sqlite3
+
+venv
+
+base.py
+prod.py
+local.py
+
+**/migrations/**
+!**/migrations
+
+__pycache__/
+*/__pycache__/
+
+media/*
+!*media

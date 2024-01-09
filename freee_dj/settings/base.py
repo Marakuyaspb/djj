@@ -21,6 +21,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 ALLOWED_HOSTS = ['77-222-42-39.swtest.ru']
 
 SITE_ID = 1
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -150,4 +151,4 @@ EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'komy.kabachok@yandex.ru'
-EMAIL_HOST_PASSWORD = '******'
+EMAIL_HOST_PASSWORD = 'NadoIOtdyhat!1'
