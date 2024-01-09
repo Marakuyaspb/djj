@@ -29,14 +29,9 @@ def order_create(request):
 			cart.clear()
 
 
-		# отправить письмо покупателю
-			# subject = f'DECONA. Заказ № {order.id}'
-			# message = f'Здавствуйте, {order.first_name}!\n Ваш заказ успешно оформлен, скоро с вами свяжется наш менеджер.\n Данные заказа:\n Ваш № заказа: {order.id}\n Имя: {order.first_name} | Город: {order.city}.\n E-mail: {order.email}\n Телефон: {order.phone}'
 
-			# send_mail(subject, message, settings.EMAIL_HOST_USER, [order.email])
+		# МАНАГЕРАМ ПИСЬМО
 
-
-			# МАНАГЕРАМ ПИСЬМО
 			context = {
 			  'order': order,
 			}
@@ -44,11 +39,23 @@ def order_create(request):
 				'Здавствуйте, {order.first_name}!', 
 				settings.EMAIL_HOST_USER,
 				['komy.kabachok@yandex.ru'],
-  			fail_silently=True,
-  			html_message=loader.get_template('orders/order/email.html').render(context)
+				fail_silently=True,
+				html_message=loader.get_template('orders/order/email.html').render(context)
   		)
 
 
+		#ПОКУПАТЕЛЮ ПИСЬМО
+
+			context_2 = {
+			  'order': order,
+			}
+			send_mail('Новый заказ', 
+				'Здавствуйте, {order.first_name}!', 
+				settings.EMAIL_HOST_USER,
+				[order.email],
+				fail_silently=True,
+				html_message=loader.get_template('orders/order/email.html').render(context_2)
+  		)
 
 
 			return render(request, 'orders/order/created.html', {'order': order})

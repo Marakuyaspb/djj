@@ -120,7 +120,7 @@
       <tbody>
         {% for item in order.items.all %}
           <tr class="row{% cycle '1' '2' %}">
-            <td>{{ item.product.product_full_name }}</td>
+            <td>{{ item.product.product_full_name }}, ткань: {{ item.product.fabric_name }}</td>
             <td class="num">{{ item.price }} ₽</td>
             <td class="num">{{ item.quantity }}</td>
             <td class="num">{{ item.get_cost }} ₽</td>
