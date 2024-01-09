@@ -15,13 +15,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 PROJECT_ROOT = os.path.dirname(__file__)
 
 
-# SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-ysl(oab^duj6c@()&p=vc)es!559e&y_mvjg&4&i&lg^#&s_9s'
-
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 
-ALLOWED_HOSTS = ['new.decona.ru', 'www.new.decona.ru']
+ALLOWED_HOSTS = ['77-222-42-39.swtest.ru']
 
 SITE_ID = 1
 # Application definition
