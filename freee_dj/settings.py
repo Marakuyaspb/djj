@@ -12,8 +12,42 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 PROJECT_ROOT = os.path.dirname(__file__)
 
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
+
 SITE_ID = 1
 # Application definition
+
+
+
+DEBUG = True
+
+ALLOWED_HOSTS = [
+    '77.222.42.39',
+    '77-222-42-39.swtest.ru'
+]
+
+    
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'products_dj',
+        'USER': 'aadmin',
+        'PASSWORD': 'HappyHobember0111',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+ADMINS = [
+    ('Annaa', 'fflaminfo@gmail.com'),
+]
+
+
+REDIS_URL = 'redis://cache:6379'
+CACHES['default']['LOCATION'] = REDIS_URL
+CHANNEL_LAYERS['default']['CONFIG']['hosts'] = [REDIS_URL]
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -22,13 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'taggit',
     'django.contrib.sitemaps',
-
-    # additional packages
-    'mathfilters',
-    'crispy_forms',
-    'ckeditor',
 
     #apps
     'cart.apps.CartConfig',
@@ -132,12 +160,17 @@ CKEDITOR_CONFIG ={
     },
 }
 
-try:
-    from .local_settings import *
-except ImportError:
-    from .prod_settings import *
-    
 
 INTERNAL_IPS = [
 '127.0.0.1',
 ]
+
+
+#SMTP
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'komy.kabachok@yandex.ru'
+EMAIL_HOST_PASSWORD = 'NadoIOtdyhat!1'

@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from .models import Category, Collection, Option, Product, ProductImage, SliderInterior
 from cart.forms import CartAddProductForm
-from .forms import CustomProductForm
+#from .forms import CustomProductForm
 
 def index(request):
 	products = Product.objects.all()

@@ -18,7 +18,7 @@ urlpatterns = [
     path("", include("blog.urls")),
     path("", include("product.urls")),
 
-    path("__debug__/", include("debug_toolbar.urls")),
+    #path("__debug__/", include("debug_toolbar.urls")),
 ]
 
 

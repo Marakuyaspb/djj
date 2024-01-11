@@ -1,32 +1,32 @@
 from django import forms
 from .models import Product, ProductImage 
-from multiupload.fields import MultiFileField
+# from multiupload.fields import MultiFileField
 
 
 
-class CustomProductForm(forms.ModelForm):
-    carousel_items = MultiFileField(min_num=1, max_num=10, required=False)
-    carousel_items_mob = MultiFileField(min_num=1, max_num=10, required=False)
-    interior_items = MultiFileField(min_num=1, max_num=10, required=False)
-    interior_items_mob = MultiFileField(min_num=1, max_num=10, required=False)
+# class CustomProductForm(forms.ModelForm):
+#     carousel_items = MultiFileField(min_num=1, max_num=10, required=False)
+#     carousel_items_mob = MultiFileField(min_num=1, max_num=10, required=False)
+#     interior_items = MultiFileField(min_num=1, max_num=10, required=False)
+#     interior_items_mob = MultiFileField(min_num=1, max_num=10, required=False)
 
-    class Meta:
-        model = Product
-        fields = '__all__'
+#     class Meta:
+#         model = Product
+#         fields = '__all__'
 
-    def save(self, commit=True):
-        product = super().save(commit=False)
-        if commit:
-            product.save()
-        for file in self.cleaned_data['carousel_items']:
-            image = ProductImage(product=product)
-            image.image = file
-            image.save()
-        for file in self.cleaned_data['carousel_items_mob']:
-            image = ProductImage(product=product)
-            image.image = file
-            image.save()
-        return product
+#     def save(self, commit=True):
+#         product = super().save(commit=False)
+#         if commit:
+#             product.save()
+#         for file in self.cleaned_data['carousel_items']:
+#             image = ProductImage(product=product)
+#             image.image = file
+#             image.save()
+#         for file in self.cleaned_data['carousel_items_mob']:
+#             image = ProductImage(product=product)
+#             image.image = file
+#             image.save()
+#         return product
 
 
 

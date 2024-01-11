@@ -2,15 +2,20 @@ import os
 from .base import *
 
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '77.222.42.39',
+    '77-222-42-39.swtest.ru'
+]
+
+    
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'products_dj',
-        'USER': 'contentman',
-        'PASSWORD': 'Sofa1924Power!',
+        'USER': 'aadmin',
+        'PASSWORD': '***',
         'HOST': 'localhost',
         'PORT': '5432',
     }

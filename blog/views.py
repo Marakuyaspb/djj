@@ -2,7 +2,7 @@ from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .models import Post
 from django.core.paginator import Paginator
-from taggit.models import Tag
+#from taggit.models import Tag
 
 
 def blog(request, tag_slug=None):

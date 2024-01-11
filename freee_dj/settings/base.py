@@ -17,8 +17,7 @@ PROJECT_ROOT = os.path.dirname(__file__)
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-
-ALLOWED_HOSTS = ['77-222-42-39.swtest.ru']
+ALLOWED_HOSTS = []
 
 SITE_ID = 1
 
@@ -31,13 +30,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'taggit',
     'django.contrib.sitemaps',
 
     # additional packages
-    'mathfilters',
-    'crispy_forms',
-    'ckeditor',
+    #'mathfilters',
+    #'crispy_forms',
+    #'ckeditor',
 
     #apps
     'cart.apps.CartConfig',
@@ -49,7 +47,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    #'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -136,6 +133,23 @@ CRISPY_TEMPLATE_PACK = 'uni_form'
 CKEDITOR_CONFIG ={
     'default':{
     'width':'auto',
+    },
+}
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379',
+    }
+}
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
     },
 }
 

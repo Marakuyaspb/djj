@@ -1,3 +1,3 @@
-from .celery import app as celery_app
+from __future__ import absolute_import
 
-__all__ = ['celery_app']
+from freee_dj.settings.celery import app as celery_app 
