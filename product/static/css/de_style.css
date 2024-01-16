@@ -405,6 +405,7 @@ a .icon-header:hover{
 }
 .h2_w600{
 	font-weight: 300;
+	font-size: 2.7em!important;
 }
 .bottom-align {
 	vertical-align:bottom;
@@ -585,7 +586,7 @@ a .icon-header:hover{
 }
 
 .status_icon{
-	max-width: 46px;
+	max-width: 3.4em;
 	z-index: 444;
   position: relative;
 }
@@ -702,13 +703,14 @@ a .icon-header:hover{
 
 .available_icon{
 	width: 3.250em;
-	padding-top: .5em;
+	margin-top: -6.5em;
+	/*padding-top: .5em;*/
 	z-index: 5!important;
 	position: relative;
 }
 .is_new_icon {
 	width: 3em;
-	padding-top: .5em;
+	margin-top: -6.5em;
 	z-index: 5!important;
 	position: relative;
 }

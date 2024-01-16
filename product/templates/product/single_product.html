@@ -11,7 +11,7 @@
 		</div>
 
 		<div class='row'>
-			<div class='{{ product.category }} col-md-8' id='content_left'>
+			<div class='{{ product.category }} col-md-7' id='content_left'>
 				<p class='h-center'>{{ product.collection }}</p>
 				<center>
 		      	<p class='fabric-name pb-3'>Ткань: {{ product.fabric_name }}
@@ -43,14 +43,14 @@
 				<div class='d-flex flex-row ms-4 card_icons'>
 
 				{% if product.is_new %}
-					<img src="{{ product.icon_is_new.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
+					<img src="{{ product.icon_is_new.url }}" alt="Можем доставить за 2 дня" class='status_icon is_new_icon'>
 				{% endif %}
 				{% if product.available_in_showroom %}
-					<img src="{{ product.icon_available_in_showroom.url }}" alt="Доступно в шоуруме" class='status_icon'>
+					<img src="{{ product.icon_available_in_showroom.url }}" alt="Доступно в шоуруме" class='status_icon available_icon'>
 				{% endif %}
 
 				{% if product.available_for_delivery_2 %}
-					<img src="{{ product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
+					<img src="{{ product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня" class='status_icon available_icon'>
 				{% endif %}
 
 				</div>
@@ -94,7 +94,9 @@
 				</div>  
 			</div>
 
-			<div class='no-padding-right padding-left-4 col-md-4 pt-5' id='content_right'>
+			<div class="col-md-1"></div>
+
+			<div class='no-padding-right padding-left-4 col-md-4' id='content_right'>
 				<img class='img-fluid banner' src='/media/{{ product.closeup }}'>
 			</div>
 		</div>
@@ -324,14 +326,14 @@
 		<div class='d-flex flex-row ms-4 card_icons'>
 
 			{% if product.is_new %}
-				<img src="{{ product.icon_is_new.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
+				<img src="{{ product.icon_is_new.url }}" alt="Можем доставить за 2 дня" class='status_icon '>
 			{% endif %}
 			{% if product.available_in_showroom %}
-				<img src="{{ product.icon_available_in_showroom.url }}" alt="Доступно в шоуруме" class='status_icon'>
+				<img src="{{ product.icon_available_in_showroom.url }}" alt="Доступно в шоуруме" class='status_icon '>
 			{% endif %}
 
 			{% if product.available_for_delivery_2 %}
-				<img src="{{ product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня" class='status_icon'>
+				<img src="{{ product.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня" class='status_icon '>
 			{% endif %}
 
 		</div>
