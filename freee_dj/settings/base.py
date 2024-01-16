@@ -17,7 +17,7 @@ PROJECT_ROOT = os.path.dirname(__file__)
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-ALLOWED_HOSTS = ['127.0.0.1:8000', '60d1-176-59-13-221.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1', '60d1-176-59-13-221.ngrok-free.app']
 
 SITE_ID = 1
 
@@ -120,6 +120,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#for ngrok
+CSRF_TRUSTED_ORIGINS = ['https://60d1-176-59-13-221.ngrok-free.app']
 
 
 # Default primary key field type

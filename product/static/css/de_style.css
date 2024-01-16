@@ -5,7 +5,7 @@ Theme name: Decona_
 
  @font-face {
         font-family: "ALS Hauss";
-        src: url("http://http://127.0.0.1:8000/media/ALS_Hauss.woff");
+        src: url("/media/ALS_Hauss.woff");
       }
 
 
