@@ -17,7 +17,7 @@ PROJECT_ROOT = os.path.dirname(__file__)
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000', '60d1-176-59-13-221.ngrok-free.app']
 
 SITE_ID = 1
 
@@ -165,4 +165,4 @@ EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'komy.kabachok@yandex.ru'
-EMAIL_HOST_PASSWORD = '***'
+EMAIL_HOST_PASSWORD = 'NadoIOtdyhat!1'
