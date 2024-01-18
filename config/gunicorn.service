@@ -1,0 +1,17 @@
+[Unit]
+Description=Gunicorn for Django project
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=aadmin
+Group=sudo
+WorkingDirectory=home/aadmin/djj
+ExecStart=./venv/bin/gunicorn --workers=3 wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

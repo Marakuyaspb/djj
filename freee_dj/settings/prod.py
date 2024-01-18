@@ -16,7 +16,7 @@ DATABASES = {
         'NAME': 'products_dj',
         'USER': 'aadmin',
         'PASSWORD': 'HappyHobember0111',
-        'HOST': 'localhost',
+        'HOST': '77.222.42.39',
         'PORT': '5432',
     }
 }
