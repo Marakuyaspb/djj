@@ -2,6 +2,7 @@ db.sqlite3
 
 venv
 
+my_way.txt
 base.py
 prod.py
 local.py

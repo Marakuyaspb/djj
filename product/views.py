@@ -47,6 +47,7 @@ def single_product(request, product_slug=None):
 		product = get_object_or_404(Product, product_slug=product_slug)
 		options = product.options.all()
 		slider_interior = product.slider_interior
+		popover = product.popover
 		popular = Product.objects.filter(popular=True)
 		similar_products = Product.objects.filter(collection=product.collection)
 	else:

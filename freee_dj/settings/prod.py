@@ -2,7 +2,7 @@ import os
 from .base import *
 
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '77.222.42.39',
@@ -13,10 +13,10 @@ ALLOWED_HOSTS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'products_dj',
-        'USER': 'user',
-        'PASSWORD': 'pass',
-        'HOST': '77.222.42.39',
+        'NAME': 'prod',
+        'USER': 'postgres',
+        'PASSWORD': 'JustVery19JanyarySecurePass!',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }

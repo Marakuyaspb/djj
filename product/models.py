@@ -66,11 +66,11 @@ class Fabric(models.Model):
 
 class Option(models.Model):
 	option_id = models.AutoField(primary_key=True)
-	option_name = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Заголовок опции (не обязательно)')
+	option_name = models.CharField(max_length=350, verbose_name = 'Заголовок опции (не обязательно)')
 	option_1_img = models.ImageField(upload_to='options/%Y/%m/%d', verbose_name = 'Изображение 1')
-	option_1_description = models.CharField(max_length=500, verbose_name = 'Описание опции 1')
+	option_1_description = models.CharField(max_length=500, null=True, blank=True, verbose_name = 'Описание опции 1')
 	option_2_img = models.ImageField(upload_to='options/%Y/%m/%d', verbose_name = 'Изображение 2')
-	option_2_description = models.CharField(max_length=500, verbose_name = 'Описание опции 2')
+	option_2_description = models.CharField(max_length=500, null=True, blank=True, verbose_name = 'Описание опции 2')
 	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
 
@@ -159,19 +159,19 @@ class Product(models.Model):
 	product_full_name = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Полное название товара (напр. Угловой диван Consono)')
 
 	product_fabric_icon_1 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/CAMBRIDGE_600.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 1')
-	slug_fabric_icon_1 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №1')
+	slug_fabric_icon_1 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №1')
 
 	product_fabric_icon_2 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d',  default='fabric_icons/2023/12/06/JAZZ_01.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 2')
-	slug_fabric_icon_2 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №2')
+	slug_fabric_icon_2 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №2')
 
 	product_fabric_icon_3 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/JAZZ_21.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 3')
-	slug_fabric_icon_3 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №3')
+	slug_fabric_icon_3 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №3')
 
 	product_fabric_icon_4 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/PIXEL_FOREST.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 4')
-	slug_fabric_icon_4 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №4')
+	slug_fabric_icon_4 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №4')
 
 	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/VELUTTO_32.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5')
-	slug_fabric_icon_5 = models.SlugField(max_length=100, null=True, verbose_name='Название ткани №5')
+	slug_fabric_icon_5 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №5')
 	
 	show_on_category_page = models.BooleanField(default=True, verbose_name = 'Отображать в выдаче категории')
 
@@ -192,9 +192,6 @@ class Product(models.Model):
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена (распродажа)')
 
 # Carousel #
-	carousel_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', null=True, blank=True, verbose_name = 'Изображение товара')
-
-
 	carousel_item_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | десктоп', default='static/img/popovers_arm.png')
 	carousel_item_2 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 2 | десктоп', default='static/img/popovers_arm.png')
 	carousel_item_3 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 3 | десктоп', default='static/img/popovers_arm.png')
@@ -207,8 +204,8 @@ class Product(models.Model):
 	carousel_item_mob_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png')
 
 
-	carousel_items = models.ManyToManyField('ProductImage', blank=True, related_name='carousel_items', verbose_name ='Слайдер с товаром | десктоп')
-	carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob', blank=True, verbose_name ='Слайдер с товаром | мобильный')
+	#carousel_items = models.ManyToManyField('ProductImage', blank=True, related_name='carousel_items', verbose_name ='Слайдер с товаром | десктоп')
+	#carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob', blank=True, verbose_name ='Слайдер с товаром | мобильный')
 	closeup = models.ImageField(upload_to='closeups/', blank=True, null=True, verbose_name = 'Крупный фрагмент справа')
 	width = models.IntegerField(blank=True, null=True, verbose_name = 'Ширина')
 	depth = models.IntegerField(blank=True, null=True, verbose_name = 'Глубина')
@@ -223,8 +220,8 @@ class Product(models.Model):
 	linen_drawer = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Бельевой ящик')
 	scheme = models.FileField(upload_to='schemes/%Y/%m/%d', default='status_icons/2023/12/07/new.svg', null=True, blank=True, verbose_name = 'Схема')
 
-	options = models.ManyToManyField(Option, blank=True, verbose_name = 'Опции')
-	slider_interior = models.ForeignKey(SliderInterior, blank=True, on_delete=models.CASCADE, verbose_name = 'Слайдер с интерьерами')
+	options = models.ManyToManyField(Option, verbose_name = 'Опции')
+	slider_interior = models.ForeignKey(SliderInterior, blank=True, null=True,on_delete=models.CASCADE, verbose_name = 'Слайдер с интерьерами')
 	popover = models.ForeignKey(PopOverFeatures, blank=True, on_delete=models.CASCADE, verbose_name = 'Поповер фичи')
 
 	features = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Конструктивные особенности')
@@ -258,94 +255,94 @@ class Product(models.Model):
 		return self.collection.collection_slug
 
 	# Fabric
-		@property
-		def fabric_img_url(self):
-			return self.fabric_name.product_fabric_img.url
-		@property
-		def fabric_about(self):
-			return self.fabric_name.product_fabric_about
+	@property
+	def fabric_img_url(self):
+		return self.fabric_name.product_fabric_img.url
+	@property
+	def fabric_about(self):
+		return self.fabric_name.product_fabric_about
 
 	# Options
-		@property
-		def option_name(self):
-			return self.options.option_name
-		@property
-		def option_1_img(self):
-			return self.options.option_1_img
-		@property
-		def option_2_img(self):
-			return self.options.option_2_img
-		@property
-		def option_1_description(self):
-			return self.options.option_1_description
-		@property
-		def option_2_description(self):
-			return self.options.option_2_description
+	@property
+	def option_name(self):
+		return self.options.option_name
+	@property
+	def option_1_img(self):
+		return self.options.option_1_img
+	@property
+	def option_2_img(self):
+		return self.options.option_2_img
+	@property
+	def option_1_description(self):
+		return self.options.option_1_description
+	@property
+	def option_2_description(self):
+		return self.options.option_2_description	
 
 	#Slider interiors
-		@property
-		def sl_interior_name(self):
-			return self.slider_interior.sl_interior_name
-		@property
-		def sl_interior_1_img(self):
-			return self.slider_interior.sl_interior_1_img
-		@property
-		def sl_interior_2_img(self):
-			return self.slider_interior.sl_interior_2_img
-		@property
-		def sl_interior_3_img(self):
-			return self.slider_interior.sl_interior_3_img
-		@property
-		def sl_interior_4_img(self):
-			return self.slider_interior.sl_interior_4_img
-		@property
-		def sl_interior_1_img_mob(self):
-			return self.slider_interior.sl_interior_1_img_mob
-		@property
-		def sl_interior_2_img_mob(self):
-			return self.slider_interior.sl_interior_2_img_mob
-		@property
-		def sl_interior_3_img_mob(self):
-			return self.slider_interior.sl_interior_3_img_mob
-		@property
-		def sl_interior_4_img_mob(self):
-			return self.slider_interior.sl_interior_4_img_mob
+	@property
+	def sl_interior_name(self):
+		return self.slider_interior.sl_interior_name
+	@property
+	def sl_interior_1_img(self):
+		return self.slider_interior.sl_interior_1_img
+	@property
+	def sl_interior_2_img(self):
+		return self.slider_interior.sl_interior_2_img
+	@property
+	def sl_interior_3_img(self):
+		return self.slider_interior.sl_interior_3_img
+	@property
+	def sl_interior_4_img(self):
+		return self.slider_interior.sl_interior_4_img
+	@property
+	def sl_interior_1_img_mob(self):
+		return self.slider_interior.sl_interior_1_img_mob
+	@property
+	def sl_interior_2_img_mob(self):
+		return self.slider_interior.sl_interior_2_img_mob
+	@property
+	def sl_interior_3_img_mob(self):
+		return self.slider_interior.sl_interior_3_img_mob
+	@property
+	def sl_interior_4_img_mob(self):
+		return self.slider_interior.sl_interior_4_img_mob
 
 
 	#PopOverFeatures
-		@property
-		def popover_name(self):
-			return self.popover.popover_name
-		@property
-		def popover_1_img(self):
-			return self.popover.popover_1_img
-		@property
-		def popover_1_description(self):
-			return self.popover.popover_1_description
-		@property
-		def popover_2_img(self):
-			return self.popover.popover_2_img
-		@property
-		def popover_2_description(self):
-			return self.popover.popover_2_description
-		@property
-		def popover_3_img(self):
-			return self.popover.popover_3_img
-		@property
-		def popover_3_description(self):
-			return self.popover.popover_3_description
-		@property
-		def popover_4_img(self):
-			return self.popover.popover_4_img
-		@property
-		def popover_4_description(self):
-			return self.popover.popover_4_description
-		@property
-		def popover_5_img(self):
-			return self.popover.popover_5_img
-		@property
-		def popover_5_description(self):
-			return self.popover.popover_5_description
+	@property
+	def popover_name(self):
+		return self.popover.popover_name
+	@property
+	def popover_1_img(self):
+		return self.popover.popover_1_img
+	@property
+	def popover_1_description(self):
+		return self.popover.popover_1_description
+	@property
+	def popover_2_img(self):
+		return self.popover.popover_2_img
+	@property
+	def popover_2_description(self):
+		return self.popover.popover_2_description
+	@property
+	def popover_3_img(self):
+		return self.popover.popover_3_img
+	@property
+	def popover_3_description(self):
+		return self.popover.popover_3_description
+	@property
+	def popover_4_img(self):
+		return self.popover.popover_4_img
+	@property
+	def popover_4_description(self):
+		return self.popover.popover_4_description
+	@property
+	def popover_5_img(self):
+		return self.popover.popover_5_img
+	@property
+	def popover_5_description(self):
+		return self.popover.popover_5_description
 
 
 
@@ -358,7 +355,8 @@ class Product(models.Model):
 		return reverse('single_product', kwargs={'product_slug': self.product_slug})
 
 	def __str__(self):
-		return self.product_full_name
+		#return self.product_full_name
+		return f"Product: {self.id}, Options: {', '.join([str(option) for option in self.options.all()])}"
 
 
 
