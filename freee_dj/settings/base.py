@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from django.contrib.messages import constants as messages
 
 # for local dev:
-# python3 manage.py runserver  local
+# python3 manage.py runserver --settings=freee_dj.settings.local
 
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)

@@ -12,7 +12,7 @@
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    background-image: url("http://127.0.0.1:8000/static/img/popovers_arm.png");
+    background-image: url("/static/img/popovers_arm.png");
 }
 
 
@@ -83,29 +83,29 @@
 /*  VARIANTS OF BACKGROUND  */
 
 .canvas-Сonsono-arm{
-    background-image: url("http://127.0.0.1:8000/static/img/popovers_all.jpg")!important;
+    background-image: url("/static/img/popovers_all.jpg")!important;
   }
-.canvas-consono-str{
+.canvas-Consono-str{
     background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/CONSONO-CORNER_VELUTTO_32.png");
   }
-.canvas-consono-k1r{
+.canvas-Consono-k1r{
     background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/CONSONO-CORNER_VELUTTO_32.png");
   }
-.canvas-consono-pouf{
+.canvas-Consono-pouf{
     background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/CONSONO-CORNER_VELUTTO_32.png");
   }
 
 
-.canvas-elementa-k1r{
+.canvas-Elementa-k1r{
    background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/ELEMENTA-K1R-ANG-M2-KNPL_VELUTTO_32.jpg");
 }
-.canvas_elementa_str_jazz_01{
+.canvas-Elementa_str_jazz_01{
    background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/ELEMENTA-STR_VELUTTO_32.jpg");
 }
 
-.canvas-nadwig-corner{
+.canvas-Nadwig-corner{
      background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/nadwig_corner_CAMBRIDGE_600.png");
 }
-.canvas_giros{
+.canvas_Giros{
    background-image: url("http://temp.decona.ru/wp-content/uploads/catalog/popOversBack/NADWIG_SOFA_JAZZ_21.png");
 }

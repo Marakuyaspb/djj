@@ -66,7 +66,7 @@ class Fabric(models.Model):
 
 class Option(models.Model):
 	option_id = models.AutoField(primary_key=True)
-	option_name = models.CharField(max_length=350, verbose_name = 'Заголовок опции (не обязательно)')
+	option_name = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Заголовок опции (не обязательно)')
 	option_1_img = models.ImageField(upload_to='options/%Y/%m/%d', verbose_name = 'Изображение 1')
 	option_1_description = models.CharField(max_length=500, null=True, blank=True, verbose_name = 'Описание опции 1')
 	option_2_img = models.ImageField(upload_to='options/%Y/%m/%d', verbose_name = 'Изображение 2')
@@ -156,40 +156,29 @@ class Product(models.Model):
 	fabric_name = models.ForeignKey(Fabric,
 		related_name='products',
 		on_delete=models.CASCADE, verbose_name = 'Название ткани')
-	product_full_name = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Полное название товара (напр. Угловой диван Consono)')
+	product_full_name = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Полное название товара')
+	product_img = models.ImageField(upload_to='images/%Y/%m/%d', null=True, blank=True, verbose_name = 'Изображение для страницы выдачи')
 
-	product_fabric_icon_1 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/CAMBRIDGE_600.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 1')
-	slug_fabric_icon_1 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №1')
-
-	product_fabric_icon_2 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d',  default='fabric_icons/2023/12/06/JAZZ_01.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 2')
-	slug_fabric_icon_2 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №2')
-
-	product_fabric_icon_3 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/JAZZ_21.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 3')
-	slug_fabric_icon_3 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №3')
-
-	product_fabric_icon_4 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/PIXEL_FOREST.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 4')
-	slug_fabric_icon_4 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №4')
-
-	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', default='fabric_icons/2023/12/06/VELUTTO_32.png', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5')
-	slug_fabric_icon_5 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Название ткани №5')
+	slug_fabric_icon_1 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №1', default='cambridge-600')
+	product_fabric_icon_1 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 1', default='fabric_icons/2024/01/23/CAMBRIDGE_600.png')
 	
-	show_on_category_page = models.BooleanField(default=True, verbose_name = 'Отображать в выдаче категории')
+	slug_fabric_icon_2 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №2', default='jazz-01')
+	product_fabric_icon_2 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 2', default='fabric_icons/2024/01/23/JAZZ_01.png')
 
-	popular = models.BooleanField(default=True, verbose_name = 'Отображать в карусели "Популярные"')
+	slug_fabric_icon_3 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №3', default='jazz-21')
+	product_fabric_icon_3 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 3', default='fabric_icons/2024/01/23/JAZZ_21.png')
 
-	is_new = models.BooleanField(default=True, verbose_name = 'Новый')
-	available_for_delivery_2 = models.BooleanField(default=True, verbose_name = 'Доставим за 2 дня')
-	available_for_delivery_28 = models.BooleanField(default=True, verbose_name = 'Доставим за 28 дней')
-	available_in_showroom = models.BooleanField(default=True, verbose_name = 'Есть в шоуруме')
-	icon_is_new = models.FileField(upload_to='status_icons/%Y/%m/%d', default='status_icons/2023/12/07/new.svg', null=True, blank=True, verbose_name = 'Иконка | Новый')
-	icon_available_for_delivery_2 = models.FileField(upload_to='status_icons/%Y/%m/%d', default='status_icons/2023/12/07/delivery2.svg', null=True, blank=True, verbose_name = 'Иконка | Доставим за 2 дня')
-	icon_available_for_delivery_28 = models.FileField(upload_to='status_icons/%Y/%m/%d', default='status_icons/2023/12/07/delivery2.svg', null=True, blank=True, verbose_name = 'Иконка | Доставим за 28 дней')
-	icon_available_in_showroom =models.FileField(upload_to='status_icons/%Y/%m/%d', default='status_icons/2023/12/07/showrooms.svg',null=True, blank=True, verbose_name = 'Иконка | Есть в шоуруме')
-
-	product_img = models.ImageField(upload_to='images/%Y/%m/%d', null=True, blank=True, verbose_name = 'Изображение товара')
-	description = models.CharField(max_length=1500, null=True, blank=True, verbose_name = 'Описание товара')
+	slug_fabric_icon_4 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №4', default='pixel-forest')
+	product_fabric_icon_4 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 4', default='fabric_icons/2024/01/23/PIXEL_FOREST.png')
+	
+	slug_fabric_icon_5 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №5', default='velutto-32')
+	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5', default='fabric_icons/2024/01/23/VELUTTO_32.png')
+	
 	price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена')
 	price_sale = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена (распродажа)')
+	
+	description = models.CharField(max_length=1500, null=True, blank=True, verbose_name = 'Описание товара')
+
 
 # Carousel #
 	carousel_item_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | десктоп', default='static/img/popovers_arm.png')
@@ -203,14 +192,12 @@ class Product(models.Model):
 	carousel_item_mob_4 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png')
 	carousel_item_mob_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png')
 
-
-	#carousel_items = models.ManyToManyField('ProductImage', blank=True, related_name='carousel_items', verbose_name ='Слайдер с товаром | десктоп')
-	#carousel_items_mob = models.ManyToManyField('ProductImage', related_name='carousel_items_mob', blank=True, verbose_name ='Слайдер с товаром | мобильный')
 	closeup = models.ImageField(upload_to='closeups/', blank=True, null=True, verbose_name = 'Крупный фрагмент справа')
+
 	width = models.IntegerField(blank=True, null=True, verbose_name = 'Ширина')
 	depth = models.IntegerField(blank=True, null=True, verbose_name = 'Глубина')
 	height = models.IntegerField(blank=True, null=True, verbose_name = 'Высота')
-	pdf =  models.FileField(upload_to='pdf/%Y/%m/%d', default='status_icons/2023/12/07/new.svg', null=True, blank=True, verbose_name = 'Файл PDF')
+	
 	product_inside = models.CharField(max_length=150, null=True, blank=True, verbose_name = 'Наполнение')
 	product_inside_pillow = models.CharField(max_length=150, null=True, blank=True, verbose_name = 'Наполнение подушек')
 	carcas_type = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Каркас')
@@ -218,13 +205,25 @@ class Product(models.Model):
 	mechanism_type = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Механизм')
 	sleep_place = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Спальное место')
 	linen_drawer = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Бельевой ящик')
-	scheme = models.FileField(upload_to='schemes/%Y/%m/%d', default='status_icons/2023/12/07/new.svg', null=True, blank=True, verbose_name = 'Схема')
+	features = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Конструктивные особенности')
+	
+	pdf =  models.FileField(upload_to='pdf/%Y/%m/%d', null=True, blank=True, verbose_name = 'Файл PDF')
+	scheme = models.FileField(upload_to='schemes/%Y/%m/%d', null=True, blank=True, verbose_name = 'Схема')
 
 	options = models.ManyToManyField(Option, verbose_name = 'Опции')
+
 	slider_interior = models.ForeignKey(SliderInterior, blank=True, null=True,on_delete=models.CASCADE, verbose_name = 'Слайдер с интерьерами')
 	popover = models.ForeignKey(PopOverFeatures, blank=True, on_delete=models.CASCADE, verbose_name = 'Поповер фичи')
 
-	features = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Конструктивные особенности')
+
+	is_new = models.BooleanField(default=True, verbose_name = 'Новый')
+	available_for_delivery_2 = models.BooleanField(default=True, verbose_name = 'Доставим за 2 дня')
+	available_for_delivery_28 = models.BooleanField(default=True, verbose_name = 'Доставим за 28 дней')
+	available_in_showroom = models.BooleanField(default=True, verbose_name = 'Есть в шоуруме')
+
+	show_on_category_page = models.BooleanField(default=True, verbose_name = 'На страницу категории')
+	popular = models.BooleanField(default=True, verbose_name = 'В карусель "Популярные"')
+
 	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
 	product_slug = models.SlugField(null=True, blank=True, max_length=100)
