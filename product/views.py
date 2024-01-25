@@ -12,11 +12,41 @@ def index(request):
 	popular = Product.objects.filter(popular=True)
 	return render(request, 'product/index.html', {'products': products, 'popular': popular})
 
-	# CATEGORIES
-def cat_view (request, category_slug=None):
-	category = get_object_or_404(Category, category_slug=category_slug)
-	products = Product.objects.filter(category=category)
+# CATEGORIES
+def cat_view(request, category_slug=None):
+	if category_slug == 'poufl':
+		poufl_category = get_object_or_404(Category, category='poufl')
+		poufs_category = get_object_or_404(Category, category='poufs')
+		products = Product.objects.filter(category__in=[poufl_category, poufs_category])
+	elif category_slug == 'accessory':
+		category = get_object_or_404(Category, category='accessory')
+		products = Product.objects.filter(category=category)
+	elif category_slug == 'arm':
+		category = get_object_or_404(Category, category='arm')
+		products = Product.objects.filter(category=category)
+	elif category_slug == 'bed':
+		category = get_object_or_404(Category, category='bed')
+		products = Product.objects.filter(category=category)
+	elif category_slug == 'corner':
+		category = get_object_or_404(Category, category='corner')
+		products = Product.objects.filter(category=category)
+	elif category_slug == 'k1r':
+		category = get_object_or_404(Category, category='k1r')
+		products = Product.objects.filter(category=category)
+	elif category_slug == 'str':
+		category = get_object_or_404(Category, category='str')
+		products = Product.objects.filter(category=category)
+	elif category_slug == 'table':
+		category = get_object_or_404(Category, category='table')
+		products = Product.objects.filter(category=category)
+	else:
+		products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
+
+# def cat_view (request, category_slug=None):
+# 	category = get_object_or_404(Category, category_slug=category_slug)
+# 	products = Product.objects.filter(category=category)
+# 	return render(request, 'product/category_goods.html', {'products': products})
 
 def about(request):
 	return render(request, 'product/about.html')
@@ -40,9 +70,9 @@ def error_404_view(request, exception):
 	popular = Product.objects.filter(popular=True)
 	return render(request, '404/404.html', {'products': products, 'popular': popular}, status=404)
 
-
-
 def single_product(request, product_slug=None):
+	template_name = 'product/single_product.html'  # Default template name
+    
 	if product_slug:
 		product = get_object_or_404(Product, product_slug=product_slug)
 		options = product.options.all()
@@ -50,8 +80,38 @@ def single_product(request, product_slug=None):
 		popover = product.popover
 		popular = Product.objects.filter(popular=True)
 		similar_products = Product.objects.filter(collection=product.collection)
+		if product.category in ['accessory', 'arm', 'bed', 'corner', 'k1r', 'poufl', 'poufs', 'str']:
+			template_name = 'product/single_product.html'
+		elif product.category in ['table', 'accessory']:
+			template_name = 'product/single_product_simpler.html'
+		else:
+			# handle error case here
+			pass
+
 	else:
 		# handle error case here
 		pass
+		
 	cart_product_form = CartAddProductForm()
-	return render(request,'product/single_product.html', {'product': product, 'options': options, 'slider_interior':slider_interior, 'popular': popular, 'similar_products': similar_products,  'cart_product_form': cart_product_form})
+	return render(request, template_name, {
+		'product': product,
+		'options': options,
+		'slider_interior': slider_interior,
+		'popular': popular,
+		'similar_products': similar_products,
+		'cart_product_form': cart_product_form
+	})
+
+# def single_product(request, product_slug=None):
+# 	if product_slug:
+# 		product = get_object_or_404(Product, product_slug=product_slug)
+# 		options = product.options.all()
+# 		slider_interior = product.slider_interior
+# 		popover = product.popover
+# 		popular = Product.objects.filter(popular=True)
+# 		similar_products = Product.objects.filter(collection=product.collection)
+# 	else:
+# 		# handle error case here
+# 		pass
+# 	cart_product_form = CartAddProductForm()
+# 	return render(request,'product/single_product.html', {'product': product, 'options': options, 'slider_interior':slider_interior, 'popular': popular, 'similar_products': similar_products,  'cart_product_form': cart_product_form})
