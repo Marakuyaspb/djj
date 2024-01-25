@@ -1464,9 +1464,9 @@ input[type=reset],
 .wp-block-file a.wp-block-file__button {
 
 	background-color: transparent;
-  	border: 1px solid #5E5B5B;
+  	border: 1px solid #9F8A88;
   /*color: #5E5B5B !important;*/
-  	font-size: 1.125rem;
+  	/*font-size: 1.125rem;*/
   	height: 2.4em;
   /*width: 10rem;*/
   	line-height: 1;

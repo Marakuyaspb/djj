@@ -3,10 +3,10 @@ Theme name: Decona_
 */
  
 
- @font-face {
-        font-family: "ALS Hauss";
-        src: url("/media/ALS_Hauss.woff");
-      }
+@font-face {
+  font-family: "ALS Hauss";
+  src: url("http://77.222.42.39//media/ALS_Hauss.woff");
+}
 
 
 
@@ -372,7 +372,7 @@ a .icon-header:hover{
 }
 
 .btn-prod-card_mob {
-	font-size: 1.4em;
+	font-size: 1.1em;
 	line-height: 1.4;
 	margin-top: auto;
 	margin-bottom: auto;
@@ -384,6 +384,11 @@ a .icon-header:hover{
 .accordion-padding{
 	padding-right: 20em;
 }
+.vertical_center{
+	margin-top: auto;
+	margin-bottom:auto;
+}
+
 
 .rel_pos{
   margin-top: auto;
@@ -539,6 +544,7 @@ a .icon-header:hover{
 	position: relative;
 	z-index: 1!important;
 	margin-top: -2em;
+	width: 80%;
 }
 
 .category_label{
@@ -633,32 +639,24 @@ a .icon-header:hover{
 .card-bottom-info{
 	z-index: 5 !important;
 	position: relative;
-	margin-top: -5em;
+	margin-top: -2em;
 }
 .product_card_header{
 	font-size: 2em!important;
 }
 .product_card_name_mob {
-	font-size: 1.25em;
+	font-size: 1.5em;
 }
 .prod-card-model{
 	color: #5E5B5B;	
 	font-size: 1.688em;
 	line-height: 2.4;
 }
-.prod-card-model-phone{
-	color: #5E5B5B;	
-	font-size: 1.3em;
-	line-height: 1.5;
-}
+
 .prod-card-price {
 	color: #5E5B5B;
 	font-size: 2.2em;
 	padding-top: .4em;
-}
-.prod-card-price-phone {
-	color: #5E5B5B;
-	font-size: 1.7em;
 }
 .old-price{
 	color: #9F8A88;
@@ -666,9 +664,20 @@ a .icon-header:hover{
 	padding-top: .4em;
 	text-decoration: line-through;
 }
+
+.prod-card-model-phone{
+	color: #5E5B5B;	
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+.prod-card-price-phone {
+	color: #5E5B5B;
+	font-size: 1.3em;
+}
+
 .old-price-phone{
 	color: #9F8A88;
-	font-size: 1.7em;
+	font-size: 1.3em;
 	text-decoration: line-through;
 }
 .margin-arm-card{
@@ -760,7 +769,9 @@ a .icon-header:hover{
 #id_quantity{
 	position: relative;
 	z-index: -2;
+
 }
+
 label{
 	position: relative;
 	z-index: -2;
