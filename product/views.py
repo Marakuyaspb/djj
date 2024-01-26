@@ -80,10 +80,16 @@ def single_product(request, product_slug=None):
 		popover = product.popover
 		popular = Product.objects.filter(popular=True)
 		similar_products = Product.objects.filter(collection=product.collection)
-		if product.category in ['accessory', 'arm', 'bed', 'corner', 'k1r', 'poufl', 'poufs', 'str']:
+		if product.category in ['accessory', 'bed', 'corner', 'str']:
 			template_name = 'product/single_product.html'
+		elif product.category in ['arm']:
+			template_name = 'product/single_product_arm.html'
 		elif product.category in ['table', 'accessory']:
 			template_name = 'product/single_product_simpler.html'
+		elif product.category in ['poufl', 'poufs']:
+			template_name = 'product/single_product_pouf.html'
+		elif product.category in ['k1r']:
+			template_name = 'product/single_product_full.html'
 		else:
 			# handle error case here
 			pass
@@ -91,7 +97,7 @@ def single_product(request, product_slug=None):
 	else:
 		# handle error case here
 		pass
-		
+
 	cart_product_form = CartAddProductForm()
 	return render(request, template_name, {
 		'product': product,
@@ -101,17 +107,3 @@ def single_product(request, product_slug=None):
 		'similar_products': similar_products,
 		'cart_product_form': cart_product_form
 	})
-
-# def single_product(request, product_slug=None):
-# 	if product_slug:
-# 		product = get_object_or_404(Product, product_slug=product_slug)
-# 		options = product.options.all()
-# 		slider_interior = product.slider_interior
-# 		popover = product.popover
-# 		popular = Product.objects.filter(popular=True)
-# 		similar_products = Product.objects.filter(collection=product.collection)
-# 	else:
-# 		# handle error case here
-# 		pass
-# 	cart_product_form = CartAddProductForm()
-# 	return render(request,'product/single_product.html', {'product': product, 'options': options, 'slider_interior':slider_interior, 'popular': popular, 'similar_products': similar_products,  'cart_product_form': cart_product_form})

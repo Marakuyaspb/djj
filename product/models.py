@@ -181,16 +181,16 @@ class Product(models.Model):
 
 
 # Carousel #
-	carousel_item_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | десктоп', default='static/img/popovers_arm.png')
-	carousel_item_2 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 2 | десктоп', default='static/img/popovers_arm.png')
-	carousel_item_3 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 3 | десктоп', default='static/img/popovers_arm.png')
-	carousel_item_4 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | десктоп', default='static/img/popovers_arm.png')
-	carousel_item_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 5 | десктоп', default='static/img/popovers_arm.png')
-	carousel_item_mob_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | мобильный', default='static/img/popovers_arm.png')
-	carousel_item_mob_2 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 2 | мобильный', default='static/img/popovers_arm.png')
-	carousel_item_mob_3 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 3 | мобильный', default='static/img/popovers_arm.png')
-	carousel_item_mob_4 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png')
-	carousel_item_mob_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png')
+	carousel_item_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_2 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 2 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_3 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 3 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_4 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 5 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_2 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 2 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_3 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 3 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_4 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
 
 	closeup = models.ImageField(upload_to='closeups/', blank=True, null=True, verbose_name = 'Крупный фрагмент справа')
 
@@ -210,7 +210,7 @@ class Product(models.Model):
 	pdf =  models.FileField(upload_to='pdf/%Y/%m/%d', null=True, blank=True, verbose_name = 'Файл PDF')
 	scheme = models.FileField(upload_to='schemes/%Y/%m/%d', null=True, blank=True, verbose_name = 'Схема')
 
-	options = models.ManyToManyField(Option, verbose_name = 'Опции')
+	options = models.ManyToManyField(Option, verbose_name = 'Опции', blank=True)
 
 	slider_interior = models.ForeignKey(SliderInterior, blank=True, null=True,on_delete=models.CASCADE, verbose_name = 'Слайдер с интерьерами')
 	popover = models.ForeignKey(PopOverFeatures, blank=True, on_delete=models.CASCADE, verbose_name = 'Поповер фичи')
