@@ -174,8 +174,8 @@ class Product(models.Model):
 	slug_fabric_icon_5 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №5', default='velutto-32')
 	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5', default='fabric_icons/2024/01/23/VELUTTO_32.png')
 	
-	price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена')
-	price_sale = models.DecimalField(max_digits=10, decimal_places=2, verbose_name = 'Цена (распродажа)')
+	price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, verbose_name = 'Цена')
+	price_sale = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name = 'Цена (распродажа)')
 	
 	description = models.CharField(max_length=1500, null=True, blank=True, verbose_name = 'Описание товара')
 
@@ -217,9 +217,9 @@ class Product(models.Model):
 
 
 	is_new = models.BooleanField(default=True, verbose_name = 'Новый')
-	available_for_delivery_2 = models.BooleanField(default=True, verbose_name = 'Доставим за 2 дня')
+	available_for_delivery_2 = models.BooleanField(default=False, verbose_name = 'Доставим за 2 дня')
 	available_for_delivery_28 = models.BooleanField(default=True, verbose_name = 'Доставим за 28 дней')
-	available_in_showroom = models.BooleanField(default=True, verbose_name = 'Есть в шоуруме')
+	available_in_showroom = models.BooleanField(default=False, verbose_name = 'Есть в шоуруме')
 
 	show_on_category_page = models.BooleanField(default=True, verbose_name = 'На страницу категории')
 	popular = models.BooleanField(default=True, verbose_name = 'В карусель "Популярные"')
