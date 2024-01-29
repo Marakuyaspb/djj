@@ -20,11 +20,14 @@ urlpatterns = [
 
 # just pages
 	path('about/', views.about, name = 'about'),
-	path('contact/', views.contact, name = 'contact'),
-	path('payment/', views.payment, name = 'payment'),
-	path('showrooms/', views.showrooms, name = 'showrooms'),
-	path('products/', views.products, name = 'products'),
 	path('categories/', views.categories, name = 'categories'),
+	path('contact/', views.contact, name = 'contact'),
+	path('dealers/', views.dealers, name = 'dealers'),
+	path('designers/', views.designers, name = 'designers'),
+	path('payment/', views.payment, name = 'payment'),
+	path('products/', views.products, name = 'products'),
+	path('showrooms/', views.showrooms, name = 'showrooms'),
+	path('vacancies/', views.vacancies, name = 'vacancies'),
 
 
 # products dynamic

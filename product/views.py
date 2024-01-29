@@ -50,14 +50,22 @@ def cat_view(request, category_slug=None):
 
 def about(request):
 	return render(request, 'product/about.html')
+def categories(request):
+	return render(request, 'product/categories_list.html')
 def contact(request):
 	return render(request, 'product/contact.html')
+def dealers(request):
+	return render(request, 'product/dealers.html')
+def designers(request):
+	return render(request, 'product/designers.html')
 def payment(request):
 	return render(request, 'product/payment.html')
 def showrooms(request):
 	return render(request, 'product/showrooms.html')
-def categories(request):
-	return render(request, 'product/categories_list.html')
+def vacancies(request):
+	return render(request, 'product/vacancies.html')
+
+
 
 #ALL
 def products (request):

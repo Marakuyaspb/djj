@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     # additional packages
+    #'weasyprint',
     #'mathfilters',
     #'crispy_forms',
     #'ckeditor',

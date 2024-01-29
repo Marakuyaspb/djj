@@ -5,7 +5,8 @@ Theme name: Decona_
 
 @font-face {
   font-family: "ALS Hauss";
-  src: url("http://77.222.42.39//media/ALS_Hauss.woff");
+  /*src: url("http://77.222.42.39//media/ALS_Hauss_VF.woff");*/
+  src: url("http://77.222.42.39/media/_.._files_Fonts_Hauss 1.2_ALS_Hauss_VF.ttf");
 }
 
 
@@ -17,14 +18,11 @@ body {
 }
 
 h1, h2, h3 {
-/*	font-family: 'ALS Hauss'!important;*/
 	color: #5E5B5B;
 
 }
 h4, h5, h6 {
-
 	color: #5E5B5B;
-/*	font-weight: ;*/
 }
 h1{
 	font-size: 5.5rem!important;
@@ -503,8 +501,9 @@ a .icon-header:hover{
 	margin-top: -16em;
 	margin-bottom: 4em;
 }
-. slider_h1{
+.slider_h1{
 	font-size:4.375em!important;
+	font-weight: 200;
 }
 
 /* CATEGORIES PAGE */

@@ -95,17 +95,11 @@ Decona Theme, (C) 2023
 	/* Font Family */
 	@font-face {
     font-family: 'ALS Hauss Book', Georgia, serif;
-    src: url("/media/ALS_Hauss.woff");
+    src: url("http://77.222.42.39/media/_.._files_Fonts_Hauss 1.2_ALS_Hauss_VF.ttf");
     font-style: normal;
  }
 --global--font-primary: var(--font-headings, 'ALS Hauss', sans-serif)!important;
 --global--font-secondary: var(--font-base, 'ALS Hauss', sans-serif)!important;
-
-	/* ANTIC INFO */
-	/*
-	--global--font-primary: var(--font-headings, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);
-	--global--font-secondary: var(--font-base, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif);*/
-
 
 
 	/* Font Size */
@@ -895,7 +889,7 @@ html {
 
 body {
 	font-size: var(--global--font-size-base);
-	font-weight: normal;
+	/*font-weight: normal;*/
 	color: #5E5B5B;
 	text-align: left;
 	/*background-color: var(--global--color-background);*/

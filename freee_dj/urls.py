@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-admin.site.site_header = 'Центр управления начинкой сайта'
+admin.site.site_header = 'Сверхважный Центр Управления Контентом'
 admin.site.index_title = 'Админская панель'
 
 handler404 = views.error_404_view
@@ -17,8 +17,6 @@ urlpatterns = [
     path('product/', include('product.urls', namespace='payment')),
     path("", include("blog.urls")),
     path("", include("product.urls")),
-
-    #path("__debug__/", include("debug_toolbar.urls")),
 ]
 
 
