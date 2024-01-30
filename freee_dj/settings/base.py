@@ -14,14 +14,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 PROJECT_ROOT = os.path.dirname(__file__)
 
-
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-ALLOWED_HOSTS = ['127.0.0.1', 'ba81-176-59-13-221.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'b774-176-59-12-162.ngrok-free.app']
 
 
 #for ngrok
-CSRF_TRUSTED_ORIGINS = ['https://ba81-176-59-13-221.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://b774-176-59-12-162.ngrok-free.app']
 
 SITE_ID = 1
 
@@ -37,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     # additional packages
-    #'weasyprint',
+    'weasyprint',
     #'mathfilters',
     #'crispy_forms',
     #'ckeditor',

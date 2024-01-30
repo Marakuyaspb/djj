@@ -2,10 +2,19 @@ server {
     listen 80;
     server_name 77.222.42.39 77-222-42-39.swtest.ru www.77-222-42-39.swtest.ru;
 
-    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /favicon.ico { 
+        access_log off;
+        log_not_found off; 
+    }
+
     location /static/ {
         root /home/aadmin/freee_dj;
     }
+    
+    location /static/fonts/ {
+        add_header Access-Control-Allow-Origin *;
+    }
+
     location /media/ {
         alias /home/aadmin/freee_dj/media/;
     }

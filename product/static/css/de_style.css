@@ -1,20 +1,53 @@
-/*
-Theme name: Decona_
-*/
- 
-
-@font-face {
+/*@font-face {
   font-family: "ALS Hauss";
-  /*src: url("http://77.222.42.39//media/ALS_Hauss_VF.woff");*/
-  src: url("http://77.222.42.39/media/_.._files_Fonts_Hauss 1.2_ALS_Hauss_VF.ttf");
+  src: url({% static "fonts/ALS_Hauss.ttf" %}) format('truetype');
 }
 
+@font-face {
+  font-family: "ALS Hauss Thin";
+  src: url({% static "fonts/als_hauss_thin.woff2" %}) format('truetype');
+  font-weight: 100;
+}
+@font-face {
+  font-family: "ALS Hauss Light";
+  src: url({% static "fonts/als_hauss_light.woff2" %}) format('truetype');
+  font-weight: 200;
+}
+@font-face {
+  font-family: "ALS Hauss Book";
+  src: url({% static "fonts/als_hauss_book.woff2") %} format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: "ALS Hauss Bold";
+  src: url({% static "fonts/als_hauss_bold.woff2" %}) format('truetype');
+  font-weight: 700;
+}*/
 
+@font-face {
+  font-family: "ALS Hauss Thin";
+  src: url("/static/fonts/als_hauss_thin.woff2");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "ALS Hauss Light";
+  src: url("/static/fonts/als_hauss_light.woff2");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "ALS Hauss Book";
+  src: url("/static/fonts/als_hauss_book.woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "ALS Hauss Bold";
+  src: url("/static/fonts/als_hauss_bold.woff2");
+  font-weight: 700;
+}
 
 body {
-	font-family: 'ALS Hauss', 'Georgia', sans-serif !important;
+	font-family: 'ALS Hauss Thin', 'Georgia', sans-serif !important;
 	margin: 0;
-
 }
 
 h1, h2, h3 {
@@ -55,7 +88,6 @@ p {
 	margin-bottom: -1.5em;
 }
 .just-thin{
-	
 	font-weight: 100;
 }
 .major-text {

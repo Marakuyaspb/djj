@@ -10,6 +10,7 @@ WorkingDirectory=/home/aadmin/freee_dj
 ExecStart=/home/aadmin/freee_dj/venv/bin/gunicorn \
 	--access-logfile - \
 	--workers 3 \
+	--error-logfile /var/log/gunicorn/error.log \
 	--bind unix:/run/gunicorn.sock \
 	freee_dj.wsgi:application
 

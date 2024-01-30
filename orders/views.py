@@ -11,7 +11,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.conf import settings
 from django.http import HttpResponse
 from django.template.loader import render_to_string
-#import weasyprint
+import weasyprint
 #from weasyprint import HTML
 from django.core.mail import send_mail, send_mass_mail
 from django.template import loader
@@ -67,12 +67,11 @@ def order_create(request):
 
 
 
-
 @staff_member_required
 def admin_order_detail(request, order_id):
     order = get_object_or_404(Order, id=order_id)
     return render(request,
-                  'admin/orders/order/detail.html',
+                  'orders/order/detail.html',
                   {'order': order})
 
 @staff_member_required
