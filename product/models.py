@@ -175,7 +175,7 @@ class Product(models.Model):
 	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5', default='fabric_icons/2024/01/23/VELUTTO_32.png')
 	
 	price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, verbose_name = 'Цена')
-	price_sale = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name = 'Цена (распродажа)')
+	price_old = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name = 'Старая цена')
 	
 	description = models.CharField(max_length=1500, null=True, blank=True, verbose_name = 'Описание товара')
 
@@ -225,7 +225,7 @@ class Product(models.Model):
 	popular = models.BooleanField(default=True, verbose_name = 'В карусель "Популярные"')
 
 	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
-	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
+	updated = models.DateTimeField(auto_now=True, verbose_name = 'Посл. изменения')
 	product_slug = models.SlugField(null=True, blank=True, max_length=100)
 
 	

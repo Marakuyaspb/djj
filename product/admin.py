@@ -25,7 +25,7 @@ class ProductImagelInline(admin.TabularInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-	list_display = ('product_full_name', 'fabric_name', 'price', 'price_sale', 'show_on_category_page', 'popular', 'is_new', 'available_in_showroom', 'created', 'updated')
+	list_display = ('product_full_name', 'fabric_name', 'price', 'price_old', 'show_on_category_page', 'popular', 'is_new', 'available_in_showroom', 'created', 'updated')
 	#form = CustomProductForm
 	inlines = [ProductImagelInline]
 	actions = ['duplicate_products']

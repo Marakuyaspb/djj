@@ -37,7 +37,7 @@ class Cart:
 	def add(self, product, quantity=1, override_quantity=False):
 		product_slug = str(product.product_slug)
 		if product_slug not in self.cart:
-			self.cart[product_slug] = {'quantity': quantity, 'price': str(product.price_sale)}
+			self.cart[product_slug] = {'quantity': quantity, 'price': str(product.price)}
 		else:
 			if override_quantity:
 				self.cart[product_slug]['quantity'] = quantity

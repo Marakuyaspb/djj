@@ -743,7 +743,7 @@ input[type=reset],
 .wp-block-file a.wp-block-file__button {
 	background-color: transparent;
 	border: 1px solid #9F8A88;
-	height: 2.4em;
+	/*height: 2.4em;*/
 	line-height: .1;
 	padding: .5em;
 }
@@ -857,10 +857,11 @@ textarea {
 .btn-prod-card {
 	background-color: #9F8A88!important;
 	border: none!important;	
-	font-size: 1.1em!important;
+	font-size: 1.375em !important;
 	line-height: 1.1!important;
 	margin: 0!important;
-	height: 2.4em;
+	height: 3.125em;
+  width: 11.75em;
 }
 .btn-prod-card:hover {
 	background-color: #5c4745!important;
@@ -1140,18 +1141,18 @@ PRODUCT CARD
 }
 .prod-card-model{
 	color: #5E5B5B;	
-	font-size: 1.688em;
-	line-height: 2.4;
+	font-size: 1.687em;
+	line-height: 3;
 }
 
 .prod-card-price {
 	color: #5E5B5B;
-	font-size: 2.2em;
+	font-size: 2.25em;
 	padding-top: .4em;
 }
 .old-price{
 	color: #9F8A88;
-	font-size: 2.2em;
+	font-size: 2.25em;
 	padding-top: .4em;
 	text-decoration: line-through;
 }
@@ -1244,12 +1245,22 @@ PRODUCT CARD
 }
 
 
-
 .cart_img{
 	width: 12em;
 }
 .zero_height{
 	height: 0!important;
+	width: 0!important;
+}
+div.zero_height select {
+  border: none;
+  height: 0!important;
+	width: 0!important;
+}
+div.zero_height label {
+  border: none;
+  height: 0!important;
+	width: 0!important;
 }
 
 .z_index_up{
