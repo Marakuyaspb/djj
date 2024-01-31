@@ -8,11 +8,7 @@ server {
     }
 
     location /static/ {
-        root /home/aadmin/freee_dj;
-    }
-    
-    location /static/fonts/ {
-        add_header Access-Control-Allow-Origin *;
+        alias /home/aadmin/freee_dj/static/;
     }
 
     location /media/ {

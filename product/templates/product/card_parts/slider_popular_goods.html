@@ -10,10 +10,6 @@
 		display: inline-block;
 	  padding: 1em;
 	}
-	/*.product_card{
-		border-right: 1px solid #DCCBC7;
-		line-height: 10px;
-	}*/
 	.product_img_under_carousel{
 		position: relative;
 	  z-index: 1 !important;
@@ -52,23 +48,32 @@
 							<img src="{{ el.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
 						{% endif %}
 					</div>
+
 				</div>
 			<!-- END OF THE HEAD OF THE CARD -->
 
 			<!-- THE CARD BODY -->			
 				<div class = 'card-bottom-info'>
-					<center class='mt-5 '>
+					<center class=''>
 						<img src="/media/{{ e.product_img }}" class="img-fluid product_img_under_carousel">
 					</center>
 
 					<div class = 'd-flex justify-content-between'>
-						<div class='cacao'>В наличии</div>
-						<div class='old-price_cat_page'>{{ e.price }} ₽</div>
+						<div class=''>
+							<p class='smaller_text_18 cacao'>В наличии</p>
+						</div>
+						<div class='old-'>
+							<p class='smaller_text_18'>{{ e.price }} ₽</p>
+						</div>
 					</div>
 
 					<div class = 'd-flex justify-content-between'>
-						<div class='cacao'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</div>
-						<div class='cacao price_cat_page'>{{ e.price_sale }} ₽</div>
+						<div class=''>
+							<p class='smaller_text_18 cacao'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</p>
+						</div>
+						<div class=' '>
+							<p class='smaller_text_18 cacao'>{{ e.price_sale }} ₽</p>
+						</div>
 					</div>
 				</div>
 			<!-- END OF THE CARD BODY -->	

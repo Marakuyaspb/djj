@@ -48,6 +48,7 @@ def cat_view(request, category_slug=None):
 # 	products = Product.objects.filter(category=category)
 # 	return render(request, 'product/category_goods.html', {'products': products})
 
+
 def about(request):
 	return render(request, 'product/about.html')
 def categories(request):
@@ -107,6 +108,7 @@ def single_product(request, product_slug=None):
 		pass
 
 	cart_product_form = CartAddProductForm()
+	
 	return render(request, template_name, {
 		'product': product,
 		'options': options,

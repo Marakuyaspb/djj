@@ -55,18 +55,26 @@
 
 			<!-- THE CARD BODY -->			
 				<div class = 'card-bottom-info'>
-					<center class='mt-5 '>
+					<center class=''>
 						<img src="/media/{{ e.product_img }}" class="img-fluid product_img_under_carousel">
 					</center>
 
 					<div class = 'd-flex justify-content-between'>
-						<div class='cacao'>В наличии</div>
-						<div class='old-price_cat_page'>{{ e.price }} ₽</div>
+						<div class='cacao'>
+							<p class='smaller_text_18'>В наличии</p>
+						</div>
+						<div class='old-price_cat_page'>
+							<p class='smaller_text_18'>{{ e.price }} ₽</p>
+						</div>
 					</div>
 
 					<div class = 'd-flex justify-content-between'>
-						<div class='cacao'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</div>
-						<div class='cacao price_cat_page'>{{ e.price_sale }} ₽</div>
+						<div class='cacao'>
+							<p class='smaller_text_18'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</p>
+						</div>
+						<div class='cacao price_cat_page'>
+							<p class='smaller_text_18'>{{ e.price_sale }} ₽</p>
+						</div>
 					</div>
 				</div>
 			<!-- END OF THE CARD BODY -->	

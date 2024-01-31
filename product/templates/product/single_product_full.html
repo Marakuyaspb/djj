@@ -6,8 +6,8 @@
 
 <!-- DESCTOP -->
 	<div class='d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
-		<div class='thin ms-4'>
-			<a id='collection' class='{{ product.collection }}' href='{% url "product:products" %}'>Продукция</a> / {{ product.category_ru }}
+		<div class='breadcrumbs'>
+			<a id='' class='{{ product.collection }}' href='{% url "product:products" %}'>Продукция</a> / <a href='/products/{{product.category}}'>{{ product.category_ru }}</a>
 		</div>
 
 		
