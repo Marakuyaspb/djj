@@ -5,8 +5,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-admin.site.site_header = 'Сверхважный Центр Управления Контентом'
-admin.site.index_title = 'Админская панель'
+admin.site.site_header = 'Система Централизованного Управления Контентом'
+admin.site.index_title = 'Панель администратора'
 
 handler404 = views.error_404_view
 

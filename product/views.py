@@ -89,14 +89,12 @@ def single_product(request, product_slug=None):
 		popover = product.popover
 		popular = Product.objects.filter(popular=True)
 		similar_products = Product.objects.filter(collection=product.collection)
-		if product.category in ['accessory', 'bed', 'corner', 'str']:
+		if product.category in ['bed', 'corner', 'str']:
 			template_name = 'product/single_product.html'
-		elif product.category in ['arm']:
-			template_name = 'product/single_product_arm.html'
-		elif product.category in ['table', 'accessory']:
+		elif product.category in ['arm', 'poufl', 'poufs']:
+			template_name = 'product/single_product_rect.html'
+		elif product.category in ['accessory', 'table']:
 			template_name = 'product/single_product_simpler.html'
-		elif product.category in ['poufl', 'poufs']:
-			template_name = 'product/single_product_pouf.html'
 		elif product.category in ['k1r']:
 			template_name = 'product/single_product_full.html'
 		else:
