@@ -343,8 +343,6 @@ class Product(models.Model):
 	def popover_5_description(self):
 		return self.popover.popover_5_description
 
-
-
 	def save(self, *args, **kwargs):
 		self.product_slug = slugify('-'.join([self.collection.collection, self.category.category, self.fabric_name.fabric_name]))
 		super().save(*args, **kwargs)
@@ -358,13 +356,12 @@ class Product(models.Model):
 		return f"Product: {self.id}, Options: {', '.join([str(option) for option in self.options.all()])}"
 
 
+class ProductOption(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    option = models.ForeignKey(Option, on_delete=models.CASCADE)
+
+
 
 class ProductImage(models.Model):
 	product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, related_name='images')
 	image = models.ImageField(upload_to='product_items/%Y/%m/%d')
-
-
-
-class ProductOption(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    option = models.ForeignKey(Option, on_delete=models.CASCADE)

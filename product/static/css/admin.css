@@ -1,0 +1,231 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "ALS Hauss";
+  src: url("../fonts/ALS_Hauss.ttf");
+}
+
+
+@font-face {
+  font-family: "ALS Hauss Thin";
+  src: url("../fonts/als_hauss_thin.woff2");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "ALS Hauss Light";
+  src: url("../fonts/als_hauss_light.woff2");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "ALS Hauss Book";
+  src: url("../fonts/als_hauss_book.woff2");
+  font-weight: 300;
+}
+
+
+body {
+	font-family: 'ALS Hauss Book', 'Georgia', sans-serif !important;
+	margin: 0;
+	font-weight: 300;
+}
+
+#header{
+	background-color: #594b4a;
+	color: #F6F1EE;
+	padding-top: 1em;
+}
+/* #9F8A88 */
+:root
+{
+  --primary: #594b4a;
+  --secondary: #e8d9d1;
+  --accent: #f5dd5d;
+  --primary-fg: #fff;
+  --body-fg: #333;
+  --body-bg: #fff;
+  --body-quiet-color: #666;
+  --body-loud-color: #000;
+  --header-color: #ffc;
+  --header-branding-color: var(--accent);
+  --header-bg: var(--secondary);
+  --header-link-color: var(--primary-fg);
+  --breadcrumbs-fg: #c4dce8;
+  --breadcrumbs-link-fg: var(--body-bg);
+  --breadcrumbs-bg: var(--primary);
+  --link-fg: #447e9b;
+  --link-hover-color: #036;
+  --link-selected-fg: #5b80b2;
+  --hairline-color: #e8d9d1;
+  --border-color: #ccc;
+  --error-fg: #fa5339;
+  --message-success-bg: #dfd;
+  --message-warning-bg: #ffc;
+  --message-error-bg: #ffefef;
+  --darkened-bg: #fcf9f7;
+  --selected-bg: #F6F1EE;
+  --selected-row: #F6F1EE!important;
+  --button-fg: #fff;
+  --button-bg: var(--primary);
+  --button-hover-bg: #609ab6;
+  --default-button-bg: var(--secondary);
+  --default-button-hover-bg: #205067;
+  --close-button-bg: #e6ddd8;
+  --close-button-hover-bg: #F6F1EE;
+  --delete-button-bg: #ff9373!important;
+  --delete-button-hover-bg: #fa8764;
+  --object-tools-fg: var(--button-fg);
+  --object-tools-bg: var(--close-button-bg);
+  --object-tools-hover-bg: var(--close-button-hover-bg);
+}
+
+/*
+button{
+	box-shadow: 0 -15px 20px -10px rgbargba(246, 241, 238, 1) inset;
+}*/
+
+#user-tools a, .navbar_brand a {
+color: #F6F1EE!important;
+}
+.navbar_brand a:visited {
+	color: #F6F1EE!important;
+}
+div.breadcrumbs{
+	background-color: #e8d9d1!important;
+	color:#50504E;
+}
+.breadcrumbs a{
+	color:#50504E!important;
+}
+caption{
+	background-color: #594b4a;
+}
+
+#branding h1{
+	color: #F6F1EE;
+	font-family: "ALS Hauss Light";
+	margin-bottom: .3em;
+}
+
+h2{
+	font-size: 1.6em!important;
+}
+h3{
+	font-size: 1.5em!important;
+}
+h4{
+	font-size: 1.3em;
+	font-family: "ALS Hauss Light";
+	margin-top: .2em;
+	margin-bottom: 0em;
+}
+
+
+
+input[type="submit"]{
+	color: #5E5B5B;
+	padding: .5em;
+	background-color: #e6ddd8;
+	border: solid 1px #e8d9d1;
+}
+input[type="submit"]:hover{
+	background-color: #F6F1EE;
+}
+
+
+input[type="submit"].default, .submit-row input.default{
+	background-color: #e6ddd8!important;
+	box-shadow: 0 -15px 20px -10px rgbargba(246, 241, 238, 1) inset;
+}
+
+.submit-row input.default:hover{
+	background-color: #F6F1EE!important;
+}
+
+/*.submit-row a.deletelink {
+	background:#fa5339!important;
+}
+.delete-confirmation form input[type="submit"]{
+	background:#fa5339!important;
+}*/
+.delete-confirmation form .cancel-link {
+	padding: 12px 15px;!important;
+}
+
+.submit-row{
+	background: #fff!important;
+	border:none!important;
+}
+
+
+input[type="text"]{
+	border: 1px solid #9F8A88;
+}
+input[type="number"]{
+	border: 1px solid #9F8A88;
+}
+select{
+	border: 1px solid #9F8A88;
+}
+fieldset input[type="checkbox"]{
+	margin-right: 1em;
+}
+
+#id_description{
+	width: 50%;
+	height: 15em;
+}
+
+#nav-filter{
+  padding: 8px 8px!important;
+}
+
+.form-row{
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+a{
+	font-size: 1em;
+	text-decoration: none;
+	color:#50504E!important;
+}
+a:hover{
+	color:#9F8A88!important;
+}
+/*a:visited{
+	color:#50504E!important;
+}*/
+a.section{
+	font-size: 1.1em;
+	padding: 8px;
+	color: #F6F1EE!important;
+}
+a.section:hover{
+	color:#FFF!important;
+}
+
+table th, table td, tr{
+  border-color: #F6F1EE;
+  border-style: solid;
+  border-width: 2px;
+  padding: .5em;
+}
+
+ul {
+  /*list-style-type: "✔";*/
+  list-style-type: none;
+}
+
+.addlink{
+	font-size: 1em;
+	font-weight: 600;
+}
+.object-tools a{
+	background: #F6F1EE!important;
+	padding: 8px 12px!important;
+}
+
+
+.aligned label{
+  width: 210px!important;
+  line-height: 1.5!important;
+}

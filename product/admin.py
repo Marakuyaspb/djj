@@ -1,35 +1,54 @@
 from django.contrib import admin
-# from .forms import CustomProductForm
 from .models import Category, Collection, Option, Fabric, SliderInterior, Product, ProductImage, PopOverFeatures
+from django.utils.safestring import mark_safe
+# from .forms import ProductImageForm
+from django.template.loader import get_template
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 from django.forms import CheckboxSelectMultiple
 
 
 
-class ProductImagelInline(admin.TabularInline):
-	model = ProductImage
-	extra = 1
-
-# class ProductCarouselMobInline(admin.TabularInline):
-# 	model = Product.carousel_items_mob.through
-# 	extra = 1
-
-# class ProductInteriorInline(admin.TabularInline):
-# 	model = Product.interior_items.through
-# 	extra = 1
-
-# class ProductInteriorMobInline(admin.TabularInline):
-# 	model = Product.interior_items_mob.through
-# 	extra = 1
-
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-	list_display = ('product_full_name', 'fabric_name', 'price', 'price_old', 'show_on_category_page', 'popular', 'is_new', 'available_in_showroom', 'created', 'updated')
-	#form = CustomProductForm
-	inlines = [ProductImagelInline]
+	
+	list_display = ('product_full_name', 'get_html_img_preview', 'fabric_name', 'price', 'price_old', 'popular', 'is_new', 'available_in_showroom', 'created', 'updated') 
+
+	fields = ['category', 'collection', 
+		'fabric_name', 
+		'product_img', 		
+		'product_full_name', 
+		('slug_fabric_icon_1', 'product_fabric_icon_1'),
+		('slug_fabric_icon_2', 'product_fabric_icon_2'),
+		('slug_fabric_icon_3', 'product_fabric_icon_3'),
+		('slug_fabric_icon_4', 'product_fabric_icon_4'),
+		('slug_fabric_icon_5', 'product_fabric_icon_5'),
+		'price', 
+		'price_old', 
+		'description', 
+		'closeup',
+		('width', 'depth', 'height'),
+		'product_inside', 
+		'product_inside_pillow', 
+		'carcas_type', 
+		'paws_type', 
+		'mechanism_type', 
+		'sleep_place', 
+		'linen_drawer', 
+		'features',
+		'pdf', 'scheme', 
+		'options', 
+		'slider_interior', 
+		'popover', 
+		('is_new', 'available_for_delivery_2','available_for_delivery_28', 'available_in_showroom'), 
+		('show_on_category_page','popular'),
+		'product_slug']
+	save_on_top = True
+
 	actions = ['duplicate_products']
 
+
+	# Duplicate product
 	def duplicate_products(self, request, queryset):
 		for product in queryset:
 			product.pk = None
@@ -37,6 +56,12 @@ class ProductAdmin(admin.ModelAdmin):
 		self.message_user(request, f"{len(queryset)} product(s) duplicated successfully.")
 	duplicate_products.short_description = "Дублировать выбранные товары"
 
+
+	# ADD photos preview in the list
+	def get_html_img_preview(self, object):
+		if object.product_img:
+			return mark_safe(f'<img src="{object.product_img.url}" width=100>')
+	get_html_img_preview.short_description = 'Превью'
 
 
 @admin.register(Category)
@@ -65,7 +90,21 @@ class PopOverFeaturesAdmin(admin.ModelAdmin):
 
 @admin.register(Fabric)
 class FabricAdmin(admin.ModelAdmin):
-	list_display = ('fabric_name', 'product_fabric_about', 'created', 'updated')
+	list_display = ('fabric_name', 'get_html_fabric_preview', 'product_fabric_about', 'created', 'updated')
+	fields = [
+	'fabric_name',
+	('product_fabric_img', 'get_html_fabric_preview'),
+	'product_fabric_about'
+	]
+	readonly_fields = ('created', 'updated', 'get_html_fabric_preview')
+
+	# ADD fabric preview in the list
+	def get_html_fabric_preview(self, object):
+		if object.product_fabric_img:
+			return mark_safe(f'<img src="{object.product_fabric_img.url}" width=170>')
+	get_html_fabric_preview.short_description = 'Миниатюра'
+
+
 
 @admin.register(Option)
 class OptionAdmin(admin.ModelAdmin):

@@ -65,7 +65,7 @@ ROOT_URLCONF = 'freee_dj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [ os.path.join(PROJECT_ROOT, 'templates/') ],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates/') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,6 +102,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+
+THUMBNAIL_ALIASES = {
+    "": {
+        "small": {"size": (150, 150)}
+    },
+}
 
 
 # Internationalization

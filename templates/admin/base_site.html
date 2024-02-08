@@ -1,0 +1,21 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrastyle %}
+	<link rel="stylesheet" href="{% static 'css/admin.css'%}" type="text/css">
+
+	<link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" >
+{% endblock %}
+
+	{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+	
+
+	{% block branding %}
+	<div class='container'>
+	 	<a href='{% url "admin:index" %}'><h1 class=''>Система Централизованного Управления Контентом</h1></a>
+	 </div>
+	{% endblock %}
+
+	{% block nav-global %}{% endblock %}
+
+	{% block breadcrumbs %}{% endblock %}
