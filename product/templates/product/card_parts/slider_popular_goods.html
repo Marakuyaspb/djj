@@ -71,9 +71,11 @@
 						<div class=''>
 							<p class='smaller_text_18 cacao'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</p>
 						</div>
+						{% if product.price_old %}
 						<div class=' '>
-							<p class='smaller_text_18 cacao'>{{ e.price_sale }} ₽</p>
+							<p class='smaller_text_18 cacao'>{{ e.price_old }} ₽</p>
 						</div>
+						{% endif %}
 					</div>
 				</div>
 			<!-- END OF THE CARD BODY -->	

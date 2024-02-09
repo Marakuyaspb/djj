@@ -275,7 +275,9 @@
 						<p>В наличии</p>
 					</div>
 					<div class=''>
-						<p>{{ el.price_old }} ₽</p>
+						{% if product.price_old %}
+							<p>{{ el.price_old }} ₽</p>
+						{% endif %}
 					</div>
 				</div>
 

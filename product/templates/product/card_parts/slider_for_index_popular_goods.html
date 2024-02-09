@@ -66,7 +66,11 @@
 
 					<div class = 'd-flex justify-content-between'>
 						<div class='cacao'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</div>
-						<div class='cacao price_cat_page'>{{ e.price_sale }} ₽</div>
+
+						{% if product.price_old %}
+						<div class='cacao price_cat_page'>{{ e.price_old }} ₽</div>
+						{% endif %}
+						
 					</div>
 				</div>
 			<!-- END OF THE CARD BODY -->	

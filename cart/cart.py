@@ -18,13 +18,11 @@ class Cart:
 	def __iter__(self):
 		product_slugs = self.cart.keys()
 		products = [get_object_or_404(Product, product_slug=product_slug) for product_slug in product_slugs]
-		#products = Product.objects.filter(product_slug__in=product_slugs)
 		cart = self.cart.copy()
 
 		for product in products:
 			cart[str(product.product_slug)]['product'] = product
 		for item in cart.values():
-			#item = cart[product.product_slug]
 			item['price'] = Decimal(item['price'])
 			item['total_price'] = item['price'] * item['quantity']
 			yield item

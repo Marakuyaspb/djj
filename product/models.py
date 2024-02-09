@@ -28,7 +28,6 @@ class Category(models.Model):
 		return self.category
 
 
-
 class Collection(models.Model):
 	collection_id = models.AutoField(primary_key=True)
 	collection = models.CharField(max_length=30, verbose_name = 'Коллекция (Латиницей, с большой буквы)')
