@@ -40,9 +40,9 @@
 
 					<td>
 						<p class='major-text pb-2'>{{ product.product_full_name }}
-						<p class='cacao'>Материал обивки: {{ product.fabric_name }}
-						<p class='cacao'>Наполнитель: {{ product.product_inside }}, {{ product.product_inside_pillow }}
-						<p class='cacao'>Габаритные размеры: {{ product.width }} x {{ product.height }} x {{ product.depth }}
+						<p class='cacao small-text'>Материал обивки: {{ product.fabric_name }}
+						<p class='cacao small-text'>Наполнитель: {{ product.product_inside }}, {{ product.product_inside_pillow }}
+						<p class='cacao small-text'>Габаритные размеры: {{ product.width }} x {{ product.height }} x {{ product.depth }}
 
 					</td>
 
@@ -81,12 +81,13 @@
 			<tr class="total">
 				<td colspan="4"></td>
 				<td>Итого:</td>
-				<td class="num show_total_cost"></td>
+				<td class="num get_total_price">{{ cart.get_total_price }}₽</td>
 			</tr>
 		</tbody>
 	</table>
 	<br>
 	<br>
+
 
 	<div class="d-flex justify-content-between">
 		

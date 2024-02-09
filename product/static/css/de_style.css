@@ -54,7 +54,6 @@
 	--global--line-height-page-title: 1.1;
 
 	/* Colors */
-	/*--global--color-black: #000;*/
 	--global--color-gray: #5E5B5B; /* for texts */
 	--global--color-cacao: #9F8A88;
 	--global--color-light-gray: #F6F1EE; /*rect*/
@@ -65,6 +64,7 @@
 	--global--color-white-50: rgba(255, 255, 255, 0.5);
 	--global--color-white-90: rgba(255, 255, 255, 0.9);
 	--global--color-primary: #5E5B5B; 
+
 	
 	/* Body text color, site title, footer text color. */
 	--global--color-secondary: var(--global--color-cacao); /* Headings */
@@ -278,7 +278,12 @@ Fonts
 }
 
 
-
+input .general-gray {
+	height: 2.4em;
+}
+form .general-gray {
+	height: 2.4em;
+}
 
 input[type=text],
 input[type=email],
