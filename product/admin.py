@@ -26,6 +26,8 @@ class ProductAdmin(admin.ModelAdmin):
 		'price', 
 		'price_old', 
 		'description', 
+		('carousel_item_1', 'carousel_item_2', 'carousel_item_3', 'carousel_item_4', 'carousel_item_5'),
+		('carousel_item_mob_1', 'carousel_item_mob_2', 'carousel_item_mob_3', 'carousel_item_mob_4', 'carousel_item_mob_5'),
 		'closeup',
 		('width', 'depth', 'height'),
 		'product_inside', 
