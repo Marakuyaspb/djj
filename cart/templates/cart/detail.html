@@ -7,100 +7,111 @@
 
 {% block content %}
 
-<div class='container my-5'>
+<div class='breadcrumbs'>
+	<a class='' href='{% url "product:index" %}'>Главная</a> / <a href='{% url "cart:cart_detail" %}'>Корзина</a>
+</div>
 
-	<h3 class='mb-4'>Корзина</h3>
-	<table class="cart">
+<h4 class='mt-2 ps_5'>Корзина</h4>
 
-		<thead>
-			<tr>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th></th>
-				<th>Цена за шт.</th>
-				<th>Общая цена</th>
-			</tr>
-		</thead>
+<div class='container mb-5'>
 
-		<tbody>
-		{% for item in cart %}
+	<div class="row">
+		<div class="col-md-9 pe-5 p-3">
+			{% for item in cart %}
 
-			{% with product=item.product %}
-				<tr >
-					<td>
-						<a href="/products/{{ product.product_slug }}">
-							<img class='cart_img' src="
-							{% if product.product_img %}{{ product.product_img.url }}
-							{% else %}
-								{% static 'media/no_img.jpg' %}
-							{% endif %}">
-						</a>
-					</td>
+				{% with product=item.product %}
 
-					<td>
-						<p class='major-text pb-2'>{{ product.product_full_name }}
-						<p class='cacao small-text'>Материал обивки: {{ product.fabric_name }}
-						<p class='cacao small-text'>Наполнитель: {{ product.product_inside }}, {{ product.product_inside_pillow }}
-						<p class='cacao small-text'>Габаритные размеры: {{ product.width }} x {{ product.height }} x {{ product.depth }}
+				<div class="row my-4">
 
-					</td>
-
-					<td>
-						<form action="{% url 'cart:cart_add' product.product_slug %}" method="post">
-
-							<div class="d-flex justify-content-start z_index_up">
-								<div>
-									{{ item.update_quantity_form.quantity }}
-								</div>
-								<div>
-									 {{ item.update_quantity_form.override }}
-									<input type="submit" value="Обновить" class="general-gray">
-								</div>
+					<div class="col-md-6">
+						<div class="d-flex justify-content-start">
+							<div>
+								<a href="/products/{{ product.product_slug }}">
+									<img class='cart_img' src="
+									{% if product.product_img %}{{ product.product_img.url }}
+									{% else %}
+										{% static 'media/no_img.jpg' %}
+									{% endif %}">
+								</a>
 							</div>
-							{% csrf_token %}
-						</form>
-					</td>
 
-					<td>
-						<form action="{% url 'cart:cart_remove' product.product_slug %}" method="post" >
-							<div class="d-flex justify-content-start">
-								<input type="submit" value="Удалить позицию" class="general-gray">
+							<div>
+								<p class='major-text pb-3'>{{ product.product_full_name }}
+								<p class='cacao small-text'>Материал обивки: {{ product.fabric_name }}
+								<p class='cacao small-text'>Наполнитель: {{ product.product_inside }}, {{ product.product_inside_pillow }}
+								<p class='cacao small-text'>Габаритные размеры: {{ product.width }} x {{ product.height }} x {{ product.depth }}
+
 							</div>
-							{% csrf_token %}
-							</form>
+						</div>
+					</div>
+
+					<div class="col-md-2 pt-3">
+						{% if product.price_old %}
+						<div class="num"><p class='cacao old_price'>{{ item.product.price_old }} ₽</div>
+						{% endif %}
+						<div class="num"><p class='pb-2'>{{ item.product.price }} ₽</div>
+
 						
-					</td>
-					<td class="num">{{ item.product.price }}₽</td>
-					<td class="num total_price">{{ item.total_price }}₽</td>
-				
-				</tr>
-			{% endwith %}
+					</div>
 
-		{% endfor %}
-			<tr class="total">
-				<td colspan="4"></td>
-				<td>Итого:</td>
-				<td class="num get_total_price">{{ cart.get_total_price }}₽</td>
-			</tr>
-		</tbody>
-	</table>
-	<br>
-	<br>
+					<div class="col pt-3">
+						<div><!-- change quantity! -->
+							<form action="{% url 'cart:cart_add' product.product_slug %}" method="post">
+								<div class="d-flex justify-content-start pb-2">
+									<div class="z_index_up ">
+										{{ item.update_quantity_form.quantity }}
+									</div>
+									<div>
+										 {{ item.update_quantity_form.override }}
+										<input type="submit" value="Обновить" class="ms-2 general-gray">
+									</div>
 
 
-	<div class="d-flex justify-content-between">
-		
-		<a href="{% url 'product:products' %}" class="">
-			<button class="btn-outline-gray">Продолжить покупки </button>
+								</div>
+								<div class="num total_price py-2"><p>Подитог: {{ item.total_price }} ₽</div>
+								{% csrf_token %}
+							</form>
+						</div>
+						<hr>
+						<div>
+							<form action="{% url 'cart:cart_remove' product.product_slug %}" method="post" >
+								<div class="d-flex justify-content-start">
+									<input type="submit" value="Удалить позицию" class="no_border small-text cacao">
+								</div>
+								{% csrf_token %}
+							</form> 
+						</div>
+					</div>
 
-		</a>
-		<a href="{% url 'orders:order_create' %}" class="ms-3">
-			<button class="btn-outline-gray">Оформление заказа </button>
-		</a>
+				</div>
+				<hr>
+				{% endwith %}
+
+			{% endfor %}
+		</div>
+		<div class="col-md-3">
+			<div class =''>
+				<p class="major-text pb-3">Общая стоимость:</p>
+				<div class="num mb-3"><p class="pb-3">{{ cart.get_total_price }} ₽</div>
+				<a href="{% url 'orders:order_create' %}" class="">
+					<button class="white cacao_bg">Оформление заказа </button>
+				</a>
+			</div>
+		</div>
 	</div>
+	
+
+		
+	<!-- 	<a href="{% url 'product:products' %}" class="">
+			<button class="white cacao_bg ps-3 pe-3">Продолжить покупки </button>
+		</a> -->
 
 </div>
+
+
+
+
+
 <br><br>
 <h4 class='my-5 container cacao'>Популярные товары</h4>
 
@@ -116,32 +127,19 @@
 
 <script>
 
-/* now you can see total sum of all products */
 window.addEventListener('DOMContentLoaded', function() {
-	var all_prices = document.querySelectorAll('.total_price');
-	var sum = 0;
-
-	for (var i = 0; i < all_prices.length; i++) {
-		var price = parseInt(all_prices[i].textContent);
-	    if (!isNaN(price)) {
-	      sum += price;
-	    	}
-		}
-	total_sum = sum;
-	document.querySelector('.show_total_cost').innerHTML = `<strong>{total_sum.toFixed(2)}₽</strong>`;
-
-
 
 /* now you can change quantity of products! */
+    
 
-	q_selector = document.querySelectorAll('#id_quantity');
+q_selector = document.querySelectorAll('#id_quantity');
 	console.log(q_selector);
 	for (var i = 0; i < q_selector.length; i++){
 			q_selector[i].classList.add('z_index_up');
 		}
 
-
 	})
+
 </script>
 
 {% endblock %}

@@ -5,7 +5,6 @@ from django.shortcuts import get_object_or_404
 
 
 
-
 class Cart:
 	def __init__(self, request):
 		self.session = request.session
@@ -47,6 +46,7 @@ class Cart:
 	def save(self):
 		self.session.modified = True
 
+
 	def remove(self, product):
 		product_slug = str(product.product_slug)
 		if product_slug in self.cart:
@@ -58,6 +58,5 @@ class Cart:
 			for item in self.cart.values())
 
 	def clear(self):
-	# удалить корзину из сеанса
 		del self.session[settings.CART_SESSION_ID]
 		self.save()
