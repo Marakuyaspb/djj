@@ -827,16 +827,15 @@ textarea {
 	border: 1px solid #5E5B5B;
 	color: #5E5B5B!important;
 	font-size: 1.125rem;
-	height: 2.25rem;
+	/*height: 2.25rem;*/
 	padding: .5em;
-	line-height: .1;
+	line-height: 1.1;
 	/*margin-top: 3rem;*/
 	z-index: 5;
 }
 .btn-outline-gray:hover{
 	border: 1px solid #9F8A88;
 	color: #9F8A88!important;
-	line-height: .1;
 	transition: background-color 1s linear;
 }
 
