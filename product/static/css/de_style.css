@@ -664,7 +664,7 @@ a .icon-header:hover{
   flex-wrap: nowrap;
 }
 .top-string{
-	line-height: 1.6!important;
+	line-height: 2;
 	opacity: 60%;
 }
 .righted {

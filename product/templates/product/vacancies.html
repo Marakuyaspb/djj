@@ -7,33 +7,43 @@
 	<img src="/media/pages_hats/vacancies_hat.jpg" class='banner img-fluid'>
 </div>  -->
 
-<div class="container big-fields-content mt-5">
-	<h2 class="mb-3">Вакансии</h2>
-		<p class="mb-5 major-text">
-			Контент-менеджер
-		</p>
-		<p class="mb-5">
-			<b>Задачи:</b>
 
-			<p>Добавление контента на сайт (работа с панелью администратора сайта), актуализация контента
+<div class='breadcrumbs'>
+	<a href='{% url "product:index" %}'>Главная</a> / <a class='' href='{% url "product:vacancies" %}'>Вакансии</a> 
+</div>
+
+<h2 class="mb-3 ps-5 ms-3">Вакансии</h2>
+
+<div class="container mt-5">
+
+	<p class="mb-4 major-text">
+		Контент-менеджер
+	</p>
+	<p class="mb-2 cacao">
+		<b>Задачи:</b>
+	</p>
+	<p>Добавление контента на сайт (работа с панелью администратора сайта), актуализация контента
 
 
-			<b>Требования:</b>
+	<p class="my-2 cacao">
+		<b>Требования:</b>
+	</p>
+	<p>- Усидчивость, внимательность
+	<p>- Продвинутый пользователь ПК, опыт работы с базами данных будет преимуществом
 
-			<p>- Усидчивость, внимательность
-			<p>- Продвинутый пользователь ПК, опыт работы с базами данных будет преимуществом
 
+	<p class="my-2 cacao">
+		<b>Условия</b>
+	</p>
+	<p>- Оформление по ТК РФ или договору ГПХ
+	<p>- Отличный коллектив и печеньки
 
-			<b>Условия</b>
-
-			<p>- Оформление по ТК РФ или договору ГПХ
-			<p>- Отличный коллектив и печеньки
-		<center class="my-5">
-			<a href='#' class='ms-4'><button class="btn-outline-gray">Откликнуться</button></a>
-		</center> 
-
-	<hr>
+	<center class="my-5">
+		<a href='#' class='ms-4'><button class="btn-outline-gray">Откликнуться</button></a>
+	</center> 
 
 </div>
+
+<hr>
 
 {% endblock %}
