@@ -258,6 +258,18 @@ Backgrounds
 	background-color: #fff!important; /* bg */
 }
 
+.latte_bg_op{
+	background-color: #F6F1EE;
+	opacity: .8;
+}
+.dark_gray_op{
+	background-color:#50504E;
+	opacity: .8;
+}
+#cacao_scroll {
+  transition: background-color 2s ease;
+}
+
 /* 
 Fonts 
 */
