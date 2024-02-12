@@ -10,7 +10,9 @@
 	<div class = "product_card p-3" >
 		<a href="{% url 'product:single_product' el.product_slug %}">
 	
+
 		<!-- HEAD OF THE CARD -->
+
 			<!-- DESCTOP -->
 			<div class = 'd-none d-md-block d-lg-block d-xl-block d-xxl-block'>
 				<div class = 'd-flex justify-content-between'>
@@ -133,6 +135,7 @@
 						{% endif %}
 					</div>
 				</div>
+			
 			</div>
 				
 
@@ -254,21 +257,25 @@
 						</svg>
 					{% endif %}
 				</div>
+			
 			</div>
 
 		<!-- END OF THE HEAD OF THE CARD -->
 
 
 
-		<!-- THE CARD BODY -->
-			<center class='px-4 d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
-				<img src="/media/{{ el.product_img }}" class="img-fluid product_img_under">
-			</center>
+		<!-- THE CARD BODY START -->
 
 			<div class = 'card-bottom-info'>
-				<center class='mt-5 d-block d-md-none'>
+
+				<center class='d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
 					<img src="/media/{{ el.product_img }}" class="img-fluid product_img_under">
 				</center>
+				
+				<center class='mt-5 d-block d-md-none'>
+					<img src="/media/{{ el.product_img_mob }}" class="img-fluid product_img_under">
+				</center>
+
 
 				<div class = 'd-flex justify-content-between'>
 					<div class='cacao'>
@@ -290,6 +297,8 @@
 					</div>
 				</div>
 			</div>
+		<!-- THE CARD BODY END -->
+
 		</a>
 	</div>
 

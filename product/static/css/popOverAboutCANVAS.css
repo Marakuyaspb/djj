@@ -12,9 +12,14 @@
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    background-image: url("/static/img/popovers_arm.png");
+   /* background-image: url("/static/img/popovers_arm.png");*/
 }
 
+.pop_back_img{
+    position: relative;
+    z-index: -1;
+    margin-top: -40em;
+}
 
 /* ABOUT POPOVERS */
 

@@ -47,8 +47,8 @@ class Collection(models.Model):
 class Fabric(models.Model):
 	fabric_id = models.AutoField(primary_key=True)
 	fabric_name = models.CharField(max_length=50, verbose_name = 'Название ткани')
-	product_fabric_img = models.ImageField(upload_to='fabric_images/%Y/%m/%d', verbose_name = 'Образец ткани')
-	product_fabric_about = models.CharField(max_length=1500, verbose_name = 'Описание ткани')
+	product_fabric_img = models.ImageField(upload_to='fabric_images/', verbose_name = 'Образец ткани')
+	product_fabric_about = models.TextField(verbose_name = 'Описание ткани')
 	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(default=timezone.now, verbose_name = 'Последние изменения')
 
@@ -66,9 +66,9 @@ class Fabric(models.Model):
 class Option(models.Model):
 	option_id = models.AutoField(primary_key=True)
 	option_name = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Заголовок опции (не обязательно)')
-	option_1_img = models.ImageField(upload_to='options/%Y/%m/%d', verbose_name = 'Изображение 1')
+	option_1_img = models.ImageField(upload_to='options/', verbose_name = 'Изображение 1')
 	option_1_description = models.CharField(max_length=500, null=True, blank=True, verbose_name = 'Описание опции 1')
-	option_2_img = models.ImageField(upload_to='options/%Y/%m/%d', verbose_name = 'Изображение 2')
+	option_2_img = models.ImageField(upload_to='options/', verbose_name = 'Изображение 2')
 	option_2_description = models.CharField(max_length=500, null=True, blank=True, verbose_name = 'Описание опции 2')
 	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
@@ -87,14 +87,14 @@ class Option(models.Model):
 class SliderInterior(models.Model):
 	sl_interior_id = models.AutoField(primary_key=True)
 	sl_interior_name = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Название слайдера (коллекция)')
-	sl_interior_1_img = models.ImageField(upload_to='interiors/%Y/%m/%d', verbose_name = 'Изображение 1 | десктоп')
-	sl_interior_2_img = models.ImageField(upload_to='interiors/%Y/%m/%d', verbose_name = 'Изображение 2 | десктоп')
-	sl_interior_3_img = models.ImageField(upload_to='interiors/%Y/%m/%d', verbose_name = 'Изображение 3 | десктоп')
-	sl_interior_4_img = models.ImageField(upload_to='interiors/%Y/%m/%d', verbose_name = 'Изображение 4 | десктоп')
-	sl_interior_1_img_mob = models.ImageField(upload_to='interiors/%Y/%m/%d', verbose_name = 'Изображение 1 | мобильный')
-	sl_interior_2_img_mob = models.ImageField(upload_to='interiors/%Y/%m/%d', verbose_name = 'Изображение 2 | мобильный')
-	sl_interior_3_img_mob = models.ImageField(upload_to='interiors/%Y/%m/%d', verbose_name = 'Изображение 3 | мобильный')
-	sl_interior_4_img_mob = models.ImageField(upload_to='interiors/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный')
+	sl_interior_1_img = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 1 | десктоп')
+	sl_interior_2_img = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 2 | десктоп')
+	sl_interior_3_img = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 3 | десктоп')
+	sl_interior_4_img = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 4 | десктоп')
+	sl_interior_1_img_mob = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 1 | мобильный')
+	sl_interior_2_img_mob = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 2 | мобильный')
+	sl_interior_3_img_mob = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 3 | мобильный')
+	sl_interior_4_img_mob = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 4 | мобильный')
 	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
 
@@ -119,15 +119,15 @@ class PopOverFeatures(models.Model):
 	collection = models.ForeignKey(Collection,
 		related_name='features', default='1',
 		on_delete=models.CASCADE, verbose_name = 'Коллекция')
-	popover_1_img = models.ImageField(upload_to='popover_features/%Y/%m/%d', verbose_name = 'Картинка фичи 1')
+	popover_1_img = models.ImageField(upload_to='popover_features/', verbose_name = 'Картинка фичи 1')
 	popover_1_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 1')
-	popover_2_img = models.ImageField(upload_to='popover_features/%Y/%m/%d', verbose_name = 'Картинка фичи 2')
+	popover_2_img = models.ImageField(upload_to='popover_features/', verbose_name = 'Картинка фичи 2')
 	popover_2_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 2')
-	popover_3_img = models.ImageField(upload_to='popover_features/%Y/%m/%d', verbose_name = 'Картинка фичи 3')
+	popover_3_img = models.ImageField(upload_to='popover_features/', verbose_name = 'Картинка фичи 3')
 	popover_3_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 3')
-	popover_4_img = models.ImageField(upload_to='popover_features/%Y/%m/%d', verbose_name = 'Картинка фичи 4')
+	popover_4_img = models.ImageField(upload_to='popover_features/', verbose_name = 'Картинка фичи 4')
 	popover_4_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 4')
-	popover_5_img = models.ImageField(upload_to='popover_features/%Y/%m/%d', verbose_name = 'Картинка фичи 5')
+	popover_5_img = models.ImageField(upload_to='popover_features/', verbose_name = 'Картинка фичи 5')
 	popover_5_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 5')
 	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
 	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
@@ -156,40 +156,43 @@ class Product(models.Model):
 		related_name='products',
 		on_delete=models.CASCADE, verbose_name = 'Название ткани')
 	product_full_name = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Полное название товара')
-	product_img = models.ImageField(upload_to='images/%Y/%m/%d', null=True, blank=True, verbose_name = 'Изображение для страницы выдачи')
+	product_img = models.ImageField(upload_to='images/', null=True, blank=True, verbose_name = 'Изображение для страницы выдачи | десктоп')
+	product_img_mob = models.ImageField(upload_to='images/', null=True, blank=True, verbose_name = 'Изображение для страницы выдачи | мобильный')
 
 	slug_fabric_icon_1 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №1', default='cambridge-600')
-	product_fabric_icon_1 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 1', default='fabric_icons/2024/01/23/CAMBRIDGE_600.png')
+	product_fabric_icon_1 = models.ImageField(upload_to='fabric_icons/', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 1', default='fabric_icons/2024/01/23/CAMBRIDGE_600.png')
 	
 	slug_fabric_icon_2 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №2', default='jazz-01')
-	product_fabric_icon_2 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 2', default='fabric_icons/2024/01/23/JAZZ_01.png')
+	product_fabric_icon_2 = models.ImageField(upload_to='fabric_icons/', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 2', default='fabric_icons/2024/01/23/JAZZ_01.png')
 
 	slug_fabric_icon_3 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №3', default='jazz-21')
-	product_fabric_icon_3 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 3', default='fabric_icons/2024/01/23/JAZZ_21.png')
+	product_fabric_icon_3 = models.ImageField(upload_to='fabric_icons/', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 3', default='fabric_icons/2024/01/23/JAZZ_21.png')
 
 	slug_fabric_icon_4 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №4', default='pixel-forest')
-	product_fabric_icon_4 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 4', default='fabric_icons/2024/01/23/PIXEL_FOREST.png')
+	product_fabric_icon_4 = models.ImageField(upload_to='fabric_icons/', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 4', default='fabric_icons/2024/01/23/PIXEL_FOREST.png')
 	
 	slug_fabric_icon_5 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №5', default='velutto-32')
-	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/%Y/%m/%d', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5', default='fabric_icons/2024/01/23/VELUTTO_32.png')
+	product_fabric_icon_5 = models.ImageField(upload_to='fabric_icons/', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 5', default='fabric_icons/2024/01/23/VELUTTO_32.png')
 	
 	price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, verbose_name = 'Цена')
 	price_old = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name = 'Старая цена')
 	
-	description = models.CharField(max_length=1500, null=True, blank=True, verbose_name = 'Описание товара')
+	description = models.TextField(null=True, blank=True, verbose_name = 'Описание товара')
 
 
 # Carousel #
-	carousel_item_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
-	carousel_item_2 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 2 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
-	carousel_item_3 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 3 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
-	carousel_item_4 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
-	carousel_item_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 5 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
-	carousel_item_mob_1 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 1 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
-	carousel_item_mob_2 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 2 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
-	carousel_item_mob_3 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 3 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
-	carousel_item_mob_4 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
-	carousel_item_mob_5 = models.ImageField(upload_to='carousel/%Y/%m/%d', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_1 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 1 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_2 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 2 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_3 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 3 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_4 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 4 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_5 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 5 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_6 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 6 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_1 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 1 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_2 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 2 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_3 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 3 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_4 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 4 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_5 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 5 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
+	carousel_item_mob_6 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 6 | мобильный', default='static/img/popovers_arm.png', null=True, blank=True)
 
 	closeup = models.ImageField(upload_to='closeups/', blank=True, null=True, verbose_name = 'Крупный фрагмент справа')
 
@@ -204,15 +207,16 @@ class Product(models.Model):
 	mechanism_type = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Механизм')
 	sleep_place = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Спальное место')
 	linen_drawer = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Бельевой ящик')
-	features = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Конструктивные особенности')
+	features = models.TextField(null=True, blank=True, verbose_name = 'Конструктивные особенности')
 	
-	pdf =  models.FileField(upload_to='pdf/%Y/%m/%d', null=True, blank=True, verbose_name = 'Файл PDF')
-	scheme = models.FileField(upload_to='schemes/%Y/%m/%d', null=True, blank=True, verbose_name = 'Схема')
+	pdf =  models.FileField(upload_to='pdf/', null=True, blank=True, verbose_name = 'Файл PDF')
+	scheme = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема')
 
-	options = models.ManyToManyField(Option, verbose_name = 'Опции', blank=True)
+	options = models.ManyToManyField(Option, verbose_name = 'Опции', null=True, blank=True)
 
 	slider_interior = models.ForeignKey(SliderInterior, blank=True, null=True,on_delete=models.CASCADE, verbose_name = 'Слайдер с интерьерами')
 	popover = models.ForeignKey(PopOverFeatures, blank=True, on_delete=models.CASCADE, verbose_name = 'Поповер фичи')
+	popover_img = models.ImageField(upload_to='popovers/', blank=True, null=True, verbose_name = 'Фоновая картинка')
 
 
 	is_new = models.BooleanField(default=True, verbose_name = 'Новый')

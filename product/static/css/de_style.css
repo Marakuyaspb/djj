@@ -12,27 +12,27 @@
 }
 @font-face {
   font-family: "ALS Hauss Light";
-  src: url("http://77-222-42-39.swtest.ru/static/fonts/als_hauss_light.woff2");
+  src: url("../fonts/als_hauss_light.woff2");
   font-weight: 200;
 }
 @font-face {
   font-family: "ALS Hauss Book";
-  src: url("http://77-222-42-39.swtest.ru/static/fonts/als_hauss_book.woff2");
+  src: url("../fonts/als_hauss_book.woff2");
   font-weight: 300;
 }
 @font-face {
   font-family: "ALS Hauss Regular";
-  src: url("http://77-222-42-39.swtest.ru/static/fonts/als_hauss_regular.woff2");
+  src: url("../fonts/als_hauss_regular.woff2");
   font-weight: 400;
 }
 @font-face {
   font-family: "ALS Hauss Medium";
-  src: url("http://77-222-42-39.swtest.ru/static/fonts/als_hauss_medium.woff2");
+  src: url("../fonts/als_hauss_medium.woff2");
   font-weight: 500;
 }
 @font-face {
   font-family: "ALS Hauss Bold";
-  src: url("http://77-222-42-39.swtest.ru/static/fonts/als_hauss_bold.woff2");
+  src: url("../fonts/als_hauss_bold.woff2");
   font-weight: 700;
 }
 
@@ -682,7 +682,7 @@ a .icon-header:hover{
 	max-width: 60%!important;
 	margin-left: auto!important;
 	margin-right:auto!important;
-	font-size: 1.6em;
+/*	font-size: 1.6em;*/
 
 }
 
@@ -923,13 +923,12 @@ textarea {
 
 .carousel-control-prev-icon{
 	background-image: url("http://temp.decona.ru/wp-content/uploads/goods_pics/prev.svg")!important;
-	padding-top: 91em;
+	padding-top: 5.5em;
   margin-top: auto;
-  margin-left: -10em;
 }
 .carousel-control-next-icon{
 	background-image: url("http://temp.decona.ru/wp-content/uploads/goods_pics/next.svg")!important;
-	padding-top: 91em;
+	padding-top: 5.5em;
 	margin-top: auto;
 	margin-right: -10em;
 }
@@ -1016,7 +1015,7 @@ textarea {
 @media (min-width: 811px){
 	.products_container {
 	  display: grid;
-	  grid-gap: 25px;
+	 /* grid-gap: 25px;*/
 	  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 	  /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
 	  width: 96%;

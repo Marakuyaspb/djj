@@ -7,7 +7,7 @@
 <!-- DESCTOP -->
 	<div class='d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
 		<div class='breadcrumbs'>
-			<a id='collection' class='{{ product.collection }}' href='{% url "product:products" %}'>Продукция</a> / <a href='/products/{{product.category}}'>{{ product.category_ru }} </a>
+			<a href='{% url "product:index" %}'>Главная</a> / <a class='' href='{% url "product:products" %}'>Продукция</a> / <a href='/products/{{product.category}}'> {{ product.category_ru }}</a>
 		</div>
 
 		<div class='row'>
@@ -154,7 +154,7 @@
 			</div>
 			<div class='d-flex flex-row'>
 				{% if product.price_old %}
-					<p class='old-price'>{{ product.price_old }} ₽</p>
+					<p class='old-price px-3'>{{ product.price_old }} ₽</p>
 				{% endif %}
 				<p class='prod-card-price pe-3'>{{ product.price}} ₽</p>
 			</div>
@@ -312,7 +312,7 @@
 		
 
 		<div class='big-fields-content mt-5 d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
-			<p>	Стоимость дивана в нестандартной комплектации рассчитывается в салоне, после выбора клиентом обивки и дополнительных опций. После того, как вы определилисть, подписывается договор, гле прописаны все особенности товара, его доставка и гарантии.</p>
+			<p>	Стоимость дивана в нестандартной комплектации рассчитывается в салоне, после выбора клиентом обивки и дополнительных опций. После того, как вы определилисть, подписывается договор, где прописаны все особенности товара, его доставка и гарантии.</p>
 			<center>
 				<br>
 				<a class='' href='/showrooms'>
@@ -334,9 +334,11 @@
 	<!-- PHONE & TABLET-->
 
 	<div class='d-block d-md-none'>
-		<div class='thin ms-4 mt-3'>
-			<a id='collection' class='{{ product.collection }}' href='{% url "product:products" %}'>Продукция</a> / {{ product.category_ru }}
+		
+		<div class='breadcrumbs'>
+			<a href='{% url "product:index" %}'>Главная</a> / <a class='' href='{% url "product:products" %}'>Продукция</a> / <a href='/products/{{product.category}}'> {{ product.category_ru }}</a>
 		</div>
+
 		<p class='major-text ps-4 pt-4'>{{ product.category_ru }}</p>
 
 		<p class='h-center pt-5'>{{ product.collection }}</p>
@@ -543,7 +545,7 @@
 
 
 		<div class='container-fluid my-5'>
-			<p class='mb-4'>Стоимость дивана в нестандартной комплектации рассчитывается в салоне, после выбора клиентом обивки и дополнительных опций. После того, как вы определилисть, подписывается договор, гле прописаны все особенности товара, его доставка и гарантии.</p>
+			<p class='mb-4'>Стоимость дивана в нестандартной комплектации рассчитывается в салоне, после выбора клиентом обивки и дополнительных опций. После того, как вы определилисть, подписывается договор, где прописаны все особенности товара, его доставка и гарантии.</p>
 			<center>
 				<br>
 				<a class='' href='/showrooms'>
