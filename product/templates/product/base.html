@@ -24,7 +24,7 @@
 <header class="header">
 	<!-- DESCTOP START -->
 	<div class='d-none d-lg-block d-xl-block d-xxl-block pt-2'>
-	  <div id='desctop_scroll' class="desctop-menu fixed-top">
+	  <div id='desctop_scroll' class="desctop-menu py-3">
 	      <div class="ps-4">
 	        <a class='navbar-brand white' href='{% url "product:index" %}'>
 	            <svg width="152px" height="27px" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 13.06 2.286">
@@ -225,7 +225,7 @@
 	                <p class='pb-5'>8 800 500 13 72</p>
 	                <div class="d-flex justify-content-end">
 	                    <div></div>
-<!-- 	                    <div>
+		<!-- 	                  <div>
 	                    <form role="search" method="get" class="search-form" action="http://temp.decona.ru/">
 	                        <input type="search" id="search-form-1" class="search-field" value="" name="s" placeholder="Поиск">
 	                        <input type="submit" class="search-submit" value="Искать">
@@ -459,21 +459,34 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-window.addEventListener('DOMContentLoaded', function() {
-	let c = document.querySelectorAll('#desctop_scroll');
 
-	window.addEventListener('scroll', function() {
-	  if (window.pageYOffset === 0) {
-	    c.forEach(element => {
-	      element.classList.remove('dark_gray_op');
-	    });
-	  } else {
-	    c.forEach(element => {
-	      element.classList.add('dark_gray_op');
-	    });
-	  }
-	});
+window.addEventListener('DOMContentLoaded', function() {
+  let c = document.querySelectorAll('#desctop_scroll');
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", function() {
+    var st = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (st > lastScrollTop) {
+      // Downscroll code
+      c.forEach(element => {
+        element.classList.remove('dark_gray_op');
+        element.classList.remove('fixed-top');
+      });
+    } else if (st < lastScrollTop) {
+      // Upscroll code
+      console.log('FFFFFF');
+      c.forEach(element => {
+        element.classList.add('dark_gray_op');
+        element.classList.add('fixed-top');
+      });
+    }
+    
+    lastScrollTop = st <= 0 ? 0 : st;
+  }, false);
+
 });
+
 </script>
 
 </body>
