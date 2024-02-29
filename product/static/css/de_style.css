@@ -122,6 +122,7 @@ html {
 body {
 	margin: 0;
 	font-family: 'ALS Hauss Book', 'Georgia', sans-serif !important;
+	overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {

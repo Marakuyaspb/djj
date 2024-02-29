@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from .models import Category, Collection, Option, Product, ProductImage, SliderInterior
 from cart.forms import CartAddProductForm
-#from .forms import CustomProductForm
+
 
 def index(request):
 	products = Product.objects.all()
@@ -28,10 +28,10 @@ def cat_view(request, category_slug=None):
 		category = get_object_or_404(Category, category='bed')
 		products = Product.objects.filter(category=category)
 	elif category_slug == 'corner':
-		category = get_object_or_404(Category, category='corner')
+		category = get_object_or_404(Category, category='cornerl')
 		products = Product.objects.filter(category=category)
-	elif category_slug == 'k1r':
-		category = get_object_or_404(Category, category='k1r')
+	elif category_slug == 'mod':
+		category = get_object_or_404(Category, category='mod1')
 		products = Product.objects.filter(category=category)
 	elif category_slug == 'str':
 		category = get_object_or_404(Category, category='str')
@@ -89,13 +89,13 @@ def single_product(request, product_slug=None):
 		popover = product.popover
 		popular = Product.objects.filter(popular=True)
 		similar_products = Product.objects.filter(collection=product.collection)
-		if product.category in ['bed', 'corner', 'str']:
+		if product.category in ['bed', 'cornerl', 'str']:
 			template_name = 'product/single_product.html'
 		elif product.category in ['arm', 'poufl', 'poufs']:
 			template_name = 'product/single_product_rect.html'
 		elif product.category in ['accessory', 'table']:
 			template_name = 'product/single_product_simpler.html'
-		elif product.category in ['k1r']:
+		elif product.category in ['mod1']:
 			template_name = 'product/single_product_full.html'
 		else:
 			# handle error case here

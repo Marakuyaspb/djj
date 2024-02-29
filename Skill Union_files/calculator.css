@@ -1,0 +1,147 @@
+/*
+
+Here is 
+all
+about 
+calculator
+
+*/
+
+.calc_body{
+  background: linear-gradient(0deg, rgb(251, 255, 44), rgb(129, 174, 58));
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Michroma", sans-serif;
+  width: 320px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.calc_h4{
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.calc_result{
+  background: #FBFF2C;
+  border-radius: 8px;
+  border:none;
+  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  padding: 10px 8px 0 8px;
+}
+
+#profit_result{
+  font-size: 20px;
+}
+.profit_info{
+  background-color: rgba(204,224,50, 0.8);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.calc_btn_sm{
+  background-color: rgba(245, 245, 245, 0.1);
+  height: 30px;
+  border-radius: 8px;
+  min-width: 40px;
+  margin: 8px 0;
+  padding: 4px 8px;
+}
+.calc_btn_sm:focus{
+  background-color: rgba(251, 255, 44, .3);
+}
+
+.calc_btn_sm p{
+  font-family: "Michroma", sans-serif;
+  font-size: 14px;
+}
+
+
+
+
+
+.calc_details{
+  font-size: 14px;
+}
+
+.calc_btn_result{
+  background: #B1CE35;
+  border-radius: 8px;
+  border:none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+  padding: 10px 0;
+  width: 270px;
+}
+
+
+.btn_glass{
+  border:none;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+
+.calc_input{
+  background-color: rgba(245, 245, 245, 0.1);
+  border:none;
+  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  height: 48px;
+}
+
+.calc_input:focus{
+  background-color: rgba(245, 245, 245, 0.1);
+  border:none;
+  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.35) inset;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.35) inset;
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.35) inset;
+}
+
+.form-check-input{
+  background-color: rgba(245, 245, 245, 0.1);
+  border:none;
+  border-radius: 12px;
+  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  width: 1.5em;
+  height: 1.5em;
+}
+.form-check-input:checked {
+  background-color: rgba(251, 255, 44, .5);
+  border-color: rgba(251, 255, 44, .1)!important;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+}
+.form-check-input:checked[type="radio"] {
+background-image: url('static/img/checked.svg');
+}
+
+/*.form-check-input:focus {
+  border-color:rgba(251, 255, 44, .5)!important;
+  outline: 0;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+}
+*/
+
+
+.form-switch .form-check-input {
+  width: 3.5em;
+
+}
+
+.form-switch .form-check-input:focus {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+}
+/*
+.form-check-input:checked {
+  background-color: rgba(251, 255, 44, .5);
+  border-color: rgba(251, 255, 44, .1) !important;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.25) inset;
+}*/
