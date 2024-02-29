@@ -1062,7 +1062,7 @@ textarea {
 	position: relative;
 	z-index: 1!important;
 	margin-top: -2em;
-	width: 80%;
+/*	width: 80%;*/
 }
 
 .category_label{

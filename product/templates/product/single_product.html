@@ -11,7 +11,7 @@
 		</div>
 
 		<div class='row'>
-			<div class='{{  product.category }} col-md-7' id='content_left'>
+			<div class='{{  product.category }} ' id='content_left'>
 				<p class='h-center'>{{ product.collection }}</p>
 				<center>
 		      	<p class='fabric-name pb-3'>Ткань: {{ product.fabric_name }}
@@ -141,9 +141,7 @@
 				</div>  
 			</div>
 
-			<div class="col-md-1"></div>
-
-			<div class='no-padding-right padding-left-4 col-md-4' id='content_right'>
+			<div class='no-padding-right' id='content_right'>
 				<img class='img-fluid banner' src='/media/{{ product.closeup }}'>
 			</div>
 		</div>
@@ -307,7 +305,7 @@
 			<!-- Опции -->
 		    {% include 'product/card_parts/options.html' %}
 		</div>
-		<div class="banner" onmousemove="showPopOverscanvasDesctop()"></div>
+		<div class="banner"></div>
 
 
 		<!-- Slider with interiors DESCTOP -->
@@ -612,5 +610,61 @@
 	  div.classList.add('zero_height');
 	});
 </script>
+
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', function adaptationWidth(){
+	
+/* Adaptation */
+	const content_left = document.getElementById('content_left');
+	const content_right = document.getElementById('content_right');
+	const f_icons = document.getElementById('fabric_icons');
+
+
+	/* Rectangles */
+
+	if (
+		content_left.classList.contains('arm') || 
+		content_left.classList.contains ('poufl') || 
+		content_left.classList.contains('poufs')
+		) {
+	  		content_left.classList.add('col-md-6');
+	  		content_right.classList.add('col-md-6');
+	  	} 
+
+
+  	/* Left bigger */
+
+	else if (
+		content_left.classList.contains('cornerl') || 
+		content_left.classList.contains('str')
+		) {
+	  		content_left.classList.add('col-md-8');
+	  		content_right.classList.add('col-md-4');
+		} 
+
+
+	/* Full */
+
+	else if (
+		content_left.classList.contains('mod1') || 
+		content_left.classList.contains('bed')
+		) {
+	  		content_left.classList.add('col-md-12');
+	  		content_right.remove();
+		}
+
+	/* Without fabric icons */
+	if (
+		content_left.classList.contains('accessory') || 
+		content_left.classList.contains('table')
+		) {
+	  		content_left.classList.add('col-md-6');
+	  		content_right.classList.add('col-md-6');
+	  		f_icons.remove();
+	  	} 
+})
+
+</script>
+
 
 {% endblock %}

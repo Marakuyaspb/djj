@@ -3,35 +3,36 @@ function adaptationWidth(){
 /* Adaptation */
 	const content_left = document.getElementById('content_left');
 	const content_right = document.getElementById('content_right');
+	const f_icons = document.getElementById('fabric_icons');
 
-	if (content_left.classList.contains("arm")) {
-  		content_left.classList.add("col-md-8");
-  		content_right.classList.add("col-md-4");
+
+	/* Rectangles */
+
+	if (content_left.classList.contains('arm' || 'poufl' || 'poufs')) {
+  		content_left.classList.add('col-md-6');
+  		content_right.classList.add('col-md-6');
   	} 
-	else if (content_left.classList.contains("str")) {
-  		content_left.classList.add("col-md-8");
-  		content_right.classList.add("col-md-4");
+
+
+  	/* Left bigger */
+
+	else if (content_left.classList.contains('cornerl' || 'str')) {
+  		content_left.classList.add('col-md-8');
+  		content_right.classList.add('col-md-4');
 	} 
-	else if (content_left.classList.contains("pouf")) {
-  		content_left.classList.add("col-md-8");
-  		content_right.classList.add("col-md-4");
-	} 
-	else if (content_left.classList.contains("corner")) {
-  		content_left.classList.add("col-md-8");
-  		content_right.classList.add("col-md-4");
-	} 
-	else if (content_left.classList.contains("bed")) {
-  		content_left.classList.add("col-md-8");
-  		content_right.classList.add("col-md-4");
-	} 
-	else if (content_left.classList.contains("k1r")) {
-  		content_left.classList.add("col-md-8");
-  		content_right.classList.add("col-md-4");
-  		content_right.classList.remove("no-padding-right");
+
+
+	/* Full */
+
+	else if (content_left.classList.contains('mod1' || 'bed')) {
+  		content_left.classList.add('col-md-12');
+  		content_right.remove();
 	}
-	else if (content_left.classList.contains("pillow")) {
-  		content_left.classList.add("col-md-6");
-  		content_right.classList.add("col-md-6");
-  		content_right.classList.remove("no-padding-right");
-	}
+
+	/* Without fabric icons */
+	if (content_left.classList.contains('accessory' || 'table')) {
+  		content_left.classList.add('col-md-6');
+  		content_right.classList.add('col-md-6');
+  		f_icons.remove();
+  	} 
 }

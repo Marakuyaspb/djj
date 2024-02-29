@@ -164,7 +164,7 @@
 </header>
 
 
-<div class='mt-3 pt-5'>
+<div id='wrapp_all'>
 
 {% block content %}
 {% endblock %}
@@ -462,6 +462,7 @@
 
 window.addEventListener('DOMContentLoaded', function() {
   let c = document.querySelectorAll('#desctop_scroll');
+  let wr = document.getElementById('wrapp_all');
   let lastScrollTop = 0;
 
   window.addEventListener("scroll", function() {
@@ -473,13 +474,18 @@ window.addEventListener('DOMContentLoaded', function() {
         element.classList.remove('dark_gray_op');
         element.classList.remove('fixed-top');
       });
-    } else if (st < lastScrollTop) {
+      wr.classList.remove('pt-5');
+      wr.classList.remove('mt-3');
+    } 
+
+    else if (st < lastScrollTop) {
       // Upscroll code
-      console.log('FFFFFF');
       c.forEach(element => {
         element.classList.add('dark_gray_op');
         element.classList.add('fixed-top');
       });
+      wr.classList.add('pt-5');
+      wr.classList.add('mt-3');
     }
     
     lastScrollTop = st <= 0 ? 0 : st;
