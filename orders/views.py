@@ -12,10 +12,14 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 import weasyprint
-#from weasyprint import HTML
+from weasyprint import HTML
+import logging
 from django.core.mail import send_mail, send_mass_mail
 from django.template import loader
 
+
+
+logging.basicConfig(filename='mail_log.txt', level=logging.INFO, format='%(asctime)s - %(message)s')
 
 #ПРОСТО ЗАКАЗ
 
@@ -30,20 +34,22 @@ def order_create(request):
 			cart.clear()
 
 
-
 		# МАНАГЕРАМ ПИСЬМО
 
 			context = {
 			  'order': order,
 			}
-			send_mail('Новый заказ', 
-				'Здавствуйте, {order.first_name}!', 
-				settings.EMAIL_HOST_USER,
-				['komy.kabachok@yandex.ru'],
-				fail_silently=True,
-				html_message=loader.get_template('orders/order/email.html').render(context)
-  		)
-
+			try:
+				send_mail('Новый заказ',
+					'Здавствуйте, {order.first_name}!', 
+					settings.EMAIL_HOST_USER,
+					['komy.kabachok@yandex.ru'],
+					fail_silently=True,
+					html_message=loader.get_template('orders/order/email.html').render(context)
+				)
+				logging.info(f"Mail to manager send successfully")
+			except Exception as e:
+				logging.error(f"Error sending mail to: {str(e)}")
 
 
 		#ПОКУПАТЕЛЮ ПИСЬМО
@@ -51,13 +57,17 @@ def order_create(request):
 			context_2 = {
 			  'order': order,
 			}
-			send_mail('Новый заказ', 
-				'Здавствуйте, {order.first_name}!', 
-				settings.EMAIL_HOST_USER,
-				[order.email],
-				fail_silently=True,
-				html_message=loader.get_template('orders/order/email.html').render(context_2)
-  		)
+			try:
+				send_mail('Новый заказ', 
+					'Здравствуйте, {order.first_name}!', 
+					settings.EMAIL_HOST_USER,
+					[order.email],
+					fail_silently=True,
+					html_message=loader.get_template('orders/order/email.html').render(context_2)
+				)
+				logging.info(f"Mail to client send successfully to {order.email}")
+			except Exception as e:
+				logging.error(f"Error sending mail to {order.email}")
 
 
 			return render(request, 'orders/order/created.html', {'order': order})

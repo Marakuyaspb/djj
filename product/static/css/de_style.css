@@ -575,9 +575,11 @@ ul,
 ol {
 	font-family: var(--list--font-family);
 	margin: 0;
+	padding-left: .1em!important;
 }
 ul {
 	list-style-type: disc;
+
 }
 
 
@@ -1297,6 +1299,10 @@ div.zero_height label {
 	position: relative;
 	z-index: -2;
 
+}
+
+.order_prev_img{
+	margin-top: -2em;
 }
 
 label{

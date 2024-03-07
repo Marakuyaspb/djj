@@ -2,10 +2,10 @@ from django.db import models
 from product.models import Product
 
 class Order(models.Model):
-	first_name = models.CharField(max_length=50, verbose_name = 'Ваше имя', default='Евлампия Агамемноновна')
-	city = models.CharField(max_length=100, verbose_name = 'Город', default='Мангазея')
-	phone = models.CharField(max_length=100, verbose_name = 'Телефон', default='911')
-	email = models.EmailField(verbose_name = 'E-mail', default='madmarakuya@gmail.com')
+	first_name = models.CharField(max_length=60, verbose_name = 'Ваше имя')
+	city = models.CharField(max_length=100, verbose_name = 'Город')
+	phone = models.CharField(max_length=30, verbose_name = 'Телефон')
+	email = models.EmailField(verbose_name = 'E-mail')
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
 	

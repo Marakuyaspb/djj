@@ -140,13 +140,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #https://django-crispy-forms.readthedocs.io/en/latest/install.html
-CRISPY_TEMPLATE_PACK = 'uni_form'
+# CRISPY_TEMPLATE_PACK = 'uni_form'
 
-CKEDITOR_CONFIG ={
-    'default':{
-    'width':'auto',
-    },
-}
+# CKEDITOR_CONFIG ={
+#     'default':{
+#     'width':'auto',
+#     },
+# }
 
 
 CACHES = {
@@ -177,4 +177,4 @@ EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'komy.kabachok@yandex.ru'
-EMAIL_HOST_PASSWORD = 'NadoIOtdyhat!1'
+EMAIL_HOST_PASSWORD = 'qibbpfnrdhjagllr'

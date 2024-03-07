@@ -212,7 +212,7 @@ class Product(models.Model):
 	pdf =  models.FileField(upload_to='pdf/', null=True, blank=True, verbose_name = 'Файл PDF')
 	scheme = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема')
 
-	options = models.ManyToManyField(Option, verbose_name = 'Опции', null=True, blank=True)
+	options = models.ManyToManyField(Option, verbose_name = 'Опции', blank=True)
 
 	slider_interior = models.ForeignKey(SliderInterior, blank=True, null=True,on_delete=models.CASCADE, verbose_name = 'Слайдер с интерьерами')
 	popover = models.ForeignKey(PopOverFeatures, blank=True, on_delete=models.CASCADE, verbose_name = 'Поповер фичи')

@@ -11,7 +11,7 @@
   <div class="row">
 
     <div class="col mx-5">  
-<h3 class='mb-4'>Оформление заказа</h3>
+    <h3 class='mb-4'>Оформление заказа</h3>
 
       <form method="post" class="order-form">
 
@@ -35,16 +35,17 @@
         <ul>
           {% for item in cart %}
             <ol class='order_li pb-2'>
-              <div class="d-flex justify-content-between pe-5">
-                <span class ='cacao'>{{ item.product.product_full_name }} ×{{ item.quantity }} шт. </span>
-                <span>{{ item.total_price|floatformat:2 }} ₽</span>
+              <div class="row">  
+                <div class ='col-md-4'><img class= 'order_prev_img img-fuid' src='{{ item.product.product_img.url }}'></div>
+                <div class ='col-md-4 cacao'>{{ item.product.product_full_name }} ×{{ item.quantity }} шт. </div>
+                <div class ='col-md-4'>{{ item.total_price|floatformat:2 }} ₽</div>
               </div>
+              
             </ol>
           {% endfor %}
         </ul>
         <p class="py-4">Итого: {{ cart.get_total_price }} ₽</p>
-
-        
+  
       </div>
     </div>
 

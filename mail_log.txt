@@ -1,0 +1,338 @@
+
+2024-03-07 14:02:02,425 - Mail to manager send successfully
+2024-03-07 14:02:02,673 - Mail to client send successfully to human.coin.order@gmail.com
+2024-03-07 14:02:40,886 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-07 14:02:52,504 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-07 14:03:18,255 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-07 14:03:22,707 - Mail to manager send successfully
+2024-03-07 14:03:23,697 - Error sending mail to human.coin.order@gmail.com
+2024-03-07 14:03:46,464 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-07 14:03:56,160 - Mail to manager send successfully
+2024-03-07 14:03:56,822 - Mail to client send successfully to human.coin.order@gmail.com
+2024-03-07 14:13:59,916 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-07 14:14:14,467 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-07 14:15:56,258 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 37, in order_create
+    send_mail('Test Email', 'This is a test email message.', 'to.the.neizvestnost@yandex.ru', [order.email])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: This user does not have access rights to this service 1709820955-tFieCjQl5uQ0')
+2024-03-07 14:15:56,479 - Not Found: /favicon.ico
+2024-03-07 14:27:21,177 - Not Found: /media/
+2024-03-07 14:27:21,213 - Not Found: /media/
+2024-03-07 14:27:34,088 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 37, in order_create
+    send_mail('Test Email', 'This is a test email message.', 'to.the.neizvestnost@yandex.ru', [order.email])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: This user does not have access rights to this service 1709821655-YRirE0CAT8c0')
+2024-03-07 14:29:38,062 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-07 14:29:51,190 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 37, in order_create
+    send_mail('Test Email', 'This is a test email message.', 'to.the.neizvestnost@yandex.ru', [order.email])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: Invalid user or password! 1709821792-pTiSmtQl7a60')
+2024-03-07 14:29:56,975 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-07 14:30:14,663 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-07 14:30:18,633 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 37, in order_create
+    send_mail('Test Email', 'This is a test email message.', 'to.the.neizvestnost@yandex.ru', [order.email])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: Invalid user or password! 1709821819-IUinfsTj3iE0')
+2024-03-07 14:30:25,370 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 37, in order_create
+    send_mail('Test Email', 'This is a test email message.', 'to.the.neizvestnost@yandex.ru', [order.email])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: Invalid user or password! 1709821826-QUiVqxO2GuQ0')
+2024-03-07 14:30:38,700 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-07 14:30:41,739 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 37, in order_create
+    send_mail('Test Email', 'This is a test email message.', 'to.the.neizvestnost@yandex.ru', [order.email])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: Invalid user or password! 1709821842-gUiROd1Or4Y0')
+2024-03-07 14:30:41,906 - Not Found: /favicon.ico
+2024-03-07 14:30:59,571 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-07 14:31:02,020 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-07 14:31:36,254 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 37, in order_create
+    send_mail('Test Email', 'This is a test email message.', 'to.the.neizvestnost@yandex.ru', [order.email])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: Invalid user or password! 1709821897-aVi6lPBf4qM0')
+2024-03-07 14:31:51,784 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-07 14:31:55,479 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 37, in order_create
+    send_mail('Test Email', 'This is a test email message.', 'komy.kabachok@yandex.ru', [order.email])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: Invalid user or password! 1709821916-uViqUP2Pi8c0')
+2024-03-07 14:32:04,748 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 37, in order_create
+    send_mail('Test Email', 'This is a test email message.', 'komy.kabachok@yandex.ru', [order.email])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/__init__.py", line 87, in send_mail
+    return mail.send()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/message.py", line 298, in send
+    return self.get_connection(fail_silently).send_messages([self])
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 124, in send_messages
+    new_conn_created = self.open()
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/mail/backends/smtp.py", line 91, in open
+    self.connection.login(self.username, self.password)
+  File "/usr/lib/python3.10/smtplib.py", line 750, in login
+    raise last_exception
+  File "/usr/lib/python3.10/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+  File "/usr/lib/python3.10/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (535, b'5.7.8 Error: authentication failed: Invalid user or password! 1709821925-4WiR12CQkGk0')
+2024-03-07 14:36:04,233 - Mail to manager send successfully
+2024-03-07 14:36:05,146 - Mail to client send successfully to madmarakuya@gmail.com
+2024-03-07 14:36:40,154 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-07 14:39:22,285 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-07 15:22:50,454 - /home/a/deco_dj/orders/models.py changed, reloading.
+2024-03-07 15:25:18,377 - /home/a/deco_dj/orders/forms.py changed, reloading.
+2024-03-07 15:25:40,022 - /home/a/deco_dj/orders/forms.py changed, reloading.
+2024-03-07 15:26:13,909 - /home/a/deco_dj/orders/models.py changed, reloading.
+2024-03-07 15:34:46,342 - Not Found: /orders/create/images/CONSONO_ARM_CORSO_08_GOODS_02_G2l7gyn.png
+2024-03-07 15:34:46,498 - Not Found: /orders/create/images/CONSONO_ARM_CORSO_08_GOODS_02_G2l7gyn.png
+2024-03-07 15:35:00,013 - Not Found: /orders/create/media/images/CONSONO_ARM_CORSO_08_GOODS_02_G2l7gyn.png
+2024-03-07 15:35:00,154 - Not Found: /orders/create/media/images/CONSONO_ARM_CORSO_08_GOODS_02_G2l7gyn.png
+2024-03-07 15:36:19,021 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 76, in order_create
+    return render(request, 'orders/order/create.html', {'cart': cart, 'form': form})
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 967, in do_if
+    nodelist = parser.parse(("endif",))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 558, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 41: 'static', expected 'endif'. Did you forget to register or load this tag?
+2024-03-07 15:36:42,939 - Not Found: /orders/create/media//media/images/CONSONO_ARM_CORSO_08_GOODS_02_G2l7gyn.png
+2024-03-07 15:36:43,074 - Not Found: /orders/create/media//media/images/CONSONO_ARM_CORSO_08_GOODS_02_G2l7gyn.png
+2024-03-07 15:36:57,964 - Not Found: /orders/create/media//media/images/CONSONO_ARM_CORSO_08_GOODS_02_G2l7gyn.png
+2024-03-07 15:36:58,105 - Not Found: /orders/create/media//media/images/CONSONO_ARM_CORSO_08_GOODS_02_G2l7gyn.png
+2024-03-07 15:37:57,874 - Not Found: /media/
+2024-03-07 15:37:58,017 - Not Found: /media/
+2024-03-07 15:53:25,108 - /home/a/deco_dj/orders/forms.py changed, reloading.
+2024-03-07 15:55:59,041 - /home/a/deco_dj/orders/forms.py changed, reloading.
+2024-03-07 15:56:34,174 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 75, in order_create
+    form = OrderCreateForm()
+  File "/home/a/deco_dj/orders/forms.py", line 11, in __init__
+    super(MyForm, self).__init__(*args, **kwargs)
+NameError: name 'MyForm' is not defined
+2024-03-07 15:56:35,289 - Internal Server Error: /orders/create/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/orders/views.py", line 75, in order_create
+    form = OrderCreateForm()
+  File "/home/a/deco_dj/orders/forms.py", line 11, in __init__
+    super(MyForm, self).__init__(*args, **kwargs)
+NameError: name 'MyForm' is not defined
+2024-03-07 15:56:42,621 - /home/a/deco_dj/orders/forms.py changed, reloading.
