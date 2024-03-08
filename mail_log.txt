@@ -336,3 +336,8 @@ Traceback (most recent call last):
     super(MyForm, self).__init__(*args, **kwargs)
 NameError: name 'MyForm' is not defined
 2024-03-07 15:56:42,621 - /home/a/deco_dj/orders/forms.py changed, reloading.
+2024-03-08 10:05:53,754 - Not Found: /products/consono-arm-jazz-01/image2.jpg
+2024-03-08 10:05:53,757 - Not Found: /products/consono-arm-jazz-01/image3.jpg
+2024-03-08 10:05:53,762 - Not Found: /products/consono-arm-jazz-01/image1.jpg
+2024-03-08 11:43:10,844 - Not Found: /products/consono-mod1-jazz-21/
+2024-03-08 11:45:54,146 - /home/a/deco_dj/product/models.py changed, reloading.

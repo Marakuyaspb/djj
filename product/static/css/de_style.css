@@ -1436,3 +1436,24 @@ about the bottom footer
 	text-align: right;
 }
 
+
+/* 
+Fade Carousel 
+*/
+
+.carousel_fade {
+  position: relative;
+}
+
+.carousel_slide_fade  {
+  display: none;
+}
+
+.fade_it {
+  animation: fadeEffect 1.5s!important;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
