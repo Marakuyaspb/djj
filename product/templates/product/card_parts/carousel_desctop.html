@@ -1,0 +1,153 @@
+<style>
+	/* 
+Fade Carousel 
+	*/
+
+.carousel_fade {
+  position: relative;
+}
+.carousel_slide_fade  {
+  display: none;
+}
+.fade_it {
+  animation: fadeEffect 5s!important;
+}
+@keyframes fadeEffect {
+  0% { opacity: 0.25;}
+  4% { opacity: 1;}
+  96% { opacity: 1;}
+  100% { opacity: 0.25;}
+}
+
+.padding-left-10{
+	padding-left: 10em; !important
+}
+
+
+.fade-carousel-indicators li{
+	display: inline-block;
+	border-radius: 50%;
+	width: .9em;
+	height: .9em;
+	margin: 5px 2px;
+	background-color: rgba(94, 91, 91, .5);
+}
+
+.fade-carousel-indicators li:active{
+	background-color: rgba(0,0,0, .5);
+}
+</style>
+
+
+
+
+<div id='carouselFade' class="carousel_fade">
+
+	<div class='carousel_slide_fade fade_it'>
+			<img src="/media/{{ product.carousel_item_1 }}" alt="Image 1">
+		</div>
+	{% if product.carousel_item_2 %}
+	<div class="carousel_slide_fade fade_it">
+		<img src="/media/{{ product.carousel_item_2 }}" alt="Image 2">
+	</div>
+	{% endif %}
+	{% if product.carousel_item_3 %}
+	<div class="carousel_slide_fade fade_it">
+		<img src="/media/{{ product.carousel_item_3 }}" alt="Image 3">
+	</div>
+	{% endif %}
+	{% if product.carousel_item_4 %}
+	<div class="carousel_slide_fade fade_it">
+		<img src="/media/{{ product.carousel_item_4 }}" alt="Image 2">
+	</div>
+	{% endif %}
+	{% if product.carousel_item_5 %}
+	<div class="carousel_slide_fade fade_it">
+		<img src="/media/{{ product.carousel_item_5 }}" alt="Image 3">
+	</div>
+	{% endif %}
+	{% if product.carousel_item_6 %}
+		<div class="carousel_slide_fade fade_it">
+			<img src="/media/{{ product.carousel_item_6 }}" alt="Image 3">
+		</div>
+	{% endif %}
+
+	<div class="d-flex justify-content-between px-3">
+		<div>
+		  <a class="prev arrows_nav" onclick="plusSlides(-1)">&#10094;</a>
+		</div>
+		<div>
+		  <ul class="fade-carousel-indicators">
+		    <li data-target="#carouselFade" data-slide-to="0" class="indicator active" onclick="currentSlide(1)"></li>
+		    
+		    {% if product.carousel_item_2 %}
+		    <li data-target="#carouselFade" data-slide-to="1" class="indicator" onclick="currentSlide(2)"></li>
+		    {% endif %}
+		    {% if product.carousel_item_3 %}
+		    <li data-target="#carouselFade" data-slide-to="2" class="indicator" onclick="currentSlide(3)"></li>
+		    {% endif %}
+		    {% if product.carousel_item_4 %}
+		    <li data-target="#carouselFade" data-slide-to="3" class="indicator" onclick="currentSlide(4)"></li>
+		    {% endif %}
+		    {% if product.carousel_item_5 %}
+		    <li data-target="#carouselFade" data-slide-to="4" class="indicator" onclick="currentSlide(5)"></li>
+		    {% endif %}
+		    {% if product.carousel_item_6 %}
+		    <li data-target="#carouselFade" data-slide-to="5" class="indicator" onclick="currentSlide(6)"></li>
+		    {% endif %}
+
+		  </ul>
+		</div>
+		<div>
+	  	<a class="next arrows_nav" onclick="plusSlides(1)">&#10095;</a>
+	  </div>
+  </div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+
+let slideIndex = 1;
+showSlides();
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let slides = document.getElementsByClassName("carousel_slide_fade");
+  let indicators = document.getElementsByClassName("indicator");
+
+  
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    slides[i].classList.remove("fade_it");
+    indicators[i].classList.remove("active");
+  }
+  
+  slides[slideIndex - 1].style.display = "block";
+  slides[slideIndex - 1].classList.add("fade_it");
+  indicators[slideIndex - 1].classList.add("active"); 
+}
+
+setTimeout(function() {
+  plusSlides(1);
+}, 5000);
+
+</script>

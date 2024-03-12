@@ -711,9 +711,11 @@ a .icon-header:hover{
 .no-padding-left{
 	padding-left: 0!important;
 }
+
 .padding-left-4{
 	padding-left: 4em !important
 };
+
 
 .no-border{
 	border: none!important;
@@ -1172,15 +1174,27 @@ PRODUCT CARD
 	font-size: 2.25em;
 	padding-top: .4em;
 }
+
 .old-price{
 	color: #9F8A88;
 	font-size: 2.25em;
 	padding-top: .4em;
 	text-decoration: line-through;
 }
-.old_price{
+
+.prod-card-price_mob {
+	color: #5E5B5B;
+	font-size: 1.7em;
+	padding-top: .4em;
+}
+
+.old-price_mob{
+	color: #9F8A88;
+	font-size: 1.7em;
+	padding-top: .4em;
 	text-decoration: line-through;
 }
+
 .ps_5{
 	margin-left: 2.75em!important;
 }
@@ -1434,26 +1448,4 @@ about the bottom footer
 
 .text-end{
 	text-align: right;
-}
-
-
-/* 
-Fade Carousel 
-*/
-
-.carousel_fade {
-  position: relative;
-}
-
-.carousel_slide_fade  {
-  display: none;
-}
-
-.fade_it {
-  animation: fadeEffect 1.5s!important;
-}
-
-@keyframes fadeEffect {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }

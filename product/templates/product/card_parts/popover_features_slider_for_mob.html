@@ -1,0 +1,103 @@
+<style>
+.fade_cards {
+  animation: fadeCardEffect 6s!important;
+}
+
+@keyframes fadeCardEffect {
+  0% { opacity: 0;}
+  10% { opacity: 0.5;}
+  20% { opacity: 1;}
+  50% { opacity: 1;}
+  80% { opacity: 1;}
+  90% { opacity: 0.5;}
+  100% { opacity: 0;}
+}
+</style>
+
+
+<div class="features_cards_fade my-4">
+
+	<div class="features_cards_mob fade_cards mx-2">
+		<div class='card w-100'>
+			<img src='/media/{{ product.popover.popover_1_img }}' class='card-img-top'>
+			<div class='card-body'>
+				<p class='card-text'>
+					{{ product.popover.popover_1_description }}
+				</p>
+			</div>
+		</div>
+  	</div>
+	
+	<div class="features_cards_mob fade_cards mx-2">
+    	<div class='card w-100'>
+			<img src='/media/{{ product.popover.popover_2_img}}'>
+			<div class='card-body'>
+				<p class='card-text'>
+					{{ product.popover.popover_2_description }}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="features_cards_mob fade_cards mx-2">
+		<div class='card w-100'>
+			<img src='/media/{{ product.popover.popover_3_img}}'>
+			<div class='card-body'>
+				<p class='card-text'>
+					{{ product.popover.popover_3_description }}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="features_cards_mob fade_cards mx-2">
+		<div class='card w-100'>
+			<img src='/media/{{ product.popover.popover_4_img}}'>
+			<div class='card-body'>
+				<p class='card-text'>
+					{{ product.popover.popover_4_description }}
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="features_cards_mob fade_cards mx-2">
+		<div class='card w-100'>
+			<img src='/media/{{ product.popover.popover_5_img}}'>
+			<div class='card-body'>
+				<p class='card-text'>
+					{{ product.popover.popover_5_description }}
+				</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+	let cardIndex = 0;
+	showCards();
+
+	function showCards() {
+	  let cards = document.getElementsByClassName("features_cards_mob");
+	  
+	  for (let i = 0; i < cards.length; i++) {
+	    cards[i].style.display = "none";
+	    cards[i].classList.remove("fade_cards");
+	  }
+	  
+	  cardIndex++;
+	  
+	  if (cardIndex > cards.length) {
+	    cardIndex = 1;
+	  }
+	  
+	  cards[cardIndex - 1].style.display = "block";
+	  cards[cardIndex - 1].classList.add("fade_cards");
+	  
+	  setTimeout(showCards, 6000); 
+	}
+
+</script>

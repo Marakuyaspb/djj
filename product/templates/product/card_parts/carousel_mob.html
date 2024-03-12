@@ -1,0 +1,142 @@
+<style>
+	/* 
+Fade Carousel 
+	*/
+
+.carousel_fade_mob {
+  position: relative;
+}
+.carousel_slide_fade_mob  {
+  display: none;
+}
+.fade_it_mob {
+  animation: fadeEffectMob 5s!important;
+}
+@keyframes fadeEffectMob {
+  0% { opacity: 0.25;}
+  4% { opacity: 1;}
+  96% { opacity: 1;}
+  100% { opacity: 0.25;}
+}
+
+.fade-carousel-indicators_mob li{
+	display: inline-block;
+	border-radius: 50%;
+	width: .9em;
+	height: .9em;
+	margin: 5px 2px;
+}
+
+.fade-carousel-indicators_mob li:active{
+	background-color: rgba(0,0,0, .5);
+</style>
+
+
+<div class="carousel_fade_mob">
+
+	<div class="carousel_slide_fade_mob fade_it_mob">
+  		<img src="/media/{{ product.carousel_item_mob_1 }}" alt="Image 1">
+  	</div>
+
+	{% if product.carousel_item_mob_2 %}
+	<div class="carousel_slide_fade_mob fade_it_mob">
+    	<img src="/media/{{ product.carousel_item_mob_2 }}" alt="Image 2">
+	</div>
+	{% endif %}
+	{% if product.carousel_item_mob_3 %}
+	<div class="carousel_slide_fade_mob fade_it_mob">
+		<img src="/media/{{ product.carousel_item_mob_3 }}" alt="Image 3">
+	</div>
+	{% endif %}
+	{% if product.carousel_item_mob_4 %}
+	<div class="carousel_slide_fade_mob fade_it_mob">
+		<img src="/media/{{ product.carousel_item_mob_4 }}" alt="Image 2">
+	</div>
+	{% endif %}
+	{% if product.carousel_item_mob_5 %}
+	<div class="carousel_slide_fade_mob fade_it_mob">
+		<img src="/media/{{ product.carousel_item_mob_5 }}" alt="Image 3">
+	</div>
+	{% endif %}
+	{% if product.carousel_item_mob_6 %}
+	<div class="carousel_slide_fade_mob fade_it_mob">
+		<img src="/media/{{ product.carousel_item_mob_6 }}" alt="Image 3">
+	</div>
+	{% endif %}
+
+
+		<div class="d-flex justify-content-between px-3">
+		<div>
+		  <a class="prev arrows_nav" onclick="plusSlidesMob(-1)">&#10094;</a>
+		</div>
+		<div>
+		  <ul class="fade-carousel-indicators">
+		    <li data-target="#carouselFade" data-slide-to="0" class="indicator_mob active" onclick="currentSlideMob(1)"></li>
+		    
+		    {% if product.carousel_item_mob_2 %}
+		    <li data-target="#carouselFade" data-slide-to="1" class="indicator_mob" onclick="currentSlideMob(2)"></li>
+		    {% endif %}
+		    {% if product.carousel_item_mob_3 %}
+		    <li data-target="#carouselFade" data-slide-to="2" class="indicator_mob" onclick="currentSlideMob(3)"></li>
+		    {% endif %}
+		    {% if product.carousel_item_mob_4 %}
+		    <li data-target="#carouselFade" data-slide-to="3" class="indicator_mob" onclick="currentSlideMob(4)"></li>
+		    {% endif %}
+		    {% if product.carousel_item_mob_5 %}
+		    <li data-target="#carouselFade" data-slide-to="4" class="indicator_mob" onclick="currentSlideMob(5)"></li>
+		    {% endif %}
+		    {% if product.carousel_item_mob_6 %}
+		    <li data-target="#carouselFade" data-slide-to="5" class="indicator_mob" onclick="currentSlideMob(6)"></li>
+		    {% endif %}
+
+		  </ul>
+		</div>
+		<div>
+	  	<a class="next arrows_nav" onclick="plusSlidesMob(1)">&#10095;</a>
+	  </div>
+  </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+	let slideIndexM = 1;
+	showSlidesMob();
+
+	function plusSlidesMob(nn) {
+  	showSlidesMob(slideIndexM += nn);
+	}
+
+	function currentSlideMob(nn) {
+	  showSlidesMob(slideIndexM = nn);
+	}
+
+	function showSlidesMob(nn) {
+	  let slidesM = document.getElementsByClassName("carousel_slide_fade_mob");
+	  let indicators_mob = document.getElementsByClassName("indicator_mob");
+	  
+	  if (nn > slidesM.length) {
+    slideIndexM = 1;
+  }
+  
+  if (nn < 1) {
+    slideIndexM = slidesM.length;
+  }
+  
+  for (let ii = 0; ii < slidesM.length; ii++) {
+    slidesM[ii].style.display = "none";
+    slidesM[ii].classList.remove("fade_it");
+    indicators_mob[ii].classList.remove("active");
+  }
+  
+  slidesM[slideIndexM - 1].style.display = "block";
+  slidesM[slideIndexM - 1].classList.add("fade_it");
+  indicators_mob[slideIndexM - 1].classList.add("active"); 
+}
+	  
+setTimeout(function() {
+  plusSlidesMob(1);
+}, 5000);
+
+</script>
