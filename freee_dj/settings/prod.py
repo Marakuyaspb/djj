@@ -5,6 +5,7 @@ from .base import *
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'new.decona.ru',
     '77.222.42.39',
     '77-222-42-39.swtest.ru'
 ]

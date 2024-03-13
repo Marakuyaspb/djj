@@ -18,6 +18,7 @@ class ProductAdmin(admin.ModelAdmin):
 		'fabric_name', 
 		'product_full_name', 
 		('product_img', 'product_img_mob'),
+		('show_fabric_icons'),
 		('slug_fabric_icon_1', 'product_fabric_icon_1'),
 		('slug_fabric_icon_2', 'product_fabric_icon_2'),
 		('slug_fabric_icon_3', 'product_fabric_icon_3'),

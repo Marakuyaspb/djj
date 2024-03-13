@@ -588,3 +588,10 @@ django.core.exceptions.FieldError: Unknown field(s) (popover_img) specified for 
 2024-03-10 12:37:49,949 - Not Found: /media/
 2024-03-10 12:37:50,091 - Not Found: /media/
 2024-03-10 12:40:11,850 - Not Found: /media/
+2024-03-13 21:24:37,300 - Not Found: /products/consono-accessory-pixel-forest/
+2024-03-13 21:24:37,487 - Not Found: /favicon.ico
+2024-03-13 21:28:44,091 - Not Found: /products/consono-arm-velutto-32/
+2024-03-13 21:28:51,924 - Not Found: /media/
+2024-03-13 21:28:55,365 - Not Found: /products/consono-arm-pixel-forest/
+2024-03-13 21:29:03,416 - Not Found: /products/consono-arm-velutto-32/
+2024-03-13 21:29:33,001 - /home/a/deco_dj/product/models.py changed, reloading.

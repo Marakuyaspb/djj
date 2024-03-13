@@ -18,7 +18,11 @@
 		    	</center>
 
 				<!-- fabric buttons -->
-				{%  include 'product/card_parts/fabric_nav.html' %}
+				{% if product.show_fabric_icons %}
+
+					{%  include 'product/card_parts/fabric_nav.html' %}
+
+				{% endif %}
 
 				<!-- ICONS: New, Showroom, Delivery, -->
 				{%  include 'product/card_parts/card_icons.html' %}
@@ -243,29 +247,11 @@
 
         <!-- fabric buttons -->
 
-		<div class='slide-fabric-nav pt-3'>
+		{% if product.show_fabric_icons %}
 
-			<a href='/products/{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_1}}'>
-				<img class='slide-fabric-button fabric-var-phone fabric-var' id='' src='/media/{{ product.product_fabric_icon_1 }}'>
-			</a>
+			{%  include 'product/card_parts/fabric_nav_mob.html' %}
 
-			<a href='/products/{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_1}}'> 
-		    	<img class='slide-fabric-button fabric-var-phone fabric-var' id='' src='/media/{{ product.product_fabric_icon_2 }}'>
-		    </a>
-
-			<a href='/products/{{product.collection_slug}}-{{product.category}}-{{product.slug_fabric_icon_3}}'> 
-		    	<img class='slide-fabric-button fabric-var-phone fabric-var' id='' src='/media/{{ product.product_fabric_icon_3 }}'>
-		    </a>
-
-			<a href='/products/{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_4}}'> 
-		    	<img class='slide-fabric-button fabric-var-phone fabric-var' id='T' src='/media/{{ product.product_fabric_icon_4 }}'>
-		    </a>
-
-			<a href='/products/{{product.collection_slug}}-{{product.category_slug}}-{{product.slug_fabric_icon_5}}'> 
-		    	<img class='slide-fabric-button fabric-var-phone fabric-var' id='' src='/media/{{ product.product_fabric_icon_5 }}'>  
-		    </a> 
-
-		</div>
+		{% endif %}
 
 
 		<!-- carousel with product PHONE -->

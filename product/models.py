@@ -159,6 +159,10 @@ class Product(models.Model):
 	product_img = models.ImageField(upload_to='images/', null=True, blank=True, verbose_name = 'Изображение для страницы выдачи | десктоп')
 	product_img_mob = models.ImageField(upload_to='images/', null=True, blank=True, verbose_name = 'Изображение для страницы выдачи | мобильный')
 
+
+	show_fabric_icons = models.BooleanField(default=True, verbose_name = 'Отображать иконки переключения тканей')
+
+
 	slug_fabric_icon_1 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №1', default='cambridge-600')
 	product_fabric_icon_1 = models.ImageField(upload_to='fabric_icons/', null=True, blank=True, verbose_name = 'Иконка переключения ткани № 1', default='fabric_icons/2024/01/23/CAMBRIDGE_600.png')
 	
