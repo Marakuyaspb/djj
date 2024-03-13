@@ -160,7 +160,7 @@ class Product(models.Model):
 	product_img_mob = models.ImageField(upload_to='images/', null=True, blank=True, verbose_name = 'Изображение для страницы выдачи | мобильный')
 
 
-	show_fabric_icons = models.BooleanField(default=True, verbose_name = 'Отображать иконки переключения тканей')
+	show_fabric_icons = models.BooleanField(default=True, verbose_name = 'Отображать иконки переключения тканей?')
 
 
 	slug_fabric_icon_1 = models.SlugField(max_length=100, null=True, blank=True, verbose_name='Слаг ткани №1', default='cambridge-600')
