@@ -5,8 +5,6 @@ venv
 fix_it.txt
 my_way.txt
 
-freee_dj/settings/*
-
 **/migrations/**
 !**/migrations
 

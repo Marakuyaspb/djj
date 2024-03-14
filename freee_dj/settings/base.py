@@ -16,11 +16,11 @@ PROJECT_ROOT = os.path.dirname(__file__)
 
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
-ALLOWED_HOSTS = ['127.0.0.1', 'b774-176-59-12-162.ngrok-free.app']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 #for ngrok
-CSRF_TRUSTED_ORIGINS = ['https://b774-176-59-12-162.ngrok-free.app']
+CSRF_TRUSTED_ORIGINS = ['https://*****.ngrok-free.app']
 
 SITE_ID = 1
 
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     # additional packages
+
     'weasyprint',
     #'mathfilters',
     #'crispy_forms',
@@ -171,8 +172,19 @@ INTERNAL_IPS = [
 ]
 
 #SMTP
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_DEBUG = True
+# EMAIL_HOST = 'smtp.mail.ru'
+# EMAIL_PORT = 465
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = True
+# EMAIL_HOST_USER = str(os.getenv('MAILRU_APP_MAIL'))
+# EMAIL_HOST_PASSWORD = str(os.getenv('MAILRU_APP_PASSWORD'))
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
+EMAIL_HOST_USER = str(os.getenv('YANDEX_APP_MAIL'))
+EMAIL_HOST_PASSWORD = str(os.getenv('YANDEX_APP_PASSWORD'))

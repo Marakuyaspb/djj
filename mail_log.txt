@@ -595,3 +595,74 @@ django.core.exceptions.FieldError: Unknown field(s) (popover_img) specified for 
 2024-03-13 21:28:55,365 - Not Found: /products/consono-arm-pixel-forest/
 2024-03-13 21:29:03,416 - Not Found: /products/consono-arm-velutto-32/
 2024-03-13 21:29:33,001 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-03-14 13:02:32,007 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:02:51,710 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:03:07,332 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:03:10,817 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:03:29,508 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-14 13:03:54,508 - Mail to manager send successfully
+2024-03-14 13:03:54,592 - Mail to client send successfully to human.coin.order@gmail.com
+2024-03-14 13:14:44,954 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:14:50,458 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:14:55,087 - Not Found: /media/pages_hats/delivery_hat.jpg
+2024-03-14 13:14:55,171 - Not Found: /media/pages_hats/delivery_hat.jpg
+2024-03-14 13:15:03,963 - Not Found: /media/
+2024-03-14 13:15:04,101 - Not Found: /media/
+2024-03-14 13:15:27,678 - Mail to manager send successfully
+2024-03-14 13:15:28,431 - Mail to client send successfully to human.coin.order@gmail.com
+2024-03-14 13:19:04,441 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:19:12,072 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:19:16,767 - Not Found: /media/
+2024-03-14 13:19:16,897 - Not Found: /media/
+2024-03-14 13:19:39,538 - Mail to manager send successfully
+2024-03-14 13:19:42,384 - Mail to client send successfully to human.coin.order@gmail.com
+2024-03-14 13:20:02,824 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:24:40,356 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:24:58,989 - Not Found: /media/
+2024-03-14 13:24:59,112 - Not Found: /media/
+2024-03-14 13:25:16,691 - Not Found: /products/consono-arm-pixel-forest/
+2024-03-14 13:25:16,924 - Not Found: /favicon.ico
+2024-03-14 13:25:31,463 - Not Found: /products/consono-mod1-jazz-21/
+2024-03-14 13:26:34,584 - Mail to manager send successfully
+2024-03-14 13:26:37,365 - Mail to client send successfully to human.coin.order@gmail.com
+2024-03-14 13:28:12,946 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:28:21,511 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-14 13:28:29,225 - Not Found: /media/
+2024-03-14 13:28:29,361 - Not Found: /media/
+2024-03-14 13:28:47,997 - Mail to manager send successfully
+2024-03-14 13:28:51,052 - Mail to client send successfully to human.coin.order@gmail.com
+2024-03-14 13:31:30,626 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:31:49,145 - Not Found: /media/
+2024-03-14 13:31:49,277 - Not Found: /media/
+2024-03-14 13:32:18,002 - Mail to manager send successfully
+2024-03-14 13:32:20,778 - Mail to client send successfully to komy.kabachok@yandex.ru
+2024-03-14 13:35:26,912 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:35:43,595 - Not Found: /media/
+2024-03-14 13:35:43,728 - Not Found: /media/
+2024-03-14 13:35:58,998 - Mail to manager send successfully
+2024-03-14 13:35:59,082 - Mail to client send successfully to komy.kabachok@yandex.ru
+2024-03-14 13:37:31,895 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:38:12,020 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:38:31,793 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:38:41,396 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-14 13:39:29,218 - Mail to manager send successfully
+2024-03-14 13:39:31,891 - Mail to client send successfully to komy.kabachok@yandex.ru
+2024-03-14 13:44:45,738 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:46:02,478 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:46:41,503 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-14 13:46:53,024 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-14 13:47:38,215 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:47:47,777 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:47:54,174 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:50:06,921 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:54:12,319 - Mail to manager send successfully
+2024-03-14 13:54:14,981 - Mail to client send successfully to komy.kabachok@yandex.ru
+2024-03-14 13:54:49,961 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 13:55:37,106 - Not Found: /media/
+2024-03-14 13:55:52,503 - Mail to manager send successfully
+2024-03-14 13:55:53,135 - Mail to client send successfully to komy.kabachok@yandex.ru
+2024-03-14 13:56:19,228 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 14:01:03,402 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 14:05:49,832 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-14 14:06:25,455 - Mail to manager send successfully
+2024-03-14 14:06:28,170 - Mail to client send successfully to komy.kabachok@yandex.ru

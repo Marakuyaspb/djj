@@ -18,13 +18,16 @@
         {{ form.as_p }}
 
         <div class='d-flex justify-content-center'>
-          <p class='py-5'><input type="submit" value="ЗАКАЗАТЬ" class="px-5 py-4 cacao_bg white"></p>
-
+          <p class='pt-5'><input type="submit" value="ЗАКАЗАТЬ" class="px-5 py-4 cacao_bg white"></p>
+          
         </div>
 
         {% csrf_token %}
 
       </form>
+
+      <p class='px-4 pt-4 pb-5 small'>* Нажимая на кнопку "ЗАКАЗАТЬ", Вы соглашаетесь с <u><a href='#'>Пользовательским соглашением</a></u> и <u><a  href='#'>Политикой конфиденциальности</a></u>.</p>
+
     </div>
 
 
