@@ -4,9 +4,8 @@ venv
 
 fix_it.txt
 my_way.txt
-base.py
-prod.py
-local.py
+
+freee_dj/settings/*
 
 **/migrations/**
 !**/migrations

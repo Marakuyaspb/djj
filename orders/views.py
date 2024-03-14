@@ -43,7 +43,7 @@ def order_create(request):
 				send_mail('Новый заказ',
 					'Здавствуйте, {order.first_name}!', 
 					settings.EMAIL_HOST_USER,
-					['komy.kabachok@yandex.ru'],
+					['europa.spb@gmail.com'],
 					fail_silently=True,
 					html_message=loader.get_template('orders/order/email.html').render(context)
 				)
