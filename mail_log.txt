@@ -666,3 +666,4 @@ django.core.exceptions.FieldError: Unknown field(s) (popover_img) specified for 
 2024-03-14 14:05:49,832 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
 2024-03-14 14:06:25,455 - Mail to manager send successfully
 2024-03-14 14:06:28,170 - Mail to client send successfully to komy.kabachok@yandex.ru
+2024-03-14 15:47:47,164 - /home/a/deco_dj/product/models.py changed, reloading.

@@ -214,6 +214,7 @@ class Product(models.Model):
 	features = models.TextField(null=True, blank=True, verbose_name = 'Конструктивные особенности')
 	
 	pdf =  models.FileField(upload_to='pdf/', null=True, blank=True, verbose_name = 'Файл PDF')
+	d3 =  models.FileField(upload_to='3d/', null=True, blank=True, verbose_name = 'Файл 3D-модели')
 	scheme = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема')
 
 	options = models.ManyToManyField(Option, verbose_name = 'Опции', blank=True)
