@@ -2,7 +2,7 @@ import os
 from .base import *
 
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'new.decona.ru',
@@ -14,8 +14,8 @@ ALLOWED_HOSTS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': str(os.getenv('DB_NAME')),
-        'USER': str(os.getenv('DB_USER')),
+        'NAME': 'prod',
+        'USER': 'postgres',
         'PASSWORD': str(os.getenv('DB_PASS')),
         'HOST': 'localhost',
         'PORT': '5432',
