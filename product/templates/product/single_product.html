@@ -7,7 +7,7 @@
 <!-- DESCTOP -->
 	<div class='d-none d-md-block d-lg-block d-xl-block d-xxl-block'>
 		<div class='breadcrumbs'>
-			<a href='{% url "product:index" %}'>Главная</a> / <a class='' href='{% url "product:products" %}'>Продукция</a> / <a href='/products/{{product.category}}'> {{ product.category_ru }}</a>
+			<a href='{% url "product:index" %}'>Главная</a> / <a class='' href='{% url "product:products" %}'>Продукция</a> / <a href='/categories/{{product.category}}'> {{ product.category_ru }}</a>
 		</div>
 
 		<div class='row'>
@@ -62,16 +62,20 @@
 				<input type="submit" class="white btn-prod-card" value="Заказать">
 				</form>
 
+				{% if product.d3 %}
 				<a class='white' href='/media/{{product.d3}}'>
 					<button class='white btn-prod-card'>
 						3D модель
 					</button>
 				</a>
+				{% endif %}
+				{% if product.pdf %}
 				<a class='white' href='/media/{{product.pdf}}'>
 					<button class='white btn-prod-card'>
 						PDF
 					</button>
 				</a>
+				{% endif %}
 			</div>
 		</div>
 
@@ -280,14 +284,17 @@
 					<input type="submit" class="btn-prod-card_mob cacao_bg white" value="Заказать">
 				</form>
 
-				<a class='white vertical_center' href='/media/{{product.d3}}'>
+				{% if product.d3 %}
+					<a class='white vertical_center' href='/media/{{product.d3}}'>
 				3D модель
 				</a>
-
-				<a class='white vertical_center' href='{{ product.pdf }}'>
+				{% endif %}
+				
+				{% if product.pdf %}
+					<a class='white vertical_center' href='{{ product.pdf }}'>
 				PDF
 				</a>
-
+				{% endif %}
 
 			</div>
 		</div>	
@@ -492,7 +499,7 @@
 		content_left.classList.contains('sofa_3m_st') || 
 		content_left.classList.contains('sofa_3m_n') ||
 		content_left.classList.contains('sofa_maxi_st') ||
-		content_left.classList.contains('sofa_maxi_n') ||
+		content_left.classList.contains('sofa_maxi_n')
 		) {
 	  		content_left.classList.add('col-md-8');
 	  		content_right.classList.add('col-md-4');

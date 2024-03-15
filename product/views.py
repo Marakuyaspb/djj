@@ -18,6 +18,10 @@ def cat_view(request, category_slug=None):
 		poufl_category = get_object_or_404(Category, category='poufl')
 		poufs_category = get_object_or_404(Category, category='poufs')
 		products = Product.objects.filter(category__in=[poufl_category, poufs_category])
+	elif category_slug == 'poufs':
+		poufl_category = get_object_or_404(Category, category='poufl')
+		poufs_category = get_object_or_404(Category, category='poufs')
+		products = Product.objects.filter(category__in=[poufl_category, poufs_category])
 	elif category_slug == 'accessory':
 		category = get_object_or_404(Category, category='accessory')
 		products = Product.objects.filter(category=category)
@@ -36,7 +40,7 @@ def cat_view(request, category_slug=None):
 		products = Product.objects.filter(category=category)
 	elif category_slug == 'str':
 		sofa_2m_st_category = get_object_or_404(Category, category='sofa_2m_st')
-		sofa_2m_n_category = get_object_or_404(Category, category='sofa_2m_n')
+		sofa_2m_n_category = get_object_or_404(Category, category='sofa_2m_st')
 		sofa_3m_st_category = get_object_or_404(Category, category='sofa_3m_st')
 		sofa_3m_n_category = get_object_or_404(Category, category='sofa_3m_n')
 		sofa_maxi_st_category = get_object_or_404(Category, category='sofa_maxi_st')
