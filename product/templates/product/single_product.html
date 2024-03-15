@@ -62,9 +62,9 @@
 				<input type="submit" class="white btn-prod-card" value="Заказать">
 				</form>
 
-				<a class='white' href='#'>
+				<a class='white' href='/media/{{product.d3}}'>
 					<button class='white btn-prod-card'>
-						3d модель
+						3D модель
 					</button>
 				</a>
 				<a class='white' href='/media/{{product.pdf}}'>
@@ -280,8 +280,8 @@
 					<input type="submit" class="btn-prod-card_mob cacao_bg white" value="Заказать">
 				</form>
 
-				<a class='white vertical_center' href='{{ product.d3 }}'>
-				3d модель
+				<a class='white vertical_center' href='/media/{{product.d3}}'>
+				3D модель
 				</a>
 
 				<a class='white vertical_center' href='{{ product.pdf }}'>
@@ -486,7 +486,13 @@
 
 	else if (
 		content_left.classList.contains('cornerl') || 
-		content_left.classList.contains('str')
+		content_left.classList.contains('corner_r') ||
+		content_left.classList.contains('sofa_2m_st') || 
+		content_left.classList.contains('sofa_2m_n') ||
+		content_left.classList.contains('sofa_3m_st') || 
+		content_left.classList.contains('sofa_3m_n') ||
+		content_left.classList.contains('sofa_maxi_st') ||
+		content_left.classList.contains('sofa_maxi_n') ||
 		) {
 	  		content_left.classList.add('col-md-8');
 	  		content_right.classList.add('col-md-4');

@@ -28,14 +28,20 @@ def cat_view(request, category_slug=None):
 		category = get_object_or_404(Category, category='bed')
 		products = Product.objects.filter(category=category)
 	elif category_slug == 'corner':
-		category = get_object_or_404(Category, category='cornerl')
-		products = Product.objects.filter(category=category)
+		cornerl_category = get_object_or_404(Category, category='cornerl')
+		corner_r_category = get_object_or_404(Category, category='corner_r')
+		products = Product.objects.filter(category__in=[cornerl_category, corner_r_category])
 	elif category_slug == 'mod':
 		category = get_object_or_404(Category, category='mod1')
 		products = Product.objects.filter(category=category)
 	elif category_slug == 'str':
-		category = get_object_or_404(Category, category='str')
-		products = Product.objects.filter(category=category)
+		sofa_2m_st_category = get_object_or_404(Category, category='sofa_2m_st')
+		sofa_2m_n_category = get_object_or_404(Category, category='sofa_2m_n')
+		sofa_3m_st_category = get_object_or_404(Category, category='sofa_3m_st')
+		sofa_3m_n_category = get_object_or_404(Category, category='sofa_3m_n')
+		sofa_maxi_st_category = get_object_or_404(Category, category='sofa_maxi_st')
+		sofa_maxi_n_category = get_object_or_404(Category, category='sofa_maxi_n')
+		products = Product.objects.filter(category__in=[sofa_2m_st_category, sofa_2m_n_category, sofa_3m_st_category, sofa_3m_n_category, sofa_maxi_st_category, sofa_maxi_n_category])
 	elif category_slug == 'table':
 		category = get_object_or_404(Category, category='table')
 		products = Product.objects.filter(category=category)
