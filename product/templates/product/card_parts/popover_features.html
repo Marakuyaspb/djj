@@ -1,3 +1,4 @@
+{% if product.popover %}
 <canvas id='canvasDesctop' class=''></canvas>
 
 <div class=''>
@@ -5,6 +6,7 @@
 		<img class='pop_back_img' src='/media/{{ product.carousel_item_2 }}' class=''>
 	</center>
 </div>
+
 
 <div class='popOvers'>
 	<div id='popPaw'>
@@ -61,8 +63,8 @@
 			</div>
 		</div>
 	</div>
-
 </div>
+
 
 
 <script type="text/javascript">	
@@ -158,3 +160,4 @@
 	}
 	showPopOverscanvasDesctop()
 </script>
+{% endif %}

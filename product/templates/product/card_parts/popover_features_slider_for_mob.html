@@ -15,6 +15,7 @@
 </style>
 
 
+{% if product.popover %}
 <div class="features_cards_fade my-4">
 
 	<div class="features_cards_mob fade_cards mx-2">
@@ -71,8 +72,8 @@
 			</div>
 		</div>
 	</div>
-
 </div>
+{% endif %}
 
 
 <script type="text/javascript">
@@ -99,5 +100,4 @@
 	  
 	  setTimeout(showCards, 6000); 
 	}
-
 </script>

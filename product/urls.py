@@ -26,6 +26,7 @@ urlpatterns = [
 	path('designers/', views.designers, name = 'designers'),
 	path('payment/', views.payment, name = 'payment'),
 	path('products/', views.products, name = 'products'),
+	path('privacy-policy/', views.privacy, name = 'privacy'),
 	path('showrooms/', views.showrooms, name = 'showrooms'),
 	path('vacancies/', views.vacancies, name = 'vacancies'),
 

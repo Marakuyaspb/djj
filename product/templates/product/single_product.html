@@ -147,23 +147,24 @@
 		            	<div class='container-fluid'>
 		            		<div class='row'>
 		            			<div class='col'>
-			            			<div class="d-flex justify-content-between">
-			            				<p class='cacao'>Ширина, см
-			            				<p class=''>{{ product.width }}
+			            			<div class="d-flex justify-content-start">
+				            			<div class=''>
+				            				<p class='cacao'>Ширина, см </p>
+				            				<p class='cacao'>Высота, см </p>
+				            				<p class='cacao'>Глубина, см </p>
+				            			</div>
+				            			<div class="ms-1">
+				            				<p class='ps-5'>{{ product.width }} </p>
+				            				<p class='ps-5'>{{ product.height }} </p>
+				            				<p class='ps-5'>{{ product.depth }} </p>
+			            				</div>
 			            			</div>
-			            			<div class="d-flex justify-content-between">
-			            				<p class='cacao'>Высота, см
-			            				<p class=''>{{ product.height }}
-		            				</div>
-		            				<div class="d-flex justify-content-between">
-			            				<p class='cacao'>Глубина, см
-			            				<p class=''>{{ product.depth }}
-			            			</div>
-
 								</div>
-								<div class='col'>
-		            			<img class='img-fluid' src='{{ product.scheme.url }}'/>
-								</div>
+								{% if product.scheme %}
+									<div class='col'>
+			            				<img class='img-fluid' src='{{ product.scheme.url }}'/>
+									</div>
+								{% endif %}
 							</div>
 						</div>
 					</div>		
@@ -369,9 +370,25 @@
 		            <div class='accordion-body'>
 		            	<div class='container-fluid'>
 		            		<div class='row'>
-								<div class=''>
-		            				<img class='img-fluid' src='{{ product.scheme.url }}'/>
+		            			<div class='col'>
+			            			<div class="d-flex justify-content-start">
+				            			<div class=''>
+				            				<p class='cacao'>Ширина, см </p>
+				            				<p class='cacao'>Высота, см </p>
+				            				<p class='cacao'>Глубина, см </p>
+				            			</div>
+				            			<div class="ms-1">
+				            				<p class='ps-5'>{{ product.width }} </p>
+				            				<p class='ps-5'>{{ product.height }} </p>
+				            				<p class='ps-5'>{{ product.depth }} </p>
+			            				</div>
+			            			</div>
 								</div>
+								{% if product.scheme %}
+									<div class='col'>
+			            				<img class='img-fluid' src='{{ product.scheme.url }}'/>
+									</div>
+								{% endif %}
 							</div>
 						</div>
 					</div>		

@@ -217,10 +217,10 @@ class Product(models.Model):
 	d3 =  models.FileField(upload_to='3d/', null=True, blank=True, verbose_name = 'Файл 3D-модели')
 	scheme = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема')
 
-	options = models.ManyToManyField(Option, verbose_name = 'Опции', blank=True)
+	options = models.ManyToManyField(Option, verbose_name = 'Опции', blank=True, null=True)
 
 	slider_interior = models.ForeignKey(SliderInterior, blank=True, null=True,on_delete=models.CASCADE, verbose_name = 'Слайдер с интерьерами')
-	popover = models.ForeignKey(PopOverFeatures, blank=True, on_delete=models.CASCADE, verbose_name = 'Поповер фичи')
+	popover = models.ForeignKey(PopOverFeatures, blank=True, null=True, on_delete=models.CASCADE, verbose_name = 'Поповер фичи')
 	popover_img = models.ImageField(upload_to='popovers/', blank=True, null=True, verbose_name = 'Фоновая картинка')
 
 

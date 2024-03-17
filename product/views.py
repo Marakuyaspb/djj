@@ -71,6 +71,8 @@ def designers(request):
 	return render(request, 'product/designers.html')
 def payment(request):
 	return render(request, 'product/payment.html')
+def privacy(request):
+	return render(request, 'product/privacy-policy.html')
 def showrooms(request):
 	return render(request, 'product/showrooms.html')
 def vacancies(request):
