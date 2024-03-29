@@ -809,3 +809,428 @@ django.db.utils.IntegrityError: NOT NULL constraint failed: product_product.popo
 2024-03-15 00:40:03,085 - Not Found: /categories/corner/
 2024-03-15 00:40:56,178 - Not Found: /media/
 2024-03-15 00:40:56,329 - Not Found: /media/
+2024-03-15 08:58:59,198 - Not Found: /media/
+2024-03-15 08:59:02,235 - Not Found: /media/
+2024-03-15 08:59:06,199 - Not Found: /media/
+2024-03-15 08:59:19,642 - Mail to manager send successfully
+2024-03-15 08:59:22,397 - Mail to client send successfully to human.coin.order@gmail.com
+2024-03-15 08:59:46,651 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-15 09:00:39,632 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-15 09:00:59,684 - Not Found: /media/
+2024-03-15 09:00:59,729 - Not Found: /media/
+2024-03-15 09:01:01,175 - Not Found: /media/
+2024-03-15 09:01:01,231 - Not Found: /media/
+2024-03-15 09:01:05,166 - Not Found: /media/
+2024-03-15 09:01:05,207 - Not Found: /media/
+2024-03-15 09:01:21,806 - Mail to manager send successfully
+2024-03-15 09:01:24,447 - Mail to client send successfully to human.coin.order@gmail.com
+2024-03-15 09:01:45,884 - Not Found: /media/
+2024-03-15 09:01:45,926 - Not Found: /media/
+2024-03-15 09:01:48,407 - Not Found: /media/
+2024-03-15 09:01:48,470 - Not Found: /media/
+2024-03-15 09:01:52,668 - Not Found: /media/
+2024-03-15 09:01:55,114 - Not Found: /media/
+2024-03-15 09:01:55,279 - Not Found: /media/
+2024-03-15 09:02:12,165 - Mail to manager send successfully
+2024-03-15 09:02:15,920 - Mail to client send successfully to fflaminfo@gmail.com
+2024-03-15 09:03:12,493 - Not Found: /categories/corner/
+2024-03-15 09:03:16,236 - Not Found: /media/
+2024-03-15 09:03:16,274 - Not Found: /media/
+2024-03-15 09:03:17,596 - Not Found: /media/
+2024-03-15 09:03:17,654 - Not Found: /media/
+2024-03-15 09:03:21,614 - Not Found: /media/
+2024-03-15 09:03:45,444 - Mail to manager send successfully
+2024-03-15 09:03:48,820 - Mail to client send successfully to to.the.neizvestnost@yandex.ru
+2024-03-15 09:11:10,752 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-15 09:11:19,449 - Not Found: /categories/corner/
+2024-03-15 09:11:22,091 - Not Found: /media/
+2024-03-15 09:11:23,501 - Not Found: /media/
+2024-03-15 09:11:27,255 - Not Found: /media/
+2024-03-15 09:11:27,298 - Not Found: /media/
+2024-03-15 09:11:40,250 - Mail to manager send successfully
+2024-03-15 09:11:42,775 - Mail to client send successfully to to.the.neizvestnost@yandex.ru
+2024-03-15 09:15:50,157 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-15 09:15:53,212 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-15 09:20:51,574 - /home/a/deco_dj/orders/views.py changed, reloading.
+2024-03-15 10:55:18,167 - Not Found: /media/
+2024-03-15 10:55:21,066 - Not Found: /media/
+2024-03-15 10:56:24,371 - Internal Server Error: /products/consono-arm-jazz-21/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 99, in single_product
+    return render(request, 'product/single_product.html', {
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 960, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/smartif.py", line 194, in parse
+    retval = self.expression()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/smartif.py", line 205, in expression
+    left = t.nud(self)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/smartif.py", line 148, in nud
+    raise parser.error_class("Unexpected end of expression in if tag.")
+django.template.exceptions.TemplateSyntaxError: Unexpected end of expression in if tag.
+2024-03-15 10:56:24,600 - Not Found: /favicon.ico
+2024-03-15 10:57:13,370 - Internal Server Error: /products/consono-arm-jazz-21/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 99, in single_product
+    return render(request, 'product/single_product.html', {
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 960, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/smartif.py", line 194, in parse
+    retval = self.expression()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/smartif.py", line 205, in expression
+    left = t.nud(self)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/smartif.py", line 148, in nud
+    raise parser.error_class("Unexpected end of expression in if tag.")
+django.template.exceptions.TemplateSyntaxError: Unexpected end of expression in if tag.
+2024-03-15 10:57:34,603 - Internal Server Error: /products/consono-arm-jazz-21/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 99, in single_product
+    return render(request, 'product/single_product.html', {
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 960, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/smartif.py", line 194, in parse
+    retval = self.expression()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/smartif.py", line 205, in expression
+    left = t.nud(self)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/smartif.py", line 148, in nud
+    raise parser.error_class("Unexpected end of expression in if tag.")
+django.template.exceptions.TemplateSyntaxError: Unexpected end of expression in if tag.
+2024-03-15 10:57:58,003 - Not Found: /media/
+2024-03-15 10:57:58,087 - Not Found: /media/
+2024-03-15 10:58:52,683 - Not Found: /media/
+2024-03-15 10:58:52,735 - Not Found: /media/
+2024-03-15 13:25:24,212 - Not Found: /media/
+2024-03-15 13:25:28,800 - Not Found: /media/
+2024-03-15 13:25:31,015 - Not Found: /media/
+2024-03-15 13:25:44,049 - Not Found: /media/
+2024-03-15 13:25:44,081 - Not Found: /media/
+2024-03-15 13:26:10,185 - Mail to manager send successfully
+2024-03-15 13:26:11,402 - Mail to client send successfully to to.the.neizvestnost@yandex.ru
+2024-03-15 13:27:00,808 - /home/a/deco_dj/freee_dj/settings/base.py changed, reloading.
+2024-03-18 08:23:50,207 - Not Found: /media/
+2024-03-18 08:34:24,814 - Not Found: /media/
+2024-03-18 08:34:50,968 - Not Found: /media/
+2024-03-18 08:34:57,018 - Not Found: /media/
+2024-03-18 08:34:58,287 - Not Found: /favicon.ico
+2024-03-18 08:54:56,946 - Not Found: /media/
+2024-03-18 08:55:35,083 - Not Found: /media/
+2024-03-18 08:55:37,539 - Not Found: /media/
+2024-03-18 08:56:26,971 - Not Found: /media/
+2024-03-18 08:59:08,024 - Not Found: /media/
+2024-03-18 08:59:48,886 - Not Found: /media/
+2024-03-18 09:04:23,318 - Not Found: /media/
+2024-03-18 09:04:27,314 - Not Found: /media/
+2024-03-18 09:05:09,302 - Not Found: /media/
+2024-03-18 09:05:09,426 - Not Found: /media/
+2024-03-18 09:05:22,611 - Not Found: /media/
+2024-03-18 09:05:22,769 - Not Found: /media/
+2024-03-18 09:06:40,771 - Not Found: /media/
+2024-03-18 09:06:59,219 - Not Found: /media/
+2024-03-18 09:07:31,692 - Not Found: /media/
+2024-03-18 09:07:50,911 - Not Found: /media/
+2024-03-18 09:07:50,977 - Not Found: /media/
+2024-03-18 09:08:01,010 - Not Found: /media/
+2024-03-18 09:08:14,990 - Not Found: /media/
+2024-03-18 09:08:34,267 - Not Found: /media/
+2024-03-18 09:09:05,197 - Not Found: /media/
+2024-03-18 09:09:05,333 - Not Found: /media/
+2024-03-18 09:09:20,986 - Not Found: /media/
+2024-03-18 09:09:36,694 - Not Found: /media/
+2024-03-18 09:09:57,096 - Not Found: /media/
+2024-03-18 09:09:57,242 - Not Found: /media/
+2024-03-18 09:10:06,610 - Not Found: /media/
+2024-03-18 09:10:06,768 - Not Found: /media/
+2024-03-18 09:10:22,544 - Not Found: /media/
+2024-03-18 09:10:22,691 - Not Found: /media/
+2024-03-18 09:10:47,459 - Not Found: /media/
+2024-03-18 09:10:47,585 - Not Found: /media/
+2024-03-18 09:11:50,566 - Not Found: /media/
+2024-03-18 09:12:00,630 - Not Found: /media/
+2024-03-18 09:12:00,749 - Not Found: /media/
+2024-03-18 09:12:24,226 - Not Found: /media/
+2024-03-18 09:12:58,276 - Not Found: /media/
+2024-03-18 09:13:16,072 - Not Found: /media/
+2024-03-18 09:13:16,120 - Not Found: /media/
+2024-03-18 09:13:37,507 - Not Found: /media/
+2024-03-18 09:15:05,256 - Not Found: /media/
+2024-03-18 09:16:19,589 - Not Found: /media/
+2024-03-18 09:16:19,766 - Not Found: /media/
+2024-03-18 09:17:29,061 - Not Found: /media/
+2024-03-18 09:18:28,050 - Not Found: /media/
+2024-03-18 09:19:48,179 - Not Found: /media/
+2024-03-18 09:22:28,404 - Not Found: /media/
+2024-03-18 09:22:28,590 - Not Found: /media/
+2024-03-18 09:22:53,000 - Not Found: /media/
+2024-03-18 09:22:53,148 - Not Found: /media/
+2024-03-18 09:23:10,577 - Not Found: /media/
+2024-03-18 09:23:10,705 - Not Found: /media/
+2024-03-18 09:23:30,195 - Not Found: /media/
+2024-03-18 09:25:53,814 - Not Found: /media/
+2024-03-18 09:26:28,785 - Not Found: /media/
+2024-03-18 09:27:36,663 - Not Found: /media/
+2024-03-18 09:27:36,823 - Not Found: /media/
+2024-03-18 09:27:39,875 - Not Found: /media/
+2024-03-18 09:28:47,664 - Not Found: /media/
+2024-03-18 09:28:47,710 - Not Found: /media/
+2024-03-18 09:30:14,576 - Not Found: /media/pages_hats/delivery_hat.jpg
+2024-03-18 09:30:14,596 - Not Found: /media/pages_hats/delivery_hat.jpg
+2024-03-18 09:30:22,153 - Not Found: /media/pages_hats/delivery_hat.jpg
+2024-03-18 09:30:22,256 - Not Found: /media/pages_hats/delivery_hat.jpg
+2024-03-18 12:58:37,866 - Not Found: /media/
+2024-03-18 12:58:38,029 - Not Found: /media/
+2024-03-29 12:33:15,963 - Not Found: /media/
+2024-03-29 12:33:19,341 - Not Found: /media/
+2024-03-29 12:36:13,412 - Not Found: /media/
+2024-03-29 12:36:13,544 - Not Found: /media/
+2024-03-29 12:36:54,634 - Not Found: /media/
+2024-03-29 12:36:57,157 - Not Found: /media/
+2024-03-29 12:37:30,785 - Not Found: /media/
+2024-03-29 12:38:55,448 - Not Found: /media/
+2024-03-29 12:38:55,754 - Not Found: /media/
+2024-03-29 12:40:22,997 - Not Found: /media/
+2024-03-29 12:40:23,179 - Not Found: /media/
+2024-03-29 12:40:24,916 - Not Found: /media/
+2024-03-29 12:40:25,054 - Not Found: /media/
+2024-03-29 12:40:31,798 - Not Found: /media/
+2024-03-29 12:40:32,010 - Not Found: /media/
+2024-03-29 12:40:36,900 - Not Found: /media/
+2024-03-29 12:40:37,054 - Not Found: /media/
+2024-03-29 12:41:11,805 - Not Found: /products/consono-arm-pixel-forest/
+2024-03-29 12:41:12,059 - Not Found: /favicon.ico
+2024-03-29 12:41:14,789 - Not Found: /products/consono-arm-pixel-forest/
+2024-03-29 12:41:18,779 - Not Found: /media/
+2024-03-29 12:41:18,930 - Not Found: /media/
+2024-03-29 12:41:22,906 - Not Found: /media/
+2024-03-29 12:42:32,955 - Not Found: /media/
+2024-03-29 12:43:50,743 - Not Found: /media/
+2024-03-29 12:43:55,076 - Not Found: /media/
+2024-03-29 12:48:57,624 - Not Found: /media/
+2024-03-29 12:49:01,897 - Not Found: /media/
+2024-03-29 12:49:02,102 - Not Found: /media/
+2024-03-29 12:51:49,511 - Not Found: /media/
+2024-03-29 12:53:13,176 - Not Found: /media/
+2024-03-29 12:54:08,921 - Not Found: /media/
+2024-03-29 12:54:09,066 - Not Found: /media/
+2024-03-29 12:55:02,531 - Not Found: /media/
+2024-03-29 12:55:02,682 - Not Found: /media/
+2024-03-29 12:55:03,726 - Not Found: /media/
+2024-03-29 12:56:02,728 - Not Found: /media/
+2024-03-29 12:56:02,882 - Not Found: /media/
+2024-03-29 12:56:15,652 - Not Found: /media/
+2024-03-29 12:56:15,801 - Not Found: /media/
+2024-03-29 12:56:26,585 - Not Found: /media/
+2024-03-29 12:56:26,741 - Not Found: /media/
+2024-03-29 12:56:40,126 - Not Found: /media/
+2024-03-29 12:56:40,337 - Not Found: /media/
+2024-03-29 12:58:01,056 - Not Found: /media/
+2024-03-29 12:58:59,601 - Not Found: /media/
+2024-03-29 12:58:59,776 - Not Found: /media/
+2024-03-29 12:59:49,468 - Not Found: /media/
+2024-03-29 12:59:56,476 - Not Found: /media/
+2024-03-29 13:00:23,317 - Not Found: /media/
+2024-03-29 13:00:23,485 - Not Found: /media/
+2024-03-29 13:01:20,354 - Not Found: /media/
+2024-03-29 13:01:20,495 - Not Found: /media/
+2024-03-29 13:05:46,391 - Ignored `font-weight: 550` at 16:2, invalid value.
+2024-03-29 13:05:46,631 - maxp pruned
+2024-03-29 13:05:46,646 - cmap pruned
+2024-03-29 13:05:46,646 - fpgm dropped
+2024-03-29 13:05:46,646 - prep dropped
+2024-03-29 13:05:46,647 - cvt  dropped
+2024-03-29 13:05:46,647 - kern dropped
+2024-03-29 13:05:46,647 - post pruned
+2024-03-29 13:05:46,648 - GPOS dropped
+2024-03-29 13:05:46,648 - GSUB dropped
+2024-03-29 13:05:46,658 - glyf pruned
+2024-03-29 13:05:46,659 - Added gid0 to subset
+2024-03-29 13:05:46,659 - Closing glyph list over 'glyf': 50 glyphs before
+2024-03-29 13:05:46,659 - Glyph names: ['.notdef', 'A', 'C', 'D', 'E', 'N', 'O', 'a', 'colon', 'comma', 'eight', 'hyphen', 'i', 'l', 'm', 'nine', 'one', 'period', 'space', 'uni0413', 'uni0417', 'uni0418', 'uni041A', 'uni041F', 'uni0422', 'uni0426', 'uni0430', 'uni0432', 'uni0433', 'uni0434', 'uni0435', 'uni0437', 'uni0438', 'uni043A', 'uni043B', 'uni043C', 'uni043D', 'uni043E', 'uni043F', 'uni0440', 'uni0441', 'uni0442', 'uni0443', 'uni0444', 'uni0447', 'uni044C', 'uni044F', 'uni20BD', 'uni2116', 'zero']
+2024-03-29 13:05:46,660 - Glyph IDs:   [0, 3, 15, 16, 17, 19, 20, 27, 28, 29, 36, 38, 39, 40, 49, 50, 68, 76, 79, 80, 936, 940, 941, 943, 948, 951, 955, 965, 967, 968, 969, 970, 972, 973, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 988, 993, 996, 2961, 2990]
+2024-03-29 13:05:46,660 - Closed glyph list over 'glyf': 56 glyphs after
+2024-03-29 13:05:46,660 - Glyph names: ['.notdef', 'A', 'C', 'D', 'E', 'N', 'O', 'T', 'a', 'c', 'colon', 'comma', 'e', 'eight', 'hyphen', 'i', 'l', 'm', 'nine', 'o', 'one', 'p', 'period', 'space', 'uni0413', 'uni0417', 'uni0418', 'uni041A', 'uni041F', 'uni0422', 'uni0426', 'uni0430', 'uni0432', 'uni0433', 'uni0434', 'uni0435', 'uni0437', 'uni0438', 'uni043A', 'uni043B', 'uni043C', 'uni043D', 'uni043E', 'uni043F', 'uni0440', 'uni0441', 'uni0442', 'uni0443', 'uni0444', 'uni0447', 'uni044C', 'uni044F', 'uni20BD', 'uni2116', 'y', 'zero']
+2024-03-29 13:05:46,661 - Glyph IDs:   [0, 3, 15, 16, 17, 19, 20, 27, 28, 29, 36, 38, 39, 40, 49, 50, 55, 68, 70, 72, 76, 79, 80, 82, 83, 92, 936, 940, 941, 943, 948, 951, 955, 965, 967, 968, 969, 970, 972, 973, 975, 976, 977, 978, 979, 980, 981, 982, 983, 984, 985, 988, 993, 996, 2961, 2990]
+2024-03-29 13:05:46,664 - Retaining 56 glyphs
+2024-03-29 13:05:46,664 - head subsetting not needed
+2024-03-29 13:05:46,665 - hhea subsetting not needed
+2024-03-29 13:05:46,665 - maxp subsetting not needed
+2024-03-29 13:05:46,665 - OS/2 subsetting not needed
+2024-03-29 13:05:46,730 - hmtx subsetted
+2024-03-29 13:05:46,735 - cmap subsetted
+2024-03-29 13:05:46,735 - loca subsetting not needed
+2024-03-29 13:05:46,735 - post subsetted
+2024-03-29 13:05:46,735 - gasp subsetting not needed
+2024-03-29 13:05:46,736 - FFTM NOT subset; don't know how to subset
+2024-03-29 13:05:46,739 - GDEF subsetted
+2024-03-29 13:05:46,739 - name subsetting not needed
+2024-03-29 13:05:46,743 - glyf subsetted
+2024-03-29 13:05:46,743 - head pruned
+2024-03-29 13:05:46,744 - OS/2 Unicode ranges pruned: [0, 9, 33, 35]
+2024-03-29 13:05:46,744 - OS/2 CodePage ranges pruned: [0]
+2024-03-29 13:05:46,746 - glyf pruned
+2024-03-29 13:05:46,746 - GDEF pruned
+2024-03-29 13:05:46,747 - name pruned
+2024-03-29 13:05:46,771 - maxp pruned
+2024-03-29 13:05:46,784 - cmap pruned
+2024-03-29 13:05:46,784 - fpgm dropped
+2024-03-29 13:05:46,784 - prep dropped
+2024-03-29 13:05:46,784 - cvt  dropped
+2024-03-29 13:05:46,784 - kern dropped
+2024-03-29 13:05:46,785 - post pruned
+2024-03-29 13:05:46,785 - GPOS dropped
+2024-03-29 13:05:46,785 - GSUB dropped
+2024-03-29 13:05:46,795 - glyf pruned
+2024-03-29 13:05:46,796 - Added gid0 to subset
+2024-03-29 13:05:46,797 - Closing glyph list over 'MATH': 43 glyphs before
+2024-03-29 13:05:46,797 - Glyph names: ['.notdef', 'C', 'E', 'S', 'T', 'a', 'at', 'comma', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'n', 'nine', 'o', 'one', 'period', 'r', 's', 'space', 't', 'two', 'u', 'uni0418', 'uni041A', 'uni041C', 'uni0430', 'uni0433', 'uni0435', 'uni043B', 'uni043E', 'uni0440', 'uni0441', 'uni0442', 'uni20BD', 'v', 'x', 'y', 'z', 'zero']
+2024-03-29 13:05:46,798 - Glyph IDs:   [0, 3, 15, 17, 19, 20, 21, 23, 24, 27, 28, 35, 38, 40, 54, 55, 68, 71, 72, 75, 76, 81, 82, 85, 86, 87, 88, 89, 91, 92, 93, 941, 943, 945, 965, 968, 970, 976, 979, 981, 982, 983, 2961]
+2024-03-29 13:05:46,801 - Closed glyph list over 'MATH': 43 glyphs after
+2024-03-29 13:05:46,801 - Glyph names: ['.notdef', 'C', 'E', 'S', 'T', 'a', 'at', 'comma', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'n', 'nine', 'o', 'one', 'period', 'r', 's', 'space', 't', 'two', 'u', 'uni0418', 'uni041A', 'uni041C', 'uni0430', 'uni0433', 'uni0435', 'uni043B', 'uni043E', 'uni0440', 'uni0441', 'uni0442', 'uni20BD', 'v', 'x', 'y', 'z', 'zero']
+2024-03-29 13:05:46,801 - Glyph IDs:   [0, 3, 15, 17, 19, 20, 21, 23, 24, 27, 28, 35, 38, 40, 54, 55, 68, 71, 72, 75, 76, 81, 82, 85, 86, 87, 88, 89, 91, 92, 93, 941, 943, 945, 965, 968, 970, 976, 979, 981, 982, 983, 2961]
+2024-03-29 13:05:46,801 - Closing glyph list over 'glyf': 43 glyphs before
+2024-03-29 13:05:46,801 - Glyph names: ['.notdef', 'C', 'E', 'S', 'T', 'a', 'at', 'comma', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'n', 'nine', 'o', 'one', 'period', 'r', 's', 'space', 't', 'two', 'u', 'uni0418', 'uni041A', 'uni041C', 'uni0430', 'uni0433', 'uni0435', 'uni043B', 'uni043E', 'uni0440', 'uni0441', 'uni0442', 'uni20BD', 'v', 'x', 'y', 'z', 'zero']
+2024-03-29 13:05:46,801 - Glyph IDs:   [0, 3, 15, 17, 19, 20, 21, 23, 24, 27, 28, 35, 38, 40, 54, 55, 68, 71, 72, 75, 76, 81, 82, 85, 86, 87, 88, 89, 91, 92, 93, 941, 943, 945, 965, 968, 970, 976, 979, 981, 982, 983, 2961]
+2024-03-29 13:05:46,801 - Closed glyph list over 'glyf': 46 glyphs after
+2024-03-29 13:05:46,801 - Glyph names: ['.notdef', 'C', 'E', 'M', 'S', 'T', 'a', 'at', 'c', 'comma', 'd', 'e', 'eight', 'five', 'four', 'h', 'i', 'n', 'nine', 'o', 'one', 'p', 'period', 'r', 's', 'space', 't', 'two', 'u', 'uni0418', 'uni041A', 'uni041C', 'uni0430', 'uni0433', 'uni0435', 'uni043B', 'uni043E', 'uni0440', 'uni0441', 'uni0442', 'uni20BD', 'v', 'x', 'y', 'z', 'zero']
+2024-03-29 13:05:46,802 - Glyph IDs:   [0, 3, 15, 17, 19, 20, 21, 23, 24, 27, 28, 35, 38, 40, 48, 54, 55, 68, 70, 71, 72, 75, 76, 81, 82, 83, 85, 86, 87, 88, 89, 91, 92, 93, 941, 943, 945, 965, 968, 970, 976, 979, 981, 982, 983, 2961]
+2024-03-29 13:05:46,806 - Retaining 46 glyphs
+2024-03-29 13:05:46,807 - head subsetting not needed
+2024-03-29 13:05:46,807 - hhea subsetting not needed
+2024-03-29 13:05:46,807 - maxp subsetting not needed
+2024-03-29 13:05:46,807 - OS/2 subsetting not needed
+2024-03-29 13:05:46,811 - hmtx subsetted
+2024-03-29 13:05:46,814 - cmap subsetted
+2024-03-29 13:05:46,814 - loca subsetting not needed
+2024-03-29 13:05:46,814 - post subsetted
+2024-03-29 13:05:46,814 - gasp subsetting not needed
+2024-03-29 13:05:46,814 - FFTM NOT subset; don't know how to subset
+2024-03-29 13:05:46,814 - MATH subsetted
+2024-03-29 13:05:46,817 - GDEF subsetted
+2024-03-29 13:05:46,817 - name subsetting not needed
+2024-03-29 13:05:46,821 - glyf subsetted
+2024-03-29 13:05:46,821 - head pruned
+2024-03-29 13:05:46,821 - OS/2 Unicode ranges pruned: [0, 9, 33]
+2024-03-29 13:05:46,821 - OS/2 CodePage ranges pruned: [0]
+2024-03-29 13:05:46,823 - glyf pruned
+2024-03-29 13:05:46,823 - GDEF pruned
+2024-03-29 13:05:46,824 - name pruned
+2024-03-29 13:14:02,311 - Not Found: /media/
+2024-03-29 13:14:02,424 - Not Found: /media/

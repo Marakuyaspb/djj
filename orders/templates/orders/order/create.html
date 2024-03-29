@@ -26,7 +26,7 @@
 
       </form>
 
-      <p class='px-4 pt-4 pb-5 small'>* Нажимая на кнопку "ЗАКАЗАТЬ", Вы соглашаетесь с <u><a href='#'>Пользовательским соглашением</a></u> и <u><a  href='#'>Политикой конфиденциальности</a></u>.</p>
+      <p class='px-4 pt-4 pb-5 small'>* Нажимая на кнопку "ЗАКАЗАТЬ", Вы соглашаетесь с <u><a href='{% url "product:privacy" %}'>Политикой конфиденциальности</a></u>.</p>
 
     </div>
 
@@ -41,13 +41,13 @@
               <div class="row">  
                 <div class ='col-md-4'><img class= 'order_prev_img img-fuid' src='{{ item.product.product_img.url }}'></div>
                 <div class ='col-md-4 cacao'>{{ item.product.product_full_name }} ×{{ item.quantity }} шт. </div>
-                <div class ='col-md-4'>{{ item.total_price|floatformat:2 }} ₽</div>
+                <div class ='col-md-4 price_display'>{{ item.total_price|floatformat:2 }} ₽</div>
               </div>
               
             </ol>
           {% endfor %}
         </ul>
-        <p class="py-4">Итого: {{ cart.get_total_price }} ₽</p>
+        <span class="py-4 d-flex flex-row"><p class='pe-1'>Итого: </p><p class='price_display'>{{ cart.get_total_price }}</p></span>
   
       </div>
     </div>

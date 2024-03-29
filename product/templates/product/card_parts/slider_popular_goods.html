@@ -18,7 +18,6 @@
 	  padding-right: 1em;
 	  padding-left: 1em;
 	}
-
 	.product_card_header_carousel{
 		font-size: 2em !important;
 		padding-bottom: 1em;
@@ -26,11 +25,12 @@
 </style>
 
 
-<div class="carousel_wrap" >
+<div class="carousel_wrap_p" >
+	<!--
 {% for e in popular %}
 		<div class="product_card">
 			<a href="{% url 'product:single_product' e.product_slug %}">
-			<!-- HEAD OF THE CARD -->
+		
 				<div class = 'd-flex justify-content-between'>
 					<div>
 						<h3 class='product_card_header_carousel'>{{ e.collection }}</h3>
@@ -50,9 +50,7 @@
 					</div>
 
 				</div>
-			<!-- END OF THE HEAD OF THE CARD -->
-
-			<!-- THE CARD BODY -->			
+					
 				<div class = 'card-bottom-info'>
 					<center class=''>
 						<img src="/media/{{ e.product_img }}" class="img-fluid product_img_under_carousel">
@@ -78,35 +76,39 @@
 						{% endif %}
 					</div>
 				</div>
-			<!-- END OF THE CARD BODY -->	
+
 			</a>
 		</div>
-
 {% endfor %}
 
-</div>
+</div> -->
 {% endif %}
 
 <script>
 
 document.addEventListener('DOMContentLoaded', function() {
+
   let position = 0;
-  const scrollIt = document.querySelector('.carousel_wrap');
+  const scrollIt = document.querySelector('.carousel_wrap_p');
+  let direction = 1;
 
   // Function to animate the scrolling of slides
-  function scrollSlides() {
+  function scrollSlidesP() {
     scrollIt.scrollTo({
       left: position,
       behavior: 'smooth'
     });
-    position += 400; // Increment position for next animation
-    if (position > scrollIt.scrollWidth - scrollIt.clientWidth) {
-      position = 0; // Reset position to start over
+
+    position += 5 * direction;
+
+    if (position >= scrollIt.scrollWidth - scrollIt.clientWidth || position <= 0) {
+      direction *= -1;
     }
+
   }
 
   // Auto-scroll slides every 3 seconds
-  setInterval(scrollSlides, 3000);
+  setInterval(scrollSlidesP, 100);
 
   // Enable mouse scroll on .scroll_it element
   scrollIt.addEventListener('wheel', function(e) {
@@ -117,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.scrollLeft += 100;
     }
   });
+
 });
 
 </script>

@@ -140,14 +140,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#https://django-crispy-forms.readthedocs.io/en/latest/install.html
-# CRISPY_TEMPLATE_PACK = 'uni_form'
-
-# CKEDITOR_CONFIG ={
-#     'default':{
-#     'width':'auto',
-#     },
-# }
 
 
 CACHES = {
@@ -171,20 +163,14 @@ INTERNAL_IPS = [
 '127.0.0.1',
 ]
 
-#SMTP
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_DEBUG = True
-# EMAIL_HOST = 'smtp.mail.ru'
-# EMAIL_PORT = 465
-# EMAIL_USE_TLS = False
-# EMAIL_USE_SSL = True
-# EMAIL_HOST_USER = str(os.getenv('MAILRU_APP_MAIL'))
-# EMAIL_HOST_PASSWORD = str(os.getenv('MAILRU_APP_PASSWORD'))
+EMAIL_DEBUG = True
 
+#SMTP
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_DEBUG = True
+EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = str(os.getenv('YANDEX_APP_MAIL'))
-EMAIL_HOST_PASSWORD = str(os.getenv('YANDEX_APP_PASSWORD'))
+EMAIL_HOST_USER = 'no-reply@decona.ru'
+EMAIL_HOST_PASSWORD = 'ysFAnxyS6kgbzd5Em0y8'

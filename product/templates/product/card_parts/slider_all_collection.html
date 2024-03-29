@@ -8,10 +8,7 @@
 		display: inline-block;
 	  padding: 1em;
 	}
-	/*.product_card{
-		border-right: 1px solid #DCCBC7;
-		line-height: 10px;
-	}*/
+
 	.product_img_under_carousel{
 		position: relative;
 	  z-index: 1 !important;
@@ -65,7 +62,7 @@
 						</div>
 						{% if product.price_old %}
 						<div class='old-price_cat_page'>
-							<p class='smaller_text_18'>{{ e.price_old }} ₽</p>
+							<p class='smaller_text_18 price_display'>{{ e.price_old }} ₽</p>
 						</div>
 						{% endif %}
 					</div>
@@ -75,7 +72,7 @@
 							<p class='smaller_text_18'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</p>
 						</div>
 						<div class='cacao price_cat_page'>
-							<p class='smaller_text_18'>{{ e.price }} ₽</p>
+							<p class='smaller_text_18 price_display'>{{ e.price }} ₽</p>
 						</div>
 					</div>
 				</div>
@@ -97,14 +94,14 @@ document.addEventListener('DOMContentLoaded', function() {
       left: position,
       behavior: 'smooth'
     });
-    position += 400; // Increment position for next animation
+    position += 5; // Increment position for next animation
     if (position > scrollIt.scrollWidth - scrollIt.clientWidth) {
       position = 0; // Reset position to start over
     }
   }
 
   // Auto-scroll slides every 3 seconds
-  setInterval(scrollSlides, 3000);
+  setInterval(scrollSlides, 100);
 
   // Enable mouse scroll on .scroll_it element
   scrollIt.addEventListener('wheel', function(e) {

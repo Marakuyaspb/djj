@@ -61,14 +61,14 @@
 
 					<div class = 'd-flex justify-content-between'>
 						<div class='cacao'>В наличии</div>
-						<div class='old-price_cat_page'>{{ e.price }} ₽</div>
+						<div class='old-price_cat_page price_display'>{{ e.price }} ₽</div>
 					</div>
 
 					<div class = 'd-flex justify-content-between'>
 						<div class='cacao'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</div>
 
 						{% if product.price_old %}
-						<div class='cacao price_cat_page'>{{ e.price_old }} ₽</div>
+						<div class='cacao price_cat_page price_display'>{{ e.price_old }} ₽</div>
 						{% endif %}
 						
 					</div>
@@ -76,7 +76,6 @@
 			<!-- END OF THE CARD BODY -->	
 			</a>
 		</div>
-
 {% endfor %}
 
 </div>
@@ -86,6 +85,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   let position = 0;
   const scrollIt = document.querySelector('.carousel_wrap');
+  let direction = 1;
 
   // Function to animate the scrolling of slides
   function scrollSlides() {
@@ -93,14 +93,16 @@ document.addEventListener('DOMContentLoaded', function() {
       left: position,
       behavior: 'smooth'
     });
-    position += 400; // Increment position for next animation
-    if (position > scrollIt.scrollWidth - scrollIt.clientWidth) {
-      position = 0; // Reset position to start over
+
+    position += 5 * direction;
+
+    if (position >= scrollIt.scrollWidth - scrollIt.clientWidth || position <= 0) {
+      direction *= -1;
     }
   }
 
   // Auto-scroll slides every 3 seconds
-  setInterval(scrollSlides, 3000);
+  setInterval(scrollSlides, 100);
 
   // Enable mouse scroll on .scroll_it element
   scrollIt.addEventListener('wheel', function(e) {
@@ -111,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.scrollLeft += 100;
     }
   });
+
 });
 
 </script>

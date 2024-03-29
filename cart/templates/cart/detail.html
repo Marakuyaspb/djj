@@ -47,9 +47,9 @@
 
 					<div class="col-md-2 pt-3">
 						{% if product.price_old %}
-						<div class="num"><p class='cacao old_price'>{{ item.product.price_old }} ₽</div>
+						<div class="num"><p class='cacao old_price price_display'>{{ item.product.price_old }} ₽</div>
 						{% endif %}
-						<div class="num"><p class='pb-2'>{{ item.product.price }} ₽</div>
+						<div class="num"><p class='pb-2 price_display'>{{ item.product.price }} ₽</div>
 
 						
 					</div>
@@ -68,7 +68,7 @@
 
 
 								</div>
-								<div class="num total_price py-2"><p>Подитог: {{ item.total_price }} ₽</div>
+								<div class="num total_price price_display py-2"><p>Подитог: {{ item.total_price }} ₽</div>
 								{% csrf_token %}
 							</form>
 						</div>
@@ -92,7 +92,7 @@
 		<div class="col-md-3">
 			<div class =''>
 				<p class="major-text pb-3">Общая стоимость:</p>
-				<div class="num mb-3"><p class="pb-3">{{ cart.get_total_price }} ₽</div>
+				<div class="num mb-3"><p class="pb-3 price_display">{{ cart.get_total_price }} ₽</div>
 				<a href="{% url 'orders:order_create' %}" class="">
 					<button class="white cacao_bg">Оформление заказа </button>
 				</a>

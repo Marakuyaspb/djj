@@ -1,9 +1,6 @@
 server {
-    listen 443 ssl;
-    server_name new.decona.ru www.new.decona.ru;
-
-    ssl_certificate /etc/letsencrypt/live/new.decona.ru/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/new.decona.ru/privkey.pem;
+    listen 80;
+    server_name new.decona.ru www.new.decona.ru 77.222.42.39 77-222-42-39.swtest.ru www.77-222-42-39.swtest.ru;
 
     location = /favicon.ico { 
         access_log off;
