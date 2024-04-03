@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Collection, Option, Fabric, SliderInterior, Product, ProductImage, PopOverFeatures
+from .models import Category, Collection, Option, Fabric, SliderInterior, Product, ProductImage, PopOverFeatures, Schemes
 from django.utils.safestring import mark_safe
 # from .forms import ProductImageForm
 from django.template.loader import get_template
@@ -119,24 +119,6 @@ class SliderInteriorAdmin(admin.ModelAdmin):
 	list_display = ('sl_interior_name', 'created', 'updated')
 
 
-# class CustomProductForm(ProductForm):
-# 	carousel_items = MultipleFileField(required=False)
-
-# 	def __init__(self, *args, **kwargs):
-# 		super().__init__(*args, **kwargs)
-# 		if self.instance.pk:
-# 			self.fields['carousel_items'].initial = self.instance.carousel_items.all()
-
-# 	def save(self, commit=True):
-# 		product = super().save(commit=False)
-# 		if commit:
-# 			product.save()
-# 		if self.cleaned_data.get('carousel_items'):
-# 			for image in self.cleaned_data['carousel_items']:
-# 				product.carousel_items.create(image=image)
-# 		return product
-
-
-# class ProductImageAdmin(admin.ModelAdmin):
-#     list_display = ('image', 'product')
-# admin.site.register(ProductImage, ProductImageAdmin)
+@admin.register(Schemes)
+class SchemesAdmin(admin.ModelAdmin):
+	list_display = ('scheme_name','scheme_1')

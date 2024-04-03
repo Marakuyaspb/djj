@@ -140,7 +140,67 @@ class PopOverFeatures(models.Model):
 		verbose_name = 'Фича поп-овер'
 		verbose_name_plural = 'Фичи поп-овер'
 	def __str__(self):
-		return self.popover_name	
+		return self.popover_name
+
+
+
+class Schemes(models.Model):
+	scheme_id = models.AutoField(primary_key=True)
+	scheme_name = models.CharField(max_length=50, verbose_name = 'Название (для какой коллекции/модели?)')
+	scheme_1 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 1')
+	scheme_2 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 2')
+	scheme_3 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 3')
+	scheme_4 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 4')
+	scheme_5 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 5')
+	scheme_6 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 6')
+	scheme_7 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 7')
+	scheme_8 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 8')
+	scheme_9 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 9')
+	scheme_10 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 10')
+	scheme_11 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 11')
+	scheme_12 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 12')
+	scheme_13 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 13')
+	scheme_14 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 14')
+	scheme_15 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 15')
+	scheme_16 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 16')
+	scheme_17 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 17')
+	scheme_18 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 18')
+	scheme_19 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 19')
+	scheme_20 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 20')
+	scheme_21 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 21')
+	scheme_22 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 22')
+	scheme_23 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 23')
+	scheme_24 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 24')
+	scheme_25 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 25')
+	scheme_26 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 26')
+	scheme_27 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 27')
+	scheme_28 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 28')
+	scheme_29 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 29')
+	scheme_30 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 30')
+	scheme_31 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 31')
+	scheme_32 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 32')
+	scheme_33 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 33')
+	scheme_34 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 34')
+	scheme_35 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 35')
+	scheme_36 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 36')
+	scheme_37 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 37')
+	scheme_38 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 38')
+	scheme_39 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 39')
+	scheme_40 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 40')
+	scheme_41 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 41')
+	scheme_42 = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема 42')
+		
+	class Meta:
+		ordering = ['scheme_name']
+		indexes = [
+		models.Index(fields=['scheme_name']),
+		]
+		verbose_name = 'Схема'
+		verbose_name_plural = 'Схемы'
+	def __str__(self):
+		return self.scheme_name	
+
+
 
 
 class Product(models.Model):
@@ -215,9 +275,11 @@ class Product(models.Model):
 	
 	pdf =  models.FileField(upload_to='pdf/', null=True, blank=True, verbose_name = 'Файл PDF')
 	d3 =  models.FileField(upload_to='3d/', null=True, blank=True, verbose_name = 'Файл 3D-модели')
-	scheme = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема')
+	# scheme = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема')
+	scheme = models.ForeignKey(Schemes, blank=True, null=True,on_delete=models.CASCADE, verbose_name = 'Набор схем товара')
 
-	options = models.ManyToManyField(Option, verbose_name = 'Опции', blank=True, null=True)
+
+	options = models.ManyToManyField(Option, verbose_name = 'Опции', blank=True)
 
 	slider_interior = models.ForeignKey(SliderInterior, blank=True, null=True,on_delete=models.CASCADE, verbose_name = 'Слайдер с интерьерами')
 	popover = models.ForeignKey(PopOverFeatures, blank=True, null=True, on_delete=models.CASCADE, verbose_name = 'Поповер фичи')
@@ -350,6 +412,138 @@ class Product(models.Model):
 	@property
 	def popover_5_description(self):
 		return self.popover.popover_5_description
+
+	#Schemes
+	@property
+	def scheme_name(self):
+		return self.scheme.scheme_name
+	@property
+	def scheme_1(self):
+		return self.scheme.scheme_1
+	@property
+	def scheme_2(self):
+		return self.scheme.scheme_2
+	@property
+	def scheme_3(self):
+		return self.scheme.scheme_3
+	@property
+	def scheme_4(self):
+		return self.scheme.scheme_4
+	@property
+	def scheme_5(self):
+		return self.scheme.scheme_5
+	@property
+	def scheme_6(self):
+		return self.scheme.scheme_6
+	@property
+	def scheme_7(self):
+		return self.scheme.scheme_7
+	@property
+	def scheme_8(self):
+		return self.scheme.scheme_8
+	@property
+	def scheme_9(self):
+		return self.scheme.scheme_9
+	@property
+	def scheme_10(self):
+		return self.scheme.scheme_10
+	@property
+	def scheme_11(self):
+		return self.scheme.scheme_11
+	@property
+	def scheme_12(self):
+		return self.scheme.scheme_12
+	@property
+	def scheme_13(self):
+		return self.scheme.scheme_13
+	@property
+	def scheme_14(self):
+		return self.scheme.scheme_14
+	@property
+	def scheme_15(self):
+		return self.scheme.scheme_15
+	@property
+	def scheme_16(self):
+		return self.scheme.scheme_16
+	@property
+	def scheme_17(self):
+		return self.scheme.scheme_17
+	@property
+	def scheme_18(self):
+		return self.scheme.scheme_18
+	@property
+	def scheme_19(self):
+		return self.scheme.scheme_19
+	@property
+	def scheme_20(self):
+		return self.scheme.scheme_20
+	@property
+	def scheme_21(self):
+		return self.scheme.scheme_21
+	@property
+	def scheme_22(self):
+		return self.scheme.scheme_22
+	@property
+	def scheme_23(self):
+		return self.scheme.scheme_23
+	@property
+	def scheme_24(self):
+		return self.scheme.scheme_24
+	@property
+	def scheme_25(self):
+		return self.scheme.scheme_25
+	@property
+	def scheme_26(self):
+		return self.scheme.scheme_26
+	@property
+	def scheme_27(self):
+		return self.scheme.scheme_27
+	@property
+	def scheme_28(self):
+		return self.scheme.scheme_28
+	@property
+	def scheme_29(self):
+		return self.scheme.scheme_29
+	@property
+	def scheme_30(self):
+		return self.scheme.scheme_30
+	@property
+	def scheme_31(self):
+		return self.scheme.scheme_31
+	@property
+	def scheme_32(self):
+		return self.scheme.scheme_32
+	@property
+	def scheme_33(self):
+		return self.scheme.scheme_33
+	@property
+	def scheme_34(self):
+		return self.scheme.scheme_34
+	@property
+	def scheme_35(self):
+		return self.scheme.scheme_35
+	@property
+	def scheme_36(self):
+		return self.scheme.scheme_36
+	@property
+	def scheme_37(self):
+		return self.scheme.scheme_37
+	@property
+	def scheme_38(self):
+		return self.scheme.scheme_38
+	@property
+	def scheme_39(self):
+		return self.scheme.scheme_39
+	@property
+	def scheme_40(self):
+		return self.scheme.scheme_40
+	@property
+	def scheme_41(self):
+		return self.scheme.scheme_41
+	@property
+	def scheme_42(self):
+		return self.scheme.scheme_42	
+
 
 	def save(self, *args, **kwargs):
 		self.product_slug = slugify('-'.join([self.collection.collection, self.category.category, self.fabric_name.fabric_name]))

@@ -92,7 +92,7 @@
 		        <div id='collapseOne' class='accordion-collapse collapse' aria-labelledby='headingOne' data-bs-parent='#accordionExample'>
 		            <div class='accordion-body'>
 		            	<div class='accordion-padding'>
-			                <p id='description'> {{ product.description }} </p>
+			                <p id='description'> {{ product.description|linebreaks }} </p>
 
 							<div class='my-4'>
 								<table class='prod-card-table col-5'>
@@ -146,7 +146,7 @@
 		            <div class='accordion-body'>
 		            	<div class='container-fluid'>
 		            		<div class='row'>
-		            			<div class='col'>
+		            			<div class='col-md-3'>
 			            			<div class="d-flex justify-content-start">
 				            			<div class=''>
 				            				<p class='cacao'>Ширина, см </p>
@@ -160,11 +160,13 @@
 			            				</div>
 			            			</div>
 								</div>
+								<div class='col'>
 								{% if product.scheme %}
-									<div class='col'>
-			            				<img class='img-fluid' src='{{ product.scheme.url }}'/>
-									</div>
+									
+								{%  include 'product/card_parts/schemes_grid.html' %}
+
 								{% endif %}
+								</div>
 							</div>
 						</div>
 					</div>		
@@ -384,11 +386,13 @@
 			            				</div>
 			            			</div>
 								</div>
+								<div class='col'>
 								{% if product.scheme %}
-									<div class='col'>
-			            				<img class='img-fluid' src='{{ product.scheme.url }}'/>
-									</div>
+									
+								{%  include 'product/card_parts/schemes_grid.html' %}
+
 								{% endif %}
+								</div>
 							</div>
 						</div>
 					</div>		
