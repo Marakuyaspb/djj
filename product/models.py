@@ -195,8 +195,8 @@ class Schemes(models.Model):
 		indexes = [
 		models.Index(fields=['scheme_name']),
 		]
-		verbose_name = 'Схема'
-		verbose_name_plural = 'Схемы'
+		verbose_name = 'Схему товара'
+		verbose_name_plural = 'Схемы товаров SVG'
 	def __str__(self):
 		return self.scheme_name	
 
@@ -276,7 +276,7 @@ class Product(models.Model):
 	pdf =  models.FileField(upload_to='pdf/', null=True, blank=True, verbose_name = 'Файл PDF')
 	d3 =  models.FileField(upload_to='3d/', null=True, blank=True, verbose_name = 'Файл 3D-модели')
 	# scheme = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема')
-	scheme = models.ForeignKey(Schemes, blank=True, null=True,on_delete=models.CASCADE, verbose_name = 'Набор схем товара')
+	scheme = models.ForeignKey(Schemes, blank=True, null=True, on_delete=models.CASCADE, verbose_name = 'Набор схем товара')
 
 
 	options = models.ManyToManyField(Option, verbose_name = 'Опции', blank=True)

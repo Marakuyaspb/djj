@@ -1613,3 +1613,12 @@ django.template.exceptions.TemplateSyntaxError: Unexpected end of expression in 
 2024-04-03 13:30:55,080 - Not Found: /media/popovers/CONSONO_ARM_PIXEL_FOREST_2_mob.jpg
 2024-04-03 13:33:44,166 - Not Found: /media/popovers/CONSONO_ARM_PIXEL_FOREST_2_mob.jpg
 2024-04-03 13:33:44,169 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-03 13:35:50,918 - Not Found: /media/popovers/CONSONO_ARM_PIXEL_FOREST_2_mob.jpg
+2024-04-03 13:35:50,923 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-03 13:35:51,031 - Not Found: /media/popovers/CONSONO_ARM_PIXEL_FOREST_2_mob.jpg
+2024-04-03 13:35:51,051 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-03 14:04:51,209 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-04-03 14:06:17,979 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-04-03 14:21:33,167 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-04-03 14:21:45,328 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-04-03 14:38:02,780 - /home/a/deco_dj/product/models.py changed, reloading.
