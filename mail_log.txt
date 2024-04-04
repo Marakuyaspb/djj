@@ -1622,3 +1622,501 @@ django.template.exceptions.TemplateSyntaxError: Unexpected end of expression in 
 2024-04-03 14:21:33,167 - /home/a/deco_dj/product/models.py changed, reloading.
 2024-04-03 14:21:45,328 - /home/a/deco_dj/product/models.py changed, reloading.
 2024-04-03 14:38:02,780 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-04-04 05:50:46,375 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 06:11:07,138 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 06:16:16,596 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:06:04,241 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:06:04,282 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:06:09,162 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:06:09,251 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:09:03,073 - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 13, in index
+    return render(request, 'product/index.html', {'products': products, 'popular': popular})
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    self.unclosed_block_tag(parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 111: 'for'. Looking for one of: empty, endfor.
+2024-04-04 07:09:03,335 - Not Found: /favicon.ico
+2024-04-04 07:09:17,991 - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 13, in index
+    return render(request, 'product/index.html', {'products': products, 'popular': popular})
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    self.unclosed_block_tag(parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 111: 'for'. Looking for one of: empty, endfor.
+2024-04-04 07:09:38,713 - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 13, in index
+    return render(request, 'product/index.html', {'products': products, 'popular': popular})
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 518, in parse
+    self.unclosed_block_tag(parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 581, in unclosed_block_tag
+    raise self.error(token, msg)
+django.template.exceptions.TemplateSyntaxError: Unclosed tag on line 111: 'for'. Looking for one of: empty, endfor.
+2024-04-04 07:10:00,804 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:10:11,017 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:10:11,153 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:11:48,185 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:11:48,332 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:12:06,586 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:12:06,841 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:12:31,709 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:12:31,879 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:22:28,183 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:22:28,189 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:22:28,193 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:22:28,273 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:22:30,656 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:22:30,918 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:22:30,993 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:22:43,400 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:22:43,413 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:22:43,418 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:22:43,427 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:22:43,537 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:22:43,574 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:23:07,005 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:23:07,046 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:23:30,887 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:23:30,911 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:23:30,916 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:23:31,006 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:23:33,488 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:23:46,274 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:23:46,289 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:25:18,158 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:25:18,160 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:25:18,162 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:25:18,174 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:25:18,287 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:25:18,362 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:25:30,580 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:25:30,600 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:25:55,000 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:25:55,029 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:25:55,033 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:25:55,125 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:25:57,278 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:25:57,517 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:25:57,535 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:27:39,855 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:27:39,869 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:27:39,872 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:27:39,883 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:27:39,999 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:27:40,074 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:27:40,979 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:27:40,997 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:28:02,980 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:28:02,985 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:28:02,989 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:28:03,070 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:28:27,863 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:28:28,032 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:28:28,076 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:43:00,000 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:43:00,026 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:43:00,029 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:43:00,141 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:43:00,673 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:43:00,747 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:43:00,832 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:43:07,218 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:43:07,241 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:43:07,247 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:43:07,244 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:43:07,266 - Not Found: /media/popovers/CONSONO_ARM_PIXEL_FOREST_2_mob.jpg
+2024-04-04 07:43:07,349 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:43:07,443 - Not Found: /media/popovers/CONSONO_ARM_PIXEL_FOREST_2_mob.jpg
+2024-04-04 07:43:07,472 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:43:07,524 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:43:07,581 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:43:08,999 - Not Found: /favicon.ico
+2024-04-04 07:43:21,500 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:43:21,503 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:43:21,506 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:43:21,516 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:43:21,659 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:43:21,705 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:43:21,716 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:43:21,728 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:43:23,272 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:43:23,277 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:43:23,280 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:43:23,291 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:43:23,408 - Not Found: /node_modules/owl.carousel/dist/assets/owl.carousel.min.css
+2024-04-04 07:43:23,433 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:43:23,466 - Not Found: /node_modules/jquery/dist/jquery.js
+2024-04-04 07:43:23,487 - Not Found: /node_modules/owl.carousel/dist/owl.carousel.min.js
+2024-04-04 07:47:38,622 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:48:30,998 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:48:31,161 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:49:22,330 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:49:46,405 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:49:46,550 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:49:53,917 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:50:08,735 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:50:17,437 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:50:29,131 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:50:29,328 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:50:43,546 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:50:59,809 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:50:59,851 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:52:47,184 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:55:15,193 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:57:54,938 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 07:59:09,164 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:01:00,478 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:01:30,084 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:01:35,745 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:01:44,069 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:02:24,342 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:06:52,435 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:06:55,949 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:16:35,802 - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: "'bootstrap-5.0.2-dist/js/bootstrap.min.js'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 13, in index
+    return render(request, 'product/index.html', {'products': products, 'popular': popular})
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 465: ''bootstrap-5.0.2-dist/js/bootstrap.min.js''. Did you forget to register or load this tag?
+2024-04-04 08:16:35,986 - Not Found: /favicon.ico
+2024-04-04 08:17:04,774 - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: "'bootstrap-5.0.2-dist/js/bootstrap.min.js'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 13, in index
+    return render(request, 'product/index.html', {'products': products, 'popular': popular})
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 465: ''bootstrap-5.0.2-dist/js/bootstrap.min.js''. Did you forget to register or load this tag?
+2024-04-04 08:17:04,966 - Not Found: /favicon.ico
+2024-04-04 08:17:41,517 - Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: "'bootstrap-5.0.2-dist/js/bootstrap.min.js'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 13, in index
+    return render(request, 'product/index.html', {'products': products, 'popular': popular})
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 465: ''bootstrap-5.0.2-dist/js/bootstrap.min.js''. Did you forget to register or load this tag?
+2024-04-04 08:17:41,700 - Not Found: /favicon.ico
+2024-04-04 08:18:09,405 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:18:28,184 - Not Found: /favicon.ico
+2024-04-04 08:18:50,945 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png
+2024-04-04 08:19:54,109 - Not Found: /media/images/CONSONO_CORNER_ST_LEFT_VELUTTO_04_GOODS_02_IQOwZ0m.png

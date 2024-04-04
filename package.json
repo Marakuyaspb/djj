@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Marakuyaspb/djj/issues"
   },
-  "homepage": "https://github.com/Marakuyaspb/djj#readme"
+  "homepage": "https://github.com/Marakuyaspb/djj#readme",
+  "dependencies": {
+    "owl.carousel": "^2.3.4"
+  }
 }

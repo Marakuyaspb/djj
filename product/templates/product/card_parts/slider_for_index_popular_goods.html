@@ -1,5 +1,5 @@
 <style>
-	.carousel_wrap {
+/*	.carousel_wrap {
 	  width: 100%;
 	  overflow-x: auto;
 	  white-space: nowrap;
@@ -7,11 +7,13 @@
 	div.product_card{
 		display: inline-block;
 	  padding: 1em;
-	}
+	}*/
 	/*.product_card{
 		border-right: 1px solid #DCCBC7;
 		line-height: 10px;
 	}*/
+
+
 	.product_img_under_carousel{
 		position: relative;
 	  z-index: 1 !important;
@@ -25,14 +27,74 @@
 		font-size: 2em !important;
 		padding-bottom: 1em;
 	}
+
+
 </style>
 
 
-<div class="carousel_wrap mt-5" >
+
+	<div class="owl-carousel">
+		{% for e in popular %}
+		<div class="item">
+				
+			<div class="product_card">
+				<a href="{% url 'product:single_product' e.product_slug %}">
+				<!-- HEAD OF THE CARD -->
+					<div class = 'd-flex justify-content-between'>
+						<div>
+							<h3 class='product_card_header_carousel'>{{ e.collection }}</h3>
+						</div>
+
+						<div>
+							{% if el.is_new %}
+								<img src="{{ el.icon_is_new.url }}" alt="Можем доставить за 2 дня">
+							{% endif %}
+							{% if el.available_in_showroom %}
+								<img src="{{ el.icon_available_in_showroom.url }}" alt="Можем доставить за 2 дня">
+							{% endif %}
+
+							{% if el.available_for_delivery_2 %}
+								<img src="{{ el.icon_available_for_delivery_2.url }}" alt="Можем доставить за 2 дня">
+							{% endif %}
+						</div>
+					</div>
+				<!-- END OF THE HEAD OF THE CARD -->
+
+				<!-- THE CARD BODY -->			
+					<div class = 'card-bottom-info'>
+						<center class='mt-5 '>
+							<img src="/media/{{ e.product_img }}" class="img-fluid product_img_under_carousel">
+						</center>
+
+						<div class = 'd-flex justify-content-between'>
+							<div class='cacao'>В наличии</div>
+							<div class='old-price_cat_page price_display'>{{ e.price }} ₽</div>
+						</div>
+
+						<div class = 'd-flex justify-content-between'>
+							<div class='cacao'>{{ e.width }}×{{ e.depth }}×{{ e.height }}</div>
+
+							{% if product.price_old %}
+							<div class='cacao price_cat_page price_display'>{{ e.price_old }} ₽</div>
+							{% endif %}
+							
+						</div>
+					</div>
+				<!-- END OF THE CARD BODY -->	
+				</a>
+			</div>
+
+		</div>
+	{% endfor %}
+	</div>
+
+
+
+<!-- <div class="carousel_wrap mt-5" >
 {% for e in popular %}
 		<div class="product_card">
 			<a href="{% url 'product:single_product' e.product_slug %}">
-			<!-- HEAD OF THE CARD -->
+			
 				<div class = 'd-flex justify-content-between'>
 					<div>
 						<h3 class='product_card_header_carousel'>{{ e.collection }}</h3>
@@ -51,9 +113,9 @@
 						{% endif %}
 					</div>
 				</div>
-			<!-- END OF THE HEAD OF THE CARD -->
 
-			<!-- THE CARD BODY -->			
+
+		
 				<div class = 'card-bottom-info'>
 					<center class='mt-5 '>
 						<img src="/media/{{ e.product_img }}" class="img-fluid product_img_under_carousel">
@@ -73,19 +135,19 @@
 						
 					</div>
 				</div>
-			<!-- END OF THE CARD BODY -->	
 			</a>
 		</div>
 {% endfor %}
-
 </div>
+ -->
+
 
 <script>
 
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
   let position = 0;
   const scrollIt = document.querySelector('.carousel_wrap');
-  let direction = 1;
+  let scrollInterval;
 
   // Function to animate the scrolling of slides
   function scrollSlides() {
@@ -93,16 +155,24 @@ document.addEventListener('DOMContentLoaded', function() {
       left: position,
       behavior: 'smooth'
     });
-
-    position += 5 * direction;
-
-    if (position >= scrollIt.scrollWidth - scrollIt.clientWidth || position <= 0) {
-      direction *= -1;
+    position += 5; // Increment position for next animation
+    if (position > scrollIt.scrollWidth - scrollIt.clientWidth) {
+      position = 0; // Reset position to start over
     }
   }
 
   // Auto-scroll slides every 3 seconds
-  setInterval(scrollSlides, 100);
+  scrollInterval = setInterval(scrollSlides, 100);
+
+  // Pause auto-scroll on mouseenter
+  scrollIt.addEventListener('mouseenter', function() {
+    clearInterval(scrollInterval);
+  });
+
+  // Resume auto-scroll on mouseleave
+  scrollIt.addEventListener('mouseleave', function() {
+    scrollInterval = setInterval(scrollSlides, 100);
+  });
 
   // Enable mouse scroll on .scroll_it element
   scrollIt.addEventListener('wheel', function(e) {
@@ -113,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.scrollLeft += 100;
     }
   });
+});*/
 
-});
 
 </script>
