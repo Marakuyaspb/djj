@@ -7,15 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" >
 
-	<link rel="stylesheet" href="static/bootstrap-5.0.2-dist/css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.min.css'%}" type="text/css">
+	<link rel="stylesheet" href="{% static 'node_modules/owl.carousel/dist/assets/owl.carousel.min.css' %}" type="text/css">
 
 	<link rel="stylesheet" href="{% static 'css/de_style.css'%}" type="text/css">
 	<link rel="stylesheet" href="{% static 'css/popOverAboutCANVAS.css'%}" type="text/css">
 	<link rel="stylesheet" href="{% static 'css/sliderFabricChange.css'%}" type="text/css">
 
- 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-	
+ 	
 	<title>
 	{% block title %} Мебельная фабрика Decona {% endblock %}
 	</title>
@@ -450,64 +449,89 @@
 	<!-- PHONE END -->
 </footer>
 
-<script src="/static/bootstrap-5.0.2-dist/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
+<script src="{% static 'bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>
+<script src="{% static 'node_modules/owl.carousel/dist/owl.carousel.min.js' %}"></script>
 
-<script type="text/javascript">
-
-window.addEventListener('DOMContentLoaded', function() {
-  let c = document.querySelectorAll('#desctop_scroll');
-  let wr = document.getElementById('wrapp_all');
-  let lastScrollTop = 0;
-
-  window.addEventListener("scroll", function() {
-    var st = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (st > lastScrollTop) {
-      // Downscroll code
-      c.forEach(element => {
-        element.classList.remove('latte_bg_op');
-        element.classList.remove('fixed-top');
-      });
-      wr.classList.remove('pt-5');
-      wr.classList.remove('mt-3');
-    } 
-
-    else if (st < lastScrollTop) {
-      // Upscroll code
-      c.forEach(element => {
-        element.classList.add('latte_bg_op');
-        element.classList.add('fixed-top');
-      });
-      wr.classList.add('pt-5');
-      wr.classList.add('mt-3');
-    }
-    
-    lastScrollTop = st <= 0 ? 0 : st;
-  }, false);
-
-});
+<script>
+	
+$('.owl-carousel').owlCarousel({
+  loop:true,
+  margin:10,
+  nav:true,
+  responsive:{
+      0:{
+          items:1
+      },
+      600:{
+          items:3
+      },
+      1000:{
+          items:5
+      }
+  }
+})
 
 </script>
 
 
 
 <script type="text/javascript">
+	/* Header sticky */
 
-function addSpace(){
-	/* ADD space into prices */
-	let price_display = document.getElementsByClassName('price_display');
+	window.addEventListener('DOMContentLoaded', function() {
+	  let c = document.querySelectorAll('#desctop_scroll');
+	  let wr = document.getElementById('wrapp_all');
+	  let lastScrollTop = 0;
 
-	for (let i = 0; i < price_display.length; i++) {
-	    let price = parseInt(price_display[i].textContent);
-	    let formattedPrice = new Intl.NumberFormat('ru-RU').format(price);
+	  window.addEventListener("scroll", function() {
+	    var st = window.pageYOffset || document.documentElement.scrollTop;
 	    
-	    price_display[i].textContent = formattedPrice + ' ₽';
+	    if (st > lastScrollTop) {
+	      // Downscroll code
+	      c.forEach(element => {
+	        element.classList.remove('latte_bg_op');
+	        element.classList.remove('fixed-top');
+	      });
+	      wr.classList.remove('pt-5');
+	      wr.classList.remove('mt-3');
+	    } 
+
+	    else if (st < lastScrollTop) {
+	      // Upscroll code
+	      c.forEach(element => {
+	        element.classList.add('latte_bg_op');
+	        element.classList.add('fixed-top');
+	      });
+	      wr.classList.add('pt-5');
+	      wr.classList.add('mt-3');
+	    }
+	    
+	    lastScrollTop = st <= 0 ? 0 : st;
+	  }, false);
+
+	});
+</script>
+
+
+
+<script type="text/javascript">
+
+	function addSpace(){
+		/* ADD space into prices */
+		let price_display = document.getElementsByClassName('price_display');
+
+		for (let i = 0; i < price_display.length; i++) {
+		    let price = parseInt(price_display[i].textContent);
+		    let formattedPrice = new Intl.NumberFormat('ru-RU').format(price);
+		    
+		    price_display[i].textContent = formattedPrice + ' ₽';
+		}
 	}
-}
-addSpace();
+	addSpace();
 
 </script>
 
