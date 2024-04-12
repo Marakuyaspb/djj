@@ -15,13 +15,13 @@ function showPopOverscanvasConsonoArm(event){
   pinStitchesConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
   pinStitchesConsonoArm.onload = function(){
     ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(pinStitchesConsonoArm, 280, 400, 50, 50);
+    ctx.drawImage(pinStitchesConsonoArm, 0, 0, 50, 50);
   }
   var pinPillowConsonoArm = new Image();
   pinPillowConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
   pinPillowConsonoArm.onload = function(){
     ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(pinPillowConsonoArm, 370, 260, 50, 50);
+    ctx.drawImage(pinPillowConsonoArm, 590, 260, 50, 50);
   }
   var pinFrontConsonoArm = new Image();
   pinFrontConsonoArm.src = 'http://temp.decona.ru/wp-content/uploads/2023/02/pin.svg';
@@ -65,7 +65,7 @@ function showPopOverscanvasConsonoArm(event){
     mouse.y = e.clientY - rect.top;
     /*console.log(mouse.x, mouse.y);*/
 
-    if (mouse.x >= 280 && mouse.x <= 330 && mouse.y >= 400 && mouse.y <= 450) {
+    if (mouse.x >= 0 && mouse.x <= 50 && mouse.y >= 0 && mouse.y <= 50) {
       popAboutStitchesConsonoArm.style.display = 'block';
     }
     else if (mouse.x >= 370 && mouse.x <= 430 && mouse.y >= 260 && mouse.y <= 310) {

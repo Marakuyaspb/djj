@@ -614,6 +614,19 @@ li .nav-link .nav-link-text{
 	font-weight: 100;
 	font-size: 2.6rem!important;
 }
+
+
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url(https://new.decona.ru/static/img/gamburger.svg);
+}
+
+
+/*	.bg-dark{
+		background-color: #e8d9d1!important;
+	}*/
+
+
 .accordion-header{
 	font-weight: 400;
 	font-size: 1.125rem!important;
@@ -1385,4 +1398,14 @@ about the bottom footer
 
 .text-end{
 	text-align: right;
+}
+
+
+/* MEDIA FEATURES */
+
+@media (min-width: 811px){
+
+}
+@media (max-width: 810px) {
+
 }

@@ -18,7 +18,7 @@
 .pop_back_img{
     position: relative;
     z-index: -1;
-    margin-top: -54em;
+    margin-top: -50em;
 }
 
 /* ABOUT POPOVERS */
@@ -27,8 +27,8 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 29em;
-  bottom: -6em;
+  left: 20em;
+  bottom: 4em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -39,49 +39,49 @@
   position: absolute;
   z-index: 4;
   display: none;
-  left: 36em;
-  bottom: 17em;
+  left: 30em;
+  bottom: 4em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-20%, -30%);
+  transform: translate(-30%, -50%);
 }
 #popFrontLeft{
   position: absolute;
   z-index: 4;
   display: none;
-  left: 45em;
-  bottom: 1em;
+  left: 40em;
+  bottom: 4em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); 
+  transform: translate(-40%, -50%); 
 }
 #popFrontRight{
   position: absolute;
   z-index: 4;
   display: none;
-  left: 75em;
-  bottom: 14em;
+  left: 50em;
+  bottom: 4em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-60%, -10%);
+  transform: translate(-50%, -50%);
 }
 #popBack{
   position: absolute;
   z-index: 4;
   display: none;
-  left: 72em;
-  bottom: 6em;
+  left: 60em;
+  bottom: 4em;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-70%, -80%);
+  transform: translate(-60%, -50%);
 }
 
 
