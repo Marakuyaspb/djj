@@ -230,6 +230,22 @@ Root Media Query Variables
 
 
 
+/* MEDIA FEATURES */
+
+@media (min-width: 811px){
+	.pt_4rem_desctop_only{
+		padding-top: 4rem!important;
+	}
+}
+@media (max-width: 810px) {
+	.pt_4rem_desctop_only{
+		padding-top: 0rem!important;
+	}
+}
+
+
+
+
 /* 
 COLORS 
 */
@@ -579,8 +595,8 @@ ol {
 }
 ul {
 	list-style-type: disc;
-
 }
+
 
 
 /* 
@@ -616,15 +632,14 @@ li .nav-link .nav-link-text{
 }
 
 
-
+/*
 .navbar-dark .navbar-toggler-icon {
-  background-image: url(https://new.decona.ru/static/img/gamburger.svg);
-}
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")!important;
+*/
 
-
-/*	.bg-dark{
+.bg-dark{
 		background-color: #e8d9d1!important;
-	}*/
+	}
 
 
 .accordion-header{
@@ -1400,12 +1415,3 @@ about the bottom footer
 	text-align: right;
 }
 
-
-/* MEDIA FEATURES */
-
-@media (min-width: 811px){
-
-}
-@media (max-width: 810px) {
-
-}

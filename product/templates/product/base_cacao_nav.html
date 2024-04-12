@@ -499,8 +499,7 @@ $('.owl-carousel').owlCarousel({
 	        element.classList.remove('latte_bg_op');
 	        element.classList.remove('fixed-top');
 	      });
-	      wr.classList.remove('pt-5');
-	      wr.classList.remove('mt-3');
+	      wr.classList.remove('pt_4rem_desctop_only');
 	    } 
 
 	    else if (st < lastScrollTop) {
@@ -509,8 +508,7 @@ $('.owl-carousel').owlCarousel({
 	        element.classList.add('latte_bg_op');
 	        element.classList.add('fixed-top');
 	      });
-	      wr.classList.add('pt-5');
-	      wr.classList.add('mt-3');
+	      wr.classList.add('pt_4rem_desctop_only');
 	    }
 	    
 	    lastScrollTop = st <= 0 ? 0 : st;
