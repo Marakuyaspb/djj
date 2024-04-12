@@ -6,7 +6,8 @@
 
 <div class="products_container">
 {% for el in products %}
-
+	{% if el.show_on_category_page %}
+	
 	<div class = "product_card p-3" >
 		<a href="{% url 'product:single_product' el.product_slug %}">
 	
@@ -301,7 +302,8 @@
 
 		</a>
 	</div>
-
+	
+	{% endif %}
 {% endfor %}
 </div>
 

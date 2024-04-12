@@ -692,13 +692,6 @@ a .icon-header:hover{
 }
 
 
-/*  CATEGORIES PAGE */
-
-.categories_panel{
-	padding-left: 0.25 rem;
-	padding-right: 0.25 rem;
-}
-
 
 .big-fields-content {
 	max-width: 60%!important;
@@ -888,7 +881,7 @@ textarea {
 	font-size: 1.375em !important;
 	line-height: 1.1!important;
 	margin: 0!important;
-	height: 2.5em;
+	height: 3.125em;
   width: 11.75em;
 }
 .btn-prod-card:hover {
@@ -1007,9 +1000,13 @@ textarea {
 .img-cover{
 	min-width: 100%!important;
 }
-
-
-
+/*.carousel-btn-bottom{
+	background-color: #fff !important;
+	opacity: .2!important;
+	width: 0.75em!important;
+	height: 0.75em!important;
+	border-radius: 50%!important;
+}*/
 
 .over-slider{
 	z-index: 5!important;
@@ -1081,7 +1078,10 @@ textarea {
 
 
 .row_prod_catgories{
-	padding: 0.25em!important;
+	padding-left: 0.5em!important;
+	padding-right: 0.5em!important;
+	/*margin-left: .1em!important;	
+	margin-right: .1em!important;*/
 }
 
 .spinner-container {
@@ -1331,6 +1331,37 @@ label{
 }
 
 
+
+/* 
+POP UP FORM 
+*/
+.wpcf7-form-control{
+	/*background-color: #9F8A88!important;*/
+	border: 2px solid #9F8A88!important;
+}
+.wpcf7-form-control:hover{
+	background-color: #F5F5F5!important;
+	border: 2px solid #9F8A88;
+	color: #9F8A88!important;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .wpcf7 form.unaccepted .wpcf7-response-output, .wpcf7 form.payment-required .wpcf7-response-output {
+  border-color: #dc3232!important;
+  color: #dc3232!important;
+  padding: .4em;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+  border-color: none!important;
+  color:#46b450!important;
+  padding: .4em;
+}
+
+.wpcf7 form .wpcf7-response-output {
+	border: 2px solid #9F8A88!important;
+}
+
+
 /* 
 PRODUCTS SLIDER 
 */
@@ -1347,6 +1378,39 @@ PRODUCTS SLIDER
 	margin-top: auto;
 	margin-bottom: 3.5em;
 
+
+
+/* 
+MULTIPLE ITEMS CAROUSEL 
+*/
+.carousel_wrap {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+div.product_card{
+	display: inline-block;
+  padding: 1em;
+}
+.product_img_under_carousel{
+	margin-top: -1em;
+  width: 24em;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+.product_card {
+  position: relative;
+}
+
+.product_card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 50%;
+  background-color: #DCCBC7;
+}
 
 /* 
 about the bottom footer 

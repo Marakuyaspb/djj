@@ -35,9 +35,9 @@ def cat_view(request, category_slug=None):
 		cornerl_category = get_object_or_404(Category, category='cornerl')
 		corner_r_category = get_object_or_404(Category, category='corner_r')
 		products = Product.objects.filter(category__in=[cornerl_category, corner_r_category])
-	elif category_slug == 'mod':
-		category = get_object_or_404(Category, category='mod1')
-		products = Product.objects.filter(category=category)
+	elif category_slug == 'mod1':
+		mod1_category = get_object_or_404(Category, category='mod1')
+		products = Product.objects.filter(category=mod1_category)
 	elif category_slug == 'str':
 		sofa_2m_st_category = get_object_or_404(Category, category='sofa_2m_st')
 		sofa_2m_n_category = get_object_or_404(Category, category='sofa_2m_st')
