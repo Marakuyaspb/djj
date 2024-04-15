@@ -1,0 +1,82 @@
+<style>
+</style>
+
+<div class='filters_container'>
+	<h3 class='filter_header'>Цена</h3>
+	<b>5 000 ₽</b> <input id="ex2" type="text" class="span2" value="" data-slider-min="10000" data-slider-max="1000000" data-slider-step="5" data-slider-value="[250,450]"/> <b>1 000 000 ₽</b>
+
+	<h3 class='filter_header'>Тип</h3>
+
+	<h3 class='filter_header'>Коллекция</h3>
+
+	<h3 class='filter_header'>Габариты</h3>
+
+	<h3 class='filter_header'>Цвет</h3>
+	{% for el in products %}
+	{% endfor %}
+
+
+	<h3 class='filter_header'>Механизм</h3>
+	
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+		<label class="form-check-label" for="flexRadioDefault1">
+			Нет
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+		<label class="form-check-label" for="flexRadioDefault2">
+			Пантограф
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+		<label class="form-check-label" for="flexRadioDefault2">
+			Регулировка элементов
+		</label>
+	</div>
+
+
+	<h3 class='filter_header'>Ящик для хранения белья</h3>
+
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+		<label class="form-check-label" for="flexRadioDefault2">
+			Да
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+		<label class="form-check-label" for="flexRadioDefault1">
+			Нет
+		</label>
+	</div>
+
+
+	<h3 class='filter_header'>Опоры</h3>
+	<div class="form-check">
+		<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+		<label class="form-check-label" for="flexCheckDefault">
+			Металл
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+		<label class="form-check-label" for="flexCheckChecked">
+			Дерево
+		</label>
+	</div>
+	<div class="form-check">
+		<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+		<label class="form-check-label" for="flexCheckChecked">
+			Скрытые
+		</label>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	/* for price range diaposon */
+	var slider = new Slider('#ex2', {});
+</script>
