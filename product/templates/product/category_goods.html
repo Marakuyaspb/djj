@@ -4,6 +4,10 @@
 
 {% block content %}
 
+
+{%  include 'product/card_parts/choises.html' %}
+
+
 <div class="products_container">
 {% for el in products %}
 	{% if el.show_on_category_page %}

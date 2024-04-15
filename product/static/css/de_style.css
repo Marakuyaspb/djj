@@ -266,7 +266,7 @@ Backgrounds
 	background-color: #CDCECF; /* info rectangle */
 }
 .dark-gray{
-	background-color:#50504E;
+	background-color: #50504E;
 }
 .milk-white_bg {
 	background-color: #F5F5F5!important; /* bg */
@@ -312,6 +312,27 @@ input .general-gray {
 }
 form .general-gray {
 	height: 2.4em;
+}
+
+.form-check-input:focus{
+	box-shadow: none!important;
+
+}
+.form-check-input:checked{
+	background-color: #fff!important;
+}
+
+.form-check-input:checked {
+  border-color: rgb(159, 138, 136);
+}
+.form-check-input:focus {
+  border-color: rgb(159, 138, 136);
+}
+
+input[type="radio"]:checked:focus {
+    outline-offset: 0px;
+    outline: none!important;
+  }
 }
 
 input[type=text],

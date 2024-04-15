@@ -13,6 +13,11 @@ def index(request):
 	return render(request, 'product/index.html', {'products': products, 'popular': popular})
 
 # CATEGORIES
+def category_list(request):
+	categories = Category.objects.all()
+	return render(request, 'category_list.html', {'categories': categories})
+
+
 def cat_view(request, category_slug=None):
 	if category_slug == 'poufl':
 		poufl_category = get_object_or_404(Category, category='poufl')
@@ -57,6 +62,9 @@ def cat_view(request, category_slug=None):
 # 	category = get_object_or_404(Category, category_slug=category_slug)
 # 	products = Product.objects.filter(category=category)
 # 	return render(request, 'product/category_goods.html', {'products': products})
+
+
+
 
 
 def about(request):
