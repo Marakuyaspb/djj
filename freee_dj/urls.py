@@ -12,6 +12,7 @@ handler404 = views.error_404_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('500/', views.error_500),
     path("cart/", include('cart.urls', namespace='cart')),
     path('orders/', include('orders.urls', namespace='orders')),
     path('product/', include('product.urls', namespace='payment')),
