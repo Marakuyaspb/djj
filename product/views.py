@@ -3,9 +3,11 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from .models import Category, Collection, Option, Product, ProductImage, SliderInterior
+from .models import Category, Collection, Color, Option, Product, SliderInterior
 from cart.forms import CartAddProductForm
 
+def error_500(request):
+    return render(request, 'product/500.html', status=500)
 
 def index(request):
 	products = Product.objects.all()
@@ -15,7 +17,7 @@ def index(request):
 # CATEGORIES
 def category_list(request):
 	categories = Category.objects.all()
-	return render(request, 'category_list.html', {'categories': categories})
+	return render(request, 'category_list.html', {'categories': categories, 'products': products, 'popular': popular})
 
 
 def cat_view(request, category_slug=None):
@@ -57,6 +59,8 @@ def cat_view(request, category_slug=None):
 	else:
 		products = Product.objects.all()
 	return render(request, 'product/category_goods.html', {'products': products})
+
+
 
 # def cat_view (request, category_slug=None):
 # 	category = get_object_or_404(Category, category_slug=category_slug)

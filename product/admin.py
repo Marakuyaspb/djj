@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Category, Collection, Option, Fabric, SliderInterior, Product, ProductImage, PopOverFeatures, Schemes
+from .models import Category, Collection, Color, Fabric, SliderInterior, Option, Product,  PopOverFeatures, Schemes
 from django.utils.safestring import mark_safe
-# from .forms import ProductImageForm
 from django.template.loader import get_template
 from django.utils.translation import gettext_lazy as _
 from django.db import models
@@ -12,7 +11,7 @@ from django.forms import CheckboxSelectMultiple
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
 	
-	list_display = ('product_full_name', 'get_html_img_preview', 'fabric_name', 'price', 'price_old', 'popular', 'is_new', 'available_in_showroom', 'created', 'updated') 
+	list_display = ('product_full_name', 'get_html_img_preview', 'fabric_name', 'price', 'price_old', 'popular', 'is_new', 'available_in_showroom') 
 
 	fields = ['category', 'collection', 
 		'fabric_name', 
@@ -73,10 +72,21 @@ class CategoryAdmin(admin.ModelAdmin):
 	list_display = ('category_ru', 'category')
 	prepopulated_fields = {"category_slug": ("category", )}
 
+
 @admin.register(Collection)
 class CollectionAdmin(admin.ModelAdmin):
 	list_display = ('collection',)
 	prepopulated_fields = {"collection_slug": ("collection", )}
+
+
+@admin.register(Color)
+class ColorAdmin(admin.ModelAdmin):
+	list_display = ('color_name', 'get_html_color_preview', 'color_code')
+
+	def get_html_color_preview(self, object):
+		if object.color_code:
+			return mark_safe(f"<style>.prev_color {{ width: auto; height: 60px; background: {object.color_code}; }}</style><div class='prev_color'></div>")
+	get_html_color_preview.short_description = 'Цвет'
 
 
 @admin.register(PopOverFeatures)
@@ -94,13 +104,13 @@ class PopOverFeaturesAdmin(admin.ModelAdmin):
 
 @admin.register(Fabric)
 class FabricAdmin(admin.ModelAdmin):
-	list_display = ('fabric_name', 'get_html_fabric_preview', 'product_fabric_about', 'created', 'updated')
+	list_display = ('fabric_name', 'get_html_fabric_preview', 'product_fabric_about')
 	fields = [
-	'fabric_name',
-	('product_fabric_img', 'get_html_fabric_preview'),
-	'product_fabric_about'
+		'fabric_name',
+		('product_fabric_img'),
+		'product_fabric_color',
+		'product_fabric_about'
 	]
-	readonly_fields = ('created', 'updated', 'get_html_fabric_preview')
 
 	# ADD fabric preview in the list
 	def get_html_fabric_preview(self, object):
@@ -112,11 +122,11 @@ class FabricAdmin(admin.ModelAdmin):
 
 @admin.register(Option)
 class OptionAdmin(admin.ModelAdmin):
-	list_display = ('option_name', 'option_1_description', 'option_2_description', 'created', 'updated')
+	list_display = ('option_name', 'option_1_description', 'option_2_description')
 
 @admin.register(SliderInterior)
 class SliderInteriorAdmin(admin.ModelAdmin):
-	list_display = ('sl_interior_name', 'created', 'updated')
+	list_display = ('sl_interior_id', 'sl_interior_name')
 
 
 @admin.register(Schemes)

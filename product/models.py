@@ -6,7 +6,6 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
 
-#from multiupload.fields import MultiFileField
 
 
 class Category(models.Model):
@@ -19,7 +18,7 @@ class Category(models.Model):
 	class Meta:
 		ordering = ['category']
 		indexes = [
-		models.Index(fields=['category']),
+			models.Index(fields=['category']),
 		]
 		verbose_name = 'Категория'
 		verbose_name_plural = 'Категории'	
@@ -36,7 +35,7 @@ class Collection(models.Model):
 	class Meta:
 		ordering = ['collection']
 		indexes = [
-		models.Index(fields=['collection']),
+			models.Index(fields=['collection']),
 		]
 		verbose_name = 'Коллекция'
 		verbose_name_plural = 'Коллекции'
@@ -44,23 +43,42 @@ class Collection(models.Model):
 		return self.collection
 
 
+class Color(models.Model):
+	color_id = models.AutoField(primary_key=True)
+	color_name = models.CharField(max_length=50, verbose_name = 'Название цвета', default='Бежевый')
+	color_code = models.CharField(max_length=50, verbose_name = 'Цвет в HEX или RGBA', default='#E5E1DF')
+
+	class Meta:
+		ordering = ['color_name']
+		indexes = [
+			models.Index(fields=['color_name']),
+		]
+		verbose_name = 'Цвет HEX или RGBA'
+		verbose_name_plural = 'Цвета HEX или RGBA'
+	def __str__(self):
+		return self.color_name
+
+
+
 class Fabric(models.Model):
 	fabric_id = models.AutoField(primary_key=True)
 	fabric_name = models.CharField(max_length=50, verbose_name = 'Название ткани')
 	product_fabric_img = models.ImageField(upload_to='fabric_images/', verbose_name = 'Образец ткани')
+	product_fabric_color = models.ForeignKey(Color,
+		related_name='features', default='1',
+		on_delete=models.CASCADE, verbose_name = 'Цвет ткани (для фильтров)')
 	product_fabric_about = models.TextField(verbose_name = 'Описание ткани')
-	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
-	updated = models.DateTimeField(default=timezone.now, verbose_name = 'Последние изменения')
 
 	class Meta:
 		ordering = ['fabric_name']
 		indexes = [
-		models.Index(fields=['fabric_name']),
+			models.Index(fields=['fabric_name']),
 		]
 		verbose_name = 'Ткань'
 		verbose_name_plural = 'Ткани'
 	def __str__(self):
 		return self.fabric_name	
+
 
 
 class Option(models.Model):
@@ -70,18 +88,17 @@ class Option(models.Model):
 	option_1_description = models.CharField(max_length=500, null=True, blank=True, verbose_name = 'Описание опции 1')
 	option_2_img = models.ImageField(upload_to='options/', verbose_name = 'Изображение 2')
 	option_2_description = models.CharField(max_length=500, null=True, blank=True, verbose_name = 'Описание опции 2')
-	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
-	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
 
 	class Meta:
 		ordering = ['option_name']
 		indexes = [
-		models.Index(fields=['option_name']),
+			models.Index(fields=['option_name']),
 		]
 		verbose_name = 'Опция'
 		verbose_name_plural = 'Опции'
 	def __str__(self):
 		return self.option_name	
+
 
 
 class SliderInterior(models.Model):
@@ -95,18 +112,17 @@ class SliderInterior(models.Model):
 	sl_interior_2_img_mob = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 2 | мобильный')
 	sl_interior_3_img_mob = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 3 | мобильный')
 	sl_interior_4_img_mob = models.ImageField(upload_to='interiors/', verbose_name = 'Изображение 4 | мобильный')
-	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
-	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
 
 	class Meta:
 		ordering = ['sl_interior_name']
 		indexes = [
-		models.Index(fields=['sl_interior_name']),
+			models.Index(fields=['sl_interior_name']),
 		]
 		verbose_name = 'Слайдер с интерьерами'
 		verbose_name_plural = 'Слайдеры с интерьерами'
 	def __str__(self):
 		return self.sl_interior_name	
+
 
 
 class PopOverFeatures(models.Model):
@@ -129,13 +145,11 @@ class PopOverFeatures(models.Model):
 	popover_4_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 4')
 	popover_5_img = models.ImageField(upload_to='popover_features/', verbose_name = 'Картинка фичи 5')
 	popover_5_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 5')
-	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
-	updated = models.DateTimeField(auto_now=True, verbose_name = 'Последние изменения')
 
 	class Meta:
 		ordering = ['popover_name']
 		indexes = [
-		models.Index(fields=['popover_name']),
+			models.Index(fields=['popover_name']),
 		]
 		verbose_name = 'Фича поп-овер'
 		verbose_name_plural = 'Фичи поп-овер'
@@ -193,13 +207,12 @@ class Schemes(models.Model):
 	class Meta:
 		ordering = ['scheme_name']
 		indexes = [
-		models.Index(fields=['scheme_name']),
+			models.Index(fields=['scheme_name']),
 		]
 		verbose_name = 'Схему товара'
 		verbose_name_plural = 'Схемы товаров SVG'
 	def __str__(self):
 		return self.scheme_name	
-
 
 
 
@@ -275,7 +288,6 @@ class Product(models.Model):
 	
 	pdf =  models.FileField(upload_to='pdf/', null=True, blank=True, verbose_name = 'Файл PDF')
 	d3 =  models.FileField(upload_to='3d/', null=True, blank=True, verbose_name = 'Файл 3D-модели')
-	# scheme = models.FileField(upload_to='schemes/', null=True, blank=True, verbose_name = 'Схема')
 	scheme = models.ForeignKey(Schemes, blank=True, null=True, on_delete=models.CASCADE, verbose_name = 'Набор схем товара')
 
 
@@ -294,17 +306,14 @@ class Product(models.Model):
 	show_on_category_page = models.BooleanField(default=True, verbose_name = 'На страницу категории')
 	popular = models.BooleanField(default=True, verbose_name = 'В карусель "Популярные"')
 
-	created = models.DateTimeField(default=timezone.now, verbose_name = 'Создано')
-	updated = models.DateTimeField(auto_now=True, verbose_name = 'Посл. изменения')
 	product_slug = models.SlugField(null=True, blank=True, max_length=100)
 
 	
 	class Meta:
 		ordering = ['product_full_name']
 		indexes = [
-			models.Index(fields=['id', 'product_slug', '-created']),
+			models.Index(fields=['id', 'product_slug']),
 			models.Index(fields=['product_full_name']),
-			models.Index(fields=['-created']),
 		]
 		verbose_name = 'Товар'
 		verbose_name_plural = 'Товары'
@@ -330,6 +339,9 @@ class Product(models.Model):
 	@property
 	def fabric_about(self):
 		return self.fabric_name.product_fabric_about
+	@property
+	def fabric_color(self):
+		return self.fabric_name.product_fabric_color
 
 	# Options
 	@property
@@ -558,12 +570,7 @@ class Product(models.Model):
 		return f"Product: {self.id}, Options: {', '.join([str(option) for option in self.options.all()])}"
 
 
+
 class ProductOption(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     option = models.ForeignKey(Option, on_delete=models.CASCADE)
-
-
-
-class ProductImage(models.Model):
-	product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True, related_name='images')
-	image = models.ImageField(upload_to='product_items/%Y/%m/%d')
