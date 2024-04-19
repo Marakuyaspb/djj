@@ -61,10 +61,10 @@ def category_list(request):
 
 def cat_view(request, category_slug=None):
 	view = GetParametres()
-	category = view.get_category()
+	categories = view.get_category()
 	collections = view.get_collection()
-	color = view.get_color()
-	producttype = view.get_producttype()
+	colors = view.get_color()
+	producttypes = view.get_producttype()
 	
 	if category_slug == 'poufl':
 		poufl_category = get_object_or_404(Category, category='poufl')
@@ -103,7 +103,7 @@ def cat_view(request, category_slug=None):
 		products = Product.objects.filter(category=category)
 	else:
 		products = Product.objects.all()
-	return render(request, 'product/category_goods.html', {'products': products, 'view': view, 'category': category, 'collections': collections, 'color': color, 'producttype': producttype})
+	return render(request, 'product/category_goods.html', {'products': products, 'view': view, 'categories': categories, 'collections': collections, 'colors': colors, 'producttypes': producttypes})
 
 
 

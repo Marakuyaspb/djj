@@ -8059,3 +8059,4 @@ IndexError: string index out of range
 2024-04-19 13:36:51,244 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
 2024-04-19 13:36:51,250 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
 2024-04-19 13:36:51,293 - Not Found: /media/
+2024-04-19 13:40:18,719 - /home/a/deco_dj/product/views.py changed, reloading.

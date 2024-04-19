@@ -86,12 +86,12 @@
 					<h3 class='filter_header'>Коллекция</h3>
 
 					{% for collection in collections %}
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-						<label class="form-check-label" for="flexCheckDefault">
-							{{ collection.collection }}
-						</label>
-					</div>
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+							<label class="form-check-label" for="flexCheckDefault">
+								{{ collection.collection }}
+							</label>
+						</div>
 					{% endfor %}
 
 
@@ -103,7 +103,10 @@
 					{% for color in colors %}
 						<style>
 							.prev_color_{{color.color_id}} { 
-								background: {{color.color_code}}; 
+								background: {{color.color_code}}!important; 
+							}
+							.prev_color_{{color.color_id}}:checked { 
+								background: {{color.color_code}}!important; 
 							}
 						</style>
 
