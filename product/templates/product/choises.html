@@ -9,38 +9,36 @@
 		color: #50504E;
 	}
 
-@media (min-width: 811px){
-	.modal{
-		width: 33%!important;
-  		height: 100vh!important;
-  		right:0!important;
-  		left:auto;
-  		padding: 0px!important;
+	@media (min-width: 811px){
+		.modal{
+			width: 33%!important;
+	  		height: 100vh!important;
+	  		right:0!important;
+	  		left:auto;
+	  		padding: 0px!important;
+		}
 	}
-}
 
-
-@media (max-width: 810px) {
-	.modal{
-		width: 100%!important;
-		height: 100vh!important;
-		padding: 0px!important;
+	@media (max-width: 810px) {
+		.modal{
+			width: 100%!important;
+			height: 100vh!important;
+			padding: 0px!important;
+		}
 	}
-}
 
-
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 100%!important;
+	@media (min-width: 576px) {
+	  .modal-dialog {
+	    max-width: 100%!important;
+		}
 	}
-}
 
 
-@media (max-width: 577px) {
-  .modal-dialog {
-    max-width: 100%!important;
+	@media (max-width: 577px) {
+	  .modal-dialog {
+	    max-width: 100%!important;
+		}
 	}
-}
 
 
 	.part33{
@@ -50,13 +48,11 @@
 		
 		margin: 0px!important;
 	}
-
-
 </style>
 
 <div class="ps-3 pb-3">
 	<button type="button" class="btn-prod-card white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Показать фильтры
+  Показать все фильтры
 </button>
 </div>
 
@@ -78,15 +74,22 @@
 
 					<h3 class='filter_header'>Тип</h3>
 
-					
+					{% for producttype in producttypes  %}
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+							<label class="form-check-label" for="flexCheckDefault">
+								{{ producttype.type_ru }}
+							</label>
+						</div>
+					{% endfor %}
 
 					<h3 class='filter_header'>Коллекция</h3>
 
-					{% for el_co in collection %}
-						<div class="form-check">
+					{% for collection in collections %}
+					<div class="form-check">
 						<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
 						<label class="form-check-label" for="flexCheckDefault">
-							{{ el_co.collection }}
+							{{ collection.collection }}
 						</label>
 					</div>
 					{% endfor %}
@@ -94,8 +97,23 @@
 
 					<h3 class='filter_header'>Габариты</h3>
 
+
 					<h3 class='filter_header'>Цвет</h3>
-					{% for el in products %}
+
+					{% for color in colors %}
+						<style>
+							.prev_color_{{color.color_id}} { 
+								background: {{color.color_code}}; 
+							}
+						</style>
+
+						<div class="form-check">
+							<input class="form-check-input prev_color_{{color.color_id}}" type="checkbox" value="" id="flexCheckDefault">
+							<label class="form-check-label" for="flexCheckDefault">
+							{{ color.color_name }}
+							</label>
+						</div>
+
 					{% endfor %}
 
 			

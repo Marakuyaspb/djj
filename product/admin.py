@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Collection, Color, Fabric, SliderInterior, Option, Product,  PopOverFeatures, Schemes
+from .models import Category, Collection, Color, Producttype, Fabric, SliderInterior, Option, Product,  PopOverFeatures, Schemes
 from django.utils.safestring import mark_safe
 from django.template.loader import get_template
 from django.utils.translation import gettext_lazy as _
@@ -67,6 +67,10 @@ class ProductAdmin(admin.ModelAdmin):
 	get_html_img_preview.short_description = 'Превью'
 
 
+@admin.register(Producttype)
+class ProducttypeAdmin(admin.ModelAdmin):
+	list_display = ('type_ru',)
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
 	list_display = ('category_ru', 'category')
@@ -85,7 +89,7 @@ class ColorAdmin(admin.ModelAdmin):
 
 	def get_html_color_preview(self, object):
 		if object.color_code:
-			return mark_safe(f"<style>.prev_color {{ width: auto; height: 60px; background: {object.color_code}; }}</style><div class='prev_color'></div>")
+			return mark_safe(f"<style>.prev_color_{object.color_id} {{ width: auto; height: 60px; background: {object.color_code}; }}</style><div class='prev_color_{object.color_id}'></div>")
 	get_html_color_preview.short_description = 'Цвет'
 
 

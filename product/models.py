@@ -7,11 +7,27 @@ from django.utils import timezone
 from django.utils.text import slugify
 
 
+class Producttype(models.Model):
+	type_id = models.AutoField(primary_key=True)
+	type_ru = models.CharField(max_length=50, verbose_name = 'Тип товара (по-русски, в ЕДИНСТВЕННОМ числе)')
+	class Meta:
+		ordering = ['type_ru']
+		indexes = [
+			models.Index(fields=['type_ru']),
+		]
+		verbose_name = 'Тип'
+		verbose_name_plural = 'Типы'	
+
+	def __str__(self):
+		return self.producttype
+
 
 class Category(models.Model):
 	category_id = models.AutoField(primary_key=True)
 	category_ru = models.CharField(max_length=50, verbose_name = 'Название категории (по-русски, в МНОЖЕСТВЕННОМ числе)')
-	producttype = models.CharField(max_length=50, null=True, verbose_name = 'Название категории (то же, в ЕДИНСТВЕННОМ числе)')
+	type_ru = models.ForeignKey(Producttype,
+		related_name='categories', default='1',
+		on_delete=models.CASCADE, verbose_name = 'Цвет ткани (для фильтров)')
 	category = models.CharField(max_length=30, verbose_name='Сокращенно латиницей (arm, str, k1r и т.п.)')
 	category_slug = models.SlugField(max_length=30, unique=True, null=True, verbose_name='URL')
 
@@ -25,6 +41,10 @@ class Category(models.Model):
 
 	def __str__(self):
 		return self.category
+		
+	@property
+	def type_id(self):
+		return self.type_ru.type_id
 
 
 class Collection(models.Model):
@@ -46,7 +66,7 @@ class Collection(models.Model):
 class Color(models.Model):
 	color_id = models.AutoField(primary_key=True)
 	color_name = models.CharField(max_length=50, verbose_name = 'Название цвета', default='Бежевый')
-	color_code = models.CharField(max_length=50, verbose_name = 'Цвет в HEX или RGBA', default='#E5E1DF')
+	color_code = models.CharField(max_length=50, verbose_name = 'Цвет в #HEX', default='#E5E1DF')
 
 	class Meta:
 		ordering = ['color_name']
@@ -65,7 +85,7 @@ class Fabric(models.Model):
 	fabric_name = models.CharField(max_length=50, verbose_name = 'Название ткани')
 	product_fabric_img = models.ImageField(upload_to='fabric_images/', verbose_name = 'Образец ткани')
 	product_fabric_color = models.ForeignKey(Color,
-		related_name='features', default='1',
+		related_name='products', default='1',
 		on_delete=models.CASCADE, verbose_name = 'Цвет ткани (для фильтров)')
 	product_fabric_about = models.TextField(verbose_name = 'Описание ткани')
 
@@ -318,6 +338,8 @@ class Product(models.Model):
 		verbose_name = 'Товар'
 		verbose_name_plural = 'Товары'
 
+
+
 	#Category
 	@property
 	def category_slug(self):
@@ -325,12 +347,16 @@ class Product(models.Model):
 	@property
 	def category_ru(self):
 		return self.category.category_ru
+	@property
+	def type_ru(self):
+		return self.category.type_ru
 
 
 	#Collection
 	@property
 	def collection_slug(self):
 		return self.collection.collection_slug
+
 
 	# Fabric
 	@property
@@ -342,6 +368,7 @@ class Product(models.Model):
 	@property
 	def fabric_color(self):
 		return self.fabric_name.product_fabric_color
+
 
 	# Options
 	@property
@@ -359,6 +386,7 @@ class Product(models.Model):
 	@property
 	def option_2_description(self):
 		return self.options.option_2_description	
+
 
 	#Slider interiors
 	@property
@@ -424,6 +452,7 @@ class Product(models.Model):
 	@property
 	def popover_5_description(self):
 		return self.popover.popover_5_description
+
 
 	#Schemes
 	@property
@@ -571,6 +600,6 @@ class Product(models.Model):
 
 
 
-class ProductOption(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    option = models.ForeignKey(Option, on_delete=models.CASCADE)
+# class ProductOption(models.Model):
+#     product = models.ForeignKey(Product, on_delete=models.CASCADE)
+#     option = models.ForeignKey(Option, on_delete=models.CASCADE)
