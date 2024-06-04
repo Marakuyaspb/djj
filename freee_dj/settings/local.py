@@ -4,6 +4,9 @@ from .base import *
 # python3 manage.py runserver --settings=freee_dj.settings.local
 
 DEBUG = True
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+]
 
 
 DATABASES = {

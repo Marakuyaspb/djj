@@ -48,6 +48,118 @@
 		
 		margin: 0px!important;
 	}
+
+
+
+
+
+	.wrapper {
+	  position: relative;
+	  width: 100%;
+	  background-color: #ffffff;
+	  padding: 10px 40px 20px 0px;
+	  border-radius: 10px;
+	}
+	.container {
+	  position: relative;
+	  width: 100%;
+	  height: 100px;
+
+	}
+	input[type="range"] {
+	  -webkit-appearance: none;
+	  -moz-appearance: none;
+	  appearance: none;
+	  width: 100%;
+	  outline: none;
+	  position: absolute;
+	  margin: auto;
+	  top: 0;
+	  bottom: 0;
+	  background-color: transparent;
+	  pointer-events: none;
+	}
+	.slider-track {
+	  width: 100%;
+	  height: 4px;
+	  position: absolute;
+	  margin: auto;
+	  top: 0;
+	  bottom: 0;
+	  border-radius: 5px;
+	}
+	input[type="range"]::-webkit-slider-runnable-track {
+	  -webkit-appearance: none;
+	  height: 5px;
+	}
+	input[type="range"]::-moz-range-track {
+	  -moz-appearance: none;
+	  height: 5px;
+	}
+	input[type="range"]::-ms-track {
+	  appearance: none;
+	  height: 5px;
+	}
+	input[type="range"]::-webkit-slider-thumb {
+	  -webkit-appearance: none;
+	  height: 1em;
+	  width: 1em;
+	  background-color: #9f8a88;
+	  cursor: pointer;
+	  margin-top: -9px;
+	  pointer-events: auto;
+	  border-radius: 50%;
+	}
+	input[type="range"]::-moz-range-thumb {
+	  -webkit-appearance: none;
+	  height: 1em;
+	  width: 1em;
+	  cursor: pointer;
+	  border-radius: 50%;
+	  background-color: #9f8a88;
+	  pointer-events: auto;
+	  border: none;
+	}
+	input[type="range"]::-ms-thumb {
+	  appearance: none;
+	  height: 1.7em;
+	  width: 1.7em;
+	  cursor: pointer;
+	  border-radius: 50%;
+	  background-color: #9f8a88;
+	  pointer-events: auto;
+	}
+	input[type="range"]:active::-webkit-slider-thumb {
+	  background-color: #ffffff;
+	  border: 1px solid #9f8a88;
+	}
+	.values {
+	  background-color: #ffffff;
+	  width: 60%;
+	  position: relative;
+	  margin: auto;
+	  padding: 10px 5px;
+	  border-radius: 5px;
+	  text-align: center;
+	  font-weight: 500;
+	  font-size: 1.1em;
+	  color: #9f8a88;
+	}
+	.values:before {
+	  content: "";
+	  position: absolute;
+	  height: 0;
+	  width: 0;
+	  border-top: 15px solid transparent;
+	  border-left: 15px solid transparent;
+	  border-right: 15px solid transparent;
+	  margin: auto;
+	  bottom: -14px;
+	  left: 0;
+	  right: 0;
+	}
+
+
 </style>
 
 <div class="ps-3 pb-3">
@@ -70,6 +182,25 @@
       		<div class="modal-body modal-dialog-scrollable">
 				<div class='filters_container'>
 					<h3 class='filter_header'>Стоимость</h3>
+
+
+					<div class="wrapper">
+					  <div class="values">
+					    <span id="range1">
+					      0
+					    </span> ₽
+					    <span> &dash; </span>
+					    <span id="range2">
+					      400000
+					    </span> ₽
+					  </div>
+					  <div class="container">
+					    <div class="slider-track"></div>
+					    <input type="range" min="0" max="300000" value="20000" id="slider-1" oninput="slideOne()">
+					    <input type="range" min="0" max="300000" value="120000" id="slider-2" oninput="slideTwo()">
+					  </div>
+					</div>
+
 					
 
 					<h3 class='filter_header'>Тип</h3>
@@ -103,10 +234,15 @@
 					{% for color in colors %}
 						<style>
 							.prev_color_{{color.color_id}} { 
-								background: {{color.color_code}}!important; 
+								background-color: {{color.color_code}}!important;
+								border: 3px solid #fff !important;
+    							border-radius: .25em !important;
+    							box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px!important;
 							}
 							.prev_color_{{color.color_id}}:checked { 
-								background: {{color.color_code}}!important; 
+								background: {{color.color_code}}!important;
+								box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px!important;
+
 							}
 						</style>
 
@@ -115,8 +251,7 @@
 							<label class="form-check-label" for="flexCheckDefault">
 							{{ color.color_name }}
 							</label>
-						</div>
-
+						</div> 
 					{% endfor %}
 
 			
@@ -192,5 +327,41 @@
 
 
 <script type="text/javascript">
+
+
+	window.onload = function () {
+  slideOne();
+  slideTwo();
+};
+
+let sliderOne = document.getElementById("slider-1");
+let sliderTwo = document.getElementById("slider-2");
+let displayValOne = document.getElementById("range1");
+let displayValTwo = document.getElementById("range2");
+let minGap = 0;
+let sliderTrack = document.querySelector(".slider-track");
+let sliderMaxValue = document.getElementById("slider-1").max;
+
+function slideOne() {
+  if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+    sliderOne.value = parseInt(sliderTwo.value) - minGap;
+  }
+  displayValOne.textContent = sliderOne.value;
+  fillColor();
+}
+function slideTwo() {
+  if (parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap) {
+    sliderTwo.value = parseInt(sliderOne.value) + minGap;
+  }
+  displayValTwo.textContent = sliderTwo.value;
+  fillColor();
+}
+function fillColor() {
+  percent1 = (sliderOne.value / sliderMaxValue) * 100;
+  percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+  sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #9F8A88 ${percent1}% , #9F8A88 ${percent2}%, #dadae5 ${percent2}%)`;
+}
+
+
 	
 </script>

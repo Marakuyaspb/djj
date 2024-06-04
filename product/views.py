@@ -36,14 +36,20 @@ class GetParametres:
 
 
 
-# def filter_view(request):
-# 	view = GetParametres()
-# 	categories = view.get_category()
-# 	collections = view.get_collection()
-# 	color = view.get_color()
-# 	producttype = view.get_producttype()
 
-# 	return render(request, 'product/choises.html', {'view': view, 'categories': categories, 'collections': collections, 'color': color, 'producttype': producttype})
+def filter_products(request):
+	collections = request.GET.getlist('collection')
+	colors = request.GET.getlist('color')
+
+	products = Product.objects.all()
+
+	if collections:
+		products = products.filter(collection__in=collections)
+
+	if colors:
+		products = products.filter(fabric_name__product_fabric_color__in=colors)
+
+	return render(request, 'category_goods.html', {'products': products})
 
 
 
@@ -137,10 +143,23 @@ def vacancies(request):
 
 
 
-#ALL
+#ALL FILTER 
 def products (request):
+	view = GetParametres()
+	categories = view.get_category()
+	collections = view.get_collection()
+	colors = view.get_color()
+	producttypes = view.get_producttype()
 	products = Product.objects.all()
-	return render(request, 'product/category_goods.html', {'products': products})
+
+	return render(request, 'product/category_goods.html', {
+		'products': products,
+		'view': view,
+		'categories': categories,
+		'collections': collections,
+		'colors': colors,
+		'producttypes': producttypes
+	})
 
 
 

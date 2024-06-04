@@ -8060,3 +8060,194 @@ IndexError: string index out of range
 2024-04-19 13:36:51,250 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
 2024-04-19 13:36:51,293 - Not Found: /media/
 2024-04-19 13:40:18,719 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-04-22 12:24:54,450 - Internal Server Error: /admin/product/product/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/library.py", line 258, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "/home/a/.local/lib/python3.10/site-packages/django/contrib/admin/templatetags/admin_list.py", line 336, in result_list
+    "results": list(results(cl)),
+  File "/home/a/.local/lib/python3.10/site-packages/django/contrib/admin/templatetags/admin_list.py", line 312, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "/home/a/.local/lib/python3.10/site-packages/django/contrib/admin/templatetags/admin_list.py", line 303, in __init__
+    super().__init__(*items)
+  File "/home/a/.local/lib/python3.10/site-packages/django/contrib/admin/templatetags/admin_list.py", line 235, in items_for_result
+    result_repr = display_for_field(value, f, empty_value_display)
+  File "/home/a/.local/lib/python3.10/site-packages/django/contrib/admin/utils.py", line 418, in display_for_field
+    return formats.number_format(value)
+  File "/home/a/.local/lib/python3.10/site-packages/django/utils/formats.py", line 188, in number_format
+    return numberformat.format(
+  File "/home/a/.local/lib/python3.10/site-packages/django/utils/numberformat.py", line 70, in format
+    if str_number[0] == "-":
+IndexError: string index out of range
+2024-04-22 12:37:15,383 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-04-22 12:37:15,390 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-04-22 12:37:15,393 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
+2024-04-22 12:37:15,409 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-04-22 12:37:15,412 - Not Found: /media/
+2024-04-22 12:37:15,416 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
+2024-04-22 12:37:15,451 - Not Found: /media/popover_features/CONSONO_FEATURES_3_BASE.jpg
+2024-04-22 12:37:15,454 - Not Found: /media/popover_features/CONSONO_FEATURES_5_PILLOW.jpg
+2024-04-22 12:37:15,458 - Not Found: /media/popover_features/CONSONO_FEATURES_4_SEAT.jpg
+2024-04-22 12:37:15,461 - Not Found: /media/popover_features/CONSONO_FEATURES_2_ELAX.jpg
+2024-04-22 12:37:15,463 - Not Found: /media/popover_features/CONSONO_FEATURES_1_LEGS.jpg
+2024-04-22 12:37:15,519 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-04-22 12:37:15,553 - Not Found: /media/
+2024-04-22 12:37:15,558 - Not Found: /media/popover_features/CONSONO_FEATURES_3_BASE.jpg
+2024-04-22 12:37:15,584 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-04-22 12:37:15,592 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
+2024-04-22 12:37:15,596 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-04-22 12:37:15,599 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
+2024-04-22 13:14:07,745 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-04-22 13:14:07,763 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-04-22 13:14:07,766 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
+2024-04-22 13:14:07,778 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-04-22 13:14:07,781 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
+2024-04-22 13:14:07,869 - Not Found: /media/popover_features/CONSONO_FEATURES_2_ELAX.jpg
+2024-04-22 13:14:07,872 - Not Found: /media/
+2024-04-22 13:14:07,875 - Not Found: /media/popover_features/CONSONO_FEATURES_1_LEGS.jpg
+2024-04-22 13:14:07,878 - Not Found: /media/popover_features/CONSONO_FEATURES_3_BASE.jpg
+2024-04-22 13:14:07,916 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-04-22 13:14:07,919 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
+2024-04-22 13:14:07,922 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
+2024-04-22 13:14:07,933 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-04-22 13:14:07,937 - Not Found: /media/popover_features/CONSONO_FEATURES_5_PILLOW.jpg
+2024-04-22 13:14:07,942 - Not Found: /media/popover_features/CONSONO_FEATURES_4_SEAT.jpg
+2024-04-22 13:14:07,964 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-04-22 13:14:07,966 - Not Found: /media/
+2024-04-22 13:14:07,982 - Not Found: /media/popover_features/CONSONO_FEATURES_1_LEGS.jpg
+2024-04-22 13:14:07,998 - Not Found: /media/popover_features/CONSONO_FEATURES_2_ELAX.jpg
+2024-04-22 13:14:08,001 - Not Found: /media/popover_features/CONSONO_FEATURES_3_BASE.jpg
+2024-04-22 13:57:48,401 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-04 09:46:49,372 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-06-04 09:46:49,375 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
+2024-06-04 09:46:49,378 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-06-04 09:46:49,381 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-06-04 09:46:49,384 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
+2024-06-04 09:46:49,478 - Not Found: /media/
+2024-06-04 09:46:49,496 - Not Found: /media/popover_features/CONSONO_FEATURES_2_ELAX.jpg
+2024-06-04 09:46:49,509 - Not Found: /media/popover_features/CONSONO_FEATURES_1_LEGS.jpg
+2024-06-04 09:46:49,513 - Not Found: /media/popover_features/CONSONO_FEATURES_3_BASE.jpg
+2024-06-04 09:46:49,542 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-06-04 09:46:49,556 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-06-04 09:46:49,586 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
+2024-06-04 09:46:49,590 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
+2024-06-04 09:46:49,593 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-06-04 09:46:49,609 - Not Found: /media/popover_features/CONSONO_FEATURES_4_SEAT.jpg
+2024-06-04 09:46:49,613 - Not Found: /media/popover_features/CONSONO_FEATURES_5_PILLOW.jpg
+2024-06-04 09:46:50,858 - Not Found: /favicon.ico
+2024-06-04 09:49:09,545 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-04 09:49:11,604 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 161, in products
+    'producttypes': producttype
+NameError: name 'producttype' is not defined
+2024-06-04 09:49:13,650 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 161, in products
+    'producttypes': producttype
+NameError: name 'producttype' is not defined
+2024-06-04 09:49:21,135 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-04 09:50:19,698 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-04 10:30:52,208 - Not Found: /media/fabric_images/JAZZ_21.jpg
+2024-06-04 10:30:52,230 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-06-04 10:30:52,239 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-06-04 10:30:52,255 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
+2024-06-04 10:30:52,260 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-06-04 10:30:52,273 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
+2024-06-04 10:30:52,276 - Not Found: /media/
+2024-06-04 10:30:52,298 - Not Found: /media/popover_features/CONSONO_FEATURES_1_LEGS.jpg
+2024-06-04 10:30:52,301 - Not Found: /media/popover_features/CONSONO_FEATURES_2_ELAX.jpg
+2024-06-04 10:30:52,316 - Not Found: /media/popover_features/CONSONO_FEATURES_3_BASE.jpg
+2024-06-04 10:30:52,319 - Not Found: /media/popover_features/CONSONO_FEATURES_4_SEAT.jpg
+2024-06-04 10:30:52,329 - Not Found: /media/popover_features/CONSONO_FEATURES_5_PILLOW.jpg
+2024-06-04 10:30:52,465 - Not Found: /media/
+2024-06-04 10:30:52,468 - Not Found: /media/popover_features/CONSONO_FEATURES_1_LEGS.jpg
+2024-06-04 10:30:52,474 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-06-04 10:30:52,477 - Not Found: /media/popover_features/CONSONO_FEATURES_2_ELAX.jpg
+2024-06-04 10:30:52,480 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-06-04 10:30:52,483 - Not Found: /media/fabric_images/JAZZ_21.jpg
+2024-06-04 10:30:52,493 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-06-04 10:30:52,514 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
+2024-06-04 10:30:52,519 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
+2024-06-04 10:36:49,054 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-06-04 10:36:49,064 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-06-04 10:36:49,178 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-06-04 10:36:49,196 - Not Found: /media/fabric_icons/2024/01/23/VELUTTO_32.png
+2024-06-04 10:36:49,204 - Not Found: /media/fabric_icons/2024/01/23/PIXEL_FOREST.png
+2024-06-04 10:36:49,287 - Not Found: /media/fabric_images/JAZZ_21.jpg
+2024-06-04 10:36:49,293 - Not Found: /media/
+2024-06-04 10:36:49,312 - Not Found: /media/popover_features/CONSONO_FEATURES_3_BASE.jpg
+2024-06-04 10:36:49,316 - Not Found: /media/popover_features/CONSONO_FEATURES_2_ELAX.jpg
+2024-06-04 10:36:49,319 - Not Found: /media/popover_features/CONSONO_FEATURES_1_LEGS.jpg
+2024-06-04 10:36:49,328 - Not Found: /media/popover_features/CONSONO_FEATURES_4_SEAT.jpg
+2024-06-04 10:36:49,342 - Not Found: /media/popover_features/CONSONO_FEATURES_5_PILLOW.jpg
+2024-06-04 10:36:49,396 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_01.png
+2024-06-04 10:36:49,399 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
+2024-06-04 10:36:49,411 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
+2024-06-04 10:37:05,919 - Not Found: /favicon.ico
