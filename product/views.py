@@ -143,29 +143,6 @@ def vacancies(request):
 
 
 
-#ALL FILTER 
-def products (request):
-	view = GetParametres()
-	categories = view.get_category()
-	collections = view.get_collection()
-	colors = view.get_color()
-	producttypes = view.get_producttype()
-	products = Product.objects.all()
-
-	return render(request, 'product/category_goods.html', {
-		'products': products,
-		'view': view,
-		'categories': categories,
-		'collections': collections,
-		'colors': colors,
-		'producttypes': producttypes
-	})
-
-
-
-
-
-
 
 
 def single_product(request, product_slug=None):
@@ -187,3 +164,50 @@ def single_product(request, product_slug=None):
 			'similar_products': similar_products,
 			'cart_product_form': cart_product_form
 			})
+
+
+
+
+
+
+
+
+
+#ALL FILTER 
+def products (request):
+	view = GetParametres()
+	categories = view.get_category()
+	collections = view.get_collection()
+	colors = view.get_color()
+	producttypes = view.get_producttype()
+	products = Product.objects.all()
+
+	context = {
+		'products': products,
+		'view': view,
+		'categories': categories,
+		'collections': collections,
+		'colors': colors,
+		'producttypes': producttypes
+		}
+
+
+	if request.method == 'POST':
+		color = request.POST.get('color')
+		option = request.POST.get('option')
+		collection = request.POST.get('collection')
+		type_id = request.POST.get('type_id')
+		min_price = request.POST.get('min_price')
+		max_price = request.POST.get('max_price')
+
+		# Construct queryset based on filter parameters
+		products = Product.objects.filter(
+			fabric_name__product_fabric_color=color,
+			mechanism_type=option,
+			collection__name=collection,
+			product_type=product_type,
+			price__gte=min_price,
+			price__lte=max_price)
+
+		return render(request, 'product/category_goods.html', {'products': products})
+	return render(request, 'product/category_goods.html', context)

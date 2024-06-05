@@ -8251,3 +8251,49 @@ NameError: name 'producttype' is not defined
 2024-06-04 10:36:49,399 - Not Found: /media/fabric_icons/2024/01/23/CAMBRIDGE_600.png
 2024-06-04 10:36:49,411 - Not Found: /media/fabric_icons/2024/01/23/JAZZ_21.png
 2024-06-04 10:37:05,919 - Not Found: /favicon.ico
+2024-06-05 13:53:35,103 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 13:54:28,339 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 13:55:37,033 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 13:56:05,335 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 204, in products
+    return render(request, 'catalog_page.html')
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: catalog_page.html
+2024-06-05 13:56:05,579 - Not Found: /favicon.ico
+2024-06-05 13:56:06,652 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 204, in products
+    return render(request, 'catalog_page.html')
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: catalog_page.html
+2024-06-05 13:56:24,464 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 13:57:41,257 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 13:57:55,931 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 13:59:48,785 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 13:59:57,318 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 14:00:11,121 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 14:09:15,612 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 14:09:55,568 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-06-05 14:10:08,164 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-06-05 14:10:27,910 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-06-05 14:10:38,551 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-05 14:11:27,706 - /home/a/deco_dj/product/models.py changed, reloading.
