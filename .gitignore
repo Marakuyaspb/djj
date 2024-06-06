@@ -1,5 +1,5 @@
 db.sqlite3
-
+freee_dj/.env
 venv
 
 fix_it.txt
@@ -15,3 +15,7 @@ __pycache__/
 
 media/*
 !*media
+
+product/static/node_modules/*
+product/static/owl/*
+product/static/OwlCarousel2-2.3.4/*

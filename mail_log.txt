@@ -8297,3 +8297,22 @@ django.template.exceptions.TemplateDoesNotExist: catalog_page.html
 2024-06-05 14:10:27,910 - /home/a/deco_dj/product/models.py changed, reloading.
 2024-06-05 14:10:38,551 - /home/a/deco_dj/product/views.py changed, reloading.
 2024-06-05 14:11:27,706 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-06-05 15:10:56,846 - /home/a/deco_dj/product/models.py changed, reloading.
+2024-06-05 15:15:14,825 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-06 13:32:41,912 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-06 13:34:03,306 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-06 13:46:35,301 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-06 13:48:15,119 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-06 13:49:09,223 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-06 13:49:11,907 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 180, in products
+    colors = view.get_color()
+NameError: name 'view' is not defined
+2024-06-06 13:49:12,135 - Not Found: /favicon.ico
+2024-06-06 13:49:58,335 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-06 13:50:10,844 - /home/a/deco_dj/product/views.py changed, reloading.

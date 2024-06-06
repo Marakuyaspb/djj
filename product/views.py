@@ -6,6 +6,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from .models import Category, Collection, Color, Producttype, Option, Product, SliderInterior
 from cart.forms import CartAddProductForm
 
+from .forms import FilterForm
 
 # # # # # # # # # # # # # #
 
@@ -19,20 +20,6 @@ def error_500(request):
 
 # # # # # # # # # # # # # #
 
-
-class GetParametres:
-
-	def get_category(self):
-		return Category.objects.all()
-
-	def get_collection(self):
-		return Collection.objects.all()
-
-	def get_color(self):
-		return Color.objects.all()
-
-	def get_producttype(self):
-		return Producttype.objects.all()
 
 
 
@@ -171,19 +158,65 @@ def single_product(request, product_slug=None):
 
 
 
+class GetParametres:
+
+	def get_category(self):
+		return Category.objects.all()
+
+	def get_collection(self):
+		return Collection.objects.all()
+
+	def get_color(self):
+		return Color.objects.all()
+
+	def get_producttype(self):
+		return Producttype.objects.all()
+
 
 
 #ALL FILTER 
 def products (request):
+	products = Product.objects.all()
+	
 	view = GetParametres()
 	categories = view.get_category()
 	collections = view.get_collection()
 	colors = view.get_color()
 	producttypes = view.get_producttype()
-	products = Product.objects.all()
+	
+
+	if request.method == 'GET':
+		form = FilterForm(request.GET)
+		if form.is_valid():
+			min_price = form.cleaned_data.get('min_price')
+			max_price = form.cleaned_data.get('max_price')
+			colors = form.cleaned_data.get('colors')
+
+			if min_price is None:
+				min_price = 0
+			if max_price is None:
+				max_price = 400000
+
+			if min_price is not None:
+				products = products.filter(price__gte=min_price)
+			if max_price is not None:
+				products = products.filter(price__lte=max_price)
+			if colors:
+				products = products.filter(color__in=colors)
+
+			products = Product.objects.filter(price__gte=min_price, price__lte=max_price)
+
+			if colors:
+				products = products.filter(fabric_name__product_fabric_color__in=colors)
+
+	else:
+		form = FilterForm()
+
+
 
 	context = {
 		'products': products,
+		'form': form,
 		'view': view,
 		'categories': categories,
 		'collections': collections,
@@ -192,22 +225,44 @@ def products (request):
 		}
 
 
-	if request.method == 'POST':
-		color = request.POST.get('color')
-		option = request.POST.get('option')
-		collection = request.POST.get('collection')
-		type_id = request.POST.get('type_id')
-		min_price = request.POST.get('min_price')
-		max_price = request.POST.get('max_price')
-
-		# Construct queryset based on filter parameters
-		products = Product.objects.filter(
-			fabric_name__product_fabric_color=color,
-			mechanism_type=option,
-			collection__name=collection,
-			product_type=product_type,
-			price__gte=min_price,
-			price__lte=max_price)
-
-		return render(request, 'product/category_goods.html', {'products': products})
 	return render(request, 'product/category_goods.html', context)
+
+
+
+
+	# view = GetParametres()
+	# categories = view.get_category()
+	# collections = view.get_collection()
+	# colors = view.get_color()
+	# producttypes = view.get_producttype()
+	# products = Product.objects.all()
+
+	# context = {
+	# 	'products': products,
+	# 	'view': view,
+	# 	'categories': categories,
+	# 	'collections': collections,
+	# 	'colors': colors,
+	# 	'producttypes': producttypes
+	# 	}
+
+
+	# if request.method == 'POST':
+	# 	color = request.POST.get('color')
+	# 	option = request.POST.get('option')
+	# 	collection = request.POST.get('collection')
+	# 	type_id = request.POST.get('type_id')
+	# 	min_price = request.POST.get('min_price')
+	# 	max_price = request.POST.get('max_price')
+
+	# 	# Construct queryset based on filter parameters
+	# 	products = Product.objects.filter(
+	# 		fabric_name__product_fabric_color=color,
+	# 		mechanism_type=option,
+	# 		collection__name=collection,
+	# 		product_type=product_type,
+	# 		price__gte=min_price,
+	# 		price__lte=max_price)
+
+	# 	return render(request, 'product/category_goods.html', {'products': products})
+	# return render(request, 'product/category_goods.html', context)

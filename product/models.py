@@ -350,6 +350,9 @@ class Product(models.Model):
 	@property
 	def type_ru(self):
 		return self.category.type_ru
+	@property
+	def type_id(self):
+		return self.category.type_id
 
 
 	#Collection
