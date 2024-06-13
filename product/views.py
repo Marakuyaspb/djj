@@ -1,11 +1,13 @@
-from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
+from django.db.models import Q, Count
 from django.conf import settings
-from django.core.paginator import Paginator
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.views import View
+from django.shortcuts import render, get_object_or_404, redirect
+
 from .models import Category, Collection, Color, Producttype, Option, Product, SliderInterior
 from cart.forms import CartAddProductForm
-
 from .forms import FilterForm
 
 # # # # # # # # # # # # # #
@@ -13,31 +15,12 @@ from .forms import FilterForm
 def error_404_view(request, exception):
 	products = Product.objects.all()
 	popular = Product.objects.filter(popular=True)
-	return render(request, '404/404.html', {'products': products, 'popular': popular}, status=404)
+	return render(request, 'product/404/404.html', {'products': products, 'popular': popular}, status=404)
 
 def error_500(request):
 	return render(request, 'product/500.html', status=500)
 
 # # # # # # # # # # # # # #
-
-
-
-
-
-def filter_products(request):
-	collections = request.GET.getlist('collection')
-	colors = request.GET.getlist('color')
-
-	products = Product.objects.all()
-
-	if collections:
-		products = products.filter(collection__in=collections)
-
-	if colors:
-		products = products.filter(fabric_name__product_fabric_color__in=colors)
-
-	return render(request, 'category_goods.html', {'products': products})
-
 
 
 
@@ -130,8 +113,6 @@ def vacancies(request):
 
 
 
-
-
 def single_product(request, product_slug=None):
 	cart_product_form = CartAddProductForm()
     
@@ -154,14 +135,23 @@ def single_product(request, product_slug=None):
 
 
 
+def products(request):
+	products_list = Product.objects.all()
 
+	paginator = Paginator(products_list, 9) 
+	page = request.GET.get('page')
+
+	try:
+		products = paginator.page(page)
+	except PageNotAnInteger:
+		products = paginator.page(1)
+	except EmptyPage:
+		products = paginator.page(paginator.num_pages)
+	return render(request, 'product/category_goods.html', {'products': products})
 
 
 
 class GetParametres:
-
-	def get_category(self):
-		return Category.objects.all()
 
 	def get_collection(self):
 		return Collection.objects.all()
@@ -172,97 +162,91 @@ class GetParametres:
 	def get_producttype(self):
 		return Producttype.objects.all()
 
+	def get_mechanism_type(self):
+		mechanism_types = Product.objects.values_list('mechanism_type', flat=True)
+		unique_mechanism_types = set(mechanism_types)
+		return unique_mechanism_types
+
+	def get_paws_type(self):
+		paws_types = Product.objects.values_list('paws_type', flat=True)
+		unique_paws_types = set(paws_types)
+		return unique_paws_types
+
+
+class FilterProductsView(GetParametres, View):
+	def get_queryset(self, request):
+		queryset = Product.objects.filter(
+			Q(collection__in=self.request.GET.getlist('collection')) |
+			Q(color__in=self.request.GET.getlist('color')) |
+			Q(producttype__in=self.request.GET.getlist('producttype')) |
+			Q(unique_mechanism_types__in=self.request.GET.getlist('unique_mechanism_types')) |
+			Q(unique_paws_types__in=self.request.GET.getlist('unique_paws_types')) |
+			Q(price__gte=min_price) |
+			Q(price__lte=max_price) |
+			Q(width__gte=min_width) |
+			Q(width__lte=max_width) |
+			Q(depth__gte=min_depth) |
+			Q(depth__lte=max_depth)
+        )
+		context = {
+			'products': queryset
+		}
+		return render(request, 'product/category_goods.html', context)
+
+filter_products_view = FilterProductsView.as_view()
+
 
 
 #ALL FILTER 
-def products (request):
-	products = Product.objects.all()
+# def products (request):
+# 	products = Product.objects.all()
 	
-	view = GetParametres()
-	categories = view.get_category()
-	collections = view.get_collection()
-	colors = view.get_color()
-	producttypes = view.get_producttype()
+# 	view = GetParametres()
+# 	collections = view.get_collection()
+# 	colors = view.get_color()
+# 	producttypes = view.get_producttype()
 	
 
-	if request.method == 'GET':
-		form = FilterForm(request.GET)
-		if form.is_valid():
-			min_price = form.cleaned_data.get('min_price')
-			max_price = form.cleaned_data.get('max_price')
-			colors = form.cleaned_data.get('colors')
+# 	if request.method == 'GET':
+# 		form = FilterForm(request.GET)
+# 		if form.is_valid():
+# 			min_price = form.cleaned_data.get('min_price')
+# 			max_price = form.cleaned_data.get('max_price')
+# 			collections = form.cleaned_data.get('collections')
+# 			colors = form.cleaned_data.get('colors')
 
-			if min_price is None:
-				min_price = 0
-			if max_price is None:
-				max_price = 400000
+# 			if min_price is None:
+# 				min_price = 0
+# 			if max_price is None:
+# 				max_price = 400000
+ 
+# 			if min_price is not None:
+# 				products = products.filter(price__gte=min_price)
+# 			if max_price is not None:
+# 				products = products.filter(price__lte=max_price)
 
-			if min_price is not None:
-				products = products.filter(price__gte=min_price)
-			if max_price is not None:
-				products = products.filter(price__lte=max_price)
-			if colors:
-				products = products.filter(color__in=colors)
+# 			products = Product.objects.filter(price__gte=min_price, price__lte=max_price)
 
-			products = Product.objects.filter(price__gte=min_price, price__lte=max_price)
+# 			if collections:
+# 				products = products.filter(collection__in=collections)
 
-			if colors:
-				products = products.filter(fabric_name__product_fabric_color__in=colors)
+# 			if colors:
+# 				products = products.filter(fabric_name__product_fabric_color__in=colors)
 
-	else:
-		form = FilterForm()
-
-
-
-	context = {
-		'products': products,
-		'form': form,
-		'view': view,
-		'categories': categories,
-		'collections': collections,
-		'colors': colors,
-		'producttypes': producttypes
-		}
-
-
-	return render(request, 'product/category_goods.html', context)
+# 	else:
+# 		form = FilterForm()
 
 
 
-
-	# view = GetParametres()
-	# categories = view.get_category()
-	# collections = view.get_collection()
-	# colors = view.get_color()
-	# producttypes = view.get_producttype()
-	# products = Product.objects.all()
-
-	# context = {
-	# 	'products': products,
-	# 	'view': view,
-	# 	'categories': categories,
-	# 	'collections': collections,
-	# 	'colors': colors,
-	# 	'producttypes': producttypes
-	# 	}
+# 	context = {
+# 		'products': products,
+# 		'form': form,
+# 		'view': view,
+# 		'categories': categories,
+# 		'collections': collections,
+# 		'colors': colors,
+# 		'producttypes': producttypes
+# 		}
 
 
-	# if request.method == 'POST':
-	# 	color = request.POST.get('color')
-	# 	option = request.POST.get('option')
-	# 	collection = request.POST.get('collection')
-	# 	type_id = request.POST.get('type_id')
-	# 	min_price = request.POST.get('min_price')
-	# 	max_price = request.POST.get('max_price')
-
-	# 	# Construct queryset based on filter parameters
-	# 	products = Product.objects.filter(
-	# 		fabric_name__product_fabric_color=color,
-	# 		mechanism_type=option,
-	# 		collection__name=collection,
-	# 		product_type=product_type,
-	# 		price__gte=min_price,
-	# 		price__lte=max_price)
-
-	# 	return render(request, 'product/category_goods.html', {'products': products})
-	# return render(request, 'product/category_goods.html', context)
+# 	return render(request, 'product/category_goods.html', context)

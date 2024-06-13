@@ -79,13 +79,31 @@
 	  pointer-events: none;
 	}
 	.slider-track {
-	  width: 100%;
-	  height: 4px;
-	  position: absolute;
-	  margin: auto;
-	  top: 0;
-	  bottom: 0;
-	  border-radius: 5px;
+		width: 100%;
+		height: 4px;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		border-radius: 5px;
+	}
+	.slider-trackd {
+		width: 100%;
+		height: 4px;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		border-radius: 5px;
+	}
+		.slider-trackw {
+		width: 100%;
+		height: 4px;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		border-radius: 5px;
 	}
 	input[type="range"]::-webkit-slider-runnable-track {
 	  -webkit-appearance: none;
@@ -157,14 +175,12 @@
 	  left: 0;
 	  right: 0;
 	}
-
-
 </style>
 
 <div class="ps-3 pb-3">
 	<button type="button" class="btn-prod-card white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Показать все фильтры
-</button>
+	  Показать все фильтры
+	</button>
 </div>
 
 
@@ -180,13 +196,13 @@
       		
       		<div class="modal-body modal-dialog-scrollable">
       			
-      			<form method="get">
-      				{% csrf_token %}
+      			<form method="get" >
+      				
 					<div class='filters_container'>
+
 						<h3 class='filter_header'>Стоимость</h3>
 
 						<div class="wrapper">
-
 							<div class="values">
 							    <span id="min_price">0</span> ₽
 								<span> &dash; </span>
@@ -198,16 +214,13 @@
 						    	<input type="range" name='min_price' min="0" max="300000" value="20000" id="slider-1" oninput="slideOne()">
 						    	<input type="range" name='max_price' min="0" max="300000" value="120000" id="slider-2" oninput="slideTwo()">
 							</div>
-
 						</div>
-
 						
 
 						<h3 class='filter_header'>Тип</h3>
-
-							{% for producttype in producttypes  %}
+							{% for producttype in view.get_producttype  %}
 								<div class="form-check">
-									<input class="form-check-input" type="checkbox" name='type_id' value="" id="flexCheckDefault">
+									<input class="form-check-input" type="checkbox" name='type_id' value=" {{ type_id }} " id="flexCheckDefault">
 									<label class="form-check-label" for="flexCheckDefault">
 										{{ producttype.type_ru }}
 									</label>
@@ -217,10 +230,10 @@
 						
 						<h3 class='filter_header'>Коллекция</h3>
 
-							{% for collection in collections %}
+							{% for collection in view.get_collection %}
 								<div class="form-check">
-									<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name='collection'>
-									<label class="form-check-label" for="flexCheckDefault">
+									<input class="form-check-input" type="checkbox" value=" {{ collection }} " id="flexCheckDefault_{{ collection }}" name='collection'>
+									<label class="form-check-label" for="flexCheckDefault_{{ collection }}">
 										{{ collection.collection }}
 									</label>
 								</div>
@@ -234,7 +247,7 @@
 									<p class='pt-2 small'>ШИРИНА</p>
 
 									<div class="wrapper">
-									  <div class="values">
+										<div class="values">
 									    <span id="range1w">
 									      0
 									    </span> см
@@ -242,14 +255,12 @@
 									    <span id="range2w">
 									      400
 									    </span> см
-									  </div>
-									  <div class="container">
-
-									    <div class="slider-trackw"></div>
-									    <input type="range" name='min_width' min="0" max="400" value="100" id="slider-1w" oninput="slideOneW()">
-									    <input type="range" name='max
-									   _width'  min="0" max="400" value="220" id="slider-2w" oninput="slideTwoW()">
-									  </div>
+										</div>
+										<div class="container">
+									    	<div class="slider-trackw"></div>
+										    <input type="range" name='min_width' min="0" max="400" value="100" id="slider-1w" oninput="slideOneW()">
+										    <input type="range" name='max_width'  min="0" max="400" value="220" id="slider-2w" oninput="slideTwoW()">
+									 	</div>
 									</div>
 								</div>
 
@@ -257,21 +268,20 @@
 									<p class='pt-2 small'>ГЛУБИНА</p>
 
 									<div class="wrapper">
-									  <div class="values">
-									    <span id="range1d">
-									      0
-									    </span> см
-									    <span> &dash; </span>
-									    <span id="range2d">
-									      400
-									    </span> см
-									  </div>
-									  <div class="container">
-
-									    <div class="slider-trackd"></div>
-									    <input type="range" name='min_depth' min="0" max="300" value="40" id="slider-1d" oninput="slideOneD()">
-									    <input type="range" name='max_depth' min="0" max="300" value="120" id="slider-2d" oninput="slideTwoD()">
-									  </div>
+										<div class="values">
+											<span id="range1d">
+											0
+											</span> см
+											<span> &dash; </span>
+											<span id="range2d">
+									    	400
+									    	</span> см
+										</div>
+										<div class="container">
+											<div class="slider-trackd"></div>
+											<input type="range" name='min_depth' min="0" max="300" value="40" id="slider-1d" oninput="slideOneD()">
+											<input type="range" name='max_depth' min="0" max="300" value="120" id="slider-2d" oninput="slideTwoD()">
+										</div>
 									</div>
 								</div>
 							</div>
@@ -279,24 +289,22 @@
 						 
 						<h3 class='filter_header'>Цвет</h3>
 
-							{% for color in colors %}
+							{% for color in view.get_color %}
 								<style>
 									.prev_color_{{color.color_id}} { 
 										background-color: {{color.color_code}}!important;
 										border: 3px solid #fff !important;
 		    							border-radius: .25em !important;
-		    							box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px!important;
+		    							box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 6px 0px!important;
 									}
 									.prev_color_{{color.color_id}}:checked { 
-										background: {{color.color_code}}!important;
-										box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px!important;
-
+										box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 6px 0px!important;
 									}
 								</style>
 
 								<div class="form-check">
-									<input class="form-check-input prev_color_{{color.color_id}}" type="checkbox" value="" id="flexCheckDefault">
-									<label class="form-check-label" for="flexCheckDefault">
+									<input class="form-check-input prev_color_{{color.color_id}}" type="checkbox" value=" {{ product_fabric_color }} " id="flexCheckDefault_{{color.color_id}}">
+									<label class="form-check-label" for="flexCheckDefault_{{color.color_id}}">
 									{{ color.color_name }}
 									</label>
 								</div> 
@@ -305,78 +313,55 @@
 				
 						<h3 class='filter_header'>Механизм</h3>
 						
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="mechanism_type" id="flexRadioDefault1">
-								<label class="form-check-label" for="flexRadioDefault1">
-									Нет
-								</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="mechanism_type" id="flexRadioDefault2" checked>
-								<label class="form-check-label" for="flexRadioDefault2">
-									Пантограф
-								</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="radio" name="mechanism_type" id="flexRadioDefault3" checked>
-								<label class="form-check-label" for="flexRadioDefault3">
-									Регулировка элементов
-								</label>
-							</div>
+							{% for unique_mechanism_type in view.get_mechanism_type %}
+							    <div class="form-check">
+							        <input class="form-check-input" type="checkbox" name='mechanism_type' value="{{ unique_mechanism_type }}" id="flexCheckDefault_{{ unique_mechanism_type }}">
+							        <label class="form-check-label" for="flexCheckDefault_{{ unique_mechanism_type }}">
+							            {{ unique_mechanism_type }}
+							        </label>
+							    </div>
+							{% endfor %}
 					
 
 						<h3 class='filter_header'>Ящик для хранения белья</h3>
 
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="linen_drawer" id="flexRadioDefault_box_yes" checked>
-								<label class="form-check-label" for="flexRadioDefault_box_yes">
+								<input class="form-check-input" type="checkbox" name="linen_drawer" value='Да' id="flexCheckDefault_yes" checked>
+								<label class="form-check-label" for="flexCheckDefault_yes">
 									Да
 								</label>
 							</div>
 							<div class="form-check">
-								<input class="form-check-input" type="radio" name="linen_drawer" id="flexRadioDefault_box_no">
-								<label class="form-check-label" for="flexRadioDefault_box_no">
+								<input class="form-check-input" type="checkbox" name="linen_drawer" value='Нет' id="flexCheckDefault_no">
+								<label class="form-check-label" for="flexCheckDefault_no">
 									Нет
 								</label>
 							</div>
 
 
 						<h3 class='filter_header'>Опоры</h3>
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" name='paws_type' value="" id="flexCheckDefault">
-								<label class="form-check-label" for="flexCheckDefault">
-									Металл
-								</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" name='paws_type' value="" id="flexCheckChecked" checked>
-								<label class="form-check-label" for="flexCheckChecked">
-									Дерево
-								</label>
-							</div>
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" name='paws_type' value="" id="flexCheckChecked" checked>
-								<label class="form-check-label" for="flexCheckChecked">
-									Скрытые
-								</label>
-							</div>
+							{% for unique_paws_type in view.get_paws_type %}
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" name='paws_type' value="{{ unique_paws_type }}" id="flexCheckDefault_{{ unique_paws_type }}">
+									<label class="form-check-label" for="flexCheckDefault_{{ unique_paws_type }}">
+										{{ unique_paws_type }}
+									</label>
+								</div>
+							{% endfor %}
 
+						<div class="py-3 mb-4">
+							<center>
+								<button type="submit" name='filter_products' class="btn-prod-card white ">Показать варианты</button>
+							</center>
+						</div>
 					</div>
-				
-					<div class="py-3 mb-4">
-						<center>
-							<button type="submit" name='filter_products' class="btn-prod-card white ">Показать варианты</button>
-						</center>
-					</div>
+
 				</form>
 
 			</div>
-
-
 		</div>
 	</div>
 </div>
-
 
 <script type="text/javascript">
 
@@ -495,6 +480,5 @@
 		percent1d = (sliderOneD.value / sliderMaxValueD) * 100;
 		percent2d = (sliderTwoD.value / sliderMaxValueD) * 100;
 		sliderTrackD.style.background = `linear-gradient(to right, #dadae5 ${percent1d}% , #9F8A88 ${percent1d}% , #9F8A88 ${percent2d}%, #dadae5 ${percent2d}%)`;
-	}
-	
+	}	
 </script>
