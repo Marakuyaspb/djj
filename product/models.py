@@ -277,7 +277,7 @@ class Product(models.Model):
 	description = models.TextField(null=True, blank=True, verbose_name = 'Описание товара')
 
 
-# Carousel #
+	# Carousel #
 	carousel_item_1 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 1 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
 	carousel_item_2 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 2 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)
 	carousel_item_3 = models.ImageField(upload_to='carousel/', verbose_name = 'Изображение 3 | десктоп', default='static/img/popovers_arm.png', null=True, blank=True)

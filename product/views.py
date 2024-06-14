@@ -174,10 +174,10 @@ def products(request):
 			)
 			products_list = queryset
 
-	unique_product_types = Product.objects.values('category__type_ru').distinct()
-	unique_colors = Product.objects.values('fabric_name__product_fabric_color__color_name').distinct()
-	unique_collection = Product.objects.values('collection__collection').distinct()
-	unique_paws_types = Product.objects.values('paws_type').distinct()
+	unique_product_type = Producttype.objects.values('type_ru').distinct()
+	unique_color = Color.objects.values('color_name', 'color_id', 'color_code').distinct()
+	unique_collection = Collection.objects.values('collection').annotate(total=Count('collection')).distinct()
+	unique_paws_type = Product.objects.values('paws_type').annotate(total=Count('paws_type')).distinct()
 	unique_mechanism_type = Product.objects.values('mechanism_type').distinct()
 
 	# ADD PAGINATOR
@@ -195,11 +195,11 @@ def products(request):
 		'products_list': products_list,
 		'sort_by': sort_by,
 		'filter_form': FilterForm(),
-		'unique_product_types': unique_product_types,
-        'unique_colors': unique_colors,
-        'unique_mechanism_type': unique_mechanism_type,
-        'unique_paws_types': unique_paws_types,
-        'unique_collection': unique_collection,
+		'unique_product_type': unique_product_type,
+		'unique_color': unique_color,
+		'unique_mechanism_type': unique_mechanism_type,
+		'unique_paws_type': unique_paws_type,
+		'unique_collection': unique_collection,
 	}
 	
 	return render(request, 'product/category_goods.html', context)

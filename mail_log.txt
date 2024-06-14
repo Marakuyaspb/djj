@@ -10543,3 +10543,126 @@ Traceback (most recent call last):
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 346: 'endfor'. Did you forget to register or load this tag?
 2024-06-14 15:30:02,166 - Not Found: /favicon.ico
+2024-06-14 16:36:13,859 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:36:37,698 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:39:33,895 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:40:34,413 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:40:37,455 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 180, in products
+    unique_paws_types = get_paws_type.annotate(total=Count('paws_type')).distinct()
+NameError: name 'get_paws_type' is not defined
+2024-06-14 16:40:37,587 - Not Found: /favicon.ico
+2024-06-14 16:40:39,216 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 180, in products
+    unique_paws_types = get_paws_type.annotate(total=Count('paws_type')).distinct()
+NameError: name 'get_paws_type' is not defined
+2024-06-14 16:40:47,187 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:43:04,791 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:43:06,517 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 164, in products
+    queryset = Product.objects.filter(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1421, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1439, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1446, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1532, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1388, in build_filter
+    return self._add_q(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1562, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1445, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1251, in check_related_objects
+    raise ValueError(
+ValueError: Cannot use QuerySet for "Color": Use a QuerySet for "Producttype".
+2024-06-14 16:43:14,651 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:51:24,780 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:52:49,940 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:53:12,862 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:53:49,784 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:54:10,928 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:58:17,974 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 16:58:21,592 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 183, in products
+    print(unique_colors.color.color_code)
+AttributeError: 'QuerySet' object has no attribute 'color'
+2024-06-14 16:58:21,854 - Not Found: /favicon.ico
+2024-06-14 16:58:31,604 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 17:05:29,643 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 17:11:16,761 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 17:11:34,437 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 17:11:57,176 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 183, in products
+    print(unique_colors)
+NameError: name 'unique_colors' is not defined
+2024-06-14 17:11:58,552 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 183, in products
+    print(unique_colors)
+NameError: name 'unique_colors' is not defined
+2024-06-14 17:12:18,667 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 17:12:20,631 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 183, in products
+    print(unique_colors)
+NameError: name 'unique_colors' is not defined
+2024-06-14 17:12:24,651 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 183, in products
+    print(unique_colors)
+NameError: name 'unique_colors' is not defined
+2024-06-14 17:12:38,500 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 183, in products
+    # ADD PAGINATOR
+NameError: name 'unique_colors' is not defined
+2024-06-14 17:12:38,512 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 17:20:14,620 - /home/a/deco_dj/product/models.py changed, reloading.
