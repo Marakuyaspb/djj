@@ -9799,3 +9799,747 @@ Traceback (most recent call last):
   File "/home/a/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'products' not found. 'products' is not a valid view function or pattern name.
+2024-06-14 11:08:33,501 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 11:08:35,180 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2142, in add_fields
+    join_info = self.setup_joins(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1808, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'color_code' into field. Choices are: available_for_delivery_2, available_for_delivery_28, available_in_showroom, carcas_type, carousel_item_1, carousel_item_2, carousel_item_3, carousel_item_4, carousel_item_5, carousel_item_6, carousel_item_mob_1, carousel_item_mob_2, carousel_item_mob_3, carousel_item_mob_4, carousel_item_mob_5, carousel_item_mob_6, category, category_id, closeup, collection, collection_id, d3, depth, description, fabric_name, fabric_name_id, features, height, id, is_new, linen_drawer, mechanism_type, options, order_items, paws_type, pdf, popover, popover_id, popover_img, popular, price, price_old, product_fabric_icon_1, product_fabric_icon_2, product_fabric_icon_3, product_fabric_icon_4, product_fabric_icon_5, product_full_name, product_img, product_img_mob, product_inside, product_inside_pillow, product_slug, scheme, scheme_id, show_fabric_icons, show_on_category_page, sleep_place, slider_interior, slider_interior_id, slug_fabric_icon_1, slug_fabric_icon_2, slug_fabric_icon_3, slug_fabric_icon_4, slug_fabric_icon_5, width
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 156, in products
+    products_set = Product.objects.values(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1298, in values
+    clone = self._values(*fields, **expressions)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1293, in _values
+    clone.query.set_values(fields)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2437, in set_values
+    self.add_fields(field_names, True)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2175, in add_fields
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'color_code' into field. Choices are: available_for_delivery_2, available_for_delivery_28, available_in_showroom, carcas_type, carousel_item_1, carousel_item_2, carousel_item_3, carousel_item_4, carousel_item_5, carousel_item_6, carousel_item_mob_1, carousel_item_mob_2, carousel_item_mob_3, carousel_item_mob_4, carousel_item_mob_5, carousel_item_mob_6, category, category_id, closeup, collection, collection_id, d3, depth, description, fabric_name, fabric_name_id, features, height, id, is_new, linen_drawer, mechanism_type, options, order_items, paws_type, pdf, popover, popover_id, popover_img, popular, price, price_old, product_fabric_icon_1, product_fabric_icon_2, product_fabric_icon_3, product_fabric_icon_4, product_fabric_icon_5, product_full_name, product_img, product_img_mob, product_inside, product_inside_pillow, product_slug, scheme, scheme_id, show_fabric_icons, show_on_category_page, sleep_place, slider_interior, slider_interior_id, slug_fabric_icon_1, slug_fabric_icon_2, slug_fabric_icon_3, slug_fabric_icon_4, slug_fabric_icon_5, width
+2024-06-14 11:09:00,378 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 11:09:02,122 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2142, in add_fields
+    join_info = self.setup_joins(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1808, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'category_type_ru' into field. Choices are: available_for_delivery_2, available_for_delivery_28, available_in_showroom, carcas_type, carousel_item_1, carousel_item_2, carousel_item_3, carousel_item_4, carousel_item_5, carousel_item_6, carousel_item_mob_1, carousel_item_mob_2, carousel_item_mob_3, carousel_item_mob_4, carousel_item_mob_5, carousel_item_mob_6, category, category_id, closeup, collection, collection_id, d3, depth, description, fabric_name, fabric_name_id, features, height, id, is_new, linen_drawer, mechanism_type, options, order_items, paws_type, pdf, popover, popover_id, popover_img, popular, price, price_old, product_fabric_icon_1, product_fabric_icon_2, product_fabric_icon_3, product_fabric_icon_4, product_fabric_icon_5, product_full_name, product_img, product_img_mob, product_inside, product_inside_pillow, product_slug, scheme, scheme_id, show_fabric_icons, show_on_category_page, sleep_place, slider_interior, slider_interior_id, slug_fabric_icon_1, slug_fabric_icon_2, slug_fabric_icon_3, slug_fabric_icon_4, slug_fabric_icon_5, width
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 156, in products
+    products_set = Product.objects.values(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1298, in values
+    clone = self._values(*fields, **expressions)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1293, in _values
+    clone.query.set_values(fields)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2437, in set_values
+    self.add_fields(field_names, True)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2175, in add_fields
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'category_type_ru' into field. Choices are: available_for_delivery_2, available_for_delivery_28, available_in_showroom, carcas_type, carousel_item_1, carousel_item_2, carousel_item_3, carousel_item_4, carousel_item_5, carousel_item_6, carousel_item_mob_1, carousel_item_mob_2, carousel_item_mob_3, carousel_item_mob_4, carousel_item_mob_5, carousel_item_mob_6, category, category_id, closeup, collection, collection_id, d3, depth, description, fabric_name, fabric_name_id, features, height, id, is_new, linen_drawer, mechanism_type, options, order_items, paws_type, pdf, popover, popover_id, popover_img, popular, price, price_old, product_fabric_icon_1, product_fabric_icon_2, product_fabric_icon_3, product_fabric_icon_4, product_fabric_icon_5, product_full_name, product_img, product_img_mob, product_inside, product_inside_pillow, product_slug, scheme, scheme_id, show_fabric_icons, show_on_category_page, sleep_place, slider_interior, slider_interior_id, slug_fabric_icon_1, slug_fabric_icon_2, slug_fabric_icon_3, slug_fabric_icon_4, slug_fabric_icon_5, width
+2024-06-14 11:09:47,673 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 11:10:21,807 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:06:29,908 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:07:11,962 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:07:16,698 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 184, in products
+    products_list = products_set.order_by('-price')
+NameError: name 'products_set' is not defined
+2024-06-14 12:07:33,734 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:08:03,764 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:08:05,425 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 210, in products
+    products = paginator.page(page)
+NameError: name 'paginator' is not defined
+2024-06-14 12:08:09,191 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 210, in products
+    products = paginator.page(page)
+NameError: name 'paginator' is not defined
+2024-06-14 12:08:22,508 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:08:30,955 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:08:42,745 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:08:56,272 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:11:11,797 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:14:20,587 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:14:28,043 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:14:32,499 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:14:54,510 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:14:57,420 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 191, in products
+    Q(collection__in=self.request.GET.getlist('collection')) |
+NameError: name 'self' is not defined
+2024-06-14 12:14:57,621 - Not Found: /favicon.ico
+2024-06-14 12:15:18,422 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:15:51,382 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:20:11,832 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:21:55,233 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:23:13,885 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:23:45,807 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:24:05,564 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:24:18,159 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:24:28,025 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:25:18,351 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:25:37,209 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:26:35,915 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:27:11,028 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:34:53,789 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:41:33,168 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:44:13,413 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:44:33,241 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:45:08,214 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:45:47,674 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:48:25,729 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:48:52,614 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:49:27,692 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:50:56,803 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:51:01,425 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 194, in products
+    return render(request, 'product/category_goods.html', context)
+NameError: name 'request' is not defined
+2024-06-14 12:51:01,609 - Not Found: /favicon.ico
+2024-06-14 12:51:02,714 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 194, in products
+    return render(request, 'product/category_goods.html', context)
+NameError: name 'request' is not defined
+2024-06-14 12:51:15,632 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:52:04,963 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:52:16,513 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:53:04,821 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:54:17,523 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:54:38,265 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:55:15,597 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:56:15,235 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:56:54,367 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:56:59,872 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 12:59:02,401 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:00:22,254 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:01:47,835 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 150, in products
+    products_list = products.order_by('price')
+AttributeError: 'function' object has no attribute 'order_by'
+2024-06-14 13:02:03,962 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 150, in products
+    products_list = products.order_by('price')
+AttributeError: 'function' object has no attribute 'order_by'
+2024-06-14 13:03:08,826 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:03:12,923 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 148, in products
+    products_list = products.order_by('price')
+UnboundLocalError: local variable 'products' referenced before assignment
+2024-06-14 13:03:13,089 - Not Found: /favicon.ico
+2024-06-14 13:04:16,494 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:05:19,133 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:05:38,826 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:05:47,370 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:06:33,487 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:06:36,966 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:07:42,555 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 13:07:44,842 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:06:54,970 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:12:48,809 - /home/a/deco_dj/product/forms.py changed, reloading.
+2024-06-14 14:14:03,424 - /home/a/deco_dj/product/forms.py changed, reloading.
+2024-06-14 14:14:21,077 - /home/a/deco_dj/product/forms.py changed, reloading.
+2024-06-14 14:15:32,627 - /home/a/deco_dj/product/forms.py changed, reloading.
+2024-06-14 14:18:35,276 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:19:28,616 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:20:04,617 - /home/a/deco_dj/product/forms.py changed, reloading.
+2024-06-14 14:22:06,088 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 214, in products
+    return render(request, 'product/category_goods.html', context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1070, in render
+    return render_value_in_context(output, context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1047, in render_value_in_context
+    value = str(value)
+  File "/home/a/deco_dj/product/models.py", line 22, in __str__
+    return self.producttype
+AttributeError: 'Producttype' object has no attribute 'producttype'
+2024-06-14 14:31:45,868 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:33:41,144 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:41:16,586 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 179, in products
+    unique_colors = ProductFabricColor.objects.values('fabric_name__product_fabric_color').distinct()
+NameError: name 'ProductFabricColor' is not defined
+2024-06-14 14:41:17,715 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 179, in products
+    unique_colors = ProductFabricColor.objects.values('fabric_name__product_fabric_color').distinct()
+NameError: name 'ProductFabricColor' is not defined
+2024-06-14 14:41:34,885 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:41:48,440 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:41:57,206 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 179, in products
+    unique_colors = ProductFabricColor.objects.values('color_name').distinct()
+NameError: name 'ProductFabricColor' is not defined
+2024-06-14 14:41:59,446 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 179, in products
+    unique_colors = ProductFabricColor.objects.values('color_name').distinct()
+NameError: name 'ProductFabricColor' is not defined
+2024-06-14 14:41:59,602 - Not Found: /favicon.ico
+2024-06-14 14:42:03,139 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:42:06,269 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 179, in products
+    unique_colors = ProductFabricColor.objects.values('color_name').distinct()
+NameError: name 'ProductFabricColor' is not defined
+2024-06-14 14:42:06,450 - Not Found: /favicon.ico
+2024-06-14 14:42:16,893 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 179, in products
+    unique_colors = ProductFabricColor.objects.values('color_name').distinct()
+NameError: name 'ProductFabricColor' is not defined
+2024-06-14 14:42:17,064 - Not Found: /favicon.ico
+2024-06-14 14:42:19,687 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 179, in products
+    unique_colors = ProductFabricColor.objects.values('color_name').distinct()
+NameError: name 'ProductFabricColor' is not defined
+2024-06-14 14:42:19,847 - Not Found: /favicon.ico
+2024-06-14 14:45:15,992 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:47:35,877 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:48:10,062 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:48:23,788 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:48:39,623 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:49:02,497 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:49:50,713 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 14:52:33,594 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:06:25,772 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:07:06,929 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:07:34,871 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:13:43,397 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:14:36,659 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:14:40,351 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 177, in products
+    unique_product_types = Producttype.objects.values('category__type_ru').distinct()
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1298, in values
+    clone = self._values(*fields, **expressions)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1293, in _values
+    clone.query.set_values(fields)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2437, in set_values
+    self.add_fields(field_names, True)
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2142, in add_fields
+    join_info = self.setup_joins(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1808, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "/home/a/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1709, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'category' into field. Choices are: categories, type_id, type_ru
+2024-06-14 15:14:40,562 - Not Found: /favicon.ico
+2024-06-14 15:15:08,621 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:15:36,613 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:15:43,161 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:15:58,843 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-14 15:29:32,889 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 205, in products
+    return render(request, 'product/category_goods.html', context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 346: 'endfor'. Did you forget to register or load this tag?
+2024-06-14 15:29:33,105 - Not Found: /favicon.ico
+2024-06-14 15:29:56,076 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 205, in products
+    return render(request, 'product/category_goods.html', context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 346: 'endfor'. Did you forget to register or load this tag?
+2024-06-14 15:29:56,230 - Not Found: /favicon.ico
+2024-06-14 15:29:57,518 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 205, in products
+    return render(request, 'product/category_goods.html', context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 346: 'endfor'. Did you forget to register or load this tag?
+2024-06-14 15:30:00,193 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 205, in products
+    return render(request, 'product/category_goods.html', context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 346: 'endfor'. Did you forget to register or load this tag?
+2024-06-14 15:30:01,991 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 505, in parse
+    compile_func = self.tags[command]
+KeyError: 'endfor'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 56, in inner
+    response = get_response(request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/a/deco_dj/product/views.py", line 205, in products
+    return render(request, 'product/category_goods.html', context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 206, in select_template
+    return self.get_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 507, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/a/.local/lib/python3.10/site-packages/django/template/base.py", line 568, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 346: 'endfor'. Did you forget to register or load this tag?
+2024-06-14 15:30:02,166 - Not Found: /favicon.ico

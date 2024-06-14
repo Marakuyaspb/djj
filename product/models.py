@@ -302,8 +302,8 @@ class Product(models.Model):
 	carcas_type = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Каркас')
 	paws_type = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Ножки')
 	mechanism_type = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Механизм')
-	sleep_place = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Спальное место')
-	linen_drawer = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Бельевой ящик')
+	sleep_place = models.BooleanField(default=True, verbose_name = 'Спальное место')
+	linen_drawer = models.BooleanField(default=True, verbose_name = 'Бельевой ящик')
 	features = models.TextField(null=True, blank=True, verbose_name = 'Конструктивные особенности')
 	
 	pdf =  models.FileField(upload_to='pdf/', null=True, blank=True, verbose_name = 'Файл PDF')

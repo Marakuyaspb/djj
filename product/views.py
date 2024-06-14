@@ -82,16 +82,6 @@ def cat_view(request, category_slug=None):
 	return render(request, 'product/category_goods.html', {'products': products, 'view': view, 'categories': categories, 'collections': collections, 'colors': colors, 'producttypes': producttypes})
 
 
-
-# def cat_view (request, category_slug=None):
-# 	category = get_object_or_404(Category, category_slug=category_slug)
-# 	products = Product.objects.filter(category=category)
-# 	return render(request, 'product/category_goods.html', {'products': products})
-
-
-
-
-
 def about(request):
 	return render(request, 'product/about.html')
 def categories(request):
@@ -152,6 +142,7 @@ class GetParametres:
 
 
 def products(request):
+	# SORT BY PRICE
 	sort_by = request.GET.get('sort_by', 'asc')
 	if sort_by == 'asc':
 		products_list = Product.objects.all().order_by('price')
@@ -159,28 +150,39 @@ def products(request):
 		products_list = Product.objects.all().order_by('-price')
 	else:
 		products_list = Product.objects.all()
-	
 
 	if request.method == 'POST':
-		queryset = Product.objects.filter(
-			Q(collection__in=self.request.GET.getlist('collection')) |
-			Q(fabric_name__product_fabric_color__color_name__in=self.request.GET.getlist('color')) |
-			Q(producttype__in=self.request.GET.getlist('producttype')) |
-			Q(unique_mechanism_types__in=self.request.GET.getlist('unique_mechanism_types')) |
-			Q(unique_paws_types__in=self.request.GET.getlist('unique_paws_types')) |
-			Q(price__gte=min_price) |
-			Q(price__lte=max_price) |
-			Q(width__gte=min_width) |
-			Q(width__lte=max_width) |
-			Q(depth__gte=min_depth) |
-			Q(depth__lte=max_depth)
-        )
-		products = queryset
-	else:
-		paginator = Paginator(products_list, 9)
-		page = request.GET.get('page')
+		filter_form = FilterForm(request.POST)
+		if filter_form.is_valid():
+			min_price = filter_form.cleaned_data.get('min_price')
+			max_price = filter_form.cleaned_data.get('max_price')
+			min_width = filter_form.cleaned_data.get('min_width')
+			max_width = filter_form.cleaned_data.get('max_width')
+			min_depth = filter_form.cleaned_data.get('min_depth')
+			max_depth = filter_form.cleaned_data.get('max_depth')
 
+			queryset = Product.objects.filter(
+				Q(collection__in=filter_form.cleaned_data.get('collections')) |
+				Q(fabric_name__product_fabric_color__color_name__in=filter_form.cleaned_data.get('colors')) |
+				Q(category__type_ru__in=filter_form.cleaned_data.get('producttypes')) |
+				Q(price__gte=min_price) |
+				Q(price__lte=max_price) |
+				Q(width__gte=min_width) |
+				Q(width__lte=max_width) |
+				Q(depth__gte=min_depth) |
+				Q(depth__lte=max_depth)
+			)
+			products_list = queryset
 
+	unique_product_types = Product.objects.values('category__type_ru').distinct()
+	unique_colors = Product.objects.values('fabric_name__product_fabric_color__color_name').distinct()
+	unique_collection = Product.objects.values('collection__collection').distinct()
+	unique_paws_types = Product.objects.values('paws_type').distinct()
+	unique_mechanism_type = Product.objects.values('mechanism_type').distinct()
+
+	# ADD PAGINATOR
+	paginator = Paginator(products_list, 9)
+	page = request.GET.get('page')
 	try:
 		products = paginator.page(page)
 	except PageNotAnInteger:
@@ -192,13 +194,14 @@ def products(request):
 		'products': products,
 		'products_list': products_list,
 		'sort_by': sort_by,
-		'collections': GetParametres().get_collection(),
-		'colors': GetParametres().get_color(),
-		'producttypes': GetParametres().get_producttype(),
-		'mechanism_types': GetParametres().get_mechanism_type(),
-		'paws_types': GetParametres().get_paws_type()
+		'filter_form': FilterForm(),
+		'unique_product_types': unique_product_types,
+        'unique_colors': unique_colors,
+        'unique_mechanism_type': unique_mechanism_type,
+        'unique_paws_types': unique_paws_types,
+        'unique_collection': unique_collection,
 	}
-
+	
 	return render(request, 'product/category_goods.html', context)
 
 
