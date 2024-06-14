@@ -177,8 +177,12 @@
 	}
 </style>
 
-<div class="ps-3 pb-3">
-	<button type="button" class="btn-prod-card white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+<div class="ps-3 py-3">
+	<form method="get">
+		<button class="btn-transperent" type="submit" name="sort_by" value="desc">Сначала дорогие ↑</button>
+		<button class="btn-transperent" type="submit" name="sort_by" value="asc">Сначала бюджетные ↓</button>
+	</form>
+	<button type="button" class="btn-transperent" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 	  Показать все фильтры
 	</button>
 </div>
@@ -196,8 +200,8 @@
       		
       		<div class="modal-body modal-dialog-scrollable">
       			
-      			<form method="get" >
-      				
+      			<form method="get">
+      				{% csrf_token %}
 					<div class='filters_container'>
 
 						<h3 class='filter_header'>Стоимость</h3>

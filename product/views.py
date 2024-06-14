@@ -1,4 +1,4 @@
-from django.db.models import Q, Count
+from django.db.models import Q, F, Count, Value
 from django.conf import settings
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -134,50 +134,37 @@ def single_product(request, product_slug=None):
 			})
 
 
-
-def products(request):
-	products_list = Product.objects.all()
-
-	paginator = Paginator(products_list, 9) 
-	page = request.GET.get('page')
-
-	try:
-		products = paginator.page(page)
-	except PageNotAnInteger:
-		products = paginator.page(1)
-	except EmptyPage:
-		products = paginator.page(paginator.num_pages)
-	return render(request, 'product/category_goods.html', {'products': products})
-
-
-
 class GetParametres:
-
 	def get_collection(self):
 		return Collection.objects.all()
-
 	def get_color(self):
 		return Color.objects.all()
-
 	def get_producttype(self):
 		return Producttype.objects.all()
-
 	def get_mechanism_type(self):
 		mechanism_types = Product.objects.values_list('mechanism_type', flat=True)
 		unique_mechanism_types = set(mechanism_types)
 		return unique_mechanism_types
-
 	def get_paws_type(self):
 		paws_types = Product.objects.values_list('paws_type', flat=True)
 		unique_paws_types = set(paws_types)
 		return unique_paws_types
 
 
-class FilterProductsView(GetParametres, View):
-	def get_queryset(self, request):
+def products(request):
+	sort_by = request.GET.get('sort_by', 'asc')
+	if sort_by == 'asc':
+		products_list = Product.objects.all().order_by('price')
+	elif sort_by == 'desc':
+		products_list = Product.objects.all().order_by('-price')
+	else:
+		products_list = Product.objects.all()
+	
+
+	if request.method == 'POST':
 		queryset = Product.objects.filter(
 			Q(collection__in=self.request.GET.getlist('collection')) |
-			Q(color__in=self.request.GET.getlist('color')) |
+			Q(fabric_name__product_fabric_color__color_name__in=self.request.GET.getlist('color')) |
 			Q(producttype__in=self.request.GET.getlist('producttype')) |
 			Q(unique_mechanism_types__in=self.request.GET.getlist('unique_mechanism_types')) |
 			Q(unique_paws_types__in=self.request.GET.getlist('unique_paws_types')) |
@@ -188,12 +175,57 @@ class FilterProductsView(GetParametres, View):
 			Q(depth__gte=min_depth) |
 			Q(depth__lte=max_depth)
         )
-		context = {
-			'products': queryset
-		}
-		return render(request, 'product/category_goods.html', context)
+		products = queryset
+	else:
+		paginator = Paginator(products_list, 9)
+		page = request.GET.get('page')
 
-filter_products_view = FilterProductsView.as_view()
+
+	try:
+		products = paginator.page(page)
+	except PageNotAnInteger:
+		products = paginator.page(1)
+	except EmptyPage:
+		products = paginator.page(paginator.num_pages)
+
+	context = {
+		'products': products,
+		'products_list': products_list,
+		'sort_by': sort_by,
+		'collections': GetParametres().get_collection(),
+		'colors': GetParametres().get_color(),
+		'producttypes': GetParametres().get_producttype(),
+		'mechanism_types': GetParametres().get_mechanism_type(),
+		'paws_types': GetParametres().get_paws_type()
+	}
+
+	return render(request, 'product/category_goods.html', context)
+
+
+
+
+
+# class FilterProductsView(GetParametres, View):
+# 	def get_queryset(self, request):
+# 		queryset = Product.objects.filter(
+# 			Q(collection__in=self.request.GET.getlist('collection')) |
+# 			Q(color__in=self.request.GET.getlist('color')) |
+# 			Q(producttype__in=self.request.GET.getlist('producttype')) |
+# 			Q(unique_mechanism_types__in=self.request.GET.getlist('unique_mechanism_types')) |
+# 			Q(unique_paws_types__in=self.request.GET.getlist('unique_paws_types')) |
+# 			Q(price__gte=min_price) |
+# 			Q(price__lte=max_price) |
+# 			Q(width__gte=min_width) |
+# 			Q(width__lte=max_width) |
+# 			Q(depth__gte=min_depth) |
+# 			Q(depth__lte=max_depth)
+#         )
+# 		context = {
+# 			'products': queryset
+# 		}
+# 		return render(request, 'product/category_goods.html', context)
+
+# filter_products_view = FilterProductsView.as_view()
 
 
 

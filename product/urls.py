@@ -2,7 +2,6 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
-from .views import FilterProductsView
 from django.urls import reverse
 from django.contrib.sitemaps.views import sitemap
 from product.sitemaps import ProductSitemap
@@ -27,7 +26,6 @@ urlpatterns = [
 	path('designers/', views.designers, name = 'designers'),
 	path('payment/', views.payment, name = 'payment'),
 	path('products/', views.products, name = 'products'),
-	path('filter/', views.filter_products_view, name='filter'),
 
 	path('privacy-policy/', views.privacy, name = 'privacy'),
 	path('showrooms/', views.showrooms, name = 'showrooms'),

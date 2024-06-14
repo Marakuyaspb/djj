@@ -27,7 +27,7 @@ class Category(models.Model):
 	category_ru = models.CharField(max_length=50, verbose_name = 'Название категории (по-русски, в МНОЖЕСТВЕННОМ числе)')
 	type_ru = models.ForeignKey(Producttype,
 		related_name='categories', default='1',
-		on_delete=models.CASCADE, verbose_name = 'Цвет ткани (для фильтров)')
+		on_delete=models.CASCADE, verbose_name = 'Тип товара')
 	category = models.CharField(max_length=30, verbose_name='Сокращенно латиницей (arm, str, k1r и т.п.)')
 	category_slug = models.SlugField(max_length=30, unique=True, null=True, verbose_name='URL')
 
@@ -85,7 +85,7 @@ class Fabric(models.Model):
 	fabric_name = models.CharField(max_length=50, verbose_name = 'Название ткани')
 	product_fabric_img = models.ImageField(upload_to='fabric_images/', verbose_name = 'Образец ткани')
 	product_fabric_color = models.ForeignKey(Color,
-		related_name='products', default='1',
+		related_name='products_color', default='1',
 		on_delete=models.CASCADE, verbose_name = 'Цвет ткани (для фильтров)')
 	product_fabric_about = models.TextField(verbose_name = 'Описание ткани')
 
@@ -240,13 +240,13 @@ class Product(models.Model):
 	id = models.AutoField(primary_key=True)
 	category = models.ForeignKey(
 		Category,
-		related_name='products',
+		related_name='products_category',
 		on_delete=models.CASCADE, verbose_name = 'Категория')
 	collection = models.ForeignKey(Collection,
-		related_name='products',
+		related_name='products_collection',
 		on_delete=models.CASCADE, verbose_name = 'Коллекция')
 	fabric_name = models.ForeignKey(Fabric,
-		related_name='products',
+		related_name='products_fabric',
 		on_delete=models.CASCADE, verbose_name = 'Название ткани')
 	product_full_name = models.CharField(max_length=50, null=True, blank=True, verbose_name = 'Полное название товара')
 	product_img = models.ImageField(upload_to='images/', null=True, blank=True, verbose_name = 'Изображение для страницы выдачи | десктоп')
