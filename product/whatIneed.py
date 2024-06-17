@@ -29,6 +29,14 @@ Product.objects.values("", "", "", "cat__name")
 
 
 
+name='type_id'
+name='collection'
+name="color_id"
+name='paws_type'
+name='mechanism_type'
+name='sleep_place'
+name='linen_drawer'
+
 
 class Product(models.Model):
 	collection = models.ForeignKey(Collection,
@@ -211,3 +219,75 @@ def products(request):
 	}
 
 	return render(request, 'product/category_goods.html', context)
+
+	#####################################
+	#####################################
+	#####################################
+
+
+
+	def products(request):
+	# SORT BY PRICE
+	sort_by = request.GET.get('sort_by', 'asc')
+	
+	if sort_by == 'asc':
+		products_list = Product.objects.all().order_by('price')
+	elif sort_by == 'desc':
+		products_list = Product.objects.all().order_by('-price')
+	else:
+		products_list = Product.objects.all()
+
+	if request.method == 'POST':
+		filter_form = FilterForm(request.POST)
+		if filter_form.is_valid():
+			min_price = filter_form.cleaned_data.get('min_price')
+			max_price = filter_form.cleaned_data.get('max_price')
+			min_width = filter_form.cleaned_data.get('min_width')
+			max_width = filter_form.cleaned_data.get('max_width')
+			min_depth = filter_form.cleaned_data.get('min_depth')
+			max_depth = filter_form.cleaned_data.get('max_depth')
+
+			queryset = Product.objects.filter(
+				Q(collection__in=filter_form.cleaned_data.get('collections')) |
+				Q(fabric_name__product_fabric_color__color_name__in=filter_form.cleaned_data.get('colors')) |
+				Q(category__type_ru__in=filter_form.cleaned_data.get('producttypes')) |
+				Q(price__gte=min_price) |
+				Q(price__lte=max_price) |
+				Q(width__gte=min_width) |
+				Q(width__lte=max_width) |
+				Q(depth__gte=min_depth) |
+				Q(depth__lte=max_depth)
+			)
+			products_list = queryset
+
+	unique_product_type = Producttype.objects.values('type_ru').distinct()
+	unique_color = Color.objects.values('color_name', 'color_id', 'color_code').distinct()
+	unique_collection = Collection.objects.values('collection').annotate(total=Count('collection')).distinct()
+	unique_paws_type = Product.objects.values('paws_type').annotate(total=Count('paws_type')).distinct()
+	unique_mechanism_type = Product.objects.values('mechanism_type').distinct()
+
+	# ADD PAGINATOR
+	paginator = Paginator(products_list, 9)
+	page = request.GET.get('page')
+	try:
+		products = paginator.page(page)
+	except PageNotAnInteger:
+		products = paginator.page(1)
+	except EmptyPage:
+		products = paginator.page(paginator.num_pages)
+
+	context = {
+		'products': products,
+		'products_list': products_list,
+		'sort_by': sort_by,
+		'filter_form': FilterForm(),
+		'unique_product_type': unique_product_type,
+		'unique_color': unique_color,
+		'unique_mechanism_type': unique_mechanism_type,
+		'unique_paws_type': unique_paws_type,
+		'unique_collection': unique_collection,
+	}
+	
+	return render(request, 'product/category_goods.html', context)
+
+
