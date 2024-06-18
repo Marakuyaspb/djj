@@ -15616,3 +15616,4 @@ NameError: name 'collection_ids' is not defined
 2024-06-18 16:56:46,582 - /home/a/deco_dj/product/filters.py changed, reloading.
 2024-06-18 16:56:49,023 - /home/a/deco_dj/product/views.py changed, reloading.
 2024-06-18 16:57:18,063 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-06-18 17:04:36,227 - /home/a/deco_dj/product/views.py changed, reloading.

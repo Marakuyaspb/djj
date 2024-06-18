@@ -133,8 +133,6 @@ def products(request):
 
 	if request.method == 'GET':
 		queryset = product_filtering(request, products_list)
-
-
 		selected_options = {}
 		for key, value in request.GET.items():
 			if key in [ 'collection_ids', 'color_ids', 'linen_drawer', 'mechanism_type', 'paws_type', 'sleep_place', 'type_ids']:
@@ -148,11 +146,8 @@ def products(request):
 		# Filter products based on selected options
 		queryset = products_list.filter(q_objects)	
 
-
 	unique_values = unique_names(request)
-
 	common_products = queryset
-
 
 	# ADD PAGINATOR
 	paginator = Paginator(queryset, 18)

@@ -516,7 +516,7 @@
 
 						<h3 class='filter_header'>Функциональность</h3>
 							<label class="checkbox">
-								<input class="checkbox-input" type="checkbox" name='sleep_place' value="{{ sleep_place }}">
+								<input id='sleep_place' class="checkbox-input" type="checkbox" name='sleep_place' value=''>
 								<span class="checkbox-checkmark-box">
 								<span class="checkbox-checkmark"></span>
 								</span>
@@ -524,7 +524,7 @@
 							</label>
 
 							<label class="checkbox mt-2">
-								<input class="checkbox-input" type="checkbox" name='linen_drawer' value="{{ linen_drawer }}">
+								<input id='linen_drawer' class="checkbox-input" type="checkbox" name='linen_drawer' value=''>
 								<span class="checkbox-checkmark-box">
 								<span class="checkbox-checkmark"></span>
 								</span>
@@ -559,6 +559,9 @@
 
 		slideOneD();
 		slideTwoD();
+
+
+		listenChanges();
 
 	};
 
@@ -643,33 +646,6 @@
 		fillColorD();
 	}
 	
-/*	function slideOneD() {
-    let valueOne = parseInt(sliderOneD.value);  // Convert value to integer
-    let valueTwo = parseInt(sliderTwoD.value);  // Convert value to integer
-
-    if (valueTwo - valueOne <= minGapD) {
-        sliderOneD.value = valueTwo - minGapD;
-        valueOne = parseInt(sliderOneD.value);  // Update value after adjustment
-    }
-
-    displayValOneD.textContent = valueOne;
-    fillColorD();
-}
-
-function slideTwoD() {
-    let valueOne = parseInt(sliderOneD.value);  // Convert value to integer
-    let valueTwo = parseInt(sliderTwoD.value);  // Convert value to integer
-
-    if (valueTwo - valueOne <= minGapD) {
-        sliderTwoD.value = valueOne + minGapD;
-        valueTwo = parseInt(sliderTwoD.value);  // Update value after adjustment
-    }
-
-    displayValTwoD.textContent = valueTwo;
-    fillColorD();
-}
-*/
-
 
 	function fillColor() {
 		percent1 = (sliderOne.value / sliderMaxValue) * 100;
@@ -691,4 +667,27 @@ function slideTwoD() {
 		percent2d = (sliderTwoD.value / sliderMaxValueD) * 100;
 		sliderTrackD.style.background = `linear-gradient(to right, #dadae5 ${percent1d}% , #9F8A88 ${percent1d}% , #9F8A88 ${percent2d}%, #dadae5 ${percent2d}%)`;
 	}	
+
+
+	function listenChanges(){
+		var sleepPlaceCheckbox = document.getElementById('sleep_place');
+	    var linenDrawerCheckbox = document.getElementById('linen_drawer');
+
+	    sleepPlaceCheckbox.addEventListener('change', function() {
+	        if (this.checked) {
+	            this.value = 'True';
+	        } else {
+	            this.value = 'False';
+	        }
+	    });
+
+	    linenDrawerCheckbox.addEventListener('change', function() {
+	        if (this.checked) {
+	            this.value = 'True';
+	        } else {
+	            this.value = 'False';
+	        }
+	    });
+	}
+
 </script>
