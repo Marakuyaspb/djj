@@ -26,10 +26,6 @@ def product_filtering(request, queryset):
 	mechanism_type = request.GET.get('mechanism_type')
 	linen_drawer = request.GET.get('linen_drawer')
 
-	# print(paws_type)
-	# print(linen_drawer)
-
-
 	if min_price:
 		filters &= Q(price__gte=min_price)
 	if max_price:
@@ -56,7 +52,6 @@ def product_filtering(request, queryset):
 		filters &= Q(linen_drawer=linen_drawer)
 
 	return queryset.filter(filters)
-
 
 def unique_names(request):
 	unique_product_type = Producttype.objects.values('type_ru', 'type_id').distinct()

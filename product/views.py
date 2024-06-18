@@ -138,17 +138,21 @@ def products(request):
 			if key in [ 'collection_ids', 'color_ids', 'linen_drawer', 'mechanism_type', 'paws_type', 'sleep_place', 'type_ids']:
 				selected_options[key] = value
 
-		# Create Q objects for filtering
 		q_objects = Q()
 		for key, value in selected_options.items():
 			q_objects &= Q(**{key: value})
 
-		# Filter products based on selected options
-		queryset = products_list.filter(q_objects)	
+		queryset = products_list.filter(q_objects)
+
+		common_products = queryset
+
+		print(products_list)
+		print(q_objects)
+		print(common_products)
+
 
 	unique_values = unique_names(request)
-	common_products = queryset
-
+	
 	# ADD PAGINATOR
 	paginator = Paginator(queryset, 18)
 	page = request.GET.get('page')
@@ -162,7 +166,8 @@ def products(request):
 	context = {
 		'products': products,
 		'sort_by': sort_by,
-		'products_list': products_list,
+		'common_products': common_products,
+		# 'products_list': products_list,
 		'queryset': queryset,		
 		**unique_values,
 	}
