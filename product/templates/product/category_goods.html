@@ -13,8 +13,10 @@
 
 <div class="products_container">
 {% if no_results %}
-	    <h2 class='mt-5'>По заданным параметрам ничего не нашлось :(</h2>
+		<div class='p-5'>
+	    <h3 class='my-5'>По такому сочетанию параметров пока ничего нет :(</h3>
 	    <p class='major-text'>Попробуйте изменить параметры поиска</p>
+	    </div>
 	 {% else %}
 
 	{% for el in products %}

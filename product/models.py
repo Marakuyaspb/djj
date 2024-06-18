@@ -99,6 +99,9 @@ class Fabric(models.Model):
 	def __str__(self):
 		return self.fabric_name	
 
+	@property
+	def color_id(self):
+		return self.product_fabric_color.color_id
 
 
 class Option(models.Model):
@@ -150,10 +153,10 @@ class PopOverFeatures(models.Model):
 	popover_name = models.CharField(max_length=350, null=True, blank=True, verbose_name = 'Название набора 5 фич')
 	category = models.ForeignKey(
 		Category,
-		related_name='features', default='1',
+		related_name='categories', default='1',
 		on_delete=models.CASCADE, verbose_name = 'Категория')
 	collection = models.ForeignKey(Collection,
-		related_name='features', default='1',
+		related_name='collections', default='1',
 		on_delete=models.CASCADE, verbose_name = 'Коллекция')
 	popover_1_img = models.ImageField(upload_to='popover_features/', verbose_name = 'Картинка фичи 1')
 	popover_1_description = models.CharField(max_length=500, verbose_name = 'Описание фичи 1')
@@ -359,6 +362,9 @@ class Product(models.Model):
 	@property
 	def collection_slug(self):
 		return self.collection.collection_slug
+	@property
+	def collection_id(self):
+		return self.collection.collection_id
 
 
 	# Fabric
@@ -371,6 +377,8 @@ class Product(models.Model):
 	@property
 	def fabric_color(self):
 		return self.fabric_name.product_fabric_color
+	def color_id(self):
+		return self.fabric_name.color_id
 
 
 	# Options

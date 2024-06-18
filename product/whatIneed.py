@@ -109,6 +109,23 @@ if request.method == 'POST':
 
 
 
+class GetParametres:
+	def get_collection(self):
+		return Collection.objects.all()
+	def get_color(self):
+		return Color.objects.all()
+	def get_producttype(self):
+		return Producttype.objects.all()
+	def get_mechanism_type(self):
+		mechanism_types = Product.objects.values_list('mechanism_type', flat=True)
+		unique_mechanism_types = set(mechanism_types)
+		return unique_mechanism_types
+	def get_paws_type(self):
+		paws_types = Product.objects.values_list('paws_type', flat=True)
+		unique_paws_types = set(paws_types)
+		return unique_paws_types
+
+
 
 ################################################
 ################################################

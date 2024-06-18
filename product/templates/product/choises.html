@@ -324,13 +324,13 @@
 						
 
 						<h3 class='filter_header'>Тип</h3>
-							{% for type_ru in unique_product_type  %}
+							{% for the_type in unique_product_type  %}
 								<label class="checkbox">
-								    <input class="checkbox-input" type="checkbox"  name='type_id' value=" {{ type_id }}">
-								    <span class="checkbox-checkmark-box">
-								      <span class="checkbox-checkmark"></span>
-								    </span>
-								 {{ type_ru.type_ru }}
+									<input class="checkbox-input" type="checkbox"  name='type_id' value="{{ the_type.type_id }}">
+									<span class="checkbox-checkmark-box">
+									<span class="checkbox-checkmark"></span>
+									</span>
+									{{ the_type.type_ru }}
 								</label>
 							{% endfor %}
 
@@ -338,7 +338,7 @@
 						<h3 class='filter_header'>Коллекция</h3>
 							{% for collection in unique_collection %}
 								<label class="checkbox">
-								    <input class="checkbox-input" type="checkbox" name='collection' value=" {{ collection }}">
+								    <input class="checkbox-input" type="checkbox" name='collection_id' value="{{ collection.collection_id }}">
 								    <span class="checkbox-checkmark-box">
 								      <span class="checkbox-checkmark"></span>
 								    </span>
@@ -480,11 +480,11 @@
 								</style>
 
 								<label class="checkbox">
-								    <input class="checkbox-input_{{ the_color.color_id }}" type="checkbox" value=" {{ the_color.color_id }} " name="color_id">
-								    <span class="checkbox-checkmark-box_{{the_color.color_id}}">
-								      <span class="checkbox-checkmark_{{the_color.color_id}}"></span>
-								    </span>
-								 {{ the_color.color_name }}
+									<input class="checkbox-input_{{ the_color.color_id }}" type="checkbox" value="{{ the_color.color_id }}" name="color_id">
+									<span class="checkbox-checkmark-box_{{ the_color.color_id }}">
+									<span class="checkbox-checkmark_{{ the_color.color_id }}"></span>
+									</span>
+									{{ the_color.color_name }}
 								</label>
 							{% endfor %}
 
@@ -492,7 +492,7 @@
 						<h3 class='filter_header'>Опоры</h3>
 							{% for the_paws in unique_paws_type %}
 								<label class="checkbox">
-								    <input class="checkbox-input" type="checkbox" name='paws_type' value="{{ paws.paws_type }}">
+								    <input class="checkbox-input" type="checkbox" name='paws_type' value="{{ the_paws.paws_type }}">
 								    <span class="checkbox-checkmark-box">
 								      <span class="checkbox-checkmark"></span>
 								    </span>
