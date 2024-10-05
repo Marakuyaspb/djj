@@ -172,5 +172,5 @@ EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 465
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'no-reply@decona.ru'
-EMAIL_HOST_PASSWORD = 'ysFAnxyS6kgbzd5Em0y8'
+EMAIL_HOST_USER = 'no-reply@*************'
+EMAIL_HOST_PASSWORD = '********'
