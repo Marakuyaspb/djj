@@ -19,12 +19,12 @@ def product_filtering(request, queryset):
 	max_width = request.GET.get('max_width')
 	min_depth = request.GET.get('min_depth')
 	max_depth = request.GET.get('max_depth')
-	collection_ids = request.GET.get('collection_id')
-	color_ids = request.GET.get('color_id')
-	type_ids = request.GET.get('type_id')
-	paws_type = request.GET.get('paws_type')
-	mechanism_type = request.GET.get('mechanism_type')
-	linen_drawer = request.GET.get('linen_drawer')
+	collection_ids = request.GET.getlist('collection_id')
+	color_ids = request.GET.getlist('color_id')
+	type_ids = request.GET.getlist('type_id')
+	paws_type = request.GET.getlist('paws_type')
+	mechanism_type = request.GET.getlist('mechanism_type')
+	linen_drawer = request.GET.getlist('linen_drawer')
 
 	if min_price:
 		filters &= Q(price__gte=min_price)
@@ -52,6 +52,8 @@ def product_filtering(request, queryset):
 		filters &= Q(linen_drawer=linen_drawer)
 
 	return queryset.filter(filters)
+
+	
 
 def unique_names(request):
 	unique_product_type = Producttype.objects.values('type_ru', 'type_id').distinct()

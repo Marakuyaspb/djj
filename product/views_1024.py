@@ -7,7 +7,7 @@ from django.views import View
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .filters import product_ordering, product_filtering, unique_names
-from .models import *
+from .models import Product, Category, Collection, Color, Producttype, Option, SliderInterior
 from cart.forms import CartAddProductForm
 from .forms import *
 
@@ -129,17 +129,29 @@ def single_product(request, product_slug=None):
 def products(request):
 	sort_by = request.GET.get('sort_by', 'asc')
 	form = FilterForm(request.GET or None)
-
 	products_list = Product.objects.all()
 	products_list = product_ordering(Product, products_list, sort_by)
 
-	queryset = products_list
-
 
 	if request.method == 'GET':
-		queryset = product_filtering(request, queryset)
+		queryset = product_filtering(request, products_list)
+		selected_options = {}
+		for key, value in request.GET.items():
+			if key in [ 'collection_ids', 'color_ids', 'linen_drawer', 'mechanism_type', 'paws_type', 'sleep_place', 'type_ids']:
+				selected_options[key] = value
 
-		print(queryset)
+
+		q_objects = Q()
+		for key, value in selected_options.items():
+			q_objects &= Q(**{key: value})
+
+		queryset = products_list.filter(q_objects)
+
+		common_products = queryset
+
+		print(products_list)
+		print(q_objects)
+		print(common_products)
 
 
 	unique_values = unique_names(request)
@@ -159,6 +171,7 @@ def products(request):
 	context = {
 		'products': products,
 		'sort_by': sort_by,
+		'common_products': common_products,
 		'products_list': products_list,
 		'queryset': queryset,		
 		**unique_values,

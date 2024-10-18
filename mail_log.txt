@@ -15623,3 +15623,336 @@ NameError: name 'collection_ids' is not defined
 2024-06-18 17:34:32,685 - /home/a/deco_dj/product/views.py changed, reloading.
 2024-06-18 17:34:35,276 - /home/a/deco_dj/product/views.py changed, reloading.
 2024-06-18 17:40:21,023 - /home/a/deco_dj/product/views.py changed, reloading.
+2024-10-18 07:31:22,256 - Internal Server Error: /categories/mod/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 40, in cat_view
+    view = GetParametres()
+NameError: name 'GetParametres' is not defined
+2024-10-18 07:31:22,379 - Not Found: /favicon.ico
+2024-10-18 07:31:27,598 - Not Found: /media/main_page_carousel/CONSONO_MAIN.jpg
+2024-10-18 07:31:27,601 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:31:27,606 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:31:27,618 - Not Found: /media/main_page_carousel/AVIS_MAIN.jpg
+2024-10-18 07:31:27,620 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:31:27,655 - Not Found: /media/main_page_carousel/SHOWROOM_MAIN.jpg
+2024-10-18 07:31:27,677 - Not Found: /media/main_page_carousel/AVIS_MOB.jpg
+2024-10-18 07:31:27,689 - Not Found: /media/main_page_carousel/SHOWROOM_MOB.jpg
+2024-10-18 07:31:27,692 - Not Found: /media/main_page_carousel/CONSONO_MOB.jpg
+2024-10-18 07:31:27,782 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:31:27,790 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:31:27,792 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:31:32,630 - Internal Server Error: /categories/arm/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 40, in cat_view
+    view = GetParametres()
+NameError: name 'GetParametres' is not defined
+2024-10-18 07:31:35,270 - Internal Server Error: /categories/corner/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 40, in cat_view
+    view = GetParametres()
+NameError: name 'GetParametres' is not defined
+2024-10-18 07:31:41,187 - Internal Server Error: /categories/mod1/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 40, in cat_view
+    view = GetParametres()
+NameError: name 'GetParametres' is not defined
+2024-10-18 07:32:05,524 - Internal Server Error: /categories/mod/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 40, in cat_view
+    view = GetParametres()
+NameError: name 'GetParametres' is not defined
+2024-10-18 07:32:08,690 - Internal Server Error: /categories/mod1/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 40, in cat_view
+    view = GetParametres()
+NameError: name 'GetParametres' is not defined
+2024-10-18 07:33:00,727 - Internal Server Error: /categories/corner/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 40, in cat_view
+    view = GetParametres()
+NameError: name 'GetParametres' is not defined
+2024-10-18 07:33:03,956 - Internal Server Error: /categories/mod1/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 40, in cat_view
+    view = GetParametres()
+NameError: name 'GetParametres' is not defined
+2024-10-18 07:33:18,945 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:33:18,966 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:33:18,975 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:33:18,985 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:33:19,005 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:33:41,134 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:47:56,494 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:47:56,498 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:47:56,501 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:48:14,402 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:48:14,414 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:48:14,424 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:48:14,434 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:49:01,462 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:49:01,472 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:49:01,487 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:49:01,490 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:49:03,712 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:49:03,715 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:49:03,721 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:49:03,723 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:49:06,484 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:49:06,499 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:49:06,501 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:49:06,511 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:50:58,258 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:51:15,500 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 135, in products
+    if form.is_valid():
+NameError: name 'form' is not defined
+2024-10-18 07:51:56,354 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:53:23,214 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:53:38,057 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 178, in products
+    paginator = Paginator(queryset, 18)
+NameError: name 'queryset' is not defined
+2024-10-18 07:53:38,177 - Not Found: /favicon.ico
+2024-10-18 07:53:42,213 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 178, in products
+    paginator = Paginator(queryset, 18)
+NameError: name 'queryset' is not defined
+2024-10-18 07:53:51,331 - Not Found: /media/main_page_carousel/AVIS_MOB.jpg
+2024-10-18 07:53:51,341 - Not Found: /media/main_page_carousel/AVIS_MAIN.jpg
+2024-10-18 07:53:51,343 - Not Found: /media/main_page_carousel/CONSONO_MOB.jpg
+2024-10-18 07:53:51,351 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:53:51,358 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:53:51,368 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:53:51,380 - Not Found: /media/main_page_carousel/SHOWROOM_MAIN.jpg
+2024-10-18 07:53:51,406 - Not Found: /media/main_page_carousel/SHOWROOM_MOB.jpg
+2024-10-18 07:53:51,415 - Not Found: /media/main_page_carousel/CONSONO_MAIN.jpg
+2024-10-18 07:53:55,873 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 178, in products
+    paginator = Paginator(queryset, 18)
+NameError: name 'queryset' is not defined
+2024-10-18 07:53:55,992 - Not Found: /favicon.ico
+2024-10-18 07:54:07,255 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:54:09,362 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 178, in products
+    paginator = Paginator(queryset, 18)
+NameError: name 'queryset' is not defined
+2024-10-18 07:54:36,727 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:54:39,258 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 190, in products
+    'common_products': common_products,
+NameError: name 'common_products' is not defined
+2024-10-18 07:54:47,814 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:54:50,246 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 196, in products
+    if not queryset:
+NameError: name 'queryset' is not defined
+2024-10-18 07:54:51,763 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 196, in products
+    if not queryset:
+NameError: name 'queryset' is not defined
+2024-10-18 07:55:25,726 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:55:47,055 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:55:54,492 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 133, in products
+    products_list = product_ordering(Product, products_list, sort_by)
+UnboundLocalError: local variable 'products_list' referenced before assignment
+2024-10-18 07:56:01,322 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:56:03,502 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 133, in products
+    products_list = product_ordering(Product, products_list, sort_by)
+UnboundLocalError: local variable 'products_list' referenced before assignment
+2024-10-18 07:56:07,302 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:56:14,078 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 133, in products
+    products_list = product_ordering(Product, products_list, sort_by)
+UnboundLocalError: local variable 'products_list' referenced before assignment
+2024-10-18 07:56:27,680 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:58:22,369 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 07:58:28,384 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:58:28,392 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:58:28,402 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:58:28,409 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:58:38,914 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:58:38,926 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:58:38,938 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:58:38,948 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:58:41,550 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:58:41,560 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:58:41,563 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:58:41,572 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:58:51,341 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 07:58:51,356 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 07:58:51,359 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 07:58:51,366 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 07:59:55,474 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 09:45:01,836 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 09:45:14,867 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 09:45:18,825 - Internal Server Error: /products/
+Traceback (most recent call last):
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/aa/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/media/aa/A/djj/product/views.py", line 133, in products
+    products_list = product_ordering(Product, products_list, sort_by)
+NameError: name 'product_ordering' is not defined
+2024-10-18 09:45:48,647 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 09:46:47,827 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 09:46:47,834 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 09:46:47,837 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 09:46:47,847 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 09:46:47,950 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 09:46:47,956 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 09:46:47,959 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 09:46:47,972 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 09:47:38,173 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 09:47:38,194 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 09:47:38,197 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 09:47:38,201 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 09:48:30,055 - /media/aa/A/djj/product/filters.py changed, reloading.
+2024-10-18 09:49:34,174 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 09:49:36,765 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 09:49:36,784 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 09:49:36,793 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 09:49:36,794 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 09:49:44,081 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 09:49:44,094 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 09:49:44,098 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 09:49:44,108 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 10:18:15,225 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 10:19:12,100 - /media/aa/A/djj/product/filters.py changed, reloading.
+2024-10-18 10:20:28,720 - /media/aa/A/djj/product/views.py changed, reloading.
+2024-10-18 10:20:37,008 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 10:20:37,020 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 10:20:37,025 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:20:37,029 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 10:20:47,505 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:20:47,518 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 10:21:13,915 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 10:21:13,917 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:21:22,742 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 10:21:22,748 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:21:32,032 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:21:32,044 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 10:21:32,047 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 10:21:39,968 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 10:21:39,973 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:21:58,074 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 10:21:58,080 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:21:58,094 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 10:21:58,096 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 10:23:02,105 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_VELUTTO_32_GOODS_01.png
+2024-10-18 10:23:02,122 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_KILLIAN_01_GOODS_01.png
+2024-10-18 10:23:02,127 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_y1Nav9l.png
+2024-10-18 10:23:02,135 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:49:00,557 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:50:11,725 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:50:50,368 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:51:01,098 - Not Found: /favicon.ico
+2024-10-18 10:51:25,562 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:51:32,551 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:52:47,335 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:52:58,281 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:53:05,681 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:53:14,122 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:58:33,285 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:58:39,848 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:58:51,845 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:59:11,556 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:59:14,269 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 10:59:20,510 - Not Found: /favicon.ico
+2024-10-18 10:59:51,422 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 11:00:03,416 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 11:00:22,908 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 11:01:00,617 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 11:01:19,184 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 11:01:34,701 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 11:01:48,852 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
+2024-10-18 11:02:51,915 - Not Found: /media/images/MARSELLE_CORNER_L_3M_ST_CORS0_08_GOODS_01_KP1wV5x.png
